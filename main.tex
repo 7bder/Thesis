@@ -1,0 +1,139 @@
+% 字号12磅
+\documentclass[12pt, oneside, a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+% 设定图片目录
+\graphicspath{ {images/} }
+% 行间距1.3倍
+\renewcommand{\baselinestretch}{1.3}
+\usepackage{times}
+% 分章节导出参考文献，最终没有尝试成功
+%\usepackage{chapterbib}
+% 另一个分章节导出参考文献的包，也没有尝试成功
+%\usepackage[sectionbib,square]{natbib}
+% 这几个意思不清楚
+%\usepackage[dvips]{graphicx}
+%\usepackage[T1]{fontenc}
+%\usepackage{microtype}
+%\usepackage{xcolor}
+
+% 设定页眉，显示章节以及页码
+\pagestyle{headings}
+
+% 设定纸张大小
+\usepackage{geometry}
+% PDF VIEW
+% \geometry{total={210mm,297mm},
+% left=25mm,right=25mm,%
+% bindingoffset=0mm, top=25mm,bottom=25mm}
+
+% PRINT
+\geometry{total={210mm,297mm},
+	left=20mm,right=20mm,
+	bindingoffset=10mm, top=25mm,bottom=25mm}
+
+\begin{document}
+\title{
+	{Research on Ridership}\\
+	{\vspace{2cm}}
+	{\includegraphics[scale=0.2]{university.jpg}}\\
+	{\vspace{1cm}}
+	{\large Graduate School of Human-Environment Studies}\\
+	{\vspace{1cm}}
+}
+\author{
+	{Author: Chen Qi}\\
+	{Supervisor: Prof. Zhao Shichen}
+	{\vspace{1cm}}
+}
+\date{\today}
+\maketitle
+
+% 表页之后生成目录
+\tableofcontents
+\frontmatter
+\chapter{Acknowledgements}
+%
+I have reached the end of my PhD journey. Without many people who gave their support to me in various ways, I could not complete this thesis. To these people I would like to convey my heartfelt gratitude and sincere appreciation. 
+
+%
+First and foremost, I am deeply grateful to my supervisor, Associate Professor Zhao Shichen for his great support, guidance and kind advice throughout my PhD research studies. From problem solving to moral support, his help has been continued and invaluable. It was a real privilege and an honor for me to share of his exceptional scientific knowledge but also of his extraordinary human qualities.
+I also want to show my sincere gratitude to my other two co-supervisors, Professor Deguchi Atsushi and Professor Kurose Shigeyuki for their constant support, availability and constructive suggestions, which were determinant for the accomplishment of the work presented in this thesis. Their insights in developing the research, especially from the perspective of an experimentalist, clarified a lot of my questions.
+
+%
+I owe many thanks to my friends, in the same laboratory with me, that always support and give full attention for me to solve my problem. They always help me in exchanging any ideas and give the enjoyable studying environment. They made my life at the Graduate School of Human-Environment Studies, a truly memorable experience and their friendships are invaluable to me.
+
+%
+Finally, I am very grateful to my family. They have always loved me and supported my every choice. As I know, they are the happiest and the most proud when seeing me gets this degree, I dedicate this project to them. 
+
+%
+There are many, many other friends who helped me and made my life in Japan so enjoyable. Please forgive me for not mentioning all of your names individually.
+
+\chapter{Abstract}
+\section{AIJ}
+This study is an extension of existing station-level ridership model for a small sample case. The aim is to explore and explain the factors influencing subway ridership. A small sample case with dozens of stations has a higher risk of both type I and type II errors in statistic when identifying the valid explanatory variables for ridership. To reduce this risk, a procedure using exploratory regression was proposed to identify the effective variables, and then the Mix Geographically Weighted Regression (MGWR) model is adopted to estimate the relevance of explanatory variables and subway ridership. This study uses the subway stations in Fukuoka, Japan as the study case. As the result, nine effective factors are selected from candidate explanatory variables for interpreting the variation of subway ridership.
+
+\section{CUPUM}
+The purpose of this study is to analyze the interaction of subway rid-ership and land-use patterns in station catchment areas. The connectiv-ity between two stations is described by the probability of getting off at the destination station; thereby this issue is converted into a discrete choice model. Then the station areas are classified into six clusters ac-cording to the proportions of the main land-use functions. A logistic regression model is applied to the object stations selected from each cluster to estimate the passenger choice probability of getting off at the destination station. Finally, the results obtained by different types of stations are compared and discussed. The results show that the varia-tions in the proportion of land-use in departure stations can lead to variations in the choice of destination stations.
+
+\section{AURG}
+It is widely accepted that walking durations from departures to transit stations should relate to passengers' individual characteristics. However, since the walking duration is the reflection of the distribution of departure points, maybe it has no simple linear relationship with individual characteristics. Instead of examining the relationship between walking durations and individual characteristics directly, this study examines the feature distribution of individual characteristics over/under several thresholds of walking duration, thus trying to explore this relationship. The rail transit trip survey of Fukuoka, Japan is used as the dataset in this study which includes 4254 records. The features are estimated by using the random forests model. As a result, trip purposes have the most significant effect at any threshold of walking duration; the feature of peak hour also shows importance; the other features have different performance at different thresholds. The result shows a clear relationship between real walking durations and passengers' individual characteristics. Also, this result is expected to provide references for planning the catchment area of transit stations or estimating the catchment area of existing transit stations.
+
+
+
+\mainmatter
+\input{chapters/chapter1}
+
+\input{chapters/chapter2}
+
+\input{chapters/chapter3}
+
+\input{chapters/chapter4}
+
+\input{chapters/chapter5}
+
+% 需要另起一页，不然页码会出错
+\clearpage
+% 将reference加入目录。这里addcontentsline之后马上加入目录。
+\addcontentsline{toc}{chapter}{Reference}
+\bibliographystyle{plain}
+\bibliography{reference}
+
+\appendix
+\input{chapters/appendix}
+
+\backmatter
+
+\end{document}
+
+
+% Not the standard layout
+%\thispagestyle{empty}
+%\vspace{\fill}
+%{
+%	% Format
+%	\centering
+%	\Large
+%	
+%	% Title
+%	{\huge Thesis title: may be long or short}
+%	\vspace{2cm}
+%	
+%	\includegraphics[scale=0.2]{university.jpg}
+%	\vspace{2cm}
+%	
+%	% Author
+%	{\LARGE Chen Qi}
+%	\vspace{2cm}
+%	
+%	% Institution
+%	Graduate School of Human-Environment Studies\\
+%	Kyushu University\\
+%	\vspace{2cm}
+%	
+%	% Supervisor
+%	Supervisor: Prof. Zhao Shichen\\
+%}
+%
+%\vspace{\fill}
+%\centering\today
