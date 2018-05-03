@@ -1,7 +1,7 @@
 \documentclass[12pt, twoside, a4paper]{book} % 字号12磅
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{times}
+\usepackage[utf8]{inputenc} % 编码格式
+\usepackage{graphicx} % 插入图片的，具体不太清楚
+\usepackage{times} % times 字体
 \usepackage{chapterbib} % 分章节导出参考文献，最终尝试成功，需要在命令行下执行，详见OneNote
 \usepackage{dcolumn} % 数学模式制表的包
 \usepackage{diagbox} % 制作斜线表头
@@ -14,11 +14,12 @@
 \usepackage{geometry} % 设置纸张大小
 \usepackage{amsmath} % 一个公式环境的包，在 begin{matrix} 中可以使用 & 符号进行公式对齐
 \usepackage{setspace} % 设置行间距的包，语法：\begin{spacing}{1.25} content \end{spacing}
+% \usepackage{apacite} % 参考文献样式
 % \usepackage{newtxtext,newtxmath} % 不知道具体功能，先放进来
 % \usepackage[sectionbib]{natbib} % 另一个分章节导出参考文献的包，也没有尝试成功。不过失败原因应该同chapterbib包，已经记录。有时间尝试一下用这个包修改参考文献格式
 
 \graphicspath{ {images/} } % 设定图片目录
-\renewcommand{\baselinestretch}{1.3} % 行间距1.3倍
+\renewcommand{\baselinestretch}{1.5} % 行间距1.5倍
 \pagestyle{myheadings} % 设定页眉，显示章节以及页码
 \bibliographystyle{plain} % 设定参考文献格式
 \topskip 10mm % 正文顶部到页眉的距离
@@ -39,11 +40,12 @@
 % 表页制作
 \title{
 	{Research on Ridership}\\
-	{\vspace{2cm}}
+	{\vspace{3cm}}
 	{\includegraphics[scale=0.2]{university.jpg}}\\
-	{\vspace{1cm}}
+	{\vspace{2cm}}
 	{\large Graduate School of Human-Environment Studies}\\
-	{\vspace{1cm}}
+	{\large Kyushu University}
+	%{\vspace{1cm}}
 }
 \author{
 	{Author: Chen Qi}\\
@@ -53,10 +55,12 @@
 \date{\today}
 \maketitle
 
-% 表页之后生成目录
-\tableofcontents
-\frontmatter
+\tableofcontents % 内容目录
+\listoffigures % 图目录
+\listoftables % 表目录
 
+\frontmatter
+\setlength{\parskip}{0.5\baselineskip} % 设置段间距
 % 声明
 \chapter{Acknowledgments}
 %
@@ -104,11 +108,15 @@ It is widely accepted that walking durations from departures to transit stations
 %\bibliographystyle{plain}
 %\bibliography{reference}
 
+% 标记为后记部分
+\backmatter
+\setlength{\parskip}{0\baselineskip} % 设置段间距还原为0
 \appendix
 \include{chapters/appendix}
 
-% 标记为后记部分
-\backmatter
+It is widely accepted that walking durations from departures to transit stations should relate to passengers' individual characteristics. However, since the walking duration is the reflection of the distribution of departure points, maybe it has no simple linear relationship with individual characteristics. Instead of examining the relationship between walking durations and individual characteristics directly, this study examines the feature distribution of individual characteristics over/under several thresholds of walking duration, thus trying to explore this relationship. The rail transit trip survey of Fukuoka, Japan is used as the dataset in this study which includes 4254 records. The features are estimated by using the random forests model. As a result, trip purposes have the most significant effect at any threshold of walking duration; the feature of peak hour also shows importance; the other features have different performance at different thresholds. The result shows a clear relationship between real walking durations and passengers' individual characteristics. Also, this result is expected to provide references for planning the catchment area of transit stations or estimating the catchment area of existing transit stations.
+
+It is widely accepted that walking durations from departures to transit stations should relate to passengers' individual characteristics. However, since the walking duration is the reflection of the distribution of departure points, maybe it has no simple linear relationship with individual characteristics. Instead of examining the relationship between walking durations and individual characteristics directly, this study examines the feature distribution of individual characteristics over/under several thresholds of walking duration, thus trying to explore this relationship. The rail transit trip survey of Fukuoka, Japan is used as the dataset in this study which includes 4254 records. The features are estimated by using the random forests model. As a result, trip purposes have the most significant effect at any threshold of walking duration; the feature of peak hour also shows importance; the other features have different performance at different thresholds. The result shows a clear relationship between real walking durations and passengers' individual characteristics. Also, this result is expected to provide references for planning the catchment area of transit stations or estimating the catchment area of existing transit stations.
 
 \end{document}
 

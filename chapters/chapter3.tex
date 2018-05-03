@@ -1,14 +1,14 @@
-\chapter{An analysis on the interaction of ridership and land-use: the perspective from connectivity between subway stations}
+\chapter{Ridership Prediction at Station-to-Station Level}
 \markright{CHAPTER 3}
 %
 \section{Introduction}
 \indent
 
 %
-Urban rail transit is a type of high-capacity public transport general-ly found in urban areas. Because of the rapid, punctual and environ-ment-friendly features, the urban rail transit is becoming one of the most important travel modes in modern cities. With the popularity of the urban rail transit in modern cities and the emphasis on sustainable development, the concept of TOD (Transit-Oriented Development) is put forward, intended to build the compact city \cite{calthorpe1993next}. Based on the perspective of TOD, many cities around the world have adopted the policy of giving priority to the development of public transport for decreasing the share of motorized travel and increasing the willingness of using public transit. For policymakers, how to grasp the relationship between land-use and passenger volume has become an important issue that they must face.
+Urban rail transit is a type of high-capacity public transport generally found in urban areas. Because of the rapid, punctual and environment-friendly features, the urban rail transit is becoming one of the most important travel modes in modern cities. With the popularity of the urban rail transit in modern cities and the emphasis on sustainable development, the concept of TOD (Transit-Oriented Development) is put forward, intended to build the compact city \cite{calthorpe1993next}. Based on the perspective of TOD, many cities around the world have adopted the policy of giving priority to the development of public transport for decreasing the share of motorized travel and increasing the willingness of using public transit. For policymakers, how to grasp the relationship between land-use and passenger volume has become an important issue that they must face.
 
 %
-Until now, there are many studies focusing on the relationship be-tween various factors and transit ridership from the perspective of TOD. Most of the studies are based on regression-type model and conducted from the view of station-level, the transit ridership is thought to be affected by the circumstance surrounding the station \cite{cervero1997travel,taylor2003analyzing,zhao2005transit,estupinan2008relationship,taylor2009nature,sohn2010factors,gutierrez2011transit,jun2015land}. Among them, the multiple line-ar regression models are the earliest and most widely used model \cite{cervero1997travel,gutierrez2011transit}. However, the da-ta point in ordinary least squares (OLS) model is treated as a single point, which is not consistent with fact since the transit node is connected to each other. To deal with the relationship among stations in the network, the approach of spatial regression is also introduced into this issue \cite{cardozo2012application,jun2015land}. However, this relationship among stations in spatial regression models is just the expression for the distribution relationship of stations in location, it cannot reflect the real connectivity between two station areas.
+Until now, there are many studies focusing on the relationship be-tween various factors and transit ridership from the perspective of TOD. Most of the studies are based on regression-type model and conducted from the view of station-level, the transit ridership is thought to be affected by the circumstance surrounding the station \cite{cervero1997travel,taylor2003analyzing,zhao2005transit,estupinan2008relationship,taylor2009nature,sohn2010factors,gutierrez2011transit,jun2015land}. Among them, the multiple line-ar regression models are the earliest and most widely used model \cite{cervero1997travel,gutierrez2011transit}. However, the data point in ordinary least squares (OLS) model is treated as a single point, which is not consistent with fact since the transit node is connected to each other. To deal with the relationship among stations in the network, the approach of spatial regression is also introduced into this issue \cite{cardozo2012application,jun2015land}. However, this relationship among stations in spatial regression models is just the expression for the distribution relationship of stations in location, it cannot reflect the real connectivity between two station areas.
 
 %
 To explore the connectivity between station areas, Choi et al. conducted a station-to-station-level investigation into the effect of both origins and destinations on OD metro ridership of Seoul, Korea by using the data from the automatic fare collection system \cite{choi2012analysis}. The factors considered to influence the OD ridership is divided into three groups: the factors of both origin and destination, and the impedance factors between stations. And where the variables of origin and destination are the same, representing the travel characteristics of O and D respectively. The influence of factors on OD ridership is estimated using multiplicative and Poisson regression, with the data of morning, evening peak hours, and midday hours. This station-to-station approach has connected stations by using the factors of both origin and destination. As the result of this empirical study, different land-use functions have different travel characteristics in terms of both time and space. However, this approach still cannot reflect the connectivity between two station areas because of the aggregate processing for data.
@@ -50,6 +50,7 @@ Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passe
 \begin{table}[htbp]
 	\centering
 	\caption{Main transportation mode accessing subway stations}
+	\label{tab:chp3:MainTransportationMode}%
 	\begin{tabular}{ccccc}
 		
 		\Xhline{1.5pt}
@@ -62,9 +63,7 @@ Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passe
 		Min & 22\% & 4.8 & 0\% & 0 \\
 		Max & 100\% & 9.2 & 33\% & 20 \\
 		\Xhline{1.5pt}
-		
 	\end{tabular}%
-	\label{tab:chp3:MainTransportationMode}%
 \end{table}%
 
 %

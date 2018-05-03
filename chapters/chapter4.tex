@@ -1,4 +1,4 @@
-\chapter{Chapter 4}
+\chapter{Catchment Area and Walking Preference}
 \markright{CHAPTER 4}
 %
 \section{Introduction}
@@ -33,11 +33,11 @@ It may be because of the problems in the disposal of walking distance/duration o
 The study case of Fukuoka is the sixth largest city in Japan which has the population of more than 1.5 million. The dataset is the Northern Kyushu Area Person Trip, which is conducted about every 12 years, the latest available data is from the 4th survey surveyed by the year of 2005, and the 5th survey is already in preparation from September 2017. Figure \ref{fig:chp4:StationDistribution} shows the research area and the distribution of rail transit stations. By the year of 2005 (the 4th Northern Kyushu Area Person Trip Survey was conducted), there are more than 70 stations located within the city area of Fukuoka, of which the number of JR Kyushu station is 27, Fukuoka Subway station is 35, and West Japan Railway station is 16. Now some new rail transit lines and stations are still under planning and construction. According to the “Survey on the current state of public transportation” published by the Ministry of Land, Infrastructure, Transport and Tourism of Japan, the rail transit system in Fukuoka carries a daily average of more than 0.4 million passengers by 2015, accounting for more than 20\% in total motorized travel. Although the rail transit system of Fukuoka is still not a large-scale one at now, it has been playing a crucial role in people's daily travel.
 
 % Figure 1
-\begin{figure}[htp]
-	\caption{Distribution of Transit Stations}
-	\label{fig:chp4:StationDistribution}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{chp4StationDistribution}
+	\caption{Distribution of Transit Stations}
+	\label{fig:chp4:StationDistribution}
 \end{figure}
 
 %
@@ -75,30 +75,30 @@ The main purpose of person trip survey is to know the travel trends, thus making
 To analyze the walking duration between departures and rail transit stations in Fukuoka, the first step is to extract the valid records of rail transit trip within the city area of Fukuoka from over 480,000 records in the dataset. The procedure of extracting the valid data is divided into 3 steps. Firstly, extracting all the person trip data that surveyed within the city area of Fukuoka; secondly, selecting the trip chaining behavior which contains the rail transit mode; thirdly, filtering the invalid data that with null value or abnormal value. The procedure of data cleaning is shown in figure \ref{fig:chp4:DataCleaning}, at last the valid dataset is reduced to a size of 4254 trips.
 
 % Figure 2
-\begin{figure}[htp]
-	\caption{Process of Data Cleaning}
-	\label{fig:chp4:DataCleaning}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{chp4DataCleaning}
+	\caption{Process of Data Cleaning}
+	\label{fig:chp4:DataCleaning}
 \end{figure}
 
 %
 Figure \ref{fig:chp4:AgeDistribution} shows the age distribution for walking trips to rail transit stations based on the finally valid dataset. The passengers aged from 25 to 55 account for the majority of the whole passengers, while schoolchildren aged under 15 rarely take rail transit. The distribution graph does not show significant peak values at any specific age group. Figure \ref{fig:chp4:DurationDistribution} shows the distribution of real walking durations to stations, it has a mean value of 8.32, and the standard deviation is 2. Notably, there are several peak values at the time of 5 multiples. It is speculated that the peak values may be caused by deviation occurred in the investigation. Since people's feeling about the specific time or number is inaccurate, they are inclined to reply a loose answer when they are asked some questions about the details of walking duration. This inclination will count some of the real walking duration that is near to 5 multiples as the 5 multiples and finally expressed in the result of investigation. Despite the bias between survey and reality, as the second assumption proposed before, passengers are viewed that they can accept the walking duration what they answered, therefore, the peak values are thought available in this study.
 
 % Figure 3
-\begin{figure}[htp]
-	\caption{The Age Distribution of Passengers}
-	\label{fig:chp4:AgeDistribution}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{chp4AgeDistribution}
+	\caption{The Age Distribution of Passengers}
+	\label{fig:chp4:AgeDistribution}
 \end{figure}
 
 % Figure 4
-\begin{figure}[htp]
-	\caption{Distribution of Walking Duration}
-	\label{fig:chp4:DurationDistribution}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{chp4DurationDistribution}
+	\caption{Distribution of Walking Duration}
+	\label{fig:chp4:DurationDistribution}
 \end{figure}
 
 %
@@ -260,24 +260,24 @@ For the threshold of 5 minutes, the features of trip purposes and peak hour play
 The valid features (Table \ref{tab:chpt4:ValidFeatures}) are used in the random forest model to estimate the probability that walking longer than the given threshold of walking duration. For estimating the model, the dataset is divided into two parts, 50\% of the sample are used for fitting the model thus obtaining the coefficients, the rest 50\% are used for testing the ability of prediction. The prediction process is presented in Figure \ref{fig:chp4:RandomForests}. For the random forest model, the prediction is not obtained from the only one decision tree but the multitude of decision trees constructed by random selection of features and samples. The dependent variable at the given threshold of walking duration to rail transit stations is calculated by equation \ref{eq:chp4:probability} based on the mean prediction.
 
 % Figure 5
-\begin{figure}[htp]
-	\caption{Prediction Process in Random Forests Model}
-	\label{fig:chp4:RandomForests}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{chp4RandomForests}
+	\caption{Prediction Process in Random Forests Model}
+	\label{fig:chp4:RandomForests}
 \end{figure}
 
 %
 The accuracy of results are evaluated by using the method of simple moving average. Figure \ref{fig:chp4:Prediction} is the trend line of probabilities that walking less than the given threshold. The trend line of the surveyed values based on the test set is calculated by the mean probability of a group people who have close predicted values. The trend line is drawn by a descending order of predicted values. From the comparison of predicted values and surveyed values, it can be known that the prediction at the threshold of 5 minutes has the best fitness, and the prediction for the threshold of 13 minutes is also slightly good, while it is not so good in the case of 8 minutes. In fact, if checking the prediction for individuals, the accuracy of this model is still not enough to explain the individual behavior. But the trend line in Figure \ref{fig:chp4:Prediction} infers that this result can reflect the behavior of people with specific individual characteristics at a given threshold of walking duration. 
 
 % Figure 6
-\begin{figure}[htp]
-	\caption{Trend Line of Prediction and Test Set}
-	\label{fig:chp4:Prediction}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\linewidth]{chp4Prediction5Min}\\
 	\includegraphics[width=0.7\linewidth]{chp4Prediction8Min}\\
 	\includegraphics[width=0.7\linewidth]{chp4Prediction13Min}\\
+	\caption{Trend Line of Prediction and Test Set}
+	\label{fig:chp4:Prediction}
 \end{figure}
 
 %
