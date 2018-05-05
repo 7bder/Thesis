@@ -1,14 +1,12 @@
-\chapter{Ridership Prediction at Station-to-Station Level}
+\chapter{Explain Ridership at Station-to-Station Level}
 \markright{CHAPTER 3}
 %
 \section{Introduction}
-\indent
-
 %
 Urban rail transit is a type of high-capacity public transport generally found in urban areas. Because of the rapid, punctual and environment-friendly features, the urban rail transit is becoming one of the most important travel modes in modern cities. With the popularity of the urban rail transit in modern cities and the emphasis on sustainable development, the concept of TOD (Transit-Oriented Development) is put forward, intended to build the compact city \cite{calthorpe1993next}. Based on the perspective of TOD, many cities around the world have adopted the policy of giving priority to the development of public transport for decreasing the share of motorized travel and increasing the willingness of using public transit. For policymakers, how to grasp the relationship between land-use and passenger volume has become an important issue that they must face.
 
 %
-Until now, there are many studies focusing on the relationship be-tween various factors and transit ridership from the perspective of TOD. Most of the studies are based on regression-type model and conducted from the view of station-level, the transit ridership is thought to be affected by the circumstance surrounding the station \cite{cervero1997travel,taylor2003analyzing,zhao2005transit,estupinan2008relationship,taylor2009nature,sohn2010factors,gutierrez2011transit,jun2015land}. Among them, the multiple line-ar regression models are the earliest and most widely used model \cite{cervero1997travel,gutierrez2011transit}. However, the data point in ordinary least squares (OLS) model is treated as a single point, which is not consistent with fact since the transit node is connected to each other. To deal with the relationship among stations in the network, the approach of spatial regression is also introduced into this issue \cite{cardozo2012application,jun2015land}. However, this relationship among stations in spatial regression models is just the expression for the distribution relationship of stations in location, it cannot reflect the real connectivity between two station areas.
+Until now, there are many studies focusing on the relationship between various factors and transit ridership from the perspective of TOD. Most of the studies are based on regression model and conducted from the view of station-level, the transit ridership is thought to be affected by the circumstance surrounding the station \cite{cervero1997travel,taylor2003analyzing,zhao2005transit,estupinan2008relationship,taylor2009nature,sohn2010factors,gutierrez2011transit,jun2015land}. Among them, the multiple linear regression models are the earliest and most widely used model \cite{cervero1997travel,gutierrez2011transit}. However, the data point in ordinary least squares (OLS) model is treated as a single point, which is not consistent with fact since the transit node is connected to each other. To deal with the relationship among stations in the network, the approach of spatial regression is also introduced into this issue \cite{cardozo2012application,jun2015land}. However, this relationship among stations in spatial regression models is just the expression for the distribution relationship of stations in location, it cannot reflect the real connectivity between two station areas.
 
 %
 To explore the connectivity between station areas, Choi et al. conducted a station-to-station-level investigation into the effect of both origins and destinations on OD metro ridership of Seoul, Korea by using the data from the automatic fare collection system \cite{choi2012analysis}. The factors considered to influence the OD ridership is divided into three groups: the factors of both origin and destination, and the impedance factors between stations. And where the variables of origin and destination are the same, representing the travel characteristics of O and D respectively. The influence of factors on OD ridership is estimated using multiplicative and Poisson regression, with the data of morning, evening peak hours, and midday hours. This station-to-station approach has connected stations by using the factors of both origin and destination. As the result of this empirical study, different land-use functions have different travel characteristics in terms of both time and space. However, this approach still cannot reflect the connectivity between two station areas because of the aggregate processing for data.
@@ -24,8 +22,6 @@ With the goal of explaining the variation in the ridership between stations, thi
 
 %
 \subsection{Study context}
-\indent
-
 %
 This study focuses on 35 subway stations in Fukuoka City (the sixth largest city in Japan) which has the largest population in Kyushu Is-land of Japan (more than 1.5 million). Figure \ref{fig:chp3:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines, a total of 29.8 kilometers operating mileage. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel (from Fukuoka City Transportation Bureau). Although the Fukuoka subway system is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population. Moreover, one thing should be noted that the third line is not directly connected with the first and second line.
 
@@ -39,8 +35,7 @@ This study focuses on 35 subway stations in Fukuoka City (the sixth largest city
 
 %
 \subsection{Catchment area of the station}
-\indent
-
+%
 The scale of the catchment area is an important prerequisite for this kind of issue. At present, in the United States, a half-mile-radius (800 m) circle has become the practical standard for rail-transit catchment areas based on TODs \cite{guerra2013half}. The distance of 800m corresponds to the distance people can walk in 10 minutes at the speed of 4.8 km/h. A Japanese case study also supported this 800m catchment area for TOD by using the survey data of $<$2010 big city traffic census metropolitan area report$>$ \cite{tadakatsu2015an}.
 
 %
@@ -51,6 +46,8 @@ Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passe
 	\centering
 	\caption{Main transportation mode accessing subway stations}
 	\label{tab:chp3:MainTransportationMode}%
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
 	\begin{tabular}{ccccc}
 		
 		\Xhline{1.5pt}
@@ -68,8 +65,6 @@ Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passe
 
 %
 \subsection{Land-use}
-\indent
-
 %
 Land-use is generally accepted as one of the determinants for transit ridership. The indicator of floor area in different building functions can be considered as a detailed expression for land-use. Also, many researchers have verified the influence of floor area in different build-ing functions on transit ridership by conducting empirical studies \cite{sohn2010factors,gutierrez2011transit,chakraborty2013land,chakraborty2013land,jun2015land}. Also, all the stations in the network are con-nected, the change of land-use within the PCA of a station will lead to the changes of transit ridership in all the stations in the same network. For the case of Fukuoka, about 90\% of the trips accessing subway stations are non-motorized, in another word, the land-use within the PCA of stations play a crucial role in determining the trip purposes of subway users, as shown in Table \ref{tab:chp3:MainTransportationMode}.
 
@@ -95,6 +90,8 @@ The same with previous studies, this study chose several types of land-use with 
 	\centering
 	\caption{Proportion of land-use in terms of the range of PCA}
 	\label{tab:chp3:ProportionOfLanduse}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
 	\begin{tabular}{cccccc}
 		\Xhline{1.5pt}
 		Range of PCA & Residence & Office & Commerce & Education & Total \\
@@ -113,8 +110,6 @@ The same with previous studies, this study chose several types of land-use with 
 
 %
 \subsection{Impedance}
-\indent
-
 %
 Another factor generally used for representing the connectivity be-tween stations is the remoteness, which is also widely adopted as im-pedance in the gravity model for explaining the connectivity between traffic zones \cite{iwanow2007trade,kepaptsoglou2010gravity,nitsch2000national}. Impedance is the index that represents the connectivity and cost between origin and destination, it can affect the choice of the trip in terms of both destination and travel mode. Generally, the factor of impedance can be considered from two aspects in this issue, one is the internal impedance that representing the convenience for accessing the station \cite{chu2004ridership,chakraborty2013land}; the other is external impedance that evaluating the connectivity between stations \cite{sohn2010factors}.
 
@@ -144,9 +139,8 @@ Since the focus of this study is the connectivity between stations, it can be as
 	\item[$R_k$] is the number of bus lines passing through the kth bus station.
 \end{enumerate}
 
+%
 \section{Model}
-\indent
-
 %
 It is difficult to analyze the connectivity of all the stations simultaneously. To simplify this issue, the study will be started by one single station, and then the connectivity between this station and all the other stations connected to it will be investigated. For a passenger, the behavior of going to some places by subway can be viewed as a procedure of choice. In this selection process, the choice is decided by the trip purpose of the passenger. As stated in the introduction, the type of building functions can be mainly categorized into residence, office, education, and commerce, which represent the trip purposes of going home, business, commute, and leisure respectively. Therefore, this is-sue can be converted into a discrete choice model, in which the de-pendent variables are the building environment in the station catchment area, and the independent variable is the choice of the destination station.
 
@@ -189,6 +183,8 @@ As the result, all the stations are fallen into six categories, they are medium-
 	\centering
 	\caption{Station classification}
 	\label{tab:chp3:StationClassification}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
 	\begin{tabular}{p{12em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{5em}<{\centering}p{5em}<{\centering}p{5em}<{\centering}}
 		
 		\Xhline{1.5pt}
@@ -207,7 +203,7 @@ As the result, all the stations are fallen into six categories, they are medium-
 	%
 	\begin{description}
 		\label{note:tab:chp3:StationClassification}
-		\item[*Note:] the highlighted cells refer to the representative values that having much higher percentage than other land-use types.
+		\item[Note:] the highlighted cells refer to the representative values that having much higher percentage than other land-use types.
 	\end{description}
 	
 \end{sidewaystable}
@@ -217,10 +213,12 @@ To investigate the stations with significant differences in land-use characteris
 
 % Table 4
 \begin{sidewaystable}[htbp]
-	\scriptsize % 该表使用小字体
 	\centering
 	\caption{Result of Logistic Regression}
 	\label{tab:chp3:Result}
+	\scriptsize % 该表使用小字体
+	\renewcommand{\arraystretch}{1} % 重设表间距
+	
 	\begin{tabular}{p{7em}p{5em}p{5em}<{\centering}rrrrrrrrr}
 		\Xhline{1.5pt}
 		
@@ -277,7 +275,7 @@ To investigate the stations with significant differences in land-use characteris
 	\end{tabular}%
 	\begin{description}
 		\label{note:tab:chp3:Result}
-		\item[*Note:] \textsl{B} is the coefficient, \textsl{Exp(B)} is the odds ratio. The blank means the estimated value is not significant at the 0.05 level.
+		\item[Note:] \textsl{B} is the coefficient, \textsl{Exp(B)} is the odds ratio. The blank means the estimated value is not significant at the 0.05 level.
 	\end{description}
 	
 \end{sidewaystable}%

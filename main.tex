@@ -14,14 +14,15 @@
 \usepackage{geometry} % 设置纸张大小
 \usepackage{amsmath} % 一个公式环境的包，在 begin{matrix} 中可以使用 & 符号进行公式对齐
 \usepackage{setspace} % 设置行间距的包，语法：\begin{spacing}{1.25} content \end{spacing}
+% \usepackage{ragged2e} % 设置两端对齐的，没试成功
 % \usepackage{apacite} % 参考文献样式
 % \usepackage{newtxtext,newtxmath} % 不知道具体功能，先放进来
 % \usepackage[sectionbib]{natbib} % 另一个分章节导出参考文献的包，也没有尝试成功。不过失败原因应该同chapterbib包，已经记录。有时间尝试一下用这个包修改参考文献格式
 
+% \setlength{\textwidth} {160 mm} % 设定文本宽度，防止参考文献溢出，无效
 \graphicspath{ {images/} } % 设定图片目录
 \renewcommand{\baselinestretch}{1.5} % 行间距1.5倍
 \pagestyle{myheadings} % 设定页眉，显示章节以及页码
-\bibliographystyle{plain} % 设定参考文献格式
 \topskip 10mm % 正文顶部到页眉的距离
 % \footskip 5mm % 正文底部到页脚的距离
 
@@ -39,7 +40,7 @@
 \begin{document}
 % 表页制作
 \title{
-	{Research on Ridership}\\
+	{Rail Transit Ridership in TOD Area}\\
 	{\vspace{3cm}}
 	{\includegraphics[scale=0.2]{university.jpg}}\\
 	{\vspace{2cm}}
@@ -65,7 +66,6 @@
 \chapter{Acknowledgments}
 %
 I have reached the end of my PhD journey. Without many people who gave their support to me in various ways, I could not complete this thesis. To these people I would like to convey my heartfelt gratitude and sincere appreciation. 
-
 %
 First and foremost, I am deeply grateful to my supervisor, Associate Professor Zhao Shichen for his great support, guidance and kind advice throughout my PhD research studies. From problem solving to moral support, his help has been continued and invaluable. It was a real privilege and an honor for me to share of his exceptional scientific knowledge but also of his extraordinary human qualities.
 I also want to show my sincere gratitude to my other two co-supervisors, Professor Deguchi Atsushi and Professor Kurose Shigeyuki for their constant support, availability and constructive suggestions, which were determinant for the accomplishment of the work presented in this thesis. Their insights in developing the research, especially from the perspective of an experimentalist, clarified a lot of my questions.
@@ -93,6 +93,7 @@ It is widely accepted that walking durations from departures to transit stations
 
 % 正文
 \mainmatter % 该命令以下标记为正文，在目录和页码中有所区别
+
 \include{chapters/chapter1}
 
 \include{chapters/chapter2}
@@ -114,12 +115,7 @@ It is widely accepted that walking durations from departures to transit stations
 \appendix
 \include{chapters/appendix}
 
-It is widely accepted that walking durations from departures to transit stations should relate to passengers' individual characteristics. However, since the walking duration is the reflection of the distribution of departure points, maybe it has no simple linear relationship with individual characteristics. Instead of examining the relationship between walking durations and individual characteristics directly, this study examines the feature distribution of individual characteristics over/under several thresholds of walking duration, thus trying to explore this relationship. The rail transit trip survey of Fukuoka, Japan is used as the dataset in this study which includes 4254 records. The features are estimated by using the random forests model. As a result, trip purposes have the most significant effect at any threshold of walking duration; the feature of peak hour also shows importance; the other features have different performance at different thresholds. The result shows a clear relationship between real walking durations and passengers' individual characteristics. Also, this result is expected to provide references for planning the catchment area of transit stations or estimating the catchment area of existing transit stations.
-
-It is widely accepted that walking durations from departures to transit stations should relate to passengers' individual characteristics. However, since the walking duration is the reflection of the distribution of departure points, maybe it has no simple linear relationship with individual characteristics. Instead of examining the relationship between walking durations and individual characteristics directly, this study examines the feature distribution of individual characteristics over/under several thresholds of walking duration, thus trying to explore this relationship. The rail transit trip survey of Fukuoka, Japan is used as the dataset in this study which includes 4254 records. The features are estimated by using the random forests model. As a result, trip purposes have the most significant effect at any threshold of walking duration; the feature of peak hour also shows importance; the other features have different performance at different thresholds. The result shows a clear relationship between real walking durations and passengers' individual characteristics. Also, this result is expected to provide references for planning the catchment area of transit stations or estimating the catchment area of existing transit stations.
-
 \end{document}
-
 
 % 以下是自己做的一个表页，暂时弃用
 % Not the standard layout

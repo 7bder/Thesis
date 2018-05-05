@@ -49,6 +49,9 @@ The main purpose of person trip survey is to know the travel trends, thus making
 	\centering
 	\caption{Available Data Contents}
 	\label{tab:chp4:Data}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	
 	\begin{tabular}{cl}
 		\Xhline{1.5pt}
 		Category                      & Feature\\
@@ -162,11 +165,11 @@ The feature of trip purpose has 15 subcategories in the original dataset, this s
 
 % Table 2
 \begin{sidewaystable}[htbp]
-	\small
 	\caption{Statistical Description of Walking Duration for Each Feature}
 	\label{tab:chp4:StatisticalDescription}
 	\centering
-	\renewcommand{\arraystretch}{1.3}
+	\small
+	\renewcommand{\arraystretch}{1.25}
 	\begin{tabular}{llrrccccccc}
 		\Xhline{1.5pt}
 		Features & Categories & Count & Percentage & Mean & Std & 10th & 25th & 50th & 75th & 90th\\
@@ -229,19 +232,22 @@ According to the achievements from previous studies, the walking distance to rai
 	\caption{Valid Features and the Effect at Each Threshold}
 	\label{tab:chpt4:ValidFeatures}
 	\centering
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	
 	\begin{tabular}{lrlrlr}
 		\Xhline{1.5pt}
 		\multicolumn{2}{c}{5 min threshold} & \multicolumn{2}{c}{8 min threshold} & \multicolumn{2}{c}{13 min threshold} \\
 		
 		\midrule
-		Features 	& Effect* 	& Features 	& Effect*		& Features 	& Effect* \\
-		Age over 65 			& L	& Female				& M	& Age 45-64				& M	\\
-		Peak hour				& M	& Age 25-44 			& M	& Peak hour 			& M	\\
-		O\_Null					& L	& Peak hour				& M	& P\_commuting to work 	& M \\
-		P\_commuting to work	& M	& P\_commuting to work  & M	& P\_ private purpose 	& L \\
-		P\_official business	& L & P\_official business	& L	&       				&  	\\
-		P\_private purpose		& L & P\_ private purpose	& L &       				&  	\\
-		P\_going home 			& L & P\_ going home 		& L &       				&   \\
+		Features & Effect* & Features & Effect* & Features & Effect* \\
+		Age over 65 & L	& Female & M & Age 45-64 & M \\
+		Peak hour & M & Age 25-44 & M & Peak hour & M \\
+		O\_Null & L & Peak hour & M & P\_commuting to work & M \\
+		P\_commuting to work & M & P\_commuting to work & M & P\_ private purpose & L \\
+		P\_official business & L & P\_official business & L	& & \\
+		P\_private purpose & L & P\_ private purpose & L & & \\
+		P\_going home & L & P\_ going home & L & & \\
 		\Xhline{1.5pt}
 	\end{tabular}
 	%

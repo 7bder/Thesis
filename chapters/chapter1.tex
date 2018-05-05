@@ -1,11 +1,11 @@
 \chapter{General Introduction}
 \markright{CHAPTER 1}
-
 %
-\section{Issues in reality}
+\section{Background}
 % status quo
 With the continued urbanization, people continue to migrate from rural areas to urban areas. As a result of this, 54 percent of people worldwide live in urban areas by 2014, this population shift will keep going and is predicted to reach 66\% by 2050 \cite{UN2014world}. Living in cities is considered much more efficient and convenient than that in rural areas in a variety of ways, as it is easier to provide services when people live closer together. However, cities also change the way that humans interact with each other and the environment, often causing multiple problems. The second UN Conference on Human Settlements in 1996 came to the conclusion that the cities all over the world are facing problems due to urbanization.
 
+ 
 % Different situations in developing countries and developed conutries
 Although the problems commonly exist all over the world, the type and scale of problems differ from different stages of urbanization. As to developing countries who are now experiencing a rapid growth in the urbanization, the problems mainly include such as traffic congestion, disorganization, and air pollution, which usually follow by the rapid migrants from rural areas to urban areas. Essentially, most of the problems are caused by the unbalance of demand and supply in land-use, resource, and infrastructure. How to satisfy this demand is an important issue that the governments in developing countries have to consider and address. Different from the situation in developing countries, population aging and low birthrate has become the serious problems in developed countries. With a rapidly increasing proportion of old people in the population, governments are forced to increase expenditure on social security, adding to that the low birthrate, further intensifies the shrinking of working-age population, thus increasing the fiscal burden of governments. How to reduce the public financial expenditure and improve the efficiency of social operation has become a problem that the governments in developed countries have to face. 
 
@@ -23,28 +23,165 @@ In urban planning, transit-oriented development (TOD) is a type of urban develop
 \end{itemize}
 
 % 
-Now the guidelines of TOD summarized above has gained popularity by all levels of governments as the means of mitigating most of the common urban problems, including traffic congestion, air pollution, and incessant sprawl \cite{cervero2002transit}. In a common sense, an area based on TOD typically has a central transit stop (such as a train station, or light rail or bus stop) surrounded by a high-density mixed-use area, with lower-density areas spreading out from this center. The densest areas of a TOD are normally located within a radius of 400 meters to 800 meters (5 minutes to 10 minutes walking duration, varying by different kinds of public transit) around the central transit stop, as this is considered to be an appropriate scale for pedestrians, thus solving the last mile problem. 
+Now the guidelines of TOD summarized above has received a lot of attention by all levels of governments as the means of mitigating most of the common urban problems, including traffic congestion, air pollution, and incessant sprawl \cite{cervero2002transit}. In a common sense, an area based on TOD typically has a central transit stop (such as a train station, or light rail or bus stop) surrounded by a high-density mixed-use area, with lower-density areas spreading out from this center. The densest areas of a TOD are normally located within a radius of 400 meters to 800 meters (5 minutes to 10 minutes walking duration, varying by different kinds of public transit) around the central transit stop, as this is considered to be an appropriate scale for pedestrians, thus solving the last mile problem. 
 
 % Change the objective to rail transit station.
 % Interpret the importance of ridership prediction
-% 这两个可以合并
-% 随着城市规模的扩大以及技术的发展，轨道交通在现代城市中得到了极大的普及。越来越多的TOD也是基于轨道交通站形成的。
-Urban rail transit is a type of high-capacity public transport, which has become an important travel mode in modern cities because of the rapid, punctual and environment-friendly features. 
-
-
-
+With the increase in demand for speed, punctuality and environment protection, urban rail transit has gained popularity by governments, especially in metropolises with high compactness and population density. Add to the continuous extension of city scale and growth in travel demand, more and more TODs are implemented taking rail transit station as the core. With this popularity, it is probably easy to enter a misunderstanding that if the transit station is built, people will come, but the implementation of TOD is not that simple. Because of this, understanding the factors influencing rail transit ridership is becoming central and fundamental to decisions on urban planning and management under the guidelines of TOD. 
 
 % 
+\section{Research purpose}
+% propose station level and station-to-station level
+What explains rail transit ridership in TOD? As interpreted before, this question is placed in front of us. The answer seems to be both obvious and complex. Every element existing in the catchment area of stations associate with ridership, population, road network, parking, income, transit network, building density, and so on all surely play a role. But the relative importance of these various factors and the internal relations among them are much more complex, and still not well understood \cite{taylor2003factors}. Besides, as transit station is part of transit network rather than a independent existence, once the transit ridership of one station varied, transit ridership of all the other stations connected to that station must vary as well. The interaction among connected stations in the same transit network is still not clear.
 
-\section{Purposes of the dissertation}
-% 我要预测客流
-% 阐述一下客流预测的主要方法，最终在TOD下，我选择了station-level的预测
-% station-level的客流预测可以分为几大步骤，存在的问题点
+%  catchment area
+We mentioned the term of catchment area above, however, what does it mean in transit ridership analysis? As a general definition, a catchment area is the area from which a city, service or institution attracts a population that uses its services. In the issue of transit ridership analysis, it means a station's primary service area, within which that people are willing to use the station, beyond which land use, travel mode choice, population distribution are unlikely to be influenced by this transit station. The catchment area is thought to be largely determined by people's willingness of walking to transit stations, which, however, vary by people's individual characteristics including trip purpose, age, gender and so on \cite{guerra2013half}. Obviously, the transit catchment area is important and fundamental to the ridership analysis, even the most.
 
-\section{Issues in research}
+% 基于上述存在的现实问题，我们得出了explain rail transit ridership 这个整体目标。以此为中心，本文针对以下三个问题点进行展开
+Based on the interpretation of the real issue above, the research goal of the whole dissertation is defined to \emph{\textbf{explain rail transit ridership}}. Three questions are to be answered in this dissertation.
+
+\begin{itemize}
+	\item What explains transit ridership at station level?
+	\item What explains transit ridership at station-to-station level?
+	\item What is the correlation between catchment area and walking preference?
+\end{itemize}
+
+\section{Literature review} 
+% 首先说明该研究通常包含三个点，然后贴那个大表，从三个点展开
 % 分问题点的review
+From the research purposes, the literature review is to be extended in terms of method, influencing factor, and catchment area respectively. Table \ref{tab:chp1:Review} gives a brief summary for the literature about transit ridership analysis.
 
+% Table 1
+\begin{sidewaystable}[htbp]
+	\scriptsize % 该表使用小字体
+	\renewcommand{\arraystretch}{0.5} % 重设表间距
+	\begin{spacing}{0.5} % 这中间行间距0.5倍
+		\centering
+		\caption{Summary of some previous studies}
+		\label{tab:chp1:Review}
+		% 这里的格式控制为限制单元格宽度，自动换行，并居中
+		\begin{tabular}{|p{8em}<{\centering}|c|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|}
+			\toprule
+			\multicolumn{2}{|c|}{Year} & 2004 & 2004 & 2009  & 2010 & 2011 & 2012 & 2013 & 2013 & 2015  \\
+			
+			\cmidrule{1-11}
+			\multicolumn{2}{|c|}{Author} & Chu & Kuby et al. & Taylor et al. & Sohn and Shim & Gutiérrez et al. & Cardozo et al. & Chakraborty et al. & Zhao et al. & Jun et al.  \\
+			
+			\cmidrule{1-11}
+			\multicolumn{2}{|c|}{Catchment} & $1/4$ mile (400m) walking distance & Half mile (800m) walking distance & N/A & N/A & Distance-decay 800m buffer & 800m walking distance & N/A & 800m radius & 300m, 600m, 900m radius  \\
+			
+			\cmidrule{1-11}
+			\multicolumn{2}{|c|}{Method} & Poisson Regression & WLS & 2SLS & OLS, SEM & OLS & OLS, GWR & OLS, SEM & OLS & OLS, MGWR  \\
+			
+			\cmidrule{1-11}
+			\multicolumn{2}{|c|}{Sample Size} & 2568 & 268 & 265 & 251 & 158 & 190 & 900 & 55 & 442  \\
+			
+			\cmidrule{1-11}
+			\multicolumn{2}{|c|}{Number of Valid Indicator} & 15 & 11 & 8 & 7 & 9 & 4 & 9 & 11 & 11  \\
+			
+			\cmidrule{1-11}
+			\multicolumn{2}{|c|}{Coefficient of determination (Adjusted R2)} & 0.54 & 0.71 & 0.91 & 0.6 & 0.73 & 0.56 & 0.69 & 0.95 & 0.77  \\
+			\midrule
+			
+			% 这里的multirow格式控制，限制宽度自动换行，内容部分加上\centering 可以居中
+			\multirow{6}[10]{8em}{\centering{Land use factors}} & Building area & & & & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$  \\
+			\cmidrule{2-11}
+			& Hospital & & & & & & & & $\bullet$ &  \\
+			\cmidrule{2-11}
+			& School/University & & & & $\bullet$ & & & & $\bullet$ &  \\
+			\cmidrule{2-11}
+			& CBD & & $\bullet$ & & & & & & $\bullet$ &  \\
+			\cmidrule{2-11}
+			& Land use mix & & & & $\bullet$ & $\bullet$ & $\bullet$ & & & $\bullet$ \\
+			\cmidrule{2-11}
+			& Other infrastructures & & $\bullet$ & & & & & & $\bullet$ & $\bullet$ \\
+			
+			\midrule
+			\multirow{6}[10]{8em}{\centering{Transit-related factors}} & Accessibility of pedestrian & $\bullet$ & & & & & & $\bullet$ & &  \\
+			\cmidrule{2-11}
+			& Accessibility of transfer & & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+			\cmidrule{2-11}
+			& Road coverage & & & $\bullet$ & $\bullet$ & & & & $\bullet$ &  \\
+			\cmidrule{2-11}
+			& Parking & & $\bullet$ & & & & & & $\bullet$ &  \\
+			\cmidrule{2-11}
+			& Service level of public transit & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ &       & $\bullet$ & $\bullet$ \\
+			\cmidrule{2-11}
+			& Locational factor & & $\bullet$ & & $\bullet$ & & & & $\bullet$ &  \\
+			\midrule
+			
+			\multirow{8}[12]{8em}{\centering{Demographic and socioeconomic environment factors}} & Population & & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+			\cmidrule{2-11}
+			& Employment & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+			\cmidrule{2-11}
+			& Age   & $\bullet$ & & $\bullet$ & & & & & & $\bullet$ \\
+			\cmidrule{2-11}
+			& Tenant proportion & & $\bullet$ & & & & & & & $\bullet$ \\
+			\cmidrule{2-11}
+			& Race  & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & & & &  \\
+			\cmidrule{2-11}
+			& Income & $\bullet$ & & & & & & $\bullet$ & &  \\
+			\cmidrule{2-11}
+			& Vehicles holdings & $\bullet$ & & & & & $\bullet$ & $\bullet$ & &  \\
+			\cmidrule{2-11}
+			& Fare  & & & $\bullet$ & & & & & &  \\
+			\bottomrule
+		\end{tabular}
+	\end{spacing}
+\end{sidewaystable}
+
+\subsection{Method}
+% 阐述一下客流预测的主要方法，最终在TOD下，我选择了station-level的预测。
+% 说明一下大家都在作regression，绝大多数都在做单点的预测。
+% chp2 和 chp3 内容
+
+% 定位于交通预测模型
+From the view of methodology, exploring and estimating the transit ridership can be treated as part of travel demand forecast \cite{miller1999potential,boyce1994introducing}. There are few fields in urban planning paying more attention to the statistical model for looking into the future than transportation. To date, a host of models have been developed and practiced for the issue of transit ridership, of which the most widely used are the activity-based four-step model and the direct model \cite{mcnally2007four,ewing2010travel}. While either of them works on travel demand forecast, they have different application scenario.
+
+% 吐槽四阶段
+Traffic Analysis Zones (TAZs), which is a definition in four-step models, range in size from block groups to census tracts, commonly working at macro scales: corridors, subregions, and stats. The resolution of four-step models tends to be too gross to deal with the issues at neighborhood-scale like TOD \cite{cervero2006alternative}. Even though the four-step model has enjoyed widespread support from decades of use, it was never meant to predict the travel demand at neighborhood-scale taking transit stations as cores, not to mention the estimation of influencing factors on the transit ridership \cite{cervero2006alternative,chu2004ridership,duduta2013direct}. Additionally, in the four-step approach, trip generation stage is usually conducted based on an empirical model using some socioeconomic variables like population, employment, auto ownership, however, in different city cases, the impact of traffic indicators will not be exactly the same \cite{jones1983demand}. It is also unclear whether these selected indicators are significantly related to traffic volume, or whether there is an indeed linear relationship between traffic volume and these selected indicators. 
+
+% 狂吹direct model
+Direct models estimates ridership as a function of station environments and transit service features based on observed ridership and statistical data \cite{cervero2006alternative}. With the development of geographic information system (GIS) technology and the richness of digital statistic, direct models have gained popularity in estimating travel demand at neighborhood-scale, most notably for TODs. The advantages of direct models firstly stem from the ease of estimation with data that are readily available to transit agencies. The only critical requirements are GIS, statistics for built-environments around stations, and the corresponding transit ridership \cite{guerra2012half}. The advantages are also reflected in the accuracy of prediction, that much easier and faster than other travel demand models, direct models can also provide strong predictive power \cite{lane2006sketch}. Compared with the disadvantage mentioned in four-step models, since the estimation in direct models is based on the historical statistics, it can justify the importance and validity of indicators that are expected to influence transit ridership \cite{walters2003forecasting}.
+
+\subsection{Influencing factor}
+% chp2 基本照搬
+% 影响transit ridership的因素分为了3类
+Transit ridership is generally thought to be related to land use, transportation environment, or travel preferences \cite{thompson1997achieving}. In 1997, Cervero proposed a three dimension index system (Density, Diversity, and Design) to examine the ridership of transit \cite{cervero1997travel}, which has been generally accepted as a basic principle. In addition, many extensions have also been added to the 3D theory, such as accessibility to the station, connectivity of line, and capacity of station \cite{beimborn2003accessibility,garcia2013walking}. In this study, all the candidate factors expected to influence transit ridership can be classified into three main categories: a. land use factors; b. transit-related factors; c. demographic and socioeconomic environment factors.
+
+% land use factors
+Land use includes the buildings or facilities that provide the setting for human activity, and it has been widely proved to have a strong relationship with ridership. Also, land use diversity has a significant effect on ridership since it reflects the balance between traffic demand and supply within the catchment area. Although the definitions of land use diversity are not the same according to different researchers, it is widely accepted that higher diversity tends to result in less transit ridership \cite{cardozo2012application,choi2012analysis,gutierrez2011transit,jun2015land,sohn2010factors,sung2014exploring}.
+
+% transit-related factors
+Transit-related factors are important for passengers going to take public transit. Better accessibility is thought to be attractive for passengers living further. The factors for accessibility are commonly described as the number of transfers, network density, number of parking facilities and walking convenience \cite{kuby2004factors,sohn2010factors,taylor2009nature,zhao2014analysis,chu2004ridership}. Also, the type and location of a station can affect accessibility as well. Terminal stations are more attractive for passengers because people can accept to spend more time on getting to a terminal station which is easier to transfer to other line or another mode of transportation \cite{o1996walking}.
+
+% demographic and socioeconomic environment factors
+The demographic and socioeconomic environment is an important factor which can reflect the travel preference. Obviously, the resident population and employment-population within the catchment area are crucial factors on ridership of the subway station. Besides, the economic factors also play an important role in ridership. For example, in the area where the car ownership is higher, people are more likely to choose private car than public transit \cite{chiou2015factors,zhao2005transit}; also the higher the percentage of low-income household is, the more likely people tend to take public transit \cite{thompson2012really}. Furthermore, the ratio of apartments and rental house within catchment have been verified being relevant with ridership in some degree \cite{jun2015land}.
+
+\subsection{Catchment area}
+% chp2 和 chp4 的整合。首先800米的论述，然后说明其实这个并不是这样
+% 这部分写的太烂啦，第一段说明大家都在做什么
+An important assumption for investigating factors influencing transit ridership is the definition of the catchment area of a station. The catchment area is defined as the influence area of a station, which represents the maximum distance that most people can accept to walk to the station. Because it is determined by the real walking distance of pedestrian along the street network, the catchment area is also called pedestrian catchment area (Abbreviated as PCA). In the previous studies, the thresholds were generally considered ranging from 400m to 1000m, in which the 800m distance is the most accepted one \cite{alshalalfah2007case,guerra2012half,keijer2000people,murray1998public,o1996walking,zhao2003forecasting}. However, the 800m threshold cannot be considered as a standard one, because of the different features of land use and demography in different cities.
+
+% 这里给出支持800米
+
+% 这里给出这个800米其实也很不合理
+
+\subsection{Summary}
+% 总结，catchment area 的研究前景最为不明朗，绝大多数研究中的PCA也都是选用了通常大家普遍认同的800米。在PCA的研究上还有很大的不确定性，因此本文也将采用800m。并在后续章节对PCA的可能研究方向进行进一步的探索。
+% 该方面的研究在模型，指标，视角等多方面还有可以提高的余地。在对既有文献的充分掌握上，本文将从以下3个研究点展开。
+
+% 2. 需要找到筛选有效指标的方法
+% 3. 建立站与站之间关系的模型
+% 4. 探寻catchment area 和 walking preference的关系，探索catchment area
+
+\section{Dissertation organization}
+% 研究范围，案例的简介
+% 本文选择了日本福冈作为研究案例，这里附上福冈简介。
+% 同时列出数据简介
+
+% 章节划分
 
 \bibliographystyle{plain}
-% 这里需要指定main文件所在路径的相对路径，否则无法读取参考文献
-\bibliography{chapters/ref_INTRO}
+% 这里需要指定main文件所在路径的相对路径，否则无法读取参考文献。多个bib文件用comma分隔，没有空格
+\bibliography{chapters/ref}

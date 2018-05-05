@@ -9,3 +9,5 @@ Thesis
 ## List of abbreviations
 
 TOD     : Transit-Oriented Development
+PCA     : Pedestrian Catchment Area
+GIS     : Geographic Information System
