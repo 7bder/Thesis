@@ -161,19 +161,20 @@ The demographic and socioeconomic environment is an important factor which can r
 \subsection{Catchment area}
 % chp2 和 chp4 的整合。首先800米的论述，然后说明其实这个并不是这样
 % 这部分写的太烂啦，第一段说明大家都在做什么
-An important assumption for investigating factors influencing transit ridership is the definition of the catchment area of a station. The catchment area is defined as the influence area of a station, which represents the maximum distance that most people can accept to walk to the station. Because it is determined by the real walking distance of pedestrian along the street network, the catchment area is also called pedestrian catchment area (Abbreviated as PCA). In the previous studies, the thresholds were generally considered ranging from 400m to 1000m, in which the 800m distance is the most accepted one \cite{alshalalfah2007case,guerra2012half,keijer2000people,murray1998public,o1996walking,zhao2003forecasting}. However, the 800m threshold cannot be considered as a standard one, because of the different features of land use and demography in different cities.
+% historically，buffer area，PCA
+An important precondition for investigating factors influencing transit ridership is the definition of the catchment area of a station, which has been interpreted in the part of research purpose. Historically, the determination of transit catchment area was mainly implemented in GIS by creating a distance buffer around the transit station \cite{o1992analysis,hsiao1997use,ayvalik2002heuristic,peng1997simultaneous}. However, since a transit catchment area is determined by the walking distance from the transit station, which is also called pedestrian catchment area (Abbreviated as PCA), a circle buffer area is not adequate for presenting the catchment area. Recent decades, with the development in GIS and the richness in statistics, the application scenario of GIS has progressed far beyond the simple buffering operation \cite{biba2010new,wu2003ptal,jiang2012walk}. Also, many efforts have been made to estimate the real walking distance by importing the data of real road network. According to the existing studies, the PCA generally range from 400 meters to 1000 meters due to different station types, city forms, also travel preference \cite{alshalalfah2007case,guerra2012half,keijer2000people,murray1998public,o1996walking,zhao2003forecasting}.
 
 % 这里给出支持800米
-
 % 这里给出这个800米其实也很不合理
+Since difficulties in estimating the accuracy catchment area are still not well addressed, a general 800 meters (half-mile) walking distance, which has been verified to be suitable for most cases, has been widely accepted as a principal reference of the catchment \cite{kuby2004factors,gutierrez2011transit,cardozo2012application,zhao2013influences}. This 800 meters, however, is just a general distance for rail transit stations without considerations of people's individual characteristics and travel preference. The catchment area is mainly determined on the base of questionnaires by asking how far/long did passengers walk to stations, or how far/long are passengers willing to walk to stations \cite{keijer2000people,zhao2003forecasting,garcia2013walking}, while the answers are usually given in a loose way like I remember I walked... or I think I prefer... What's more, the same reasoning has been used to justify other rail transit catchment areas and even in different cities and countries. Till now, restricted by analytical method and data, there are no better options than this general 800 meters walking distance in determining rail transit catchment area, unless doing a large-scale rail transit travel survey which is also thought to be impossible due to excessive costs.
 
 \subsection{Summary}
-% 总结，catchment area 的研究前景最为不明朗，绝大多数研究中的PCA也都是选用了通常大家普遍认同的800米。在PCA的研究上还有很大的不确定性，因此本文也将采用800m。并在后续章节对PCA的可能研究方向进行进一步的探索。
-% 该方面的研究在模型，指标，视角等多方面还有可以提高的余地。在对既有文献的充分掌握上，本文将从以下3个研究点展开。
+To sum up in brief, 
+% 该领域的研究尽管已经取得了相当的进展，但在模型，指标，范围这些具体问题上都仍有进一步发展的可能。研究的方向上来看，目前为止的绝大多数研究都还是专注于单个站点问题的挖掘，从线路和网络角度出发的研究非常少。具体来看，direct model在模型上的创新没有什么太大的进展，基本上都是基于regression的改进，并没有从本质上提高。在影响因素的研究上，学者们对于指标的总结归类已经做的非常全面，但对于不同的国家，地区，甚至TOD区域，其影响因素也不尽相同。如何在潜在影响因素中寻找出有效因素这一过程还有待进一步发展。PCA的研究中还有很大的不确定性，无论是视点，方法都有待进一步探索。在对既有文献的充分掌握上，本文将从以下3个研究点展开。
 
-% 2. 需要找到筛选有效指标的方法
-% 3. 建立站与站之间关系的模型
-% 4. 探寻catchment area 和 walking preference的关系，探索catchment area
+% 2. 探索筛选有效指标的方法。
+% 3. 转换研究视点，建立站与站之间关系的模型
+% 4. 探寻catchment area 和 walking preference的关系，试图对catchment area进行解释
 
 \section{Dissertation organization}
 % 研究范围，案例的简介
@@ -181,7 +182,7 @@ An important assumption for investigating factors influencing transit ridership 
 % 同时列出数据简介
 
 % 章节划分
-
-\bibliographystyle{plain}
+\clearpage % 新起一页
+\bibliographystyle{apacite}
 % 这里需要指定main文件所在路径的相对路径，否则无法读取参考文献。多个bib文件用comma分隔，没有空格
 \bibliography{chapters/ref}

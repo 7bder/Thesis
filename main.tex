@@ -1,4 +1,4 @@
-\documentclass[12pt, twoside, a4paper]{book} % 字号12磅
+\documentclass[12pt, twoside, a4paper]{book} % 全局字号12磅
 \usepackage[utf8]{inputenc} % 编码格式
 \usepackage{graphicx} % 插入图片的，具体不太清楚
 \usepackage{times} % times 字体
@@ -14,15 +14,22 @@
 \usepackage{geometry} % 设置纸张大小
 \usepackage{amsmath} % 一个公式环境的包，在 begin{matrix} 中可以使用 & 符号进行公式对齐
 \usepackage{setspace} % 设置行间距的包，语法：\begin{spacing}{1.25} content \end{spacing}
+
+% 断字和参考文献格式相关
+\usepackage[activate={true,nocompatibility}]{microtype} % 不完美解决断行断字问题。参数是自适应调整字间距。keyword: letterspace, hyphenate, expansion, protrusion
+\usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
+\usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
+
 % \usepackage{ragged2e} % 设置两端对齐的，没试成功
 % \usepackage{apacite} % 参考文献样式
 % \usepackage{newtxtext,newtxmath} % 不知道具体功能，先放进来
 % \usepackage[sectionbib]{natbib} % 另一个分章节导出参考文献的包，也没有尝试成功。不过失败原因应该同chapterbib包，已经记录。有时间尝试一下用这个包修改参考文献格式
 
 % \setlength{\textwidth} {160 mm} % 设定文本宽度，防止参考文献溢出，无效
+\pagestyle{myheadings} % 设定页眉，显示章节以及页码
 \graphicspath{ {images/} } % 设定图片目录
 \renewcommand{\baselinestretch}{1.5} % 行间距1.5倍
-\pagestyle{myheadings} % 设定页眉，显示章节以及页码
+\setlength{\parskip}{0.5\baselineskip} % 设置段间距
 \topskip 10mm % 正文顶部到页眉的距离
 % \footskip 5mm % 正文底部到页脚的距离
 
@@ -56,15 +63,22 @@
 \date{\today}
 \maketitle
 
+% 这里设置目录的字体
+% \global\large % 设置全局字体，large在12pt文稿下为14.4pt
+\fontsize{14pt}{14pt} % 这里为1.0倍行距
+\selectfont
+
 \tableofcontents % 内容目录
 \listoffigures % 图目录
 \listoftables % 表目录
 
+% 前书
 \frontmatter
-\setlength{\parskip}{0.5\baselineskip} % 设置段间距
 % 声明
 \chapter{Acknowledgments}
-%
+% 设置正文字号，貌似只能在正文部分声明
+\fontsize{13pt}{16.9pt} % 这里为1.3倍行距
+\selectfont
 I have reached the end of my PhD journey. Without many people who gave their support to me in various ways, I could not complete this thesis. To these people I would like to convey my heartfelt gratitude and sincere appreciation. 
 %
 First and foremost, I am deeply grateful to my supervisor, Associate Professor Zhao Shichen for his great support, guidance and kind advice throughout my PhD research studies. From problem solving to moral support, his help has been continued and invaluable. It was a real privilege and an honor for me to share of his exceptional scientific knowledge but also of his extraordinary human qualities.
