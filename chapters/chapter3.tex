@@ -1,10 +1,11 @@
 \chapter{Explain Ridership at Station-to-Station Level}
-\markright{CHAPTER 3}
+% \markright{CHAPTER 3}
 %
 \section{Introduction}
 %
 Urban rail transit is a type of high-capacity public transport generally found in urban areas. Because of the rapid, punctual and environment-friendly features, the urban rail transit is becoming one of the most important travel modes in modern cities. With the popularity of the urban rail transit in modern cities and the emphasis on sustainable development, the concept of TOD (Transit Oriented Development) is put forward, intended to build the compact city \cite{calthorpe1993next}. Based on the perspective of TOD, many cities around the world have adopted the policy of giving priority to the development of public transport for decreasing the share of motorized travel and increasing the willingness of using public transit. For policymakers, how to grasp the relationship between land use and passenger volume has become an important issue that they must face.
 
+\section{Review}
 %
 Until now, there are many studies focusing on the relationship between various factors and transit ridership from the perspective of TOD. Most of the studies are based on regression model and conducted from the view of station-level, the transit ridership is thought to be affected by the circumstance surrounding the station \cite{cervero1997travel,taylor2003analyzing,zhao2005transit,estupinan2008relationship,taylor2009nature,sohn2010factors,gutierrez2011transit,jun2015land}. Among them, the multiple linear regression models are the earliest and most widely used model \cite{cervero1997travel,gutierrez2011transit}. However, the data point in ordinary least squares (OLS) model is treated as a single point, which is not consistent with fact since the transit node is connected to each other. To deal with the relationship among stations in the network, the approach of spatial regression is also introduced into this issue \cite{cardozo2012application,jun2015land}. However, this relationship among stations in spatial regression models is just the expression for the distribution relationship of stations in location, it cannot reflect the real connectivity between two station areas.
 
@@ -21,7 +22,7 @@ With the goal of explaining the variation in the ridership between stations, thi
 \section{Data}
 
 %
-\subsection{Study context}
+\subsection{Case introduction}
 %
 This study focuses on 35 subway stations in Fukuoka City (the sixth largest city in Japan) which has the largest population in Kyushu Island of Japan (more than 1.5 million). Figure \ref{fig:chp3:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines, a total of 29.8 kilometers operating mileage. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel (from Fukuoka City Transportation Bureau). Although the Fukuoka subway system is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population. Moreover, one thing should be noted that the third line is not directly connected with the first and second line.
 
@@ -140,7 +141,7 @@ Since the focus of this study is the connectivity between stations, it can be as
 \end{enumerate}
 
 %
-\section{Model}
+\section{Methods}
 %
 It is difficult to analyze the connectivity of all the stations simultaneously. To simplify this issue, the study will be started by one single station, and then the connectivity between this station and all the other stations connected to it will be investigated. For a passenger, the behavior of going to some places by subway can be viewed as a procedure of choice. In this selection process, the choice is decided by the trip purpose of the passenger. As stated in the introduction, the type of building functions can be mainly categorized into residence, office, education, and commerce, which represent the trip purposes of going home, business, commute, and leisure respectively. Therefore, this issue can be converted into a discrete choice model, in which the dependent variables are the building environment in the station catchment area, and the independent variable is the choice of the destination station.
 
@@ -170,7 +171,7 @@ For the estimation of a regression model, the model of logistic regression built
 	\label{eq:chp3:MLE}
 \end{equation}
 
-\section{Result}
+\section{Results}
 %
 The characteristic of land use within the PCA of a station can represent the characteristic of passengers departing from that station. Since a city is the collection of different functional regions, the land use characteristics of each PCA are also different. To explore the connectivity between stations with different types of land use characteristics, this study firstly classifies all the stations in terms of the proportion of different function of land use and population density. Then the typical stations are chosen from each group of different land use type, thereby estimating the connectivity between stations by conducting the logistic regression. 
 
@@ -280,7 +281,7 @@ To investigate the stations with significant differences in land use characteris
 	
 \end{sidewaystable}%
 
-\subsection{Logistic regression}
+\subsection{Estimation of logistic regression}
 %
 For the logistic regression model adopted in this study, the independent variable is the choice of getting off at the object station or not. The factor influencing the choice is the land use attribution and impedance of the other stations connected to the object station. Because the third line is not directly connected with the first and second line, the third line is separated from the first and second line when dealing with the model. That is, if the object station belongs to the first or second line, the model will only examine the connectivity with other stations within the first and second line. On the contrary, if the object station belongs to the third line, the connectivity will be only investigated within the third line. The result of estimation is shown in Table \ref{tab:chp3:Result}.
 

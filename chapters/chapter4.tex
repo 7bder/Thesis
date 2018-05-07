@@ -1,8 +1,8 @@
 \chapter{Catchment Area and Walking Preference}
-\markright{CHAPTER 4}
+% \markright{CHAPTER 4}
 %
 \section{Introduction}
-
+%
 As to passengers, the acceptable walking distance/duration is not only associated with features of the built environment such as the scale of stations and the functions of the buildings around stations, but also the features of passengers' individual characteristics, such as occupations and trip purposes.
 
 %
@@ -15,7 +15,7 @@ As to the case of rail transit, before a potential passenger makes the decision 
 As interpreted above, although the walking duration just presents the distance between departures and stations, it should have relevance with individual characteristics. Thereby, this study uses Fukuoka, Japan, as the case to explore this relevance, trying to explore how long passengers with have different individual characteristics are willing to take for walking to stations. The sample mainly includes people's individual characteristics and trip chain information, for example gender, age, occupation, departures, destinations and travel time. This paper is constructed as follow: section two reviews the previous research from the factor of walking duration and the influencing factors two parts;  section three describes the data for Fukuoka, and presents methods and necessary assumptions; section four and five give the process of analysis; section six discusses the results and draws conclusions. 
 
 %
-\section{Literature Review}
+\section{Review}
 This section reviews the literature on the issue of walking duration/distance to rail transit stations, some problems that are still not well addressed are summarized. The review is arranged into two parts, which are the disposal of the variable of walking duration/distance, and the effect of influencing factors.
 
 %
@@ -30,19 +30,11 @@ It may be because of the problems in the disposal of walking distance/duration o
 %
 \section{Data and Methods}
 %
-\subsection{Introduction for the study case of Fukuoka}
-The study case of Fukuoka is the sixth largest city in Japan which has the population of more than 1.5 million. The dataset is the Northern Kyushu Area Person Trip, which is conducted about every 12 years, the latest available data is from the 4th survey surveyed by the year of 2005, and the 5th survey is already in preparation from September 2017. Figure \ref{fig:chp4:StationDistribution} shows the research area and the distribution of rail transit stations. By the year of 2005 (the 4th Northern Kyushu Area Person Trip Survey was conducted), there are more than 70 stations located within the city area of Fukuoka, of which the number of JR Kyushu station is 27, Fukuoka Subway station is 35, and West Japan Railway station is 16. Now some new rail transit lines and stations are still under planning and construction. According to the “Survey on the current state of public transportation” published by the Ministry of Land, Infrastructure, Transport and Tourism of Japan, the rail transit system in Fukuoka carries a daily average of more than 0.4 million passengers by 2015, accounting for more than 20\% in total motorized travel. Although the rail transit system of Fukuoka is still not a large-scale one at now, it has been playing a crucial role in people's daily travel.
-
-% Figure 1
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{chp4StationDistribution}
-	\caption{Distribution of Transit Stations}
-	\label{fig:chp4:StationDistribution}
-\end{figure}
+\subsection{Case introduction}
+The study case of Fukuoka is the sixth largest city in Japan which has the population of more than 1.5 million. The dataset is the Northern Kyushu Area Person Trip, which is conducted about every 12 years, the latest available data is from the 4th survey surveyed by the year of 2005, and the 5th survey is already in preparation from September 2017. Figure \ref{fig:chp1:StationDistribution} shows the research area and the distribution of rail transit stations. By the year of 2005 (the 4th Northern Kyushu Area Person Trip Survey was conducted), there are more than 70 stations located within the city area of Fukuoka, of which the number of JR Kyushu station is 27, Fukuoka Subway station is 35, and West Japan Railway station is 16. Now some new rail transit lines and stations are still under planning and construction. According to the “Survey on the current state of public transportation” published by the Ministry of Land, Infrastructure, Transport and Tourism of Japan, the rail transit system in Fukuoka carries a daily average of more than 0.4 million passengers by 2015, accounting for more than 20\% in total motorized travel. Although the rail transit system of Fukuoka is still not a large-scale one at now, it has been playing a crucial role in people's daily travel.
 
 %
-\subsection{Description for the data}
+\subsection{Data description}
 The main purpose of person trip survey is to know the travel trends, thus making a better living environment and providing support for traffic planning. The original data covered the range of all the main cities in Northern Kyushu Area, which has more than 483,000 records of trip chaining behavior. The available data in this study mainly includes trip chaining behavior and socio-demographic characteristics, as shown in the table \ref{tab:chp4:Data}.
 
 % Table 1
@@ -106,6 +98,8 @@ Figure \ref{fig:chp4:AgeDistribution} shows the age distribution for walking tri
 \end{figure}
 
 %
+\section{Methods}
+%
 \subsection{Necessary hypothesis}
 Based on the statements outlined in the parts of introduction and review, three basic assumptions are proposed in this study.
 
@@ -122,9 +116,11 @@ Based on H1 and H2, when examining the threshold of walking duration $t$, set th
 Based on H3, if someone gives the answer $t$ minutes, it means this respondent can accept the walking duration of $t$ minutes and any walking duration that less than $t$ minutes. Indeed, this respondent perhaps can accept the walking duration over he answered, but this study just concern about if he can accept the given threshold of the walking duration other than how long he can accept.
 
 %
-\subsection{Methods}
+\subsection{Model}
+%
 In this study, the variable of walking duration to the rail transit station is a continuous one, while the variables of individual characteristics are multi-categorical, for which the multiple linear regression is considered not applicable. Although there were some studies using the multiple linear regression to estimate the walking duration, the result showed no clear relationship \cite{krygsman2004multimodal}. Since what we concern with is the feature distribution of individual characteristics over or under the thresholds of walking durations, there is no need to find the linear relationship between the individual characteristics and walking durations.
 
+%
 According to the assumptions proposed before, when giving a specific threshold of walking duration, passengers walking longer or less than this threshold should have different feature distributions of individual characteristics. That is, if the walking duration of a passenger is more than a given threshold of walking duration, it can be considered that this given threshold of walking duration is an acceptable one, and this passenger should have a relatively high probability of choosing to use rail transit at any threshold of walking duration that less than that given one. This willingness of using rail transit can be reflected by the distribution of walking duration in terms of passengers' individual characteristics, based on which this study examines the relevance of passengers' individual characteristics and this distribution. The abstract model describing this relevance is expressed as follow, of which Equation \ref{eq:chp4:threshold} gives the value of $Y^T_i$, and Equation \ref{eq:chp4:probability} is the probability that $Y^T_i=1$ at given vector of $X_i$.
 
 % & 符号为对齐符号，用于 table 或 matrix
@@ -142,13 +138,13 @@ According to the assumptions proposed before, when giving a specific threshold o
 \end{equation}
 
 %
-\begin{enumerate}
+\begin{description}
 	\item[\textbf{Where:}]
 	\item[$t_i$] is the walking duration answered by passenger $i$ (in minutes).
 	\item[$T$] is the threshold of walking duration that to be examined (in minutes).
 	\item[$Y^T_i$] is a binary variable. According to assumption 3, $Y^T_i=1$ means passenger $i$ can accept the threshold of $T$; while $Y^T_i=0$ indicates that it is uncertain whether passenger $i$ can accept this threshold.
 	\item[$X_i$] is the vector whose component is the individual characteristics of passengers.
-\end{enumerate}
+\end{description}
 
 %
 The essence of such issue can be viewed as a binary classification problem, for which the models of decision tree, Bayesian, support vector machine (SVM), logistic regression, and neural network are widely adopted. In this study, limited by the volume of sample and features, also the unknown internal relationship among the features, the decision tree model should be a good choice because of the good generalization for different forms of data. Furthermore, to avoid the structure of the tree being too complicated, and to improve the robustness of the model, this study will use an improved model of decision tree, the random forest model, to train and test the samples. Random forests model is an ensemble learning method mainly for classification and prediction. The random forests model is an extension and improvement for the decision tree model, it is operated by constructing a multitude of decision trees and randomly selecting the features at training time \cite{ho1995random,ho1998random}. To improve the efficiency and accuracy of the model, and reduce the number of invalid branches in the model, it is necessary to filter the invalid features before estimating the model.
@@ -157,12 +153,21 @@ The essence of such issue can be viewed as a binary classification problem, for 
 Briefly, the general process of this study can be summarized as follows. Firstly, data is extracted on the Fukuoka city-wide, including 4254 samples, and 6 main categories of features. Secondly, the features with importance in explaining the willingness of walking duration are selected by using analysis of variance (ANOVA). Thirdly, random forest model for each threshold of walking duration is estimated, the result obtained from the random forest model is the probability of walking longer than the given threshold of walking duration for each passenger in terms of individual characteristics. Finally, the accuracy of this result is evaluated using the method of simple moving average by descending order of the predicted probabilities.
 
 %
-\section{Feature selection}
+\section{Results}
 The procedure of feature selection includes two parts, the first is the disposal of features with low variance, and the second is the univariate feature selection. The first one is used for filtering the features accounting for very little in the total samples, because a too small quantity in the sample cannot present significant influence on the result. In this study, the multi-categorical features in the original dataset are reclassified into larger groups, thus dealing with the features with low variance. The second step is to select the valid features that indeed have relevance with the independent variable, this step is based on statistical tests. In this study, the Analysis of Variance (ANOVA) is used for estimating the importance of each feature.
 
 %
 \subsection{Reclassifying features}
 The feature of trip purpose has 15 subcategories in the original dataset, this study reclassifies them into 5 categories including commuting to work, commuting to school, official business, private purpose (such as shopping, entertainment), and going home. The feature of occupation is reclassified from 14 subcategories into 5 categories as well, they are service, technology, administration, student, and the other. Table \ref{tab:chp4:StatisticalDescription} reports some of the statistical description for each feature. Overall, the average walking duration to rail transit stations is 8.32 minutes; more than 75\% of the passengers walk less than 10 minutes; most passengers walk to stations costing 5-10 minutes. In detail, there are some significant differences in the statistical description for each feature, the differences are summarized as follows.
+
+%
+\begin{itemize}
+	\item The walking duration in peak hour is longer than off-peak hour.
+	\item Young and old people are inclined to spend less time on walking to rail transit stations.
+	\item Passengers with the trip purposes of official business and going home tend to take shorter time in walking to rail transit stations.
+	\item Passengers with the trip purpose of commuting to work are willing to accept a longer walking duration than that with other purposes significantly.
+\end{itemize}
+
 
 % Table 2
 \begin{sidewaystable}[htbp]
@@ -217,14 +222,6 @@ The feature of trip purpose has 15 subcategories in the original dataset, this s
 \end{sidewaystable}
 
 %
-\begin{enumerate}
-	\item The walking duration in peak hour is longer than off-peak hour.
-	\item Young and old people are inclined to spend less time on walking to rail transit stations.
-	\item Passengers with the trip purposes of official business and going home tend to take shorter time in walking to rail transit stations.
-	\item Passengers with the trip purpose of commuting to work are willing to accept a longer walking duration than that with other purposes significantly.
-\end{enumerate}
-
-%
 \subsection{Univariate feature selection}
 According to the achievements from previous studies, the walking distance to rail transit stations ranged generally from 400 meters to 1000 meters in terms of different city types, travel habits, also the needs of research purpose \cite{guerra2012half,murray1998public,o1996walking,keijer2000people,zhao2003forecasting,alshalalfah2007case}. If converting this walking distance into walking duration by using the walking speed of 4.8 km/h, the walking duration would range from 5 minutes to 13 minutes \cite{bohannon1997comfortable}. In this study, more than 40\% of the samples walk less than 5 minutes, and the walking duration within 13 minutes covers about 85\% of the total. The 5 minutes walking duration can be accepted by most passengers, while a walking duration longer than 13 minutes cannot be accepted by most passengers. In addition, as the average walking duration in this study is about 8 minutes, the three representative thresholds of 5, 8, 13 minutes are picked as the typical threshold for estimating the relationship between individual characteristics and walking durations. The features with the p-value in ANOVA less than 0.05, which means this feature relevant with the dependent variable at the confidence level of 95\%, are picked out and listed in Table \ref{tab:chpt4:ValidFeatures}.
 
@@ -258,12 +255,11 @@ According to the achievements from previous studies, the walking distance to rai
 	\end{description}
 \end{sidewaystable}
 
-
 %
 For the threshold of 5 minutes, the features of trip purposes and peak hour play the most important role in determining the willingness of walking duration. Situations are changed a little at the threshold of 8 minutes, the importance of age and gender raised in some extent, while the features of trip purposes changed little from that of 5 minutes. The feature importance shows a big difference from 5 and 8 minutes at the threshold of 13 minutes. This result of feature selection is also consistent with common sense and partly confirmed by the previous research. Most of the walking duration is distributed around the average walking duration of 8 minutes, it can be considered that walking duration between 5 and 13 minutes is sensitive to individual characteristics. The walking duration more than 13 minutes is not accepted by most people even if they have different individual characteristics, and the threshold less than 5 minutes is also not sensitive to individual characteristics since the 5 minutes threshold is generally accepted by most passengers.
 
 %
-\section{Estimation of features}
+\subsection{Estimation of features}
 The valid features (Table \ref{tab:chpt4:ValidFeatures}) are used in the random forest model to estimate the probability that walking longer than the given threshold of walking duration. For estimating the model, the dataset is divided into two parts, 50\% of the sample are used for fitting the model thus obtaining the coefficients, the rest 50\% are used for testing the ability of prediction. The prediction process is presented in Figure \ref{fig:chp4:RandomForests}. For the random forest model, the prediction is not obtained from the only one decision tree but the multitude of decision trees constructed by random selection of features and samples. The dependent variable at the given threshold of walking duration to rail transit stations is calculated by equation \ref{eq:chp4:probability} based on the mean prediction.
 
 % Figure 5
@@ -288,7 +284,7 @@ The accuracy of results are evaluated by using the method of simple moving avera
 \end{figure}
 
 %
-\section{Discussion and Conclusion}
+\section{Discussion}
 This study described and analyzed 4254 records of rail transit trip. Three thresholds of walking duration are examined. From the result in Table \ref{tab:chpt4:ValidFeatures}, trip purpose is the most important factor in determining the walking durations at all the 3 thresholds. The feature of peak hour is also significant in explaining the walking duration. People tend to walk a longer time to stations at peak hours, while people with private purpose or on the way going home are not willing to choose a stations far away. For the details of each threshold, the unemployed people and the elderly people tend to walk less than 5 minutes to stations; people whose age is between 25 and 44 are unwilling to walk more than 8 minutes; people aged from 45 to 64 can accept walking more than 13 minutes to stations more easily.
 
 %
@@ -297,6 +293,7 @@ However, summarized above is only the description for the distribution of walkin
 %
 As explained above, this study examined the differences in individual characteristics of which people who accepted the given thresholds of walking duration. As the results, people with different individual characteristics shows different acceptability at each threshold of walking duration. According to the evaluation from the method of simple moving average, the model of 5 minutes’ threshold has a better explanatory ability, the model of 13 minutes' threshold is a little weaker, and the model of 8 minutes' threshold is not good. Here are some possible reasons for explaining the results. The selected thresholds of walking duration 5, 8, 13 minutes represent the lower boundary, mean value, and upper boundary of the main distribution of walking durations respectively. The commonly acceptable walking durations range from 5 to 13 minutes, therefore, it can be inferred that people who prefer walking less than 5 minutes and who can accept walking longer than 13 minutes may have significant features. However, as the mean value of walking duration, it can be thought that most of the walking durations are distributed around 8 minutes, for passengers there may be some randomness in making the decision of whether walking to rail transit stations. For the other threshold values near the mean value of 8 minutes, it also can be inferred that people may have some ambiguity in choosing whether to walk to stations or not. This explanation can also be confirmed by the result of valid features selection. There are 5 identical features in both thresholds of 5 and 8 minutes, which means people with those features are not sensitive to the threshold from 5 to 8 minutes.
 
+\section{Conclusion}
 %
 Overall, the results of the random forest model perform not well on individual predictions. But for a group of people, it shows a good predictive ability, especially at the threshold of 5 minutes. In the next stage of this research, we plan to apply the results on predicting the willingness at a specific threshold of walking duration for a group of people. By using this prediction, for example, if knowing the individual characteristics of residents in a particular area locating from the rail transit station $T$ minutes, the general acceptability of walking to the station for the residents in this area should be predictive. Therefore, this prediction of willingness is expected to be used in planning the catchment area of rail transit stations or estimating the catchment area of existing stations.
 

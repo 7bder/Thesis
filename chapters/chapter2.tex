@@ -1,40 +1,34 @@
 \chapter{Explain Ridership at Station Level}
-\markright{CHAPTER 2}
+% \markright{CHAPTER 2}
 %
 \section{Introduction}
 % \indent % 强制缩进，但 \indent 命令与正文之间需要有一个空行
-
+% brief introduction
 With the problem of weakness in population growth and the tendency of using private transport in the local central city of Japan, many operators of public transport in Japan, especially urban rail transit such as subway are now facing financial pressure due to the huge operating costs. How to increase the use of public transportation has become an important issue for the government of the local central city in Japan, and in order to turn around the bad financial situation, many efforts have been made to attract public transit user \cite{takashi2015study}. To increase the use of public transportation, understanding how various factors affect the ridership is treated as a foundation for the policymaker.
 
-%
-From the view of methodology, exploring and estimating the factors influencing subway ridership is treated as part of traffic demand forecast \cite{miller1999potential,boyce1994introducing}. In the past, limited by data and analytical tools, the traditional four step approach was usually applied to the issue of macro traffic forecast, rather than exploring and estimating the factors influencing transit ridership \cite{cervero2006alternative,chu2004ridership,duduta2013direct}. In the four step approach, trip generation stage is usually conducted based on an empirical model using some socioeconomic variables like population, employment, auto ownership, however, in different city cases, the impact of traffic indicators will not be exactly the same \cite{jones1983demand}. Additionally, it is also unclear whether these selected indicators are significantly related to traffic volume, or whether there is an indeed linear relationship between traffic volume and these selected indicators.
+% locating this study. brief review
+% 说明该类研究多是针对于大城市轨道交通，但中型城市也存在这样的需求。问题在于样本量不足。
+% 说明本文要提出一个筛选指标的方法
+This part can be viewed as an extension of existing station-level ridership model relative to small sample cases. Different from the case with hundreds of samples, a small sample case with dozens of stations has a higher risk of both type I and type II errors in statistic when identifying the valid variables that should be entered the regression model. For this problem, the aim of this study can be stated as: exploring and explaining the factors influencing subway ridership using the small sample case. The main work includes 3 aspects: a. to build the index framework based on prior study; b. to identify the valid indexes that do affect subway ridership; c. to explain the relationship among variables in generating subway ridership quantitatively.
 
-%
-With the development of GIS technology and the richness of digital statistic, now extracting more accurate data in the catchment area of a station has become possible, thereby exploring and estimating the factors having significant relationships with ridership, which formed the so-called direct station-level ridership forecasting model \cite{walters2003forecasting}.
+\section{Review}
+% overall
+To estimate the relevance of various factors and ridership, the model of linear regression is a widely adopted one \cite{cervero1997travel,chakraborty2013land}. However, due to the insufficient consideration of heteroscedasticity and spatial autocorrelation, the result of regression often leads to large standard errors or low level of significance. Thus, linear regression model is not available to all the stations with different characteristics. To improve the generality of the model, the extension such as Geographically Weighted Regression (GWR), Weighted Least Squares Regression (WLS) and Poisson Regression etc. have been successively introduced into the issue of direct ridership model. 
 
-%
-This study can be viewed as an extension of existing station-level ridership model for a small sample case. Different from the case with hundreds of samples, a small sample case with dozens of stations has a higher risk of both type I and type II errors in statistic when identifying the valid variables that should be entered the regression model. For this problem, the aim of this study can be stated as: exploring and explaining the factors influencing subway ridership using the small sample case. The main work includes 3 aspects: a. to build the index framework based on prior study; b. to identify the valid indexes that do affect subway ridership; c. to explain the relationship among variables in generating subway ridership quantitatively.
+% heteroscedasticity
+Chu and Choi et al. estimated the ridership of bus using the model of Poisson Regression \cite{choi2012analysis,chu2004ridership}. The problems occurred in ordinary linear regression such as the contravention between fact and estimated coefficients, and the low level of significance was well addressed. Therefore, both generality and explanatory ability in the regression model were enhanced. Some studies have achieved a high coefficient of determination at the first stage with OLS, however, the result showed a significant heteroscedasticity and a non-random distribution of estimated residual \cite{kuby2004factors}. To deal with this deviation at the second stage, WLS was brought in to eliminate heteroscedasticity, in which the data points were weighted using the standard error. The result showed that WLS was effective in eliminating heteroscedasticity and improving the explanatory ability of the model.
 
-%
-To estimate the relevance of various factors and ridership, the model of linear regression is a widely adopted one \cite{cervero1997travel,chakraborty2013land}. However, due to the insufficient consideration of heteroscedasticity and spatial autocorrelation, the result of regression often leads to large standard errors or low level of significance. Thus, linear regression model is not available to all the stations with different characteristics. To improve the generality of the model, the extension such as Geographically Weighted Regression (GWR), Weighted Least Squares Regression (WLS) and Poisson Regression etc. have been successively introduced into the issue of direct ridership model.
-
-%
-Chu and Choi et al. estimated the ridership of bus using the model of Poisson Regression \cite{choi2012analysis,chu2004ridership}. The problems occurred in ordinary linear regression such as the contravention between fact and estimated coefficients, and the low level of significance was well addressed. Therefore, both generality and explanatory ability in the regression model were enhanced.
-
-%
-Some studies have achieved a high coefficient of determination at the first stage with OLS, however, the result showed a significant heteroscedasticity and a non-random distribution of estimated residual \cite{kuby2004factors}. To deal with this deviation at the second stage, WLS was brought in to eliminate heteroscedasticity, in which the data points were weighted using the standard error. The result showed that WLS was effective in eliminating heteroscedasticity and improving the explanatory ability of the model.
-
-%
+%  spatial autocorrelation
 The data points in OLS are regarded to be independent of each other, however, each data point has different geographical location in the issue of direct ridership model, the observed values are not considered to be independent of each other in terms of the fact that they are distributed continuously in space. For one data point in regression, the observed value is related to the data point nearby in geographical location, and the regression parameters in different geographical locations usually have different performances in their characteristics \cite{brunsdon1996geographically}. For the problems of spatial autocorrelation and spatial heterogeneity, Cardozo made a comparison of OLS and GWR with the same regression parameters, the result showed that the coefficient of determination had a significant improvement and the standard errors turned to be less in GWR \cite{cardozo2012application}. On the basis of common GWR, Jun and Zhao introduced Mixed Geographically Weighted Regression (MGWR) to this issue in the consideration of that some regression parameters did not have special autocorrelation \cite{jun2015land,zhao2005transit}. They set part of the parameters as global independent variables, and the others as spatially autocorrelated variables, to make model closer to fact.
 
-%
+% summary
 Although existing studies have done a lot on the issue of direct ridership model, there is still some insufficiency in each study due to the limitation of study case and data source, especially for small sample case. For the selection and construction of factors, the simple and direct indicators such as population, employment etc. are roughly the same with those in the existing studies. But the definition of indicators obtained by secondary calculating such as land use diversity, bus service etc. are not the same, and the effects of such factors have been neither well verified nor widely accepted. For the model, most of the coefficient of determination in OLS were not very ideal (less than 0.7), there was still more than 30\% of the change in ridership not being explained by the model \cite{gutierrez2011transit,jun2015land}. Additionally, even though some of the studies have obtained the high coefficient of determination exactly, there was still another problem that one factor had too strong effect while the rest of the factors had very little influence on the ridership.
 
-%
+% purpose
 This study will focus on the small sample case and try to address some of the shortcomings stated above. The main work of this study can be divided into 3 parts. 1) Build the index framework based on the previous studies, and proposes new indicators to help describe the variation in the subway ridership of Fukuoka. 2) Optimize the procedure of identifying a valid explanatory variable, thereby making it applicable for small sample cases. 3) Improve the accuracy in the estimation of the regression model in the terms of small sample cases.
 
 \section{Data}
-\subsection{Data source}
+\subsection{Case introduction}
 %
 This study focuses on 35 subway stations in Fukuoka City (the sixth largest city in Japan) which has the largest population in Kyushu Island of Japan (more than 1.5 million). Figure \ref{fig:chp2:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines (The first line was operated since 1981, the second line was operated in 1993 and the latest third line began in 2005), and has a total of 29.8 kilometers operating mileage, some details of the three lines are shown in Table \ref{tab:chp2:DetailsSubway} Details for the three subway lines in Fukuoka. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel(Ministry of Land, Infrastructure n.d.). Although the subway system of Fukuoka is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population.
 
@@ -255,13 +249,16 @@ For this group of factors, except for the population and employment factors, age
 All the 16 candidate indicators are shown in Table \ref{tab:chp2:StatisticalDescription}. According to the previous studies, an expected influence is shown in the column of expected sign. With the consideration of small sample case in this study, the method is divided into two phases, identifying the valid variables and estimating the coefficients.
 
 %
-\section{Identification for effective independent variables}
-\subsection{Methodology}
+\section{Methods}
 %
 The exploratory regression tool in ArcGIS is introduced into this study to help to conduct the process of identifying valid variables. As is known, finding a proper OLS model is the main problem in this kind of study, especially when there are lots of candidate explanatory variables being estimated in the regression model. The Exploratory Regression tool provides a reference for choosing a valid combination of explanatory variables. It is a data mining tool that will try all possible combinations of explanatory variables to see which model can pass the necessary OLS diagnostics. This study proposes a two-step procedure to explore the final model with an optimal combination of explanatory indicators, rather than selecting the best one from all possible combinations. The first step is selecting the variables having effectiveness in explaining the subway ridership, and the second step is choosing the best combination of the valid variables in the final indicators.
 
 %
-\subsection{Identification for effective variables}
+GWR is a spatial regression technique, which is used for dealing with the explanatory variables with spatial dependence. The coefficients of explanatory variables are varied with the spatial location of the data point in GWR, and the closer the distance between a data point and observation point is, the greater weight the data point is. Different from general GWR, the explanatory variables in MGWR can be either spatial dependent or spatial independent. The variables with spatial dependence (called local variable) are the same with that in GWR, varied with spatial location of data points; while the variables without spatial dependence (called global variable) are the same with that in OLS, constant in all data points. Before estimating the MGWR model, it is necessary to determine whether the variable is spatial dependent or not. To prevent this small sample case from becoming data-driven, repeating test is conducted to reduce the probability of occasional mistakes. The local/global variables were determined by the spatial dependency of each exploratory variable, in which the variable with spatial dependency is treated as a local term, otherwise, is treated as a global term.
+
+%
+\section{Results}
+\subsection{Selection of effective variables}
 %
 The first stage of selecting effective variables is conducted based on three judgment factors: a. Multicollinearity, which is expressed by the factor of VIF; b. Validity, which is expressed by the number of times that shows statistical importance; c. Stability, which is shown by the percentage of negative and positive effect to the dependent variable (Stage 1 in Table \ref{tab:chp2:ExploratoryRegression}). Generally, the variable is thought to be multicollinearity if the value of VIF factor is more than 7.5, as shown in Table \ref{note:tab:chp2:ExploratoryRegression} there are four variables with higher VIF which are marked by dark color. For the factor of validity, three variables are filtered since they rarely show their statistical significance (less than 10\%). Even though some variables have statistical significances in the regression model, they are still not credible since their performances are not stable in different models (sometimes they are positive for the independent variable but sometimes are not). As shown in the underneath of stage 1 in Table \ref{note:tab:chp2:ExploratoryRegression}, the three variables marked with grey are shown not stable in explaining dependent variable. Therefore, as a result, 10 valid variables of 16 candidate variables are reserved in the first stage.
 
@@ -336,17 +333,22 @@ The first stage of selecting effective variables is conducted based on three jud
 	\end{description}
 \end{sidewaystable}%
 
-\subsection{Selection for the optimal combination of variables}
 %
 At the second stage, the exploratory regression is conducted again to select an optimal combination of explanatory variables based on a statistical test for regression. As shown in the stage 2 of Table \ref{tab:chp2:ExploratoryRegression}, the variable of household members did not pass the statistical significance test, there are 9 valid variables entering the model at last (at 95\% confidence level). The Jarque–Bera test (Abbreviated as JB test) is not significant in the final model; it indicates that there are no biased standard errors due to heteroscedasticity. The Breusch–Pagan test is not showing statistical significance, it represents that the residuals are not deviating from a normal theoretical distribution. The test of SA is not significant; it means the residuals are not spatial autocorrelated. The optimal combination with 9 explanatory variables will be evaluated by using MGWR in the next part to obtain a better result with fewer residuals.
 
-\section{Estimation of MGWR}
-\subsection{Method}
+\subsection{Estimation of MGWR}
 %
-GWR is a spatial regression technique, which is used for dealing with the explanatory variables with spatial dependence. The coefficients of explanatory variables are varied with the spatial location of the data point in GWR, and the closer the distance between a data point and observation point is, the greater weight the data point is. Different from general GWR, the explanatory variables in MGWR can be either spatial dependent or spatial independent. The variables with spatial dependence (called local variable) are the same with that in GWR, varied with spatial location of data points; while the variables without spatial dependence (called global variable) are the same with that in OLS, constant in all data points. Before estimating the MGWR model, it is necessary to determine whether the variable is spatial dependent or not. To prevent this small sample case from becoming data-driven, repeating test is conducted to reduce the probability of occasional mistakes. The local/global variables were determined by the spatial dependency of each exploratory variable, in which the variable with spatial dependency is treated as a local term, otherwise, is treated as a global term.
+The MGWR is estimated is estimated by using a fixed Gaussian kernel function,  the optimal bandwidth size is determined by using a “golden-section search” method. As a result, the optimal bandwidth is obtained when its corresponding AICc value gets to the minimum. The variation of AICc at different bandwidths are shown in Figure \ref{fig:chp2:AICcBandwidths}, and the optimal bandwidth is to the lowest AICc of 5.7 km.
 
-%
-The MGWR is estimated using the GWR4 software. The determination of local or global is processed in two steps: firstly, using Moran’s index to examine if the variable is spatial autocorrelation or not; secondly, re-examining the variable with spatial dependency in terms of the indicator of “DIFF of Criterion” provided by GWR4. The test value describing the spatial relationship is summarized in the left part of Table \ref{tab:chp2:ResultMGWR}. Five variables are found to be spatial autocorrelation; they are transportation warehousing, bus capacity, bus accessibility and the tenant proportion respectively. Thereby in the first step, the other 4 variables are considered as global variables while the 5 variables with spatial dependency are considered as local variables. Nakaya, the author of the GWR4 software suggested in the GWR4 user manual that the assessment of the spatial variability of the $k$th varying coefficient is conducted by comparing the fitted GWR with a model in which only the $k$th coefficient is fixed while the other coefficients vary spatially \cite{nakaya2014gwr4}. If the original model is better than the model with the kth coefficient fixed, that coefficient can be considered as spatial autocorrelation. GWR4 also provides the indicator of model comparison which is “DIFF of Criterion”. The user manual suggests that a positive value of “DIFF of Criterion”, especially greater than or equal to 2, means the local term is better to be assumed as a global one. As shown in the left part of Table \ref{tab:chp2:ResultMGWR}, all the values of indicator “DIFF of Criterion” are no more than 2, which means that all the local terms are adapt to the model. Therefore, all the local variables passed the test in the second step.
+% Figure 2
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chp2AICcBandwidths}
+	\caption{Variations of AICc at different bandwidths}
+	\label{fig:chp2:AICcBandwidths}
+\end{figure}
+
+The determination of local or global is processed in two steps: firstly, using Moran’s index to examine if the variable is spatial autocorrelation or not; secondly, re-examining the variable with spatial dependency in terms of the indicator of “DIFF of Criterion” provided by GWR4. The test value describing the spatial relationship is summarized in the left part of Table \ref{tab:chp2:ResultMGWR}. Five variables are found to be spatial autocorrelation; they are transportation warehousing, bus capacity, bus accessibility and the tenant proportion respectively. Thereby in the first step, the other 4 variables are considered as global variables while the 5 variables with spatial dependency are considered as local variables. Nakaya, the author of the GWR4 software suggested in the GWR4 user manual that the assessment of the spatial variability of the $k$th varying coefficient is conducted by comparing the fitted GWR with a model in which only the $k$th coefficient is fixed while the other coefficients vary spatially \cite{nakaya2014gwr4}. If the original model is better than the model with the kth coefficient fixed, that coefficient can be considered as spatial autocorrelation. GWR4 also provides the indicator of model comparison which is “DIFF of Criterion”. The user manual suggests that a positive value of “DIFF of Criterion”, especially greater than or equal to 2, means the local term is better to be assumed as a global one. As shown in the left part of Table \ref{tab:chp2:ResultMGWR}, all the values of indicator “DIFF of Criterion” are no more than 2, which means that all the local terms are adapt to the model. Therefore, all the local variables passed the test in the second step.
 
 % Table 6
 \begin{sidewaystable}[htbp]
@@ -386,21 +388,9 @@ The MGWR is estimated using the GWR4 software. The determination of local or glo
 	\end{tabular}%
 \end{sidewaystable}%
 
+
+\subsection{Interpretation of coefficients}
 %
-The MGWR model is estimated by using a fixed Gaussian kernel function and using a “golden-section search” method to find the optimal bandwidth size. The optimal bandwidth is obtained when its corresponding AICc value gets to the minimum. The variation of AICc at different bandwidths are shown in Figure \ref{fig:chp2:AICcBandwidths}, and the bandwidth for the lowest AICc is 5.7 km.
-
-% Figure 2
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{chp2AICcBandwidths}
-	\caption{Variations of AICc at different bandwidths}
-	\label{fig:chp2:AICcBandwidths}
-\end{figure}
-
-%
-\subsection{Result}
-\indent
-
 The right part of Table \ref{tab:chp2:ResultMGWR} reports the result of MGWR model. The global variables in MGWR model have statistical significance at 95\% confidence level, it means most of the variation in ridership can be explained by the 9 variables in this present model. The signs of all terms for local variables are consistent with that of OLS model in Table \ref{tab:chp2:ExploratoryRegression}, and the values of coefficients in MGWR maintain a high consistency with OLS model. The result shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables play positive effect. The value of the explanatory variable changes by 1 unit, the subway passenger will change the value of the coefficient. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform completely opposite effect on the independent variable. Moreover, comparing with the result of OLS regression, the result of MGWR has an improvement in both adjusted R2 and AICc value, and there is a 12\% decrease in residual.
 
 % Table 7
@@ -427,7 +417,7 @@ The right part of Table \ref{tab:chp2:ResultMGWR} reports the result of MGWR mod
 \end{table}
 
 %
-\subsection{Residual analysis}
+\subsection{Evaluation of results}
 %
 As the result from both models, MGWR has a better performance than OLS, in which the residual of MGWR is 12.27\% less than that of OLS. Also, the homogeneity of residual distribution is evaluated by using Moran’s index shown in Table \ref{tab:chp2:Residual}. As can be seen, the Moran’s index in MGWR is closer to expected value than that in OLS. The MGWR model also shows less variance and greater likelihood of random distribution (with lower z-score and higher p-value) than OLS model. The spatial autocorrelation analysis presents that the residual of OLS model is more likely to be aggregative in space.
 
