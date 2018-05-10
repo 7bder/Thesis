@@ -1,7 +1,80 @@
 \chapter{Conclusion}
+%
 \section{Overview}
-% 简短总结
+% one paragraph for the whole
+In the context of promoting the development of TOD, the prediction of rail transit ridership is becoming more and more important. This research taking explaining the rail transit ridership as the overall goal analyzed the influence of various factors on ridership from station level and station-to-station level respectively. Moreover, this research also provided new explanations for the catchment area of TOD. As results, this research provided an approach for selecting the valid indicators; and proposed a ridership forecasting method with the consideration of interaction among stations and stations; also, it showed a way to accurately estimate the catchment area.
+
+% brief summary for each chapter
+% Note: re-state the main points in a new concise way that you want your readers to remember.
+Specific to each chapter, the main content and findings are:
+\begin{itemize}
+	\item \emph{\textbf{Chapter 1}} proposed the overall research purpose according to the background of real issues. By reviewing the literature relating to this field, specific research questions were proposed. Around the primary goal of explaining rail transit ridership, the description of study case and dissertation organization were given at the last of this chapter.
+	
+	\item \emph{\textbf{Chapter 2}} analyzed the influencing factors on ridership from the perspective of station level. In this chapter, the approach for selecting the valid factors that used for explaining ridership was proposed; the index system was rearranged and the effect of newly proposed indicators was verified; the improvement on distinguishing local and global variable in MGWR model was made. As the results, the valid influencing factors on ridership were extracted from various factors, and influence of each valid factor was estimated.
+	
+	\item \emph{\textbf{Chapter 3}} shifted the perspective of analyzing ridership from station level to station-to-station level. In this chapter, the type of land use and the relative location of stations were thought to be important factors influencing the ridership between station and station. The station-to-station connectivity was expressed by the probability of selecting the destination station from all the stations, and was estimated by logistic regression model. As the results, the variation in station-to-station connectivity was able to be estimated, thus the variation in ridership of one station caused by the variation in ridership of other stations within the same station network can be estimated.
+	
+	\item \emph{\textbf{Chapter 4}} reexamined the implication of surveyed walking distance/duration to transit station, and estimated the correlation between the walking duration and people's individual characteristics using random forest decision tree model. In this chapter, the distribution of surveyed walking duration was viewed as the reflection of acceptability of walking to transit stations, and this acceptability was thought to be affected by individual characteristics. As the results, the correlation between surveyed walking duration and individual characteristics was verified, which can provide a way to estimate the catchment area of TOD accurately.
+	
+	\item \emph{\textbf{Chapter 5}} summarized the main content and findings from the view of both integer and each chapter. Recommendations for future work were also given for extending and improving this research field.
+\end{itemize}
+
 \section{Contributions}
-% 对于前边三个研究中的具体问题，我给出了怎样的回答
-\section{Future work}
+% 贡献点，直接说本文主要的贡献点如下即可
+% in bulleted list, format as below
+% 做一个列表，加上label，在recommendations中进行引用
+% format: problem description/contributions/chapter
+
+% 将bus指标根据其对客流量的影响效果分为了bus capacity和bus accessibiliy，并验证了这两个指标的作用
+% 引入exploratory regression进行筛选指标，并在小样本中证实了其有效性。
+% 通过空间分布关系，确定MGWR中的local和global变量，the estimation of model 验证了有效性。
+% 建立了乘客目的地选择的logistic regression模型来描述站与站之间的关系
+% 定量的验证了土地利用类型对于乘客出行目的地选择的影响
+% 对walking duration to transit station的含义重新进行了discuss
+% 阐述了surveyed walking duration和walking preference的关系
+% 通过random forest decision model从概率的角度对surveyed walking duration 和walking preference的关系进行了estimation
+This dissertation worked on several key questions in the field of explaining rail transit ridership, the main contribution can be arranged as below.
+
+\begin{itemize}
+	\item Considered the influence of bus on rail transit ridership from both the sides of bus capacity and bus accessibility, and verified that the effect of bus capacity is positive to rail transit ridership, while the effect of bus accessibility is negative. (refer to \textbf{chapter 2})
+	
+	\item Proposed the approach of screening valid indicators by introducing the exploratory regression, and confirmed its effectiveness in a small sample case. (refer to \textbf{chapter 2})
+	
+	\item Distinguished the local and global variables in MGWR model by examining the spatial distribution of each variable, and the effectiveness was confirmed in the estimation of MGWR model. (refer to \textbf{chapter 2})
+	
+	\item By examining the probability of selecting the destination station from all the stations, established a logistic regression model for describing the correlation between stations and stations. (refer to \textbf{chapter 3})
+	
+	\item Quantitatively validated the impact of land use types on the selection of destination stations. (refer to \textbf{chapter 3})
+	
+	\item Reinterpreted the implication of surveyed walking distance/duration to transit stations, that it has no linear relation with people willingness but just the reflection of the distance between departures and stations. (refer to \textbf{chapter 4})
+	
+	\item Described the correlation between surveyed walking duration and people's individual characteristics from the view of probability, which can be further applied to the estimation of catchment area of TOD. (refer to \textbf{chapter 4})
+	
+\end{itemize} 
+
+% \section{Implications of the findings}
+% 如何利用研究成果，一段话，就一段话。
+% Some practical suggestions for TOD are given below according to the findings of this dissertation.
+% bus transit规划要考虑其和rail transit的作用关系，使得效益最大化
+
+
+\section{Recommendations for future work}
+% 直接开干？
+Suggestions for future work include the following:
+
+\begin{itemize}
+	\item Surveys of income and occupation, exploring the effect on travel behavior.
+	
+	\item Integer of the whole process of estimating the catchment area of TOD based on the achievements of this dissertation.
+	
+	\item Joint of the estimation of catchment area and ridership forecasting, improving the accuracy.
+	
+	\item Analysis of the influence on land use affected by the development of TOD, exploring the interaction between land use and transit.
+	
+	\item Analysis of balance condition among various elements in TOD region, including human, resource, land use, transportation etc. achieving the goal of sustainable development.
 % 还有哪些可以改进的点
+% 将catchment area推测部分完善，然后重新应用在站点客流量预测中，以提高
+
+% 数据向的，我还需要什么东西
+% 研究向的，我还需要做什么东西
+% 方向向的，我需要向哪里转

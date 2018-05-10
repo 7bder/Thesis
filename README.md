@@ -1,6 +1,6 @@
 # Thesis
 
-## Current Version: 1.0.20180506 (updated on May 6th, 2018)
+## Current Version: 1.0.20180506 (Last updated: May 10th, 2018)
 
 ---
 
@@ -8,10 +8,33 @@
 
 ---
 
+ Version: 1.0.201805010
+
+---
+    Date: 2018-05-10, 23:00 p.m.
+        Progress    :   Conclusion chapter is finished
+        Remaining   :   Revise for the body chapters, and abstract
+        Overall     :   1. Revise the body chapters (In one day)
+                        2. Abstract and overall check (In one day)
+
+---
+
+ Version: 1.0.20180507
+
+---
+    Date: 2018-05-07, 24:00 p.m.
+        Progress    :   Introduction chapter is finished
+        Remaining   :   Conclusion chapter
+        Overall     :   1. write the Conclusion chapter (In two days)
+                        2. revise details for the other chapters (In two days)
+>Remarks : Revised and united the content structure.
+
+---
+
  Version: 1.0.20180506
 
 ---
-    Date: 2018-05-06, 1:00 a.m.
+    Date: 2018-05-06, 25:00 p.m.
         Progress    :   85% of the Introduction chapter
         Remaining   :   half a day for the Introduction chapter
         Overall     :   1. write the Conclusion chapter (In two days)
@@ -23,7 +46,7 @@
 - Version: 1.0.20180503
 
 ---
-    Date: 2018-05-04, 2:00 a.m.
+    Date: 2018-05-03, 26:00 p.m.
         Progress    :   40% of the Introduction chapter
         Remaining   :   two days for the Introduction chapter
         Overall     :   1. write the Conclusion chapter (In two days)

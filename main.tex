@@ -14,7 +14,7 @@
 \usepackage{geometry} % 设置纸张大小
 \usepackage{amsmath} % 一个公式环境的包，在 begin{matrix} 中可以使用 & 符号进行公式对齐
 \usepackage{setspace} % 设置行间距的包，语法：\begin{spacing}{1.25} content \end{spacing}
-% \usepackage{fancyhdr} % 页眉页脚设置包, 使用简单，但我没用
+% \usepackage{fancyhdr} % 页眉页脚设置包, 使用简单，但我没用。
 
 % 断字和参考文献格式相关
 \usepackage[activate={true,nocompatibility}]{microtype} % 不完美解决断行断字问题。参数是自适应调整字间距。keyword: letterspace, hyphenate, expansion, protrusion
@@ -27,7 +27,7 @@
 % \usepackage[sectionbib]{natbib} % 另一个分章节导出参考文献的包，也没有尝试成功。不过失败原因应该同chapterbib包，已经记录。有时间尝试一下用这个包修改参考文献格式
 
 % \setlength{\textwidth} {160 mm} % 设定文本宽度，防止参考文献溢出，无效
-% \pagestyle{myheadings} % 设定页眉，显示章节以及页码
+% \pagestyle{myheadings} % 自定义页眉，显示章节，页码。对于页脚无效
 \graphicspath{ {images/} } % 设定图片目录
 \renewcommand{\baselinestretch}{1.5} % 基础行间距1.5倍
 \setlength{\parskip}{0.5\baselineskip} % 设置段间距
@@ -61,7 +61,7 @@
 	{\large Supervisor: Prof. Zhao Shichen}
 	{\vspace{1cm}}
 }
-\date{\normalsize Last edited: \today}
+\date{\normalsize Last Edited: \today}
 \maketitle
 
 % 声明页
@@ -85,7 +85,7 @@ QQ: 331730634 \\
 
 % 这里设置目录的字体
 % \global\large % 设置全局字体，large在12pt文稿下为14.4pt
-\renewcommand{\baselinestretch}{1.3} % 目录页基础行间距1.3倍
+\renewcommand{\baselinestretch}{1.2} % 目录页基础行间距1.2倍
 \fontsize{14pt}{14pt} % 目录字号14pt，行间距局14pt，即1倍基础行距
 \selectfont
 \tableofcontents % 内容目录
@@ -95,7 +95,7 @@ QQ: 331730634 \\
 % 前书
 \frontmatter
 % 设置正文字号，貌似只能在正文部分声明
-\renewcommand{\baselinestretch}{1.8} % 正文页基础行间距1.5倍
+\renewcommand{\baselinestretch}{1.8} % 正文页基础行间距1.8倍
 \fontsize{13pt}{13pt} % 正文字号13pt，行间距13pt，即1倍基础行距
 \selectfont
 
@@ -150,7 +150,7 @@ It is widely accepted that walking durations from departures to transit stations
 %	\Large
 %	
 %	% Title
-%	{\huge Thesis title: may be long or short}
+%	{\huge Dissertation title: may be long or short}
 %	\vspace{2cm}
 %	
 %	\includegraphics[scale=0.2]{university.jpg}
