@@ -1,11 +1,21 @@
 # Thesis
 
-## Current Version: 1.0.20180506 (Last updated: May 10th, 2018)
+## Current Version: 1.1.20180513 (Last updated: May 13th, 2018)
 
 ---
 
 ## Upgrade Log
 
+---
+
+ Version: 1.1.201805013
+
+---
+    Date: 2018-05-13, 29:00 p.m.
+        Progress    :   Abstract and body revise are finished
+        Remaining   :   Null
+        Overall     :
+>Remarks : First draft is over.
 ---
 
  Version: 1.0.201805010

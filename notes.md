@@ -15,3 +15,11 @@ Something for the dissertation.
 - PCA: Pedestrian Catchment Area
 
 - GIS: Geographic Information System
+
+- OLS: Ordinary Least Square
+
+- GWR: Geographically Weighted Regression
+
+- MGWR: Mixed Geographically Weighted Regression
+
+- WLS: Weighted Least Squares Regression

@@ -21,11 +21,13 @@
 \usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
 \usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
 
+% 几个没试成功的包
 % \usepackage{ragged2e} % 设置两端对齐的，没试成功
 % \usepackage{apacite} % 参考文献样式
 % \usepackage{newtxtext,newtxmath} % 不知道具体功能，先放进来
 % \usepackage[sectionbib]{natbib} % 另一个分章节导出参考文献的包，也没有尝试成功。不过失败原因应该同chapterbib包，已经记录。有时间尝试一下用这个包修改参考文献格式
 
+% 一些全局环境设置
 % \setlength{\textwidth} {160 mm} % 设定文本宽度，防止参考文献溢出，无效
 % \pagestyle{myheadings} % 自定义页眉，显示章节，页码。对于页脚无效
 \graphicspath{ {images/} } % 设定图片目录
@@ -45,6 +47,7 @@
 	left=20mm,right=20mm,
 	bindingoffset=10mm, top=25mm,bottom=25mm}
 
+% 全文开始
 \begin{document}
 % 表页制作
 \title{
@@ -65,7 +68,6 @@
 \maketitle
 
 % 声明页
-%
 \centerline{\textbf{\Large STATEMENT}}
 
 This academic dissertation is independent research work conducted under the guidance of the supervisor. Except for the quoted content, this dissertation does not contain any research result that has been published by other individuals or groups.\\
@@ -82,19 +84,21 @@ E-mail: chenqi.clever@gmail.com \\
 QQ: 331730634 \\
 \end{flushright}
 
-
 % 这里设置目录的字体
 % \global\large % 设置全局字体，large在12pt文稿下为14.4pt
 \renewcommand{\baselinestretch}{1.2} % 目录页基础行间距1.2倍
 \fontsize{14pt}{14pt} % 目录字号14pt，行间距局14pt，即1倍基础行距
 \selectfont
+
+% 生成目录
 \tableofcontents % 内容目录
 \listoffigures % 图目录
 \listoftables % 表目录
 
-% 前书
+% 这里开始前书部分
 \frontmatter
-% 设置正文字号，貌似只能在正文部分声明
+
+% 设置正文字号
 \renewcommand{\baselinestretch}{1.8} % 正文页基础行间距1.8倍
 \fontsize{13pt}{13pt} % 正文字号13pt，行间距13pt，即1倍基础行距
 \selectfont
@@ -104,15 +108,27 @@ QQ: 331730634 \\
 
 % 摘要
 \chapter{Abstract}
+% 背景
+% 城市化带来了一系列的人口，资源，环境的问题，这些问题都可以归结为可持续发展的问题，针对这些问题，TOD被提出，以期能够缓解矛盾
+% 说明TOD中，客流预测，以及分析对客流的影响因素是非常必要的。
+Urbanization caused many social problems in both developing and developed countries, of which although the problems are different in various ways, in essence, they can be attributed to the demand for sustainability. With the goal of making cities more sustainable, the concept of TOD aiming at compact development was proposed to alleviate the conflict between sustainability and development. However, the implementation of TOD is not as simple as building rail transit stations, then waiting for people to come. Understanding the factors influencing rail transit ridership is always central and fundamental to decisions on urban planning and management at any stage of implementing TOD.
 
-% \section{AIJ}
-This study is an extension of existing station-level ridership model for a small sample case. The aim is to explore and explain the factors influencing subway ridership. A small sample case with dozens of stations has a higher risk of both type I and type II errors in statistic when identifying the valid explanatory variables for ridership. To reduce this risk, a procedure using exploratory regression was proposed to identify the effective variables, and then the Mix Geographically Weighted Regression (MGWR) model is adopted to estimate the relevance of explanatory variables and subway ridership. This study uses the subway stations in Fukuoka, Japan as the study case. As the result, nine effective factors are selected from candidate explanatory variables for interpreting the variation of subway ridership.
+% 主旨，目的
+% 因此，本文最基本的目的是解释客流量。具体来看，目的可以分为三个。
+This research sets the primary purpose of explaining rail transit ridership in TOD area, from which is expanded to three specific aspects: 1. explaining transit ridership at station level; 2. explaining transit ridership at station-to-station level; 3. explaining the walking duration of to transit stations. To this end, the research questions are as follow: 1. to find an approach for screening effective influencing factors; 2. to describe the relationship of transit ridership between stations and stations; 3. to explore the relation between walking distance and walking preference.
 
-% \section{CUPUM}
-The purpose of this study is to analyze the interaction of subway ridership and land-use patterns in station catchment areas. The connectivity between two stations is described by the probability of getting off at the destination station; thereby this issue is converted into a discrete choice model. Then the station areas are classified into six clusters ac-cording to the proportions of the main land-use functions. A logistic regression model is applied to the object stations selected from each cluster to estimate the passenger choice probability of getting off at the destination station. Finally, the results obtained by different types of stations are compared and discussed. The results show that the variations in the proportion of land-use in departure stations can lead to variations in the choice of destination stations.
+% 具体研究的内容，包含方法
+The first question is answered through the exploratory regression that decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables are then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
 
-% \section{AURG}
-It is widely accepted that walking durations from departures to transit stations should relate to passengers' individual characteristics. However, since the walking duration is the reflection of the distribution of departure points, maybe it has no simple linear relationship with individual characteristics. Instead of examining the relationship between walking durations and individual characteristics directly, this study examines the feature distribution of individual characteristics over/under several thresholds of walking duration, thus trying to explore this relationship. The rail transit trip survey of Fukuoka, Japan is used as the dataset in this study which includes 4254 records. The features are estimated by using the random forests model. As a result, trip purposes have the most significant effect at any threshold of walking duration; the feature of peak hour also shows importance; the other features have different performance at different thresholds. The result shows a clear relationship between real walking durations and passengers' individual characteristics. Also, this result is expected to provide references for planning the catchment area of transit stations or estimating the catchment area of existing transit stations.
+For the second question, the relationship of transit ridership between stations and stations is analyzed from the view of land use within the station catchment area. This relationship then is converted into a binary choice problem, and is estimated using logistic regression model. The results show that for passengers the variations in land use in departure stations can lead to variations in the choice of destination stations.
+
+As to the third question, this research examines the feature distribution of individual characteristics at several thresholds of walking duration, thus trying to explore the willingness of walking duration to transit stations. The model of random forest decision is introduced to explain the relationship from the perspective of probability. The results show a quantitative relationship of surveyed walking durations and passengers' individual characteristics, which is thought can be used in planning catchment areas of rail transit station or estimating the catchment areas of existing stations.
+
+% 讨论和建议
+Based on the achievements of this research, several recommendations are given as follow: 1. before estimating transit ridership a general process of screening valid factors is necessary; 2. since the transit ridership of one station is not only affected by the factors within the catchment area of that station but also affected by the other stations in the same transit network, the research perspective should be shifted to station-to-station level and further to the line or network level. 3. accuracy estimation for catchment area needs further exploration. \\ \\ \\
+
+\noindent % 不缩进
+\textbf{Keywords:} Urban planning; Urban transportation; TOD; Rail transit ridership; Catchment area; Land use; Individual characteristic; Walking duration; Exploratory regression; Mixed geographically weighted regression; Logistic regression; Random forest decision
 
 % 正文
 \mainmatter % 该命令以下标记为正文，在目录和页码中有所区别
@@ -127,16 +143,19 @@ It is widely accepted that walking durations from departures to transit stations
 
 \include{chapters/chapter5}
 
+% 参考文献放在frontmatter部分会出现如下的页码问题。总参考文献如果放入backmatter部分就没问题了。不过这部分注释作为插入页码的方法保留一下。
 % \clearpage % 需要另起一页，不然页码会出错
-% \addcontentsline{toc}{chapter}{Reference} % 将reference加入目录。这里addcontentsline之后马上加入目录。
-%\bibliographystyle{plain}
-%\bibliography{reference}
+% \addcontentsline{toc}{chapter}{References} % 将reference加入目录。这里addcontentsline之后马上加入目录。
+% \bibliographystyle{apacite}
+% \bibliography{chapters/ref,chapters/ref_AIJ,chapters/ref_CUPUM,chapters/ref_AURG}
 
 % 标记为后记部分
 \backmatter
-\setlength{\parskip}{0\baselineskip} % 设置段间距还原为0
-\appendix
-\include{chapters/appendix}
+% \setlength{\parskip}{0\baselineskip} % 设置段间距还原为0
+\bibliographystyle{apacite}
+\bibliography{chapters/ref,chapters/ref_AIJ,chapters/ref_CUPUM,chapters/ref_AURG}
+% \appendix
+% \include{chapters/appendix}
 
 \end{document}
 
