@@ -23,3 +23,5 @@ Something for the dissertation.
 - MGWR: Mixed Geographically Weighted Regression
 
 - WLS: Weighted Least Squares Regression
+
+- ANOVA: Analysis of Variance

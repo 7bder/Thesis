@@ -1,4 +1,4 @@
-\chapter{Explain Ridership at Station-to-Station Level}
+\chapter{Influencing Factors on Ridership at Station-to-Station Level}
 % \markright{CHAPTER 3}
 
 % 待修正，再稍微补充一点，有点短感觉。两段话差不多
@@ -30,23 +30,13 @@ With the goal of explaining the variation in the ridership between stations, thi
 %
 \subsection{Case introduction}
 %
-This study focuses on 35 subway stations in Fukuoka City (the sixth largest city in Japan) which has the largest population in Kyushu Island of Japan (more than 1.5 million). Figure \ref{fig:chp3:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines, a total of 29.8 kilometers operating mileage. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel (from Fukuoka City Transportation Bureau). Although the Fukuoka subway system is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population. Moreover, one thing should be noted that the third line is not directly connected with the first and second line.
-
-% Figure 1
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{chp3ResearchArea}
-	\caption{Research area and the distribution of subway stations}
-	\label{fig:chp3:ResearchArea}
-\end{figure}
+This study focuses on 35 subway stations in Fukuoka City (the sixth largest city in Japan) which has the largest population in Kyushu Island of Japan (more than 1.5 million). Figure \ref{fig:chp2:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines, a total of 29.8 kilometers operating mileage. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel (from Fukuoka City Transportation Bureau). Although the Fukuoka subway system is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population. Moreover, one thing should be noted that the third line is not directly connected with the first and second line.
 
 %
 \subsection{Catchment area of the station}
 %
 The scale of the catchment area is an important prerequisite for this kind of issue. At present, in the United States, a half-mile-radius (800 m) circle has become the practical standard for rail transit catchment areas based on TODs \cite{guerra2013half}. The distance of 800m corresponds to the distance people can walk in 10 minutes at the speed of 4.8 km/h. A Japanese case study also supported this 800m catchment area for TOD by using the survey data of $<$2010 big city traffic census metropolitan area report$>$ \cite{tadakatsu2015empirical}.
 
-%
-Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passengers accessing stations by walking and about nearly 90\% of the subway passengers choose non-motorized travel mode, as shown in Table \ref{tab:chp3:MainTransportationMode}. The average walking distance for accessing stations is about 600m according to the average speed and time. Considering the average walking distance is a little less than the main walking distance, it can be inferred that the pedestrian catchment area (Abbreviated as PCA) in Fukuoka is consistent with the most widely accepted distance of 800m. Thereby the distance threshold of 800m is adopted in this study. All the data based on geographical information will be covered by the 800m PCA using the areal interpolation method.
 
 % Table 1
 \begin{table}[htbp]
@@ -71,52 +61,18 @@ Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passe
 \end{table}%
 
 %
-\subsection{Land use}
+Based on the personal trip survey of Fukuoka, there are nearly 80\% of the passengers accessing stations by walking and about nearly 90\% of the subway passengers choose non-motorized travel mode, as shown in Table \ref{tab:chp3:MainTransportationMode}. The average walking distance for accessing stations is about 600m according to the average speed and time. Considering the average walking distance is a little less than the main walking distance, it can be inferred that the pedestrian catchment area (Abbreviated as PCA) in Fukuoka is consistent with the most widely accepted distance of 800m. Thereby the distance threshold of 800m is adopted in this study. All the data based on geographical information will be covered by the 800m PCA using the areal interpolation method.
+
+%
+\subsection{Land use factors}
 %
 Land use is generally accepted as one of the determinants for transit ridership. The indicator of floor area in different building functions can be considered as a detailed expression for land use. Also, many researchers have verified the influence of floor area in different building functions on transit ridership by conducting empirical studies \cite{sohn2010factors,gutierrez2011transit,chakraborty2013land,chakraborty2013land,jun2015land}. Also, all the stations in the network are connected, the change of land use within the PCA of a station will lead to the changes of transit ridership in all the stations in the same network. For the case of Fukuoka, about 90\% of the trips accessing subway stations are non-motorized, in another word, the land use within the PCA of stations play a crucial role in determining the trip purposes of subway users, as shown in Table \ref{tab:chp3:MainTransportationMode}.
 
 %
-The same with previous studies, this study chose several types of land use with higher proportion to assess the indicator of land use mix, including residential, office, commercial, education. The four main types of land use account for about 85\% of all the floor area in Fukuoka City, especially in subway PCA, reaching more than 90\%, as shown in Table \ref{tab:chp3:ProportionOfLanduse}. In addition to the indicator of floor area, the index of the land use mix is also assumed to be a crucial factor for explaining the connectivity of stations \cite{badoe2000transportation,cervero2004transit,frank2004obesity}. Different from the general definition of land use mix, this study redefines it into the aggregation of land use. The Euclidean Metric is used for evaluating the deviation of land use aggregation in each subway station with respect to a reference value. The value of this indicator is ranged from 0 to 1, in which the lower value represents a higher diversity in land use function, while the higher value means the land use function is less diverse. This indicator of land use aggregation is defined as for Equation \ref{eq:chp3:LanduseAggregation}, it is speculated to have a negative impact on ridership. To describe the mixture of land use closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station PCA (800m) in Fukuoka City, shown in Table \ref{tab:chp3:ProportionOfLanduse}.
-
-% Equation 1
-\begin{equation}
-	A=\sqrt{\sum (S_i-P_i)^2}
-	\label{eq:chp3:LanduseAggregation}
-\end{equation}
-
-\begin{enumerate}
-	\item[\textbf{Where:}]
-	\item[$i$] represents the type of land use (respectively government, commercial, residence and education).
-	\item[$A$] is the indicator for aggregation of land use functions.
-	\item[$P_i$] is the average proportion of the land use with type $i$.
-	\item[$L_i$] is the floor area of land use with type $i$ within the PCA.
-\end{enumerate}
-
-% Table 2
-\begin{table}[htbp]
-	\centering
-	\caption{Proportion of land use in terms of the range of PCA}
-	\label{tab:chp3:ProportionOfLanduse}
-	\small
-	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{cccccc}
-		\Xhline{1.5pt}
-		Range of PCA & Residence & Office & Commerce & Education & Total \\
-		\midrule
-		
-		600 & 51.80\% & 19.30\% & 13.80\% & 5.50\% & 90.50\% \\
-		\rowcolor[rgb]{.8, .8, .8}
-		800 & 55.30\% & 17.50\% & 12.00\% & 6.20\% & 90.90\% \\
-		1000 & 57.60\% & 16.50\% & 10.80\% & 6.00\% & 90.90\% \\
-		1200 & 59.20\% & 15.50\% & 10.20\% & 5.90\% & 90.80\% \\
-		Ave & 62.80\% & 10.10\% & 7.50\% & 5.30\% & 85.70\% \\
-		\Xhline{1.5pt}
-		
-	\end{tabular}%
-\end{table}%
+The same with previous studies, this study chose several types of land use with higher proportion to assess the indicator of land use mix, including residential, office, commercial, education. The four main types of land use account for about 85\% of all the floor area in Fukuoka City, especially in subway PCA, reaching more than 90\%, as shown in Table \ref{tab:chp2:ProportionOfLanduse}. In addition to the indicator of floor area, the index of the land use mix is also assumed to be a crucial factor for explaining the connectivity of stations \cite{badoe2000transportation,cervero2004transit,frank2004obesity}. Different from the general definition of land use mix, this study redefines it into the aggregation of land use. The Euclidean Metric is used for evaluating the deviation of land use aggregation in each subway station with respect to a reference value. The value of this indicator is ranged from 0 to 1, in which the lower value represents a higher diversity in land use function, while the higher value means the land use function is less diverse. This indicator of land use aggregation is defined as for Equation \ref{eq:chp2:LanduseAggregation}, it is speculated to have a negative impact on ridership. To describe the mixture of land use closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station PCA (800m) in Fukuoka City, shown in Table \ref{tab:chp2:ProportionOfLanduse}. There are five variables of land use category selected as the indicator in this study, the list of indicators also the statistical descriptions refer Table \ref{tab:chp3:StatisticalDescription}.
 
 %
-\subsection{Impedance}
+\subsection{Impedance factors}
 %
 Another factor generally used for representing the connectivity between stations is the remoteness, which is also widely adopted as impedance in the gravity model for explaining the connectivity between traffic zones \cite{iwanow2007trade,kepaptsoglou2010gravity,nitsch2000national}. Impedance is the index that represents the connectivity and cost between origin and destination, it can affect the choice of the trip in terms of both destination and travel mode. Generally, the factor of impedance can be considered from two aspects in this issue, one is the internal impedance that representing the convenience for accessing the station \cite{chu2004ridership,chakraborty2013land}; the other is external impedance that evaluating the connectivity between stations \cite{sohn2010factors}.
 
@@ -124,27 +80,36 @@ Another factor generally used for representing the connectivity between stations
 For Fukuoka, there are about 90\% of all the trip accessing stations by walking and bicycles, as shown in Table \ref{tab:chp3:MainTransportationMode}. Because the PCA is set by the pedestrian distance, the internal road impedance has been already considered in the phase of setting the PCA. It can be thought that there is no need to create a new indicator to represent the internal impedance in this case study.
 
 %
-Since the focus of this study is the connectivity between stations, it can be assumed that the interconnection between stations in a subway network is an influential factor in determining the ridership between stations. Two types of external impedance are considered in this study. The operation distance of subway line between two stations is the direct indicator representing the spatial connectivity between two stations. And the impedance of competing modes is also considered in this study. Two indicators of bus accessibility and bus capacity are proposed as shown in Equation \ref{eq:chp3:BusCapacity} and Equation \ref{eq:chp3:BusAccessibility} respectively. The former one is used for representing the convenience for accessing the station which is speculated as a positive factor for ridership, while the later one is the transport capacity of the bus within the PCA of the station which is considered as a negative factor for ridership because it may share part of ridership from the subway.
+Since the focus of this study is the connectivity between stations, it can be assumed that the interconnection between stations in a subway network is an influential factor in determining the ridership between stations. Two types of external impedance are considered in this study. The operation distance of subway line between two stations is the direct indicator representing the spatial connectivity between two stations. And the impedance of competing modes is also considered in this study. Two indicators of bus accessibility and bus capacity are proposed as shown in Equation \ref{eq:chp2:BusCapacity} and Equation \ref{eq:chp2:BusAccessibility} respectively. The former one is used for representing the convenience for accessing the station which is speculated as a positive factor for ridership, while the later one is the transport capacity of the bus within the PCA of the station which is considered as a negative factor for ridership because it may share part of ridership from the subway. All the statistical description of indicators in this study are listed in Table \ref{tab:chp3:StatisticalDescription}.
 
-% Equation 2
-\begin{equation}
-	BC=\sum_{k}^{K}\sum_{r}^{R}f_{r}^{k}
-	\label{eq:chp3:BusCapacity}
-\end{equation}
 
-% Equation 3
-\begin{equation}
-	BA=\sum_{k}^{K}R_{k}
-	\label{eq:chp3:BusAccessibility}
-\end{equation}
-
-\begin{enumerate}
-	\item[\textbf{Where:}]
-	\item[$K$] is the numbers of bus stations within PCA.
-	\item[$R$] is the number of lines at one bus station.
-	\item[$f_{r}^{k}$] is the frequency of the $r$th line at the $k$th station
-	\item[$R_k$] is the number of bus lines passing through the kth bus station.
-\end{enumerate}
+% Table
+\begin{table}[htbp]
+	\centering
+	\caption{Statistical description of data}
+	\label{tab:chp3:StatisticalDescription}%
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	\begin{tabular}{cll p{5em}<{\raggedleft} p{5em}<{\raggedleft} p{5em}<{\raggedleft}} 
+		\Xhline{1.5pt}
+		Category & Variable & Unit & Min Value & Max Value & Average \\
+		
+		\midrule
+		\multirow{4}[0]{*}{Land use}
+		& Commerce & \% & 1.03 & 44.58 & 9.89 \\
+		& Office & \% & 0.41 & 44.19 & 12.78 \\
+		& Residence & \% & 7.15 & 92.26 & 60.34 \\
+		& Education & \% & 0.03 & 48.02 & 7.08 \\
+		& Land Use Aggregation & - & 0.09 & 0.75 & 0.31 \\
+		
+		\Xhline{0.5pt}	
+		\multirow{2}[0]{*}{Impedance} 
+		& Bus Capacity & - & 58.48 & 2.91 & 259.80 \\
+		& Bus Accessibility & - & 89.71 & 4.00 & 455.00 \\
+		& Operation Distance & $km$ & 154.50 & 389.30 & 237.58 \\
+		\Xhline{1.5pt}
+		
+	\end{tabular}%
+\end{table}%
 
 %
 \section{Methods}
@@ -160,13 +125,14 @@ Taking one station as the destination station, it will correspond to the other d
 	\label{eq:chp3:LogisticRegression}
 \end{equation}
 
-\begin{enumerate}
+\begin{description}
+	\normalsize
 	\item[\textbf{Where:}]
 	\item[$p_i$] is the probability of getting off the subway for the $i$th passenger.
 	\item[$y$] is the choice of passengers.
 	\item[$X_i$] is the attribute vector of the $i$th passenger.
 	\item[$\alpha$] is the residual item
-\end{enumerate}
+\end{description}
 
 %
 For the estimation of a regression model, the model of logistic regression built in this study is a non-linear regression model, which can be directly estimated by using maximum likelihood estimation (MLE). Thus, the MLE is adopted to estimate the coefficient. In this study, the sample size is the passenger volume of all the departure stations connected to the investigated destination station, which is marked as $N$. The same with Equation \ref{eq:chp3:LogisticRegression}, $p_i$ is the probability for choosing to get off, thus, $1-p_i$ represent the probability for choosing not to get off. Then the occurrence probability $L(\theta)$ in all observation sample can be expressed as Equation \ref{eq:chp3:MLE}:
@@ -176,6 +142,14 @@ For the estimation of a regression model, the model of logistic regression built
 	L(\theta)=\prod_{i=1}^{N}{p_i}^{y_i}(1-p_i)^{(1-y_i)}
 	\label{eq:chp3:MLE}
 \end{equation}
+
+\begin{description}
+	\normalsize
+	\item[\textbf{Where:}]
+	\item[$p_i$] is the probability of getting off at the investigated destination station for the $i$th passenger.
+	\item[$y_i$] is the choice of $i$th passenger, of which $y_i = 1$ means getting off at the investigated destination station, $y_i = 0$ means not getting off at the investigated station.
+	\item[$N$] is the number of passengers riding rail transit at all the departure stations connected to the investigated destination station
+\end{description}
 
 \section{Results}
 %
@@ -195,7 +169,7 @@ As the result, all the stations are fallen into six categories, they are medium-
 	\begin{tabular}{p{12em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{5em}<{\centering}p{5em}<{\centering}p{5em}<{\centering}}
 		
 		\Xhline{1.5pt}
-		Type & Population density & Commerce & Office & Residence & Education & Land use Aggregation & Bus Capacity & Bus Accessibility \\
+		Type & Population density & Commerce & Office & Residence & Education & Land Use Aggregation & Bus Capacity & Bus Accessibility \\
 		\midrule
 		
 		Medium-density residence & 98 & 4\% & 3\% & \cellcolor[rgb]{.8, .8, .8} 83\% & 4\% & 0.34 & 18 & 28 \\
@@ -209,6 +183,7 @@ As the result, all the stations are fallen into six categories, they are medium-
 	\end{tabular}
 	%
 	\begin{description}
+		\normalsize
 		\label{note:tab:chp3:StationClassification}
 		\item[Note:] the highlighted cells refer to the representative values that having much higher percentage than other land use types.
 	\end{description}
@@ -223,7 +198,7 @@ To investigate the stations with significant differences in land use characteris
 	\centering
 	\caption{Result of Logistic Regression}
 	\label{tab:chp3:Result}
-	\scriptsize % 该表使用小字体
+	\footnotesize % 该表使用小字体
 	\renewcommand{\arraystretch}{1} % 重设表间距
 	
 	\begin{tabular}{p{7em}p{5em}p{5em}<{\centering}rrrrrrrrr}
@@ -254,24 +229,24 @@ To investigate the stations with significant differences in land use characteris
 		& & \textsl{Exp(B)} & 0.95 & 0.94 & 0.94 & 0.93 & 0.97 & & 1.07 & 1.01 & 1.00 \\
 		\midrule
 		
-		\multirow{3}[0]{7em}{High-density residence} & \multirow{3}[0]{5em}{Fujisaki} & \textsl{B} & 0.01 & & -0.01 & 0.01 & -0.02 & & -0.06 & 0.00 & 0.00 \\
-		& & \textsl{P-value} & 0.00 & & 0.00 & 0.00 & 0.00 & & 0.00 & 0.00 & 0.00 \\
-		& & \textsl{Exp(B)} & 1.01 & & 0.99 & 1.01 & 0.98 & & 0.95 & 1.00 & 1.00 \\
+		\multirow{3}[0]{7em}{High-density residence} & \multirow{3}[0]{5em}{Fujisaki} & \textsl{B} & 0.01 & \cellcolor[rgb]{.8, .8, .8} 0.00 & -0.01 & 0.01 & -0.02 & & -0.06 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & \cellcolor[rgb]{.8, .8, .8} 0.18 & 0.00 & 0.00 & 0.00 & & 0.00 & 0.00 & 0.00 \\
+		& & \textsl{Exp(B)} & 1.01 & \cellcolor[rgb]{.8, .8, .8} 1.00 & 0.99 & 1.01 & 0.98 & & 0.95 & 1.00 & 1.00 \\
 		\midrule
 		
-		\multirow{3}[0]{7em}{Education} & \multirow{3}[0]{5em}{Hakozakikyudai} & \textsl{B} & 0.02 & & 0.02 & 0.03 & -0.01 & & -0.13 & 0.00 & 0.00 \\
-		& & \textsl{P-value} & 0.00 & & 0.00 & 0.00 & 0.00 & & 0.00 & 0.04 & 0.00 \\
-		& & \textsl{Exp(B)} & 1.02 & & 1.02 & 1.03 & 0.99 & & 0.88 & 1.00 & 1.00 \\
+		\multirow{3}[0]{7em}{Education} & \multirow{3}[0]{5em}{Hakozakikyudai} & \textsl{B} & 0.02 & \cellcolor[rgb]{.8, .8, .8} 0.00 & 0.02 & 0.03 & -0.01 & & -0.13 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & \cellcolor[rgb]{.8, .8, .8} 0.53 & 0.00 & 0.00 & 0.00 & & 0.00 & 0.04 & 0.00 \\
+		& & \textsl{Exp(B)} & 1.02 & \cellcolor[rgb]{.8, .8, .8} 1.00 & 1.02 & 1.03 & 0.99 & & 0.88 & 1.00 & 1.00 \\
 		\midrule
 		
-		\multirow{3}[0]{7em}{Office} & \multirow{3}[0]{5em}{Gofukumachi} & \textsl{B} & 0.02 & -0.02 & 0.02 & 0.05 & -0.01 & & & 0.00 & 0.00 \\
-		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00 & 0.01 & & & 0.03 & 0.00 \\
-		& & \textsl{Exp(B)} & 1.02 & 0.98 & 1.02 & 1.06 & 0.99 & & & 1.00 & 1.00 \\
+		\multirow{3}[0]{7em}{Office} & \multirow{3}[0]{5em}{Gofukumachi} & \textsl{B} & 0.02 & -0.02 & 0.02 & 0.05 & -0.01 & & \cellcolor[rgb]{.8, .8, .8} -0.01 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00 & 0.01 & & \cellcolor[rgb]{.8, .8, .8} 0.72 & 0.03 & 0.00 \\
+		& & \textsl{Exp(B)} & 1.02 & 0.98 & 1.02 & 1.06 & 0.99 & & \cellcolor[rgb]{.8, .8, .8} 0.99 & 1.00 & 1.00 \\
 		\midrule
 		
-		\multirow{3}[0]{7em}{Commerce} & \multirow{3}[0]{5em}{Tenjinn} & \textsl{B} & -0.01 & -0.01 & 0.01  & 0.03  & 0.02  & & 0.06 & & 0.00 \\
-		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00  & 0.00 & & 0.00 & & 0.00 \\
-		& & \textsl{Exp(B)} & 1 & 0.99 & 1.01 & 1.03 & 1.02 & & 1.06 & & 1.00 \\
+		\multirow{3}[0]{7em}{Commerce} & \multirow{3}[0]{5em}{Tenjinn} & \textsl{B} & -0.01 & -0.01 & 0.01  & 0.03  & 0.02  & & 0.06 & \cellcolor[rgb]{.8, .8, .8} 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00  & 0.00 & & 0.00 & \cellcolor[rgb]{.8, .8, .8} 0.38 & 0.00 \\
+		& & \textsl{Exp(B)} & 1 & 0.99 & 1.01 & 1.03 & 1.02 & & 1.06 & \cellcolor[rgb]{.8, .8, .8} 1.00 & 1.00 \\
 		\midrule
 		
 		\multirow{3}[0]{7em}{Airport} & \multirow{3}[0]{5em}{Fukuoka Airport} & \textsl{B} & -0.03 & 0.03 & -0.01 & -0.02 & 0.03 & & -0.08 & 0.00 & 0.00 \\
@@ -280,22 +255,27 @@ To investigate the stations with significant differences in land use characteris
 		\Xhline{1.5pt}
 		
 	\end{tabular}%
+%
 	\begin{description}
+		\normalsize
 		\label{note:tab:chp3:Result}
-		\item[Note:] \textsl{B} is the coefficient, \textsl{Exp(B)} is the odds ratio. The blank means the estimated value is not significant at the 0.05 level.
+		\item[Note:]
+		$B$ is the coefficient \\
+		$Exp(B)$ is the odds ratio \\
+		Gray cell means the estimated value is not significant at the significance level of 0.05 \\
 	\end{description}
 	
 \end{sidewaystable}%
 
 \subsection{Estimation of logistic regression}
 %
-For the logistic regression model adopted in this study, the independent variable is the choice of getting off at the object station or not. The factor influencing the choice is the land use attribution and impedance of the other stations connected to the object station. Because the third line is not directly connected with the first and second line, the third line is separated from the first and second line when dealing with the model. That is, if the object station belongs to the first or second line, the model will only examine the connectivity with other stations within the first and second line. On the contrary, if the object station belongs to the third line, the connectivity will be only investigated within the third line. The result of estimation is shown in Table \ref{tab:chp3:Result}.
+In this study, the independent variable is the choice of getting off at the object station or not, and the influencing factors are land use and impedance between stations and stations. Notably, in the case of Fukuoka subway network, subway line 3 is not directly connected with that line 1 and line 2, thus subway line 3 is addressed separately from subway line 1 and line 2. That is, if the object station belongs to subway line 3, the connectivity will be only investigated within subway line 3. The result of estimation is shown in Table \ref{tab:chp3:Result}.
 
 %
-All the estimation showed in in Table \ref{tab:chp3:Result} are statistically significant at the 0.05 or 0.01 level. The index of \textsl{Exp(B)}, which means the odds ratio, represents the extent to the effect on the probability of choice if the coefficient \textsl{B} changes one unit. Here giving a brief explanation of the index of \textsl{Exp(B)}, since the unit and meaning of the variables entered the models are different. For the variables of land use, the index of \textsl{Exp(B)} represents that the 1 percent (0.01 unit) change in the variables will lead to an \textsl{Exp(B)} multiples of increases in the probability of getting off at the object station. For the variables of impedance, it means the 1 unit change in the variables will lead to an \textsl{Exp(B)} multiples of increases in the probability of choosing the object station as a destination. 
+The estimation is as shown in Table \ref{tab:chp3:Result}, the values in gray cell mean that this factor showed no statistical significance at the confidence level of 0.05. The index of $Exp(B)$, which is the odds ratio, represents the extent to the effect on the probability of choice if the coefficient $B$ changes one unit. Here giving a brief explanation of the index of $Exp(B)$, since the unit and meaning of the variables entered the models are different. For the variables of land use, the index of $Exp(B)$ represents that the 1 percent (0.01 unit) change in the variables will lead to an $Exp(B)$ multiples of increases in the probability of getting off at the object station. For the variables of impedance, it means the 1 unit change in the variables will lead to an $Exp(B)$ multiples of increases in the probability of choosing the object station as a destination. 
 
 %
-Here takes the Tenjin station as an example to make a further explanation. From the point of land use, the increase of commerce and office floor area in the catchment area of the boarding stations can lead to a decrease in the probability of choosing the Tenjin station as the destination station; while the increase of residence and education floor area in the catchment area of boarding stations can raise the probability of choosing to go the Tenjin station. If interpreted in terms of connectivity, the business type of Tenjin Station is weakly connected to stations with the same commercial type, and the stations of office type; while the stations of business type have relatively strong connectivity with the stations of residence and education type.
+A further explanation taking the Tenjin station as an example is given as below. From the point of land use, the increase of commerce and office floor area in the catchment area of the boarding stations can lead to a decrease in the probability of choosing the Tenjin station as the destination station; while the increase of residence and education floor area in the catchment area of boarding stations can raise the probability of choosing to go the Tenjin station. If interpreted in terms of connectivity, the business type of Tenjin Station is weakly connected to stations with the same commercial type, and the stations of office type; while the stations of business type have relatively strong connectivity with the stations of residence and education type. 
 
 %
 \section{Discussion}
@@ -321,5 +301,6 @@ Based on the results in this study, the next stage of this research will focus o
 
 % reference
 \clearpage % 新起一页
-\bibliographystyle{apacite}
-\bibliography{chapters/ref_CUPUM}
+% \bibliographystyle{apacite}
+\bibliographystyle{IEEEtran}
+\bibliography{ref}

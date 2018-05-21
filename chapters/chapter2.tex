@@ -1,4 +1,4 @@
-\chapter{Explain Ridership at Station Level}
+\chapter{Influencing Factors on Ridership at Station Level}
 % \markright{CHAPTER 2}
 %
 \section{Introduction}
@@ -39,7 +39,7 @@ This study focuses on 35 subway stations in Fukuoka City (the sixth largest city
 % Figure 1
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{chp2ResearchArea}
+	\includegraphics[width=0.8\linewidth]{chp2ResearchArea}
 	\caption{Research area and the distribution of subway stations}
 	\label{fig:chp2:ResearchArea}
 	\small
@@ -155,56 +155,89 @@ In this study, the average daily ridership of each subway station is used as the
 The land and buildings provide people space for living, working and recreating, and people tend to have different travel preferences with different trip purposes. Therefore, the floor area is commonly thought to be the primary factor that can affect ridership. Another compound indicator, land use diversity, is also thought to be an important factor that can influence transit ridership, because people living in the catchment area with higher land use diversity can do most of their daily activities at different types of buildings without taking public transport.
 
 %
-The same with previous studies, this study choose several types of land use with higher proportion to assess the indicator of land use diversity, including residential, office, commercial, education. The four main types of land use account for about 90\% of all the floor area in Fukuoka, especially in subway catchment area, reaching more than 95\%. However, different from the general definition of land use diversity, the proportion of land use is not evenly distributed in the case of Fukuoka City. As shown in Table \ref{tab:chp2:LandUse}, obviously, it is significantly different from average distribution, and the proportion varies with the variation of the catchment area. To describe the land use diversity closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station catchment area (800m pedestrian distance) in Fukuoka.
+The same with previous studies, this study choose several types of land use with higher proportion to assess the indicator of land use diversity, including residential, office, commercial, education. The four main types of land use account for about 90\% of all the floor area in Fukuoka, especially in subway catchment area, reaching more than 95\%. However, different from the general definition of land use diversity, the proportion of land use is not evenly distributed in the case of Fukuoka City. As shown in Table \ref{tab:chp2:ProportionOfLanduse}, obviously, it is significantly different from average distribution, and the proportion varies with the variation of the catchment area. To describe the land use diversity closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station catchment area (800m pedestrian distance) in Fukuoka.
 
-% Table 4
+% Table 2
 \begin{table}[htbp]
 	\centering
-	\caption{Average proportion of each land use type in different PCA}
-	\label{tab:chp2:LandUse}%
+	\caption{Proportion of land use in terms of the range of PCA}
+	\label{tab:chp2:ProportionOfLanduse}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	% 控制表的行间距
-	% \renewcommand{\arraystretch}{1}
-	% \begin{tabular}[option]{layout} option两个可选，t：按表格顶部对齐，顶部为表格第一行或表线；b：按表格底部对齐，底部是表格第一行或表线
-	% \begin{array} 按数学模式制表，可以控制显示的小数点位数等
-	\begin{tabular}{ccccc}
-		
-		\Xhline{1.5pt} % 依赖于 makecell 包
-		\diagbox[height=3em]{Range}{Type} & Business & Commerce & Residence & Education\\ % 表头
-		\midrule % 依赖于 booktabs 包
-		
-		% 表内容
-		\multicolumn{1}{c}{600 m}
-		& 20.8\% & 14.9\% & 55.7\% & 6.0\%\\
-		\multicolumn{1}{c}{800 m}
-		& 18.8\% & 12.8\% & 59.4\% & 6.7\%\\
-		\multicolumn{1}{c}{1000 m}
-		& 17.7\% & 11.6\% & 62.0\% & 6.5\%\\
-		\multicolumn{1}{c}{City Average}
-		& 10.5\% & 7.7\% & 65.2\% & 5.5\%\\
+	\begin{tabular}{cccccc}
 		\Xhline{1.5pt}
-	\end{tabular}
+		Range of PCA & Residence & Office & Commerce & Education & Total \\
+		\midrule
+		
+		600 & 51.80\% & 19.30\% & 13.80\% & 5.50\% & 90.50\% \\
+		\rowcolor[rgb]{.8, .8, .8}
+		800 & 55.30\% & 17.50\% & 12.00\% & 6.20\% & 90.90\% \\
+		1000 & 57.60\% & 16.50\% & 10.80\% & 6.00\% & 90.90\% \\
+		1200 & 59.20\% & 15.50\% & 10.20\% & 5.90\% & 90.80\% \\
+		Ave & 62.80\% & 10.10\% & 7.50\% & 5.30\% & 85.70\% \\
+		\Xhline{1.5pt}
+		
+	\end{tabular}%
 	\normalsize
 	\begin{description}
-		\label{note:tab:chp2:LandUse}
-		\item[Note:]
-		The value marked with grey is adopted in this study.
+		\label{note:tab:chp2:ProportionOfLanduse}
+		\item[Note:] The value marked with grey is adopted in this study.
 	\end{description}
-\end{table}
+\end{table}%
+
+
+% Table 4 和第三章的表重复了，删掉一个
+%\begin{table}[htbp]
+%	\centering
+%	\caption{Average proportion of each land use type in different PCA}
+%	\label{tab:chp2:LandUse}%
+%	\small
+%	\renewcommand{\arraystretch}{1.25} % 重设表间距
+%	% 控制表的行间距
+%	% \renewcommand{\arraystretch}{1}
+%	% \begin{tabular}[option]{layout} option两个可选，t：按表格顶部对齐，顶部为表格第一行或表线；b：按表格底部对齐，底部是表格第一行或表线
+%	% \begin{array} 按数学模式制表，可以控制显示的小数点位数等
+%	\begin{tabular}{ccccc}
+%		
+%		\Xhline{1.5pt} % 依赖于 makecell 包
+%		\diagbox[height=3em]{Range}{Type} & Business & Commerce & Residence & Education\\ % 表头
+%		\midrule % 依赖于 booktabs 包
+%		
+%		% 表内容
+%		\multicolumn{1}{c}{600 m}
+%		& 20.8\% & 14.9\% & 55.7\% & 6.0\%\\
+%		\multicolumn{1}{c}{800 m}
+%		& 18.8\% & 12.8\% & 59.4\% & 6.7\%\\
+%		\multicolumn{1}{c}{1000 m}
+%		& 17.7\% & 11.6\% & 62.0\% & 6.5\%\\
+%		\multicolumn{1}{c}{City Average}
+%		& 10.5\% & 7.7\% & 65.2\% & 5.5\%\\
+%		\Xhline{1.5pt}
+%	\end{tabular}
+%	\normalsize
+%	\begin{description}
+%		\label{note:tab:chp2:LandUse}
+%		\item[Note:]
+%		The value marked with grey is adopted in this study.
+%	\end{description}
+%\end{table}
 
 %
-In addition, to make indicator more intuitive and simpler, the index of land use diversity is redefined as the aggregation of land use. The Euclidean Metric is used for evaluating the deviation of land use aggregation in each subway station with respect to a reference value. The value of this indicator is arranged from 0 to $\sqrt{2}$, in which the lower value represents a higher level of mixing in land use function, while the higher value means the land use function is more monotonous. This indicator of land use aggregation is defined as Equation \ref{eq:chp2:LanduseAggregation}, it is speculated to have a negative impact on ridership.
+In addition, to make indicator more intuitive and simpler, the index of land use diversity is redefined as the aggregation of land use. The Euclidean Metric is used for evaluating the deviation of land use aggregation in each subway station with respect to a reference value. The value of this indicator is arranged from $0$ to $\sqrt{2}$, in which the lower value represents a higher level of mixing in land use function, while the higher value means the land use function is more monotonous. This indicator of land use aggregation is defined as Equation \ref{eq:chp2:LanduseAggregation}, it is speculated to have a negative impact on ridership.
 
-% eq 1
+% Equation 1
 \begin{equation}
-	G=\sqrt{\sum \left ( A_{i}-P_{i} \right )^2}
-	\label{eq:chp2:LanduseAggregation}
+A=\sqrt{\sum (S_i-P_i)^2}
+\label{eq:chp2:LanduseAggregation}
 \end{equation}
-% note for eq 1
+
 \begin{description}
-	\item[Where:]
-	the $G$ is the indicator for aggregation of land use functions, $P_i$ is the average proportion of $i$ type land use, $i$ represents the type of land use (respectively government, commercial, residence and education), $A_i$ is the proportion of land use type $i$ within catchment area of subway station.
+	\normalsize
+	\item[\textbf{Where:}]
+	\item[$i$] represents the type of land use (respectively government, commercial, residence and education).
+	\item[$A$] is the indicator for aggregation of land use functions.
+	\item[$P_i$] is the average proportion of the land use with type $i$.
+	\item[$L_i$] is the floor area of land use with type $i$ within the PCA.
 \end{description}
 
 \subsubsection{Transit-related factors}
@@ -217,28 +250,26 @@ Road network is commonly used in previous studies. Users of the road network are
 %
 Another accessibility for passengers transferring from the bus is also considered from both positive and negative way. Bus service in catchment area can reflect the connectivity with other regions, by which the potential subway ridership can be shared by bus to some extent. This sharing ridership can be represented by the service capacity of all the bus operating in the same catchment area of the subway station, and the service capacity $(C)$ is expressed by Equation \ref{eq:chp2:BusCapacity} as follow. In contrast, the bus station close to subway can be used as transfer station which can increase the accessibility of subway for people who want to take the subway but living far away from subway station. In this case, the bus station will play a positive effect on ridership of subway. The indicator should represent the accessibility between subway and bus, thus it is defined as the number of bus lines within the catchment area of subway station. The indicator A representing accessibility of bus is defined as Equation \ref{eq:chp2:BusAccessibility} in the below.
 
-% eq 2
+% Equation 2
 \begin{equation}
-	C=\sum_{k}^{K}\sum_{r}^{R}f_{r}^{k}
-	\label{eq:chp2:BusCapacity}
+BC=\sum_{k}^{K}\sum_{r}^{R}f_{r}^{k}
+\label{eq:chp2:BusCapacity}
 \end{equation}
 
-% note for eq 2
-\begin{description}
-	\item[Where:]
-	the $K$ is the number of bus stations within catchment area of subway station, $R$ refers to the number of lines in one bus station and $f_r^k$ is the frequency of the $r$th line at the $k$th station.
-\end{description}
-
-% eq 3
+% Equation 3
 \begin{equation}
-	A=\sum_{k}^{K}R_{k}
-	\label{eq:chp2:BusAccessibility}
+BA=\sum_{k}^{K}R_{k}
+\label{eq:chp2:BusAccessibility}
 \end{equation}
 
-% note for eq 3
+% note for Equation 3
 \begin{description}
-	\item[Where:]
-	the $K$ is the number of bus stations within catchment area of subway station, $R_k$ is the number of bus lines passing through the $k$th bus station.
+	\normalsize
+	\item[\textbf{Where:}]
+	\item[$K$] is the numbers of bus stations within PCA.
+	\item[$R$] is the number of lines at one bus station.
+	\item[$f_{r}^{k}$] is the frequency of the $r$th line at the $k$th station
+	\item[$R_k$] is the number of bus lines passing through the $k$th bus station.
 \end{description}
 
 %
@@ -347,7 +378,7 @@ The MGWR is estimated is estimated by using a fixed Gaussian kernel function,  t
 % Figure 2
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{chp2AICcBandwidths}
+	\includegraphics[width=0.8\linewidth]{chp2AICcBandwidths}
 	\caption{Variations of AICc at different bandwidths}
 	\label{fig:chp2:AICcBandwidths}
 \end{figure}
@@ -372,14 +403,14 @@ The determination of local or global is processed in two steps: firstly, using M
 		
 		\cmidrule{1-7}\cmidrule{9-11}
 		
-		Government & ha & 0.04 & 0.51 & Random & Global &- & & 490 & 190 & 2.59 \\
-		Transportation Facility & ha & 0.29 & 0 & Clustered & Local & -1.95 & & 1020 & 200 & - \\
+		Government & ha & 0.04 & 0.51 & Random & Global &- & & 490.00 & 190.00 & 2.59 \\
+		Transportation Facility & ha & 0.29 & 0.00 & Clustered & Local & -1.95 & & 1020.00 & 200.00 & - \\
 		Land use Aggregation & \% & -0.01 & 0.84 & Random & Global & - & & 133.84 & 54.06 & 2.48 \\
 		Transfer Station & Dummy & 0.13 & 0.12 & Random & Global & - & & 5968.65 & 1198.72 & 4.98 \\
-		Bicycle Parking & 100 & -0.12 & 0.36 & Random & Global & - & & 771.7 & 89.8 & 8.59 \\
-		Bus Capacity & - & 0.7 & 0 & Clustered & Local & 0.18  & & -55.16 & 5.94  & - \\
-		Bus Accessibility & - & 0.45 & 0 &  Clustered & Local & 0.04 & & 48.61 & 2.43 & - \\
-		Job-Resident Balance & \% & 0.77 & 0 & Clustered & Local & -0.17 & & -24.11 & 3.64 & - \\
+		Bicycle Parking & 100 & -0.12 & 0.36 & Random & Global & - & & 771.70 & 89.80 & 8.59 \\
+		Bus Capacity & - & 0.70 & 0.00 & Clustered & Local & 0.18  & & -55.16 & 5.94  & - \\
+		Bus Accessibility & - & 0.45 & 0.00 &  Clustered & Local & 0.04 & & 48.61 & 2.43 & - \\
+		Job-Resident Balance & \% & 0.77 & 0.00 & Clustered & Local & -0.17 & & -24.11 & 3.64 & - \\
 		Tenant Proportion & \% & 0.24 & 0.01 & Clustered & Local & 1.02 & & -103.05 & 7.56 & - \\
 		
 		\midrule
@@ -396,6 +427,11 @@ The determination of local or global is processed in two steps: firstly, using M
 \subsection{Interpretation of coefficients}
 %
 The right part of Table \ref{tab:chp2:ResultMGWR} reports the result of MGWR model. The global variables in MGWR model have statistical significance at 95\% confidence level, it means most of the variation in ridership can be explained by the 9 variables in this present model. The signs of all terms for local variables are consistent with that of OLS model in Table \ref{tab:chp2:ExploratoryRegression}, and the values of coefficients in MGWR maintain a high consistency with OLS model. The result shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables play positive effect. The value of the explanatory variable changes by 1 unit, the subway passenger will change the value of the coefficient. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform completely opposite effect on the independent variable. Moreover, comparing with the result of OLS regression, the result of MGWR has an improvement in both adjusted R2 and AICc value, and there is a 12\% decrease in residual.
+
+%
+\subsection{Evaluation of results}
+%
+As the result from both models, MGWR has a better performance than OLS, in which the residual of MGWR is 12.27\% less than that of OLS. Also, the homogeneity of residual distribution is evaluated by using Moran’s index shown in Table \ref{tab:chp2:Residual}. As can be seen, the Moran’s index in MGWR is closer to expected value than that in OLS. The MGWR model also shows less variance and greater likelihood of random distribution (with lower z-score and higher p-value) than OLS model. The spatial autocorrelation analysis presents that the residual of OLS model is more likely to be aggregative in space.
 
 % Table 7
 \begin{table}[htbp]
@@ -421,25 +457,19 @@ The right part of Table \ref{tab:chp2:ResultMGWR} reports the result of MGWR mod
 \end{table}
 
 %
-\subsection{Evaluation of results}
-%
-As the result from both models, MGWR has a better performance than OLS, in which the residual of MGWR is 12.27\% less than that of OLS. Also, the homogeneity of residual distribution is evaluated by using Moran’s index shown in Table \ref{tab:chp2:Residual}. As can be seen, the Moran’s index in MGWR is closer to expected value than that in OLS. The MGWR model also shows less variance and greater likelihood of random distribution (with lower z-score and higher p-value) than OLS model. The spatial autocorrelation analysis presents that the residual of OLS model is more likely to be aggregative in space.
+Since the MGWR is a kind of variable coefficient regression model, the coefficients and adjusted R2 of each data point are different depending on the location of the data point, as shown in the Figure \ref{fig:chp2:LocalR}. For the 5 local variables in all 35 data points, the spatial distribution of significance level for the local variables are mapped in Figure \ref{fig:chp2:SignificanceDistribution}. For the variables of building area of transportation, bus capacity, bus accessibility, job-resident balance and tenant proportion, there are 33, 34, 35, 24 and 32 data points having statistical significance at confidence level 95\% respectively. As can be seen, the two indicators for bus proposed in this study have good performance in terms of significance and stability, while the variable of ‘tenant proportion’ does not have a strong stability in explanatory ability. Relatively, the other 4 variables have higher reliability in explaining the variety of ridership.
 
 % Figure 3
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{chp2LocalR}
+	\normalsize
+	\includegraphics[width=0.7\linewidth]{chp2LocalR}
 	\caption{The spatial distribution of local $R^2$}
 	\label{fig:chp2:LocalR}
 \end{figure}
 
-%
-Since the MGWR is a kind of variable coefficient regression model, the coefficients and adjusted R2 of each data point are different depending on the location of the data point, as shown in the Figure \ref{fig:chp2:LocalR}. For the 5 local variables in all 35 data points, the spatial distribution of significance level for the local variables are mapped in Figure \ref{fig:chp2:SignificanceDistribution}. For the variables of building area of transportation, bus capacity, bus accessibility, job-resident balance and tenant proportion, there are 33, 34, 35, 24 and 32 data points having statistical significance at confidence level 95\% respectively. As can be seen, the two indicators for bus proposed in this study have good performance in terms of significance and stability, while the variable of ‘tenant proportion’ does not have a strong stability in explanatory ability. Relatively, the other 4 variables have higher reliability in explaining the variety of ridership.
-
 % Feagure 4
-
 % 多图联排的模板
-
 % 如果使用\usepackage{subfig},可以对每个子图进行交叉引用
 % 用法：\subfloat[...]{\label{sub-fig-1}% 为子图加交叉引用，详见该包的说明
 % Note： 两个minipage之间不能有空行，否则无法对齐
@@ -498,7 +528,10 @@ Since the MGWR is a kind of variable coefficient regression model, the coefficie
 %
 \section{Discussion}
 %
-This study focuses on small sample size, using 9 explanatory variables to describe the variety of subway ridership in a local central city with 35 subway stations, while regarding the outcomes of some existed studies in Table \ref{tab:chp1:Review}, most of these studies have a middle sample size (ranged from 150-450), and the number of explanatory variables is general about 10. The adjusted $R^2$ (0.96) in this study is a relatively higher one comparing with other studies. Most of the variation in ridership can be explained by the 9 variables in this present model. But the adjusted $R^2$ is not the only judgment criterion in the regression model, especially in the small sample case. The result of this study shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables plays positive effect. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform fully opposite effect on the independent variable. Regarding the coefficient showed in Table \ref{tab:chp2:ExploratoryRegression} and Table \ref{tab:chp2:ResultMGWR} obtained from the two models and 9 variables, the coefficients in both OLS model and MGWR model have consistent signs and similar values. The rationale of estimated results will be discussed from the three categories of indicators.
+This study focuses on small sample size, using 9 explanatory variables to describe the variety of subway ridership in a local central city with 35 subway stations, while regarding the outcomes of some existed studies in Table \ref{tab:chp1:Review}, most of these studies have a middle sample size (ranged from 150-450), and the number of explanatory variables is general about 10. The adjusted $R^2$ (0.96) in this study is a relatively higher one comparing with other studies, which means that most of the variation in ridership can be explained by the 9 variables in this present model. 
+
+%
+However, the adjusted $R^2$ is not the only judgment criterion in the regression model, especially in the small sample case. The result of this study shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables plays positive effect. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform fully opposite effect on the independent variable. Regarding the coefficient showed in Table \ref{tab:chp2:ExploratoryRegression} and Table \ref{tab:chp2:ResultMGWR} obtained from the two models and 9 variables, the coefficients in both OLS model and MGWR model have consistent signs and similar values. The rationale of estimated results will be discussed from the three categories of indicators.
 
 %
 \subsection{Built environment}
@@ -506,10 +539,13 @@ This study focuses on small sample size, using 9 explanatory variables to descri
 Built environment has been considered as a critical driver for influencing transit ridership, and some results of empirical studies have supported it \cite{sohn2010factors,zhao2013influences,chakraborty2013land}. Built environment can reflect land use density around the station, different kind of building function has different demand in using subway \cite{chakraborty2013land}. In this study, two variables about building floor area (government area and transportation facility area) are found to be valid in explaining subway ridership (with statistical significance at 0.05 level). The coefficients showed in Table \ref{tab:chp2:ResultMGWR} implies that there is an increase of 5/10 passengers per additional 100 $m^2$ building floor area for government/transportation facility respectively. 
 
 %
-Refer to the results of previous studies, the building floor area of office and commerce was normally considered as the crucial driver for generating transit ridership. However, travel habit and culture are not the same in all cities. The result of this study stated that in Fukuoka people working at or visiting government office are likely to use the subway. Another valid indicator is building floor area of transportation facilities, which mainly represents the scale of public transit in the urban area. Obviously, the larger station usually has a larger scale of passengers, but the causal relationship is that forecasted ridership determined the scale of the station, rather than the opposite direction. Thus, this indicator of transportation facility can be viewed as an index for posterior evaluation, to judge if the planning is consistent with the fact, but not a predictable index. In fact, the variables of office area, commerce area, and residence area are also placed on the candidate list, but they are not showing statistical significance. One possible conjecture is given here: these three indicators represent the major category in building type, but they also contain several subcategories which cannot be expressed in the indicators. It means that each of these indicators is interpreting multiple issues, for which they cannot be consistent with statistics.
+Refer to the results of previous studies, the building floor area of office and commerce was normally considered as the crucial driver for generating transit ridership. However, travel habit and culture are not the same in all cities. The result of this study stated that in Fukuoka people working at or visiting government office are likely to use the subway. Another valid indicator is building floor area of transportation facilities, which mainly represents the scale of public transit in the urban area. Obviously, the larger station usually has a larger scale of passengers, but the causal relationship is that forecasted ridership determined the scale of the station, rather than the opposite direction. Thus, this indicator of transportation facility can be viewed as an index for posterior evaluation, to judge if the planning is consistent with the fact, but not a predictable index. In fact, the variables of office area, commerce area, and residence area are also placed on the candidate list, but they are not showing statistical significance. One possible conjecture can be given here: these three indicators represent the major category in building type, but they also contain several subcategories which cannot be expressed in the indicators. It means that each of these indicators is interpreting multiple issues, for which they cannot be consistent with statistics.
 
 %
-Moreover, the land use mix is also widely thought to be a crucial factor that can influence subway ridership. Some researches argued that the diversity of land use has a positive relationship with ridership, which means the higher diversity of land use can attract more passengers \cite{gutierrez2011transit,jun2015land}. However, the finding of this study shows an opposite result. The index of land use mix is redefined into land use aggregation in this study, and the result shows that the more aggregated the land use is the more ridership will be generated. In another word, the high diversity of land use will lead to a decrease in subway ridership. The relationship can be interpreted as following from the perspective of principles and features of TOD. A complete TOD area should have various kinds of urban function, and the main aim of TOD is to allow people to do their daily activities by walking in the TOD area, thus reducing inefficient vehicle trip. That is, if people can do most of their daily activities around the station, they will tend to reduce the use of subway. It is still not clear why this difference occurs. And unfortunately, the indicator of land use mix was not discussed in previous studies, there is little reference to explain it. A hypothesis is proposed to interpret this difference, even though there is no way to verify it, that is the proportion of each kind of land use should not be equal, the proportion in Fukuoka is as shown in Table \ref{tab:chp2:LandUse} \cite{bhat2007comprehensive}. Therefore, maybe this indicator with statistical significance in the prior studies was interpreting something else related to ridership but not describing land use mix. The results may be just statistically relevant to the ridership coincidentally. And that is the reason why this study proposes the method of identifying valid explanatory variables. Especially for small sample case, repeating test can reduce the probability of contingency.
+Moreover, the land use mix is also widely thought to be a crucial factor that can influence subway ridership. Some researches argued that the diversity of land use has a positive relationship with ridership, which means the higher diversity of land use can attract more passengers \cite{gutierrez2011transit,jun2015land}. However, the finding of this study shows an opposite result. The index of land use mix is redefined into land use aggregation in this study, and the result shows that the more aggregated the land use is the more ridership will be generated. In another word, the high diversity of land use will lead to a decrease in subway ridership. 
+
+%
+A possible explanation can be interpreted as following from the perspective of principles and features of TOD. A complete TOD area should have various kinds of urban function, and the main aim of TOD is to allow people to do their daily activities by walking in the TOD area, thus reducing inefficient vehicle trip. That is, if people can do most of their daily activities around the station, they will tend to reduce the use of subway. It is still not clear why this difference occurs. Unfortunately, the indicator of land use mix was not discussed in previous studies, there is little reference to explain it. A hypothesis is proposed to interpret this difference, even though there is no way to verify it, that is the proportion of each kind of land use should not be equal, the proportion in Fukuoka is as shown in Table \ref{tab:chp2:ProportionOfLanduse} \cite{bhat2007comprehensive}. Therefore, maybe this indicator with statistical significance in the prior studies was interpreting something else related to ridership but not describing land use mix. The results may be just statistically relevant to the ridership coincidentally. And that is the reason why this study proposes the method of identifying valid explanatory variables. Especially for small sample case, repeating test can reduce the probability of contingency.
 
 %
 \subsection{Transportation accessibility}
@@ -517,7 +553,10 @@ Moreover, the land use mix is also widely thought to be a crucial factor that ca
 Accessibility is also thought to be a key factor influencing ridership. K. Sohn and H.Shim further divided this factor into internal and external accessibility, which was also cited and used by Zhao et al., the former represented the accessibility to station within the catchment area, and the latter reflected the connectivity to the place outside the catchment area \cite{sohn2010factors,zhao2013influences}. This study identified four valid variables in transportation accessibility: transfer dummy, bicycle parking, bus capacity and bus accessibility. The transfer dummy and bicycle parking can be easily classified into external accessibility and internal accessibility respectively, and both have a positive effect on ridership. It means the more easily people reach subway station, the more likely they will use the subway. This result is also consistent with prior studies \cite{gutierrez2011transit,cardozo2012application,kuby2004factors}.
 
 %
-However, the effect of bus service on subway ridership is not so intuitive and clear as other factors. It can be speculated that bus service may have both positive and negative effects on ridership, for there are both competitive and transferring relationships between bus and subway simultaneously. Therefore, a greater transport capacity of bus service can share part of the passengers of the subway while a more accessible route network, bus service can transfer more passengers to subway from other places. And the result from this study has verified this hypothesis that the indicator of bus accessibility and bus capacity showed the totally opposite effect on subway ridership, the former have a positive effect on subway ridership while the latter is in contrary. The indicator of bus service was intuitively considered to be related with subway ridership, and it often appears in the candidate variables list of prior studies, but is rarely estimated successfully in final model (some studies used the indicator of feeder bus rather than normal urban bus \cite{sohn2010factors,cardozo2012application,zhao2013influences}. Besides, the factor of trunk bus which is thought to be competitive with subway, is also considered in the previous study, but it did not show statistical significance \cite{sohn2010factors}. It can be guessed that the influence of bus service cannot be interpreted by only one indicator since the factor of bus service contains more than one kind of information. This result provided some inspiration that every transportation mode having both competitive and transferring relationships with another transportation mode may have both positive and negative effect on the others simultaneously.
+However, the effect of bus service on subway ridership is not so intuitive and clear as other factors. It can be speculated that bus service may have both positive and negative effects on ridership, for there are both competitive and transferring relationships between bus and subway simultaneously. Therefore, a greater transport capacity of bus service can share part of the passengers of the subway while a more accessible route network, bus service can transfer more passengers to subway from other places. And the result from this study has verified this hypothesis that the indicator of bus accessibility and bus capacity showed the totally opposite effect on subway ridership, the former have a positive effect on subway ridership while the latter is in contrary. 
+
+%
+The indicator of bus service was intuitively considered to be related with subway ridership, and it often appears in the candidate variables list of prior studies, but is rarely estimated successfully in final model (some studies used the indicator of feeder bus rather than normal urban bus \cite{sohn2010factors,cardozo2012application,zhao2013influences}. Besides, the factor of trunk bus which is thought to be competitive with subway, is also considered in the previous study, but it did not show statistical significance \cite{sohn2010factors}. It can be guessed that the influence of bus service cannot be interpreted by only one indicator since the factor of bus service contains more than one kind of information. This result provided some inspiration that every transportation mode having both competitive and transferring relationships with another transportation mode may have both positive and negative effect on the others simultaneously.
 
 %
 \subsection{Demographic and social economic environment}
@@ -537,7 +576,7 @@ This study focuses on subway ridership at station level. However, the ridership 
 
 \section{Conclusion}
 %
-This study examined the factors that may be associated with transit ridership using the case of subway stations in Fukuoka, Japan. There 9 effective factors selected from candidate indicators to describe the variation of subway ridership in the final models. The result from both the OLS and MGWR models shows that the 9 indicators performed stably and reasonable. The procedure proposed in this study is verified to be effective in identifying valid explanatory indicators in terms of small sample cases. The major contribution of this study can be summarized as follows.
+This study examined the factors that may be associated with transit ridership using the case of subway stations in Fukuoka, Japan. There are 9 effective factors selected from candidate indicators to describe the variation of subway ridership in the final models. The results from both the OLS and MGWR model show that the 9 indicators performed stably. The procedure proposed in this study is verified to be effective in identifying valid explanatory indicators in terms of small sample cases. The major contribution of this study can be summarized as follows.
 
 %
 First, on the base of previous studies, this study reclassified and reorganized the indicator framework. Besides the indicators appeared in the previous studies, the indicator of land use diversity was redefined as an aggregation of land use to make the expression of this index more intuitive and closer to reality. Additionally, two variables representing bus accessibility and bus capacity were proposed in this study to explore how can bus service influence the subway ridership.
@@ -553,5 +592,6 @@ Finally, as a summary and prospect, direct station-level transit ridership forec
 
 % reference
 \clearpage % 新起一页
-\bibliographystyle{apacite}
-\bibliography{chapters/ref_AIJ}
+% \bibliographystyle{apacite}
+\bibliographystyle{IEEEtran}
+\bibliography{ref}

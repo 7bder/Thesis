@@ -17,9 +17,10 @@
 % \usepackage{fancyhdr} % 页眉页脚设置包, 使用简单，但我没用。
 
 % 断字和参考文献格式相关
+% 使用apa格式参考文献时，使用以下命令。数字格式直接用默认格式, 下边这些需要注释掉，否则报错。
 \usepackage[activate={true,nocompatibility}]{microtype} % 不完美解决断行断字问题。参数是自适应调整字间距。keyword: letterspace, hyphenate, expansion, protrusion
-\usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
-\usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
+% \usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
+% \usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
 
 % 几个没试成功的包
 % \usepackage{ragged2e} % 设置两端对齐的，没试成功
@@ -32,7 +33,7 @@
 % \pagestyle{myheadings} % 自定义页眉，显示章节，页码。对于页脚无效
 \graphicspath{ {images/} } % 设定图片目录
 \renewcommand{\baselinestretch}{1.5} % 基础行间距1.5倍
-\setlength{\parskip}{0.5\baselineskip} % 设置段间距
+\setlength{\parskip}{0.7\baselineskip} % 设置段间距
 \topskip 10mm % 正文顶部到页眉的距离
 % \footskip 5mm % 正文底部到页脚的距离
 
@@ -47,13 +48,25 @@
 	left=20mm,right=20mm,
 	bindingoffset=10mm, top=25mm,bottom=25mm}
 
+% 调整标题字号行距等
+\usepackage{sectsty}
+\sectionfont{\fontsize{16}{0}\selectfont}
+\subsectionfont{\fontsize{14}{0}\selectfont}
+\subsubsectionfont{\fontsize{13}{0}\selectfont}
+
+% 全局调整列表的间距
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+
 % 全文开始
 \begin{document}
 % 表页制作
 \title{
-	{\Huge Rail Transit Ridership in TOD Area}\\
+	{\Huge Analysis of Influencing Factors on Use of Rail Transit}\\
 	{\vspace{3cm}}
-	{\includegraphics[scale=0.2]{university.jpg}}\\
+	{\includegraphics[width=0.2\linewidth]{university.jpg}}\\
 	{\vspace{2cm}}
 	{\large Graduate School of Human-Environment Studies}\\
 	{\large Kyushu University}
@@ -69,19 +82,19 @@
 
 % 声明页
 \centerline{\textbf{\Large STATEMENT}}
-
+%
 This academic dissertation is independent research work conducted under the guidance of the supervisor. Except for the quoted content, this dissertation does not contain any research result that has been published by other individuals or groups.\\
 \newline
 \newline
-
+%
 Postscript:
-
+%
 This dissertation is edited in \LaTeX. For any details on content or typesetting, please contact below.
 
 \begin{flushright}
-Name: Chen Qi \\
-E-mail: chenqi.clever@gmail.com \\
-QQ: 331730634 \\
+	Name: Chen Qi \\
+	E-mail: chenqi.clever@gmail.com \\
+	QQ: 331730634 \\
 \end{flushright}
 
 % 这里设置目录的字体
@@ -94,17 +107,38 @@ QQ: 331730634 \\
 \tableofcontents % 内容目录
 \listoffigures % 图目录
 \listoftables % 表目录
+\listtablename{name}
 
 % 这里开始前书部分
 \frontmatter
 
 % 设置正文字号
-\renewcommand{\baselinestretch}{1.8} % 正文页基础行间距1.8倍
+\renewcommand{\baselinestretch}{1.6} % 正文页基础行间距1.8倍
 \fontsize{13pt}{13pt} % 正文字号13pt，行间距13pt，即1倍基础行距
 \selectfont
 
 % 声明
 \chapter{Acknowledgments}
+% Most valuable thing duing Ph.D., the overview.
+The journey of PhD has both pleasure and pain, but I deeply trust that all I went through today, either good or bad, will be the valuable life experience in the future. If mentioning the most memorable thing during my PhD, maybe I would say the process of shifting the way of thinking from a common people to a researcher, even I can say this is the most valuable thing that I obtained after the 4 years rather than the degree certificate.
+
+% 我要谢！谢全家十八辈儿！
+I am not willing to describe the period of PhD in a suffering way, but frankly, I have to say that without the support and help from various people around me, I should have already stopped my feet underway. There are so many thanks I would like to say, please let me express my appreciation one by one.
+
+% 我要谢！一个一个谢！
+First and foremost, I would like to thank Prof. Zhao Shichen, my supervisor, for the guidance and instruction not only in my studies but more in work and life attitude. The time of drinking with Prof. Zhao is so joyful and memorable, this drinking time also shortened the distance between us students and professor, for which I appreciated a lot. It's my luck that I came to Zhao laboratory doing research, thank to Prof. Zhao again for teaching me so many things.
+
+% 谢陈思婷帮我搞论文
+I would like to thank the fellow students in our laboratory for their feedback on my papers. Communication is an important segment of research, a good research without readers has no meaning. Thanks to everyone for the their patients. Among them, I would like to thank Chen Siting especially for helping a lot in checking English and organizing logic of my papers. 
+
+% 谢日本小鬼子教我日语
+Also, I have to say thanks to the cute Japanese fellows, although not for helping me in research. They talked with me, taught me language and culture, made me adapt Japanese life soon. My period in Japan is so enrich and interesting, a large part of which can be attributed to them. In particular, I would like to say thanks to Ikutake Shin, Yoshioka Daiki, Higuchi Go, thanks for their accompany in countless overnights.
+
+% 感谢韩博士家的麻将，火锅，炒菜
+One more thing, as we know relax is also important especially during the relatively arduous PhD period, how to spend the boring time and retrieve research condition is always a serious problem puzzling PhD students. Dr. Han Guofeng, my ex-roommate at Kyushu University International House, and his current-roommate provided us the party place in his apartment, where we have hotpot party and even playing mahjong in leisure time. Thanks to my mahjong partners, together with them a lot of happiness is created, boring time is spent, thus accomplishing research with a better status.
+
+% 最后的最重要，我要感谢China, CSC，他们给我钱
+The most important thing always come last, all the expense during the 4 years PhD period is sponsored by China Scholarship Council (CSC). With this money, I clearly know that my country is standing behind me, she gives me confidences to step into a new environment, to face the world. Thanks to my country.
 
 % 摘要
 \chapter{Abstract}
@@ -118,7 +152,7 @@ Urbanization caused many social problems in both developing and developed countr
 This research sets the primary purpose of explaining rail transit ridership in TOD area, from which is expanded to three specific aspects: 1. explaining transit ridership at station level; 2. explaining transit ridership at station-to-station level; 3. explaining the walking duration of to transit stations. To this end, the research questions are as follow: 1. to find an approach for screening effective influencing factors; 2. to describe the relationship of transit ridership between stations and stations; 3. to explore the relation between walking distance and walking preference.
 
 % 具体研究的内容，包含方法
-The first question is answered through the exploratory regression that decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables are then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
+The first question is answered through the exploratory regression decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables are then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
 
 For the second question, the relationship of transit ridership between stations and stations is analyzed from the view of land use within the station catchment area. This relationship then is converted into a binary choice problem, and is estimated using logistic regression model. The results show that for passengers the variations in land use in departure stations can lead to variations in the choice of destination stations.
 
@@ -128,7 +162,7 @@ As to the third question, this research examines the feature distribution of ind
 Based on the achievements of this research, several recommendations are given as follow: 1. before estimating transit ridership a general process of screening valid factors is necessary; 2. since the transit ridership of one station is not only affected by the factors within the catchment area of that station but also affected by the other stations in the same transit network, the research perspective should be shifted to station-to-station level and further to the line or network level. 3. accuracy estimation for catchment area needs further exploration. \\ \\ \\
 
 \noindent % 不缩进
-\textbf{Keywords:} Urban planning; Urban transportation; TOD; Rail transit ridership; Catchment area; Land use; Individual characteristic; Walking duration; Exploratory regression; Mixed geographically weighted regression; Logistic regression; Random forest decision
+\textbf{Keywords:} Urban planning; Rail transit ridership; Catchment area; Land use; Individual characteristic; Walking duration
 
 % 正文
 \mainmatter % 该命令以下标记为正文，在目录和页码中有所区别
@@ -152,8 +186,8 @@ Based on the achievements of this research, several recommendations are given as
 % 标记为后记部分
 \backmatter
 % \setlength{\parskip}{0\baselineskip} % 设置段间距还原为0
-\bibliographystyle{apacite}
-\bibliography{chapters/ref,chapters/ref_AIJ,chapters/ref_CUPUM,chapters/ref_AURG}
+% \bibliographystyle{apacite}
+% \bibliography{chapters/ref,chapters/ref_AIJ,chapters/ref_CUPUM,chapters/ref_AURG}
 % \appendix
 % \include{chapters/appendix}
 

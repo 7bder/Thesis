@@ -1,3 +1,4 @@
+bibtex main
 pdflatex main
 bibtex chapters/chapter1
 bibtex chapters/chapter2
