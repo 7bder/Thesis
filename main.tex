@@ -14,13 +14,13 @@
 \usepackage{geometry} % 设置纸张大小
 \usepackage{amsmath} % 一个公式环境的包，在 begin{matrix} 中可以使用 & 符号进行公式对齐
 \usepackage{setspace} % 设置行间距的包，语法：\begin{spacing}{1.25} content \end{spacing}
-% \usepackage{fancyhdr} % 页眉页脚设置包, 使用简单，但我没用。
+\usepackage{fancyhdr} % 页眉页脚设置包, 使用简单，但我没用
 
 % 断字和参考文献格式相关
 % 使用apa格式参考文献时，使用以下命令。数字格式直接用默认格式, 下边这些需要注释掉，否则报错。
 \usepackage[activate={true,nocompatibility}]{microtype} % 不完美解决断行断字问题。参数是自适应调整字间距。keyword: letterspace, hyphenate, expansion, protrusion
-% \usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
-% \usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
+\usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
+\usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
 
 % 几个没试成功的包
 % \usepackage{ragged2e} % 设置两端对齐的，没试成功
@@ -30,7 +30,7 @@
 
 % 一些全局环境设置
 % \setlength{\textwidth} {160 mm} % 设定文本宽度，防止参考文献溢出，无效
-% \pagestyle{myheadings} % 自定义页眉，显示章节，页码。对于页脚无效
+\pagestyle{myheadings} % 自定义页眉，显示章节，页码。对于页脚无效
 \graphicspath{ {images/} } % 设定图片目录
 \renewcommand{\baselinestretch}{1.5} % 基础行间距1.5倍
 \setlength{\parskip}{0.7\baselineskip} % 设置段间距
@@ -64,7 +64,7 @@
 \begin{document}
 % 表页制作
 \title{
-	{\Huge Analysis of Influencing Factors on Use of Rail Transit}\\
+	{\Huge Research on Factors Influencing the Use of Rail Transit}\\
 	{\vspace{3cm}}
 	{\includegraphics[width=0.2\linewidth]{university.jpg}}\\
 	{\vspace{2cm}}
@@ -107,7 +107,6 @@ This dissertation is edited in \LaTeX. For any details on content or typesetting
 \tableofcontents % 内容目录
 \listoffigures % 图目录
 \listoftables % 表目录
-\listtablename{name}
 
 % 这里开始前书部分
 \frontmatter
@@ -181,13 +180,13 @@ Based on the achievements of this research, several recommendations are given as
 % \clearpage % 需要另起一页，不然页码会出错
 % \addcontentsline{toc}{chapter}{References} % 将reference加入目录。这里addcontentsline之后马上加入目录。
 % \bibliographystyle{apacite}
-% \bibliography{chapters/ref,chapters/ref_AIJ,chapters/ref_CUPUM,chapters/ref_AURG}
+% \bibliography{ref}
 
 % 标记为后记部分
 \backmatter
 % \setlength{\parskip}{0\baselineskip} % 设置段间距还原为0
 % \bibliographystyle{apacite}
-% \bibliography{chapters/ref,chapters/ref_AIJ,chapters/ref_CUPUM,chapters/ref_AURG}
+% \bibliography{ref}
 % \appendix
 % \include{chapters/appendix}
 

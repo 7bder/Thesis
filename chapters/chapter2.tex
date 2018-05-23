@@ -1,5 +1,5 @@
 \chapter{Influencing Factors on Ridership at Station Level}
-% \markright{CHAPTER 2}
+\markright{CHAPTER 2}
 %
 \section{Introduction}
 % \indent % 强制缩进，但 \indent 命令与正文之间需要有一个空行
@@ -324,23 +324,23 @@ The first stage of selecting effective variables is conducted based on three jud
 		
 		% 表的正文上半部分
 		Government & ha & & 1.8 & 42.30\% & 100.00\% & 33 & & 490 & 0.02  & 1.36 \\
-		Transportation Facility & ha & & 3 & 67.90\% & 100.00\% & 53 & & 1180 & 0 & 2.31 \\
+		Transportation Facility & ha & & 3.0 & 67.90\% & 100.00\% & 53 & & 1180 & 0.00 & 2.31 \\
 		
 		Land use Aggregation & \% & & 2.5 & 50.00\% & 100.00\% & 39 & & 124 & 0.03 & 1.42 \\
 		
-		Transfer Station & Dummy & & 3 & 34.60\% & 100.00\% & 27 & & 6014.28 & 0 & 2.79 \\
+		Transfer Station & Dummy & & 3.0 & 34.60\% & 100.00\% & 27 & & 6014.28 & 0.00 & 2.79 \\
 		
-		Bicycle Parking & 100 & & 4.5 & 44.90\% & 100.00\% & 35 & & 754 & 0 & 2.6 \\
+		Bicycle Parking & 100 & & 4.5 & 44.90\% & 100.00\% & 35 & & 754 & 0.00 & 2.6 \\
 		
 		Bus Capacity & - & & 6.6 & 37.20\% & 96.60\% & 29 & & -68.19 & 0.01 & 3.56 \\
 		
-		Bus Accessibility & - & & 6.8 & 19.20\% & 100.00\% & 15 & & 49.37 & 0 & 4.71 \\
+		Bus Accessibility & - & & 6.8 & 19.20\% & 100.00\% & 15 & & 49.37 & 0.00 & 4.71 \\
 		
-		Job-Resident Balance & \% & & 3 & 37.20\% & 100.00\% & 35 & & -47.08 & 0.05  & 1.94 \\
+		Job-Resident Balance & \% & & 3.0 & 37.20\% & 100.00\% & 35 & & -47.08 & 0.05  & 1.94 \\
 		
 		Tenant Proportion & \% & & 2.2 & 21.80\% & 100.00\% & 29 & & -138.2 & 0.03  & 1.32 \\
 		
-		Household Members & \% & & 3 & 39.70\% & 100.00\% & 27 & & - & - & - \\
+		Household Members & \% & & 3.0 & 39.70\% & 100.00\% & 27 & & - & - & - \\
 		
 		% 第三行下划线
 		\cmidrule{1-2}\cmidrule{4-7}\cmidrule{9-11}
@@ -364,7 +364,7 @@ The first stage of selecting effective variables is conducted based on three jud
 	\begin{description}
 		\label{note:tab:chp2:ExploratoryRegression}
 		\item[Note:]
-		The value marked with grey means it is not valid.
+		The value marked with gray means it is not valid.
 	\end{description}
 \end{sidewaystable}%
 
@@ -534,7 +534,7 @@ This study focuses on small sample size, using 9 explanatory variables to descri
 However, the adjusted $R^2$ is not the only judgment criterion in the regression model, especially in the small sample case. The result of this study shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables plays positive effect. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform fully opposite effect on the independent variable. Regarding the coefficient showed in Table \ref{tab:chp2:ExploratoryRegression} and Table \ref{tab:chp2:ResultMGWR} obtained from the two models and 9 variables, the coefficients in both OLS model and MGWR model have consistent signs and similar values. The rationale of estimated results will be discussed from the three categories of indicators.
 
 %
-\subsection{Built environment}
+\subsubsection{Factors of land use}
 %
 Built environment has been considered as a critical driver for influencing transit ridership, and some results of empirical studies have supported it \cite{sohn2010factors,zhao2013influences,chakraborty2013land}. Built environment can reflect land use density around the station, different kind of building function has different demand in using subway \cite{chakraborty2013land}. In this study, two variables about building floor area (government area and transportation facility area) are found to be valid in explaining subway ridership (with statistical significance at 0.05 level). The coefficients showed in Table \ref{tab:chp2:ResultMGWR} implies that there is an increase of 5/10 passengers per additional 100 $m^2$ building floor area for government/transportation facility respectively. 
 
@@ -548,7 +548,7 @@ Moreover, the land use mix is also widely thought to be a crucial factor that ca
 A possible explanation can be interpreted as following from the perspective of principles and features of TOD. A complete TOD area should have various kinds of urban function, and the main aim of TOD is to allow people to do their daily activities by walking in the TOD area, thus reducing inefficient vehicle trip. That is, if people can do most of their daily activities around the station, they will tend to reduce the use of subway. It is still not clear why this difference occurs. Unfortunately, the indicator of land use mix was not discussed in previous studies, there is little reference to explain it. A hypothesis is proposed to interpret this difference, even though there is no way to verify it, that is the proportion of each kind of land use should not be equal, the proportion in Fukuoka is as shown in Table \ref{tab:chp2:ProportionOfLanduse} \cite{bhat2007comprehensive}. Therefore, maybe this indicator with statistical significance in the prior studies was interpreting something else related to ridership but not describing land use mix. The results may be just statistically relevant to the ridership coincidentally. And that is the reason why this study proposes the method of identifying valid explanatory variables. Especially for small sample case, repeating test can reduce the probability of contingency.
 
 %
-\subsection{Transportation accessibility}
+\subsubsection{Factors of transportation accessibility}
 %
 Accessibility is also thought to be a key factor influencing ridership. K. Sohn and H.Shim further divided this factor into internal and external accessibility, which was also cited and used by Zhao et al., the former represented the accessibility to station within the catchment area, and the latter reflected the connectivity to the place outside the catchment area \cite{sohn2010factors,zhao2013influences}. This study identified four valid variables in transportation accessibility: transfer dummy, bicycle parking, bus capacity and bus accessibility. The transfer dummy and bicycle parking can be easily classified into external accessibility and internal accessibility respectively, and both have a positive effect on ridership. It means the more easily people reach subway station, the more likely they will use the subway. This result is also consistent with prior studies \cite{gutierrez2011transit,cardozo2012application,kuby2004factors}.
 
@@ -559,7 +559,7 @@ However, the effect of bus service on subway ridership is not so intuitive and c
 The indicator of bus service was intuitively considered to be related with subway ridership, and it often appears in the candidate variables list of prior studies, but is rarely estimated successfully in final model (some studies used the indicator of feeder bus rather than normal urban bus \cite{sohn2010factors,cardozo2012application,zhao2013influences}. Besides, the factor of trunk bus which is thought to be competitive with subway, is also considered in the previous study, but it did not show statistical significance \cite{sohn2010factors}. It can be guessed that the influence of bus service cannot be interpreted by only one indicator since the factor of bus service contains more than one kind of information. This result provided some inspiration that every transportation mode having both competitive and transferring relationships with another transportation mode may have both positive and negative effect on the others simultaneously.
 
 %
-\subsection{Demographic and social economic environment}
+\subsubsection{Factor of demographic and social economic environment}
 %
 Regarding the factor of the demographic and socioeconomic environment, the job-resident balance and tenant proportion are found to be effective in explaining the variation of subway ridership. As shown in Table \ref{tab:chp2:ResultMGWR}, both job-resident balance and tenant proportion are showed to have a negative impact on subway ridership. The result indicates that working people tend to use subway more than unemployed people (like children, old people, and housewife), while tenant takes subway less.
 
@@ -570,7 +570,7 @@ Because the travel habit is not the same between working people and unemployed p
 In this study, tenant proportion is also verified that having a positive influence on subway ridership. But for different cities and regions, travel preferences are different. The result from the empirical case in nine US cities indicates that tenant is more likely to use subway, while the case in Seoul shows an opposite result that tenants living around station use subway less \cite{jun2015land,kuby2004factors}. It seems that renters are likely to use public transport, since they are thought to be poor, young, located in denser multifamily housing \cite{kuby2004factors}. However, the discussion also suggests that the indicator of tenant percentage should be treated separated: it may have a high tenant percentage in both CBD areas and suburban apartment, but of which the travel habits may be totally different. That means even though travel preference is different in CBD area and suburban area, the indicator of tenant proportion may be almost the same.
 
 %
-\subsection{Limitation and implication}
+\subsubsection{Limitation and implication}
 %
 This study focuses on subway ridership at station level. However, the ridership of one station is not only influenced by the circumstance of itself but also the stations connected to it. Once the circumstance within catchment area changes, obviously, the ridership of this station will change as well. But the increased part of passengers will be transported to other stations, thus every station connected to that station will also have an increasing on ridership. Until now, most of the studies (including this study) on this issue are focusing on station level. Therefore, identifying and explaining the factors influencing subway ridership from both origin and destination will be the next step of research. Meanwhile, the analysis of subway ridership at station-to-station level based on OD data will also provide a way to research the spatial connectivity among the catchment area of subway stations.
 
@@ -592,6 +592,6 @@ Finally, as a summary and prospect, direct station-level transit ridership forec
 
 % reference
 \clearpage % 新起一页
-% \bibliographystyle{apacite}
-\bibliographystyle{IEEEtran}
+\bibliographystyle{apacite}
+% \bibliographystyle{IEEEtran}
 \bibliography{ref}
