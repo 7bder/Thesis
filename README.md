@@ -1,10 +1,24 @@
 # Thesis
 
-## Current Version: 1.1.20180521 (Last updated: May 21st, 2018)
+## Current Version: 1.2.20180523 (Last updated: May 23rt, 2018)
 
 ---
 
 ## Upgrade Log
+
+---
+
+ Version: 1.1.201805023
+
+---
+    Date: 2018-05-23, 18:00 p.m.
+        Progress    :   Details
+        Remaining   :   Unknown
+        Overall     :
+>Remarks : This is the version for myself, which is uploaded as the version of my-version.
+---
+
+ Version: 1.1.201805013
 
 ---
 
