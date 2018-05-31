@@ -1,11 +1,21 @@
 # Thesis
 
-## Current Version: 1.1.20180521 (Last updated: May 21st, 2018)
+## Current Version: 1.2.20180531 (Last updated: May 31st, 2018)
 
 ---
 
 ## Upgrade Log
 
+---
+
+ Version: 1.2.201805031
+
+---
+    Date: 2018-05-31, 23:30 p.m.
+        Progress    :   Complement
+        Remaining   :   Null
+        Overall     :
+>Remarks : Added garbage into the dissertation. Full of Nausea, want to split.
 ---
 
  Version: 1.1.201805021

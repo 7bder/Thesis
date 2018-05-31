@@ -19,8 +19,8 @@
 % 断字和参考文献格式相关
 % 使用apa格式参考文献时，使用以下命令。数字格式直接用默认格式, 下边这些需要注释掉，否则报错。
 \usepackage[activate={true,nocompatibility}]{microtype} % 不完美解决断行断字问题。参数是自适应调整字间距。keyword: letterspace, hyphenate, expansion, protrusion
-\usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
-\usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
+% \usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
+% \usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
 
 % 几个没试成功的包
 % \usepackage{ragged2e} % 设置两端对齐的，没试成功
@@ -45,7 +45,7 @@
 
 % PRINT
 \geometry{total={210mm,297mm},
-	left=20mm,right=20mm,
+	left=25mm,right=25mm,
 	bindingoffset=10mm, top=25mm,bottom=25mm}
 
 % 调整标题字号行距等
@@ -99,7 +99,7 @@ This dissertation is edited in \LaTeX. For any details on content or typesetting
 
 % 这里设置目录的字体
 % \global\large % 设置全局字体，large在12pt文稿下为14.4pt
-\renewcommand{\baselinestretch}{1.2} % 目录页基础行间距1.2倍
+\renewcommand{\baselinestretch}{1.0} % 目录页基础行间距1.0倍
 \fontsize{14pt}{14pt} % 目录字号14pt，行间距局14pt，即1倍基础行距
 \selectfont
 
@@ -112,7 +112,7 @@ This dissertation is edited in \LaTeX. For any details on content or typesetting
 \frontmatter
 
 % 设置正文字号
-\renewcommand{\baselinestretch}{1.6} % 正文页基础行间距1.8倍
+\renewcommand{\baselinestretch}{1.5} % 正文页基础行间距1.5倍
 \fontsize{13pt}{13pt} % 正文字号13pt，行间距13pt，即1倍基础行距
 \selectfont
 
@@ -126,6 +126,9 @@ I am not willing to describe the period of PhD in a suffering way, but frankly, 
 
 % 我要谢！一个一个谢！
 First and foremost, I would like to thank Prof. Zhao Shichen, my supervisor, for the guidance and instruction not only in my studies but more in work and life attitude. The time of drinking with Prof. Zhao is so joyful and memorable, this drinking time also shortened the distance between us students and professor, for which I appreciated a lot. It's my luck that I came to Zhao laboratory doing research, thank to Prof. Zhao again for teaching me so many things.
+
+% co-supervisor
+I would like to express my appreciation to my co-supervisors, Prof. Sakai Takeru and Prof. Divigalpitiya Prasanna, for their instruction in the designing workshop. Even though I am not working on the architecture design, the sense of design they inspired me must be a valuable wealth in the future.
 
 % 谢陈思婷帮我搞论文
 I would like to thank the fellow students in our laboratory for their feedback on my papers. Communication is an important segment of research, a good research without readers has no meaning. Thanks to everyone for the their patients. Among them, I would like to thank Chen Siting especially for helping a lot in checking English and organizing logic of my papers. 
@@ -148,7 +151,7 @@ Urbanization caused many social problems in both developing and developed countr
 
 % 主旨，目的
 % 因此，本文最基本的目的是解释客流量。具体来看，目的可以分为三个。
-This research sets the primary purpose of explaining rail transit ridership in TOD area, from which is expanded to three specific aspects: 1. explaining transit ridership at station level; 2. explaining transit ridership at station-to-station level; 3. explaining the walking duration of to transit stations. To this end, the research questions are as follow: 1. to find an approach for screening effective influencing factors; 2. to describe the relationship of transit ridership between stations and stations; 3. to explore the relation between walking distance and walking preference.
+This research sets the primary purpose of explaining rail transit ridership in TOD area, from which is expanded to 4 specific aspects: 1. exploring the characteristics of variation in transit ridership and land use; 2. explaining transit ridership at station level; 3. explaining transit ridership at station-to-station level; 4. explaining the walking duration of to transit stations. To this end, the research questions are as follow: 1. to explore the overall relationship between transit ridership and land use; 2. to find an approach for screening effective influencing factors; 3. to describe the relationship of transit ridership between stations and stations; 4. to explore the relation between walking distance and walking preference.
 
 % 具体研究的内容，包含方法
 The first question is answered through the exploratory regression decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables are then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
@@ -175,6 +178,8 @@ Based on the achievements of this research, several recommendations are given as
 \include{chapters/chapter4}
 
 \include{chapters/chapter5}
+
+\include{chapters/chapter6}
 
 % 参考文献放在frontmatter部分会出现如下的页码问题。总参考文献如果放入backmatter部分就没问题了。不过这部分注释作为插入页码的方法保留一下。
 % \clearpage % 需要另起一页，不然页码会出错
