@@ -1,6 +1,6 @@
 # Thesis
 
-## Current Version: 1.2.20180523 (Last updated: May 23rt, 2018)
+## Current Version: 2.0.20180523 (Last updated: May 23rt, 2018)
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
- Version: 1.1.201805023
+ Version: 2.0.201805023
 
 ---
     Date: 2018-05-23, 18:00 p.m.
