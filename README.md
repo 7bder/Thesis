@@ -21,20 +21,6 @@
  Version: 1.1.201805013
 
 ---
-
- Version: 1.1.201805021
-
----
-    Date: 2018-05-21, 18:00 p.m.
-        Progress    :   Details
-        Remaining   :   Unknown
-        Overall     :
->Remarks : Revised many details and the format. Reference files are cut to one file.
----
-
- Version: 1.1.201805013
-
----
     Date: 2018-05-13, 29:00 p.m.
         Progress    :   Abstract and body revise are finished
         Remaining   :   Null
