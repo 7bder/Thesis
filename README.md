@@ -1,6 +1,6 @@
 # Thesis
 
-## Current Version: 2.0.20180523 (Last updated: May 23rt, 2018)
+## Current Version: 2.0.20180604 (Last updated: Jun 4th, 2018)
 
 ---
 
@@ -8,7 +8,18 @@
 
 ---
 
- Version: 2.0.201805023
+ Version: 2.0.20180604
+
+---
+    Date: 2018-06-04 09:30 a.m.
+        Progress    :   Completed
+        Remaining   :   Null
+        Overall     :
+>Remarks : Revised some little mistakes.
+---
+---
+
+ Version: 2.0.20180523
 
 ---
     Date: 2018-05-23, 18:00 p.m.
@@ -16,6 +27,7 @@
         Remaining   :   Unknown
         Overall     :
 >Remarks : This is the version for myself, which is uploaded as the version of my-version.
+---
 ---
 
  Version: 1.1.201805013
@@ -27,6 +39,7 @@
         Overall     :
 >Remarks : First draft is over.
 ---
+---
 
  Version: 1.0.201805010
 
@@ -37,6 +50,7 @@
         Overall     :   1. Revise the body chapters (In one day)
                         2. Abstract and overall check (In one day)
 
+---
 ---
 
  Version: 1.0.20180507
@@ -50,6 +64,7 @@
 >Remarks : Revised and united the content structure.
 
 ---
+---
 
  Version: 1.0.20180506
 
@@ -62,6 +77,7 @@
 >Remarks : A little late than expected, but not so serious yet. The next version will start from 1.1 after finishing the Introduction chapter.
 
 ---
+---
 
 - Version: 1.0.20180503
 
@@ -72,6 +88,7 @@
         Overall     :   1. write the Conclusion chapter (In two days)
                         2. revise details for the other chapters (In two days)
 
+---
 ---
 
 - Version: 1.0.20180501
