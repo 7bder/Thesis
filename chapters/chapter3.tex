@@ -7,7 +7,7 @@
 % brief introduction
 \subsection{Background}
 %
-Traffic demand forecasting is always an important part of urban planning also urban management, especially in terms of TOD development. To date, most of the studies on predicting rail transit ridership are conducted using the samples of large-scale cities where commonly have a large rail transit system with hundreds of stations. As to medium-sized cities, however, there is also the necessity for traffic demand forecasting. 
+Traffic demand forecasting is always an important part of urban planning also urban management. To date, most of the studies on predicting rail transit ridership are conducted using the samples of large-scale cities where commonly have a large rail transit system with hundreds of stations. As to medium-sized cities, however, there is also the necessity for traffic demand forecasting. 
 
 % locating this study. brief review
 % 说明该类研究多是针对于大城市轨道交通，但中型城市也存在这样的需求。问题在于样本量不足。
@@ -66,7 +66,8 @@ This study focuses on 35 subway stations in Fukuoka City of Japan, which is a ty
 	\begin{tabular}{cccc}
 		\Xhline{1.5pt} % 依赖于 makecell 包
 		\diagbox[height=3em]{Item}{Lines} & Line 1 & Line 2 & Line 3\\ % 表头
-		\midrule % 依赖于 booktabs 包
+		% \midrule % 依赖于 booktabs 包,  这里该命令会导致表线断开
+		\Xhline{0.5pt}
 		
 		% 表内容
 		\multicolumn{1}{c}{Total Stations}
@@ -96,7 +97,7 @@ Most of the data used in this study is open source, which can be freely download
 %
 \subsection{Catchment area of stations}
 %
-At present, in the United States, a half-mile-radius (800 m) circle has become the practical standard for rail-transit catchment areas based on TODs \cite{guerra2013half}. The distance of 800m corresponds to the distance people can walk in 10 minutes at the speed of 4.8 km/h. A Japanese case study also supported this 800m catchment area for TOD by using the survey data of $<$2010 big city traffic census metropolitan area report$>$ \cite{tadakatsu2015empirical}. Based on the report of basic survey along the subway third line in Fukuoka (refer to \ref{tab:chp3:AccessToStations}), more than 70\% of the passengers choose to walk to the station, about 16\% choose bicycles, the total percentage of non-motorized trip accessing to station accounted for about 90\%. It can be considered that an 800m catchment area covered most of the subway passengers in Fukuoka. On the base of existing literature and the current situation of Fukuoka, the distance threshold of 800m is adopted in this study. All the data based on geographical information will be covered by the 800m PCA using the areal interpolation method.
+The scale of the catchment area is an important prerequisite for this kind of issue. At present, in the United States, a half-mile (800 meters) distance has become the practical standard for rail-transit catchment areas based on TOD \cite{guerra2013half}. The distance of 800 meters corresponds to the distance people can walk in 10 minutes at the speed of 4.8 km/h. A Japanese case study also supported this 800 meters catchment area for TOD by using the survey data of $<$2010 big city traffic census metropolitan area report$>$ \cite{tadakatsu2015empirical}. Based on the report of basic survey along the subway third line in Fukuoka (refer to \ref{tab:chp3:AccessToStations}), more than 70\% of the passengers choose to walk to the station, about 16\% choose bicycles, the total percentage of non-motorized trip accessing to station accounted for about 90\%. It can be considered that an 800 meters catchment area covered most of the subway passengers in Fukuoka. On the base of existing literature and the current situation of Fukuoka, the distance threshold of 800 meters is adopted in this study. All the data based on geographical information will be covered by the 800 meters catchment area using the areal interpolation method.
 
 % Table
 \begin{table}[htbp]
@@ -172,7 +173,7 @@ In this study, the average daily ridership of each subway station is used as the
 		& Government & ha & + & - & 12.85 & 2.09 \\
 		& Transportation Facility & ha & + & 0.02 & 13.28 & 2.12 \\
 		& Land use Aggregation & - & + & 0.09 & 0.75 & 0.31 \\
-		\cmidrule{2-7} 		% 2到7列添加横线
+		\midrule
 		
 		% 第二大行
 		\multirow{5}{90pt}{\centering Transit-related factors}
@@ -181,7 +182,7 @@ In this study, the average daily ridership of each subway station is used as the
 		& Bus Capacity & - & Unknown & 3.00 & 260.00 & 58.48 \\
 		& Bus Accessibility & - & Unknown & 4.00 & 455.0 & 89.71 \\
 		& Road Density & km/km2 & - & 19.10 & 47.90 & 29.90 \\
-		\cmidrule{2-7}
+		\midrule
 		
 		% 第三大行
 		\multirow{4}{90pt}{\centering Demographic and socioeconomic environment factors} 
@@ -199,7 +200,7 @@ In this study, the average daily ridership of each subway station is used as the
 The land and buildings provide people space for living, working and recreating, and people tend to have different travel preferences with different trip purposes. Therefore, the floor area is commonly thought to be the primary factor that can affect ridership. Another compound indicator, land use diversity, is also thought to be an important factor that can influence transit ridership, because people living in the catchment area with higher land use diversity can do most of their daily activities at different types of buildings without taking public transport.
 
 %
-The same with previous studies, this study choose several types of land use with higher proportion to assess the indicator of land use diversity, including residential, office, commercial, education. The four main types of land use account for about 90\% of all the floor area in Fukuoka, especially in subway catchment area, reaching more than 95\%. However, different from the general definition of land use diversity, the proportion of land use is not evenly distributed in the case of Fukuoka City. As shown in Table \ref{tab:chp3:ProportionOfLanduse}, obviously, it is significantly different from average distribution, and the proportion varies with the variation of the catchment area. To describe the land use diversity closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station catchment area (800m pedestrian distance) in Fukuoka.
+The same with previous studies, this study choose several types of land use with higher proportion to assess the indicator of land use diversity, including residential, office, commercial, education. The four main types of land use account for about 90\% of all the floor area in Fukuoka, especially in subway catchment area, reaching more than 95\%. However, different from the general definition of land use diversity, the proportion of land use is not evenly distributed in the case of Fukuoka City. As shown in Table \ref{tab:chp3:ProportionOfLanduse}, obviously, it is significantly different from average distribution, and the proportion varies with the variation of the catchment area. To describe the land use diversity closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station catchment area (800 meters pedestrian distance) in Fukuoka.
 
 % Table 2
 \begin{table}[htbp]
@@ -222,8 +223,9 @@ The same with previous studies, this study choose several types of land use with
 		\Xhline{1.5pt}
 		
 	\end{tabular}%
-	\normalsize
+
 	\begin{description}
+		\small
 		\label{note:tab:chp3:ProportionOfLanduse}
 		\item[Note:] The value marked with gray is adopted in this study.
 	\end{description}
@@ -294,7 +296,7 @@ The transit-related factors are thought to affect subway ridership in two opposi
 Road network is commonly used in previous studies. Users of the road network are not only the vehicle but also non-motorized travelers including bicycle riders and pedestrians. As is known, the higher coverage of road network is thought to have better accessibility for both motor travel and non-motorized travel. Additional, bicycle parking may also be an important factor influencing the accessibility of catchment area for non-motorized travelers. Therefore, the accessibility index for road network is set into the number of bicycle parking and road density in this study.
 
 %
-Another accessibility for passengers transferring from the bus is also considered from both positive and negative way. Bus service in catchment area can reflect the connectivity with other regions, by which the potential subway ridership can be shared by bus to some extent. This sharing ridership can be represented by the service capacity of all the bus operating in the same catchment area of the subway station, and the service capacity $(C)$ is expressed by Equation \ref{eq:chp2:BusCapacity} as follow. In contrast, the bus station close to subway can be used as transfer station which can increase the accessibility of subway for people who want to take the subway but living far away from subway station. In this case, the bus station will play a positive effect on ridership of subway. The indicator should represent the accessibility between subway and bus, thus it is defined as the number of bus lines within the catchment area of subway station. The indicator A representing accessibility of bus is defined as Equation \ref{eq:chp2:BusAccessibility} in the below.
+Another accessibility for passengers transferring from the bus is also considered from both positive and negative way. Bus service in catchment area can reflect the connectivity with other regions, by which the potential subway ridership can be shared by bus to some extent. This sharing ridership can be represented by the service capacity of all the bus operating in the same catchment area of the subway station, and the service capacity $BC$ is expressed by Equation \ref{eq:chp2:BusCapacity} as follow. In contrast, the bus station close to subway can be used as transfer station which can increase the accessibility of subway for people who want to take the subway but living far away from subway station. In this case, the bus station will play a positive effect on ridership of subway. The indicator should represent the accessibility between subway and bus, thus it is defined as the number of bus lines within the catchment area of subway station. The indicator $BA$ representing accessibility of bus is defined as Equation \ref{eq:chp2:BusAccessibility} in the below.
 
 % Equation 2
 \begin{equation}
@@ -408,8 +410,9 @@ The first stage of selecting effective variables is conducted based on three jud
 		
 		\Xhline{1.5pt}
 	\end{tabular}%
-	\normalsize
+
 	\begin{description}
+		\small
 		\label{note:tab:chp3:ExploratoryRegression}
 		\item[Note:]
 		The value marked with gray means it is not valid.
@@ -505,7 +508,7 @@ As the result from both models, MGWR has a better performance than OLS, in which
 \end{table}
 
 %
-Since the MGWR is a kind of variable coefficient regression model, the coefficients and adjusted R2 of each data point are different depending on the location of the data point, as shown in the Figure \ref{fig:chp3:LocalR}. For the 5 local variables in all 35 data points, the spatial distribution of significance level for the local variables are mapped in Figure \ref{fig:chp3:SignificanceDistribution}. For the variables of building area of transportation, bus capacity, bus accessibility, job-resident balance and tenant proportion, there are 33, 34, 35, 24 and 32 data points having statistical significance at confidence level 95\% respectively. As can be seen, the two indicators for bus proposed in this study have good performance in terms of significance and stability, while the variable of ‘tenant proportion’ does not have a strong stability in explanatory ability. Relatively, the other 4 variables have higher reliability in explaining the variety of ridership.
+Since the MGWR is a kind of variable coefficient regression model, the coefficients and adjusted $R^2$ of each data point are different depending on the location of the data point, as shown in the Figure \ref{fig:chp3:LocalR}. For the 5 local variables in all 35 data points, the spatial distribution of significance level for the local variables are mapped in Figure \ref{fig:chp3:SignificanceDistribution}. For the variables of building area of transportation, bus capacity, bus accessibility, job-resident balance and tenant proportion, there are 33, 34, 35, 24 and 32 data points having statistical significance at confidence level 95\% respectively. As can be seen, the two indicators for bus proposed in this study have good performance in terms of significance and stability, while the variable of ‘tenant proportion’ does not have a strong stability in explanatory ability. Relatively, the other 4 variables have higher reliability in explaining the variety of ridership.
 
 % Figure 3
 \begin{figure}[htbp]

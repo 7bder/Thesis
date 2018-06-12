@@ -60,6 +60,10 @@
 \setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 
+% 调整caption和table，figure之间的距离
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{2.6pt} % caption 到表格距离为1.2倍行距
+
 % 全文开始
 \begin{document}
 % 表页制作
@@ -131,10 +135,10 @@ First and foremost, I would like to thank Prof. Zhao Shichen, my supervisor, for
 I would like to express my appreciation to my co-supervisors, Prof. Sakai Takeru and Prof. Divigalpitiya Prasanna, for their instruction in the designing workshop. Even though I am not working on the architecture design, the sense of design they inspired me must be a valuable wealth in the future.
 
 % 谢陈思婷帮我搞论文
-I would like to thank the fellow students in our laboratory for their feedback on my papers. Communication is an important segment of research, a good research without readers has no meaning. Thanks to everyone for the their patients. Among them, I would like to thank Chen Siting especially for helping a lot in checking English and organizing logic of my papers. 
+I would like to thank the fellow students in our laboratory for their feedback on my papers. Communication is an important segment of research, a good research without readers has no meaning. Thanks to everyone for the their patients. Among them, I would like to thank Chen Siting especially for helping a lot in checking my messy English also in organizing the logic of my papers. 
 
 % 谢日本小鬼子教我日语
-Also, I have to say thanks to the cute Japanese fellows, although not for helping me in research. They talked with me, taught me language and culture, made me adapt Japanese life soon. My period in Japan is so enrich and interesting, a large part of which can be attributed to them. In particular, I would like to say thanks to Ikutake Shin, Yoshioka Daiki, Higuchi Go, thanks for their accompany in countless overnights.
+Also, I have to say thanks to the cute Japanese fellows, although not for helping me in research. They talked with me, taught me language and culture, made me adapt Japanese life soon. My period in Japan is so enrich and interesting, a large part of which can be attributed to them. In particular, I would like to say thanks to  Yoshioka Daiki, Ikutake Shin, and Higuchi Go, thanks for their accompany in countless overnights.
 
 % 感谢韩博士家的麻将，火锅，炒菜
 One more thing, as we know relax is also important especially during the relatively arduous PhD period, how to spend the boring time and retrieve research condition is always a serious problem puzzling PhD students. Dr. Han Guofeng, my ex-roommate at Kyushu University International House, and his current-roommate provided us the party place in his apartment, where we have hotpot party and even playing mahjong in leisure time. Thanks to my mahjong partners, together with them a lot of happiness is created, boring time is spent, thus accomplishing research with a better status.
@@ -147,14 +151,14 @@ The most important thing always come last, all the expense during the 4 years Ph
 % 背景
 % 城市化带来了一系列的人口，资源，环境的问题，这些问题都可以归结为可持续发展的问题，针对这些问题，TOD被提出，以期能够缓解矛盾
 % 说明TOD中，客流预测，以及分析对客流的影响因素是非常必要的。
-Urbanization caused many social problems in both developing and developed countries, of which although the problems are different in various ways, in essence, they can be attributed to the demand for sustainability. With the goal of making cities more sustainable, the concept of TOD aiming at compact development was proposed to alleviate the conflict between sustainability and development. However, the implementation of TOD is not as simple as building rail transit stations, then waiting for people to come. Understanding the factors influencing rail transit ridership is always central and fundamental to decisions on urban planning and management at any stage of implementing TOD.
+Urbanization caused many social problems related to urban traffic in both developing and developed countries, of which although the problems are manifested in various aspects, in essence, they can be attributed to the demand for sustainability. Giving priority to the development of public transport has been widely accepted as the effective means to deal with the problem in the sustainability of urban traffic. To decrease the share of motorized travel and increase the willingness of using public transit, a lot of measures aimed at attracting people to use public transit were proposed and implemented. However, the implementation of these measures is not as simple as building rail transit stations, then waiting for people to come. Understanding the factors influencing rail transit ridership is always central and fundamental to decisions on this issue.
 
 % 主旨，目的
 % 因此，本文最基本的目的是解释客流量。具体来看，目的可以分为三个。
-This research sets the primary purpose of explaining rail transit ridership in TOD area, from which is expanded to 4 specific aspects: 1. exploring the characteristics of variation in transit ridership and land use; 2. explaining transit ridership at station level; 3. explaining transit ridership at station-to-station level; 4. explaining the walking duration of to transit stations. To this end, the research questions are as follow: 1. to explore the overall relationship between transit ridership and land use; 2. to find an approach for screening effective influencing factors; 3. to describe the relationship of transit ridership between stations and stations; 4. to explore the relation between walking distance and walking preference.
+The primary purpose of this research is explaining rail transit ridership, it is expanded to 4 specific aspects: 1. exploring the characteristics of variation in transit ridership and land use; 2. explaining transit ridership at station level; 3. explaining transit ridership at station-to-station level; 4. explaining the walking duration to transit stations. To this end, the research questions are as follow: 1. to explore the overall relationship between transit ridership and land use; 2. to find an approach for screening effective influencing factors; 3. to describe the relationship of transit ridership between stations and stations; 4. to explore the relation between walking distance and walking preference.
 
 % 具体研究的内容，包含方法
-The first question is answered through the exploratory regression decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables are then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
+The first question is answered through the exploratory regression decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables is then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
 
 For the second question, the relationship of transit ridership between stations and stations is analyzed from the view of land use within the station catchment area. This relationship then is converted into a binary choice problem, and is estimated using logistic regression model. The results show that for passengers the variations in land use in departure stations can lead to variations in the choice of destination stations.
 

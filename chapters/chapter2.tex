@@ -97,9 +97,9 @@ The study case in this study is the subway stations of Fukuoka, some details is 
 	\label{tab:chp2:SubwayLineInfo}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{rrp{5em}<{\centering}p{4em}<{\centering}p{4em}<{\raggedleft}p{3em}<{\centering}p{4em}<{\centering}}
+	\begin{tabular}{crp{5em}<{\centering}p{4em}<{\centering}p{4em}<{\raggedleft}p{3em}<{\centering}p{4em}<{\centering}}
 		\Xhline{1.5pt}
-		Line & Name & First section opened & Last extended & \centering{Length} & Stations & Gauge \\
+		Line & \multicolumn{1}{c}{Name} & First section opened & Last extended & \multicolumn{1}{c}{Length} & Stations & Gauge \\
 		
 		\midrule
 		1 & Kukou Line & 1981 & 1993 & 13.1 $km$ & 13 & 1067 $mm$\\
@@ -132,7 +132,7 @@ All the dataset used in this study comes from the official statistics, details f
 	\label{tab:chp2:DataSource}%
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{llll}
+	\begin{tabular}{cccc}
 		\Xhline{1.5pt}
 		Item & Source & Data accuracy & Time point \\
 		
@@ -253,7 +253,7 @@ Through the initial screening, there are 10 indicators being selected. Neverthel
 		\Xhline{1.5pt}
 		Indicator & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 		
-		\midrule
+		\Xhline{0.5pt}
 		1. Business & 1.000 & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.987} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.775} & -0.385 & 0.378  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 0.615  & 0.006  & 0.656 \\
 		
 		2. Commerce & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 1.000 & 0.828  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.765} & -0.293 & 0.345  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.734} & 0.645  & 0.065  & 0.530 \\
@@ -294,12 +294,12 @@ The KMO measure of sampling adequacy reflect the correlation among all the indic
 	\label{tab:chp2:KMOBartlettTest}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{p{12em}<{\centering}rr}
+	\begin{tabular}{p{16em}<{\centering}rr}
 		\Xhline{1.5pt}
-		Kaiser-Meyer-Olkin Measure of Sampling Adequacy & & 0.756 \\
+		\multicolumn{2}{c}{Kaiser-Meyer-Olkin Measure of Sampling Adequacy} & 0.756 \\
 		\midrule
 		
-		\multirow{3}[0]{7em}{\centering{Bartlett's Test of Sphericity}} & \multicolumn{1}{r}{Chi-Square} & 346.086 \\
+		\multirow{3}[0]{16em}{\centering{Bartlett's Test of Sphericity}} & \multicolumn{1}{r}{Chi-Square} & 346.086 \\
 		& df & 45 \\
 		& Sig. & 0 \\
 		\Xhline{1.5pt}
@@ -320,7 +320,7 @@ The factors are extracted using principal component method, Table \ref{tab:chp2:
 	\label{tab:chp2:Communalities}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{lrr}
+	\begin{tabular}{crr}
 		\Xhline{1.5pt}
 		Indicator & Initial & Extraction \\
 		\midrule
@@ -389,7 +389,7 @@ The rotated component matrix (refer to Table \ref{tab:chp2:RotatedComponent} sho
 	\label{tab:chp2:RotatedComponent}%
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{p{8em}p{3em}<{\centering}p{3em}<{\centering}p{3em}<{\centering}}
+	\begin{tabular}{cp{3em}<{\centering}p{3em}<{\centering}p{3em}<{\centering}}
 		\Xhline{1.5pt}
 		\multirow{2}[3]{*}{Indicator} & \multicolumn{3}{c}{Component} \\
 		\cmidrule{2-4}
@@ -471,7 +471,7 @@ According to the classification result (refer to \ref{fig:chp2:StationClassifica
 	\label{tab:chp2:ClassificationCharacteristics}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{lp{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}}
+	\begin{tabular}{cp{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}}
 		\Xhline{1.5pt}
 		Type & Office & Commerce & Residence & Education & Transit ridership \\
 		\midrule
@@ -495,7 +495,7 @@ According to the classification result of both subway transit ridership and land
 	\label{tab:chp2:CrossTable}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{p{10em}p{3em}<{\raggedleft}p{3em}<{\raggedleft}p{3em}<{\raggedleft}p{3em}<{\raggedleft}}
+	\begin{tabular}{cp{3em}<{\raggedleft}p{3em}<{\raggedleft}p{3em}<{\raggedleft}p{3em}<{\raggedleft}}
 		\Xhline{1.5pt}
 		Type & Hub & Large-scale & Medium-scale & Small-scale \\
 		\midrule
@@ -564,7 +564,7 @@ As to the result of influence on the transit ridership, the commerce \& office c
 		& 10,000-50,000 & 11 & 993 & \\
 		& 50,000-100,000 & 11 & -4317 & \\
 		& 100,000- & 8 & 1544 & \\
-		\midrule
+		\Xhline{0.5pt}
 				
 		\multicolumn{2}{c|}{Independent variable} & \multicolumn{2}{c}{Sample size} & 35 \\
 		\multicolumn{2}{c|}{Transit ridership} & \multicolumn{2}{c}{Coefficient of determination} & 0.513 \\
@@ -611,7 +611,7 @@ As to the result of influence on the transit ridership, the commerce \& office c
 		& 10,000-50,000 & 11 & -0.0025 & \\
 		& 50,000-100,000 & 11 & 0.0034 & \\
 		& 100,000- & 8 & 0.0036 & \\
-		\midrule
+		\Xhline{0.5pt}
 		
 		\multicolumn{2}{c|}{Independent variable} & \multicolumn{2}{c}{Sample size} & 35 \\
 		\multicolumn{2}{c|}{Growth rate of transit ridership} & \multicolumn{2}{c}{Coefficient of determination} & 0.537 \\

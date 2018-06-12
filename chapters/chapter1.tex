@@ -55,80 +55,82 @@ Based on the interpretation of the real issue above, the research goal of the wh
 From the research purposes, the literature review is to be extended in terms of method, influencing factor, and catchment area respectively. Table \ref{tab:chp1:Review} gives a brief summary for the literature about transit ridership analysis.
 
 % Table 1
+% 这个表太大了，划线的时候使用toprule，bottomrule。否则格式会乱
 \begin{sidewaystable}[htbp]
+	\centering
+	\caption{Summary of some previous studies}
+	\label{tab:chp1:Review}
 	\scriptsize % 该表使用小字体
-	\renewcommand{\arraystretch}{0.5} % 重设表间距
-	\begin{spacing}{0.5} % 这中间行间距0.5倍
-		\centering
-		\caption{Summary of some previous studies}
-		\label{tab:chp1:Review}
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+		
+	\begin{spacing}{1} % 这中间行间距1倍
 		% 这里的格式控制为限制单元格宽度，自动换行，并居中
 		\begin{tabular}{|p{8em}<{\centering}|c|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|p{5em}<{\centering}|}
-			\toprule
+			\Xhline{1.5pt}
 			\multicolumn{2}{|c|}{Year} & 2004 & 2004 & 2009  & 2010 & 2011 & 2012 & 2013 & 2013 & 2015  \\
 			
-			\cmidrule{1-11}
+			\Xhline{0.5pt}
 			\multicolumn{2}{|c|}{Author} & Chu & Kuby et al. & Taylor et al. & Sohn and Shim & Gutiérrez et al. & Cardozo et al. & Chakraborty et al. & Zhao et al. & Jun et al.  \\
 			
-			\cmidrule{1-11}
+			\Xhline{0.5pt}
 			\multicolumn{2}{|c|}{Catchment} & $1/4$ mile (400m) walking distance & Half mile (800m) walking distance & N/A & N/A & Distance-decay 800m buffer & 800m walking distance & N/A & 800m radius & 300m, 600m, 900m radius  \\
 			
-			\cmidrule{1-11}
+			\Xhline{0.5pt}
 			\multicolumn{2}{|c|}{Method} & Poisson Regression & WLS & 2SLS & OLS, SEM & OLS & OLS, GWR & OLS, SEM & OLS & OLS, MGWR  \\
 			
-			\cmidrule{1-11}
+			\Xhline{0.5pt}
 			\multicolumn{2}{|c|}{Sample Size} & 2568 & 268 & 265 & 251 & 158 & 190 & 900 & 55 & 442  \\
 			
-			\cmidrule{1-11}
+			\Xhline{0.5pt}
 			\multicolumn{2}{|c|}{Number of Valid Indicator} & 15 & 11 & 8 & 7 & 9 & 4 & 9 & 11 & 11  \\
 			
-			\cmidrule{1-11}
+			\Xhline{0.5pt}
 			\multicolumn{2}{|c|}{Coefficient of determination (Adjusted R2)} & 0.54 & 0.71 & 0.91 & 0.6 & 0.73 & 0.56 & 0.69 & 0.95 & 0.77  \\
-			\midrule
+			\Xhline{0.5pt}
 			
 			% 这里的multirow格式控制，限制宽度自动换行，内容部分加上\centering 可以居中
-			\multirow{6}[16]{8em}{\centering{Land use factors}} & Building area & & & & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$  \\
-			\cmidrule{2-11}
+			\multirow{6}[3]{*}{\centering{Land use factors}} & Building area & & & & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$  \\
+			\Xcline{2-11}{0.5pt}
 			& Hospital & & & & & & & & $\bullet$ &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& School/University & & & & $\bullet$ & & & & $\bullet$ &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& CBD & & $\bullet$ & & & & & & $\bullet$ &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Land use mix & & & & $\bullet$ & $\bullet$ & $\bullet$ & & & $\bullet$ \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Other infrastructures & & $\bullet$ & & & & & & $\bullet$ & $\bullet$ \\
 			
-			\midrule
-			\multirow{6}[16]{8em}{\centering{Transit-related factors}} & Accessibility of pedestrian & $\bullet$ & & & & & & $\bullet$ & &  \\
-			\cmidrule{2-11}
+			\Xhline{0.5pt}
+			\multirow{6}[3]{8em}{\centering{Transit-related factors}} & Accessibility of pedestrian & $\bullet$ & & & & & & $\bullet$ & &  \\
+			\Xcline{2-11}{0.5pt}
 			& Accessibility of transfer & & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Road coverage & & & $\bullet$ & $\bullet$ & & & & $\bullet$ &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Parking & & $\bullet$ & & & & & & $\bullet$ &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Service level of public transit & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ &       & $\bullet$ & $\bullet$ \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Locational factor & & $\bullet$ & & $\bullet$ & & & & $\bullet$ &  \\
-			\midrule
+			\Xhline{0.5pt}
 			
-			\multirow{8}[24]{8em}{\centering{Demographic and socioeconomic environment factors}} & Population & & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
-			\cmidrule{2-11}
+			\multirow{8}[4]{8em}{\centering{Demographic and socioeconomic environment factors}} & Population & & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+			\Xcline{2-11}{0.5pt}
 			& Employment & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Age   & $\bullet$ & & $\bullet$ & & & & & & $\bullet$ \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Tenant proportion & & $\bullet$ & & & & & & & $\bullet$ \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Race  & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & & & &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Income & $\bullet$ & & & & & & $\bullet$ & &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Vehicles holdings & $\bullet$ & & & & & $\bullet$ & $\bullet$ & &  \\
-			\cmidrule{2-11}
+			\Xcline{2-11}{0.5pt}
 			& Fare  & & & $\bullet$ & & & & & &  \\
-			\bottomrule
+			\Xhline{1.5pt}
 		\end{tabular}
 	\end{spacing}
 \end{sidewaystable}
