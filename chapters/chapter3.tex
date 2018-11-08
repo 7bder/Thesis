@@ -1,648 +1,666 @@
-\chapter{Influencing Factors on Ridership at Station Level}
+\chapter{Analysis on the relationship between the land use around transit stations and transit ridership}
 \markright{CHAPTER 3}
 %
 \section{Introduction}
-% \indent % 强制缩进，但 \indent 命令与正文之间需要有一个空行
-
-% brief introduction
+%
 \subsection{Background}
 %
-Traffic demand forecasting is always an important part of urban planning also urban management. To date, most of the studies on predicting rail transit ridership are conducted using the samples of large-scale cities where commonly have a large rail transit system with hundreds of stations. As to medium-sized cities, however, there is also the necessity for traffic demand forecasting. 
+In recent years, the problem of aging population has occurred in many developed countries, which also always accompanied by decline in population. As a local central city, Fukuoka now is still in the population growth period, the population has reached 1.5 million, nevertheless, the proportion of aging population is continuously increasing as well. According to the census data, it is expected that the population will reach the peak in 15 years and shift to the population decline period, moreover, the aging population will break through one quarter of the total after 10 years (as shown in Figure \ref{fig:chp3:PopulationEstimation}). On the other hand, the data from Kitakyushu Person Trip Survey shows an inclination of that the private car share rate will keep on increasing while the rail transit share rate will turn to decrease in the future (refer to Figure \ref{fig:chp3:TrafficModeShare}), As a result, this trend of the shift in population structure and traffic share rate will lead to a decline operating income and increase in financial pressure for rail transit operator of Fukuoka, the same problem will also occur in most of the local central cities similar with Fukuoka. Addition to the financial problem for rail transit operators, traffic congestion is also becoming the problem for all the resident. Figure \ref{fig:chp3:TravelSpeed}, which is quoted from Road Traffic Census (2010), shows the average travel speed during crowded time in major cities of Japan, as we can know from this figure, the problem of traffic congestion is becoming more and more serious in the downtown area of Fukuoka.
 
-% locating this study. brief review
-% 说明该类研究多是针对于大城市轨道交通，但中型城市也存在这样的需求。问题在于样本量不足。
-\subsection{Research purpose}
 %
-In many developed countries like Japan, as the increasingly serious problems of weakness in population growth, adding to the tendency of using private transport in the local central city, operators of public transport, especially urban rail transit, are now facing financial pressure due to the huge operating costs. How to increase the use of public transportation has become an important issue for the government of the local central city in Japan. With the main purpose of turning around the bad financial situation, some efforts already have been made to attract public transit use \cite{takashi2015study}, nevertheless, still far from adequate, particularly for the medium-sized cities. A further and clearer understanding of how various factors affect the ridership is necessary for the policymaker.
-
-
-% 说明本文要提出一个筛选指标的方法
-\subsection{Research contents}
-%
-Using the case of Fukuoka, which is a typical medium-sized local central city in Japan, as the research object, this study can be viewed as an extension of existing station-level ridership model relative to small sample cases. Different from the case with hundreds of samples, a small sample case with dozens of stations has a higher risk of both type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. For this problem, the aim of this study can be stated as: exploring and explaining the factors influencing subway ridership using the small sample case. The main work includes 3 aspects: a. to build the index framework based on prior study; b. to identify the valid indexes that do affect subway ridership; c. to explain the relationship among variables in generating subway ridership quantitatively.
-
-\section{Review}
-% overall
-To estimate the relevance of various factors and ridership, the model of linear regression is a widely adopted one \cite{cervero1997travel,chakraborty2013land}. However, due to the insufficient consideration of heteroscedasticity and spatial autocorrelation, the result of regression often leads to large standard errors or low level of significance. Thus, linear regression model is not available to all the stations with different characteristics. To improve the generality of the model, the extension such as Geographically Weighted Regression (abbreviated as GWR), Weighted Least Squares Regression (abbreviated as WLS) and Poisson Regression etc. have been successively introduced into the issue of direct ridership model. 
-
-% heteroscedasticity
-Chu and Choi et al. estimated the ridership of bus using the model of Poisson Regression \cite{choi2012analysis,chu2004ridership}. The problems occurred in ordinary linear regression such as the contravention between fact and estimated coefficients, and the low level of significance was well addressed. Therefore, both generality and explanatory ability in the regression model were enhanced. Some studies have achieved a high coefficient of determination at the first stage with the ordinary least square model (abbreviated as OLS), however, the result showed a significant heteroscedasticity and a non-random distribution of estimated residual \cite{kuby2004factors}. To deal with this deviation at the second stage, the WLS model was brought in to eliminate heteroscedasticity, in which the data points were weighted using the standard error. The result showed that WLS was effective in eliminating heteroscedasticity and improving the explanatory ability of the model.
-
-%  spatial autocorrelation
-The data points in OLS are regarded to be independent of each other, however, each data point has different geographical location in the issue of direct ridership model, the observed values are not considered to be independent of each other in terms of the fact that they are distributed continuously in space. For one data point in regression, the observed value is related to the data point nearby in geographical location, and the regression parameters in different geographical locations usually have different performances in their characteristics \cite{brunsdon1996geographically}. For the problems of spatial autocorrelation and spatial heterogeneity, Cardozo made a comparison of OLS and GWR with the same regression parameters, the result showed that the coefficient of determination had a significant improvement and the standard errors turned to be less in GWR \cite{cardozo2012application}. On the basis of common GWR, Jun and Zhao introduced Mixed Geographically Weighted Regression (abbreviated as MGWR) to this issue in the consideration of that some regression parameters did not have special autocorrelation \cite{jun2015land,zhao2005transit}. They set part of the parameters as global independent variables, and the others as spatially autocorrelated variables, to make model closer to fact.
-
-% summary for review
-Although existing studies have done a lot on the issue of direct ridership model, there is still some insufficiency in each study due to the limitation of study case and data source, especially for small sample case. For the selection and construction of factors, the simple and direct indicators such as population, employment etc. are roughly the same with those in the existing studies. But the definition of indicators obtained by secondary calculating such as land use diversity, bus service etc. are not the same, and the effects of such factors have been neither well verified nor widely accepted. For the model, most of the coefficient of determination in OLS were not very ideal (less than 0.7), there was still more than 30\% of the change in ridership not being explained by the model \cite{gutierrez2011transit,jun2015land}. Additionally, even though some of the studies have obtained the high coefficient of determination exactly, there was still another problem that one factor had too strong effect while the rest of the factors had very little influence on the ridership.
-
-% research questions
-This study will focus on the small sample case and try to address some of the shortcomings stated above. The main work of this study can be divided into 3 parts. 1) Build the index framework based on the previous studies, and proposes new indicators to help describe the variation in the subway ridership of Fukuoka. 2) Optimize the procedure of identifying a valid explanatory variable, thereby making it applicable for small sample cases. 3) Improve the accuracy in the estimation of the regression model in the terms of small sample cases.
-
-\section{Data}
-\subsection{Case introduction}
-%
-This study focuses on 35 subway stations in Fukuoka City of Japan, which is a typical local central city in Japan having not so large population and not so complex rail transit system. A city like Fukuoka commonly has the demand in developing rail transit, but usually, the data support is insufficient due to the lack of station samples. Figure \ref{fig:chp3:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines (The first line was operated since 1981, the second line was operated in 1993 and the latest third line began in 2005), and has a total of 29.8 kilometers operating mileage, some details of the three lines are shown in Table \ref{tab:chp3:DetailsSubway}. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel(Ministry of Land, Infrastructure n.d.). Although the subway system of Fukuoka is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population.
-
-% Figure 1
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\linewidth]{chapter3/ResearchArea}
-	\caption{Research area and the distribution of subway stations}
-	\label{fig:chp3:ResearchArea}
-	\small
-	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	\includegraphics[width=\linewidth]{chapter2/PopulationEstimation}
+	\caption{Population estimation}
+	\label{fig:chp3:PopulationEstimation}
 \end{figure}
 
-% Table 2
-\begin{table}[htbp]
+%
+\begin{figure}[htbp]
 	\centering
-	\caption{Details for the three subway lines in Fukuoka}
-	\label{tab:chp3:DetailsSubway}%
-	\small
-	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	% 控制表的行间距
-	% \renewcommand{\arraystretch}{1}
-	% \begin{tabular}[option]{layout} option两个可选，t：按表格顶部对齐，顶部为表格第一行或表线；b：按表格底部对齐，底部是表格第一行或表线
-	% \begin{array} 按数学模式制表，可以控制显示的小数点位数等
-	\begin{tabular}{cccc}
-		\Xhline{1.5pt} % 依赖于 makecell 包
-		\diagbox[height=3em]{Item}{Lines} & Line 1 & Line 2 & Line 3\\ % 表头
-		% \midrule % 依赖于 booktabs 包,  这里该命令会导致表线断开
-		\Xhline{0.5pt}
-		
-		% 表内容
-		\multicolumn{1}{c}{Total Stations}
-		& 13 & 7 & 16\\
-		\multicolumn{1}{c}{Operating Distance}
-		& 13.1km & 4.7km & 12.0km \\
-		\multicolumn{1}{c}{Transfer Station}
-		& 5 & 2 & 2\\
-		\Xhline{1.5pt}
-	\end{tabular}
-\end{table}
+	\includegraphics[width=\linewidth]{chapter2/TrafficModeShare}
+	\caption{Traffic mode share rate}
+	\label{fig:chp3:TrafficModeShare}
+\end{figure}
 
 %
-Most of the data used in this study is open source, which can be freely downloaded or bought from the government official website. The data of 2010 year is used as a reference. All the resource of data used in the study is listed below.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/TravelSpeed}
+	\caption{Private car travel speed ranking}
+	\label{fig:chp3:TravelSpeed}
+\end{figure}
 
 %
-\begin{itemize}
+As stated above, obviously, the issue put in front of the local central cities like Fukuoka is how to promote the use of rail transit, thus reversing the financial dilemma of rail transit operator and making a better living environment for the resident. To achieve this goal, it is necessary to make clear what factors can influence the rail transit ridership, based on which to make new policy helping improve the role of rail transit.
+
+%
+\subsection{Previous studies}
+%
+Many works have been done on the topic of rail transit ridership and the environment around transit stations, while most of them focused on the trend of variation in rail transit ridership or land use type, concentration on the studies of the relationship between the transit ridership and land use type is inadequate [1–3]. 
+
+%
+Depending on the research purpose, the scale of research is also different. For example, the study on the changing trends in transit ridership at the scale of Shinkansen mainly aims at making clear the role of each city from the view of entire country \cite{matsumoto2013study}. At a relative small research scale, for example, some studies focused on the urban rail transit within metropolitan area to make clear of the changing trends in urban structure \cite{song2013evaluation,baba2012change}. Further narrowing the research scale to the urban rail transit within cities, the research purposes mainly focused on making clear of the changing trends in rail transit ridership itself, thus providing reference for making policies of urban planning and management \cite{nakamura2015study,yano2008}. 
+
+%
+Land use type around transit stations is always thought as the key factor influencing the transit ridership, while on the other hand, land use type is also though to be affected by the transit station. The changes in distribution and types of shop around transit stations are generally considered as good ways to reflect the influence on land use type impacted by the stations, the conclusion from existing studies also supported this argument for that the changes of shops around transit stations showed clear characteristics \cite{sui2013research,zhao2012study,kitayama2008study}. The other kinds of facilities belong to different land use types are also relate to rail transit ridership, such as clinic, school, and some other public facilities \cite{lee1995predicting,lee1994temporal}. 
+
+%
+Some studies also worked on the influence on transit ridership from the perspective of land use. A study on the changing trend of transit ridership gave the main conclusion that mixed land use around rail transit stations has a constant effect on increasing transit ridership \cite{nakamura2015study}. Quantitative analysis on the relationship between transit ridership and land use usually conducted using regression model (refer to Table \ref{tab:chp1:Review}), which is also applied to the case of cities in Japan. A study using the case of rail transit stations within Tokyo metropolitan showed a result that the land use types of residence, office, and education play the most important role in affecting the transit ridership \cite{tadakatsu2015empirical}.
+
+%
+Land use is widely accepted as one of the most important factors influencing transit ridership, nevertheless, the problem is how to find the specific factors of land use to estimate transit ridership, and how to evaluate this effect quantitatively and precisely. Besides, the influencing factors are not only land use, some other factors such as road network, floor area ratio, transfer structure etc. also have an interactive relationship with rail transit ridership \cite{kondo2010railway,inohae2009study}. There are also many factors, even though which has not been fully confirmed yet, maybe also play the important role in determining transit ridership.
+
+%
+\subsection{Research purpose}
+%
+With the goal of promoting the use of rail transit, this chapter focuses on making clear of the characteristics of annual changing in both rail transit ridership and land use around the station, based on which to explore the relationship between transit ridership and land use. 
+
+%
+Specifically, the research has two main purposes: 
+\begin{enumerate}
 	\setlength{\parskip}{0\baselineskip} % 设置段间距
-	\item Subway Ridership
-	\item Basic Survey of City Planning
-	\item Census
-	\item Digital Map (Basic Geospatial Information)
-	\item National Land Numerical Information
+	\item To describe the characteristics of transit stations in terms of both transit ridership and land use.  
+	\item To explore the relationship between transit ridership and land use on the base of intensive description on the characteristics of transit stations. 
 	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
-\end{itemize}
+\end{enumerate}
 
 %
-\subsection{Catchment area of stations}
+\subsection{Research objective}
 %
-The scale of the catchment area is an important prerequisite for this kind of issue. At present, in the United States, a half-mile (800 meters) distance has become the practical standard for rail-transit catchment areas based on TOD \cite{guerra2013half}. The distance of 800 meters corresponds to the distance people can walk in 10 minutes at the speed of 4.8 km/h. A Japanese case study also supported this 800 meters catchment area for TOD by using the survey data of $<$2010 big city traffic census metropolitan area report$>$ \cite{tadakatsu2015empirical}. Based on the report of basic survey along the subway third line in Fukuoka (refer to \ref{tab:chp3:AccessToStations}), more than 70\% of the passengers choose to walk to the station, about 16\% choose bicycles, the total percentage of non-motorized trip accessing to station accounted for about 90\%. It can be considered that an 800 meters catchment area covered most of the subway passengers in Fukuoka. On the base of existing literature and the current situation of Fukuoka, the distance threshold of 800 meters is adopted in this study. All the data based on geographical information will be covered by the 800 meters catchment area using the areal interpolation method.
+The research objective in this study is the 35 subway stations of Fukuoka, and several reasons are given here for doing this:
+
+%
+\begin{enumerate}
+	\setlength{\parskip}{0\baselineskip} % 设置段间距
+	\item The catchment area of subway stations cover all the downtown area of Fukuoka, and most of the urban area. 
+	\item Subway system undertakes the major rail transit traffic within the urban area of Fukuoka. 
+	\item Since subway system is not serving the traffic of intercity, the influencing factors on transit ridership can be easily confined within the area around transit stations, which is conductive to the analysis on the relationship between transit ridership and land use.
+	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
+\end{enumerate}
+
+%
+This study works on the transit ridership and the land use type around transit stations, but how to define the area of “around”? Since this study is not aiming at predicting transit ridership using land use factors, the main purpose is to understand the trend of variation in transit ridership and land use type and to explore what kind of land use factors can influence the transit 
+
+
+
+%
+\section{Data}
+\subsection{Study case introduction}
+%
+The study case in this study is the subway stations of Fukuoka, some details is shown in Table \ref{tab:chp3:SubwayLineInfo}. It consists of three subway lines, the Kukou, or Airport Line (Line 1), the Hakozaki Line (Line 2) and the Nanakuma Line (Line 3). The three lines are operated by the Fukuoka City Transportation Bureau, this subway system is not a large-scale one, which only has 35 stations in total. The distribution and name of the 35 stations is shown in Figure \ref{fig:chp3:SubwayStations}.
 
 % Table
 \begin{table}[htbp]
 	\centering
-	\caption{Description for accessing to transit stations}
-	\label{tab:chp3:AccessToStations}%
+	\caption{Information of Fukuoka subway stations}
+	\label{tab:chp3:SubwayLineInfo}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	
-	\begin{tabular}{p{3em}<{\centering}p{5em}<{\raggedleft}p{5em}<{\raggedleft}p{5em}<{\raggedleft}p{5em}<{\raggedleft}}
-	
+	\begin{tabular}{ccp{5em}<{\centering}p{4em}<{\centering}p{4em}<{\raggedleft}p{3em}<{\centering}p{4em}<{\centering}}
 		\Xhline{1.5pt}
-		\multirow{2}{3em}{\centering{Station No.}} & \multicolumn{2}{c}{Pedestrian} & \multicolumn{2}{c}{Bicycle} \\
-		& Duration & Proportion & Duration & Proportion \\
+		Line & \multicolumn{1}{c}{Name} & First section opened & Last extended & \multicolumn{1}{c}{Length} & Stations & Gauge \\
 		
 		\midrule
-		30 & 8.9 & 46.5\% & 8.0 & 27.5\% \\
-		29 & 8.1 & 84.5\% & 10.6 & 9.1\% \\
-		28 & 8.9 & 53.5\% & 8.1 & 29.2\%\\
-		27 & 9.0 & 46.2\% & 8.5 & 29.5\% \\
-		26 & 7.2 & 91.3\% & 10.0 & 8.8\% \\
-		25 & 13.1 & 44.3\% & 11.6 & 16.8\% \\
-		35 & 6.7 & 85.2\% & 8.5 & 14.8\% \\
-		34 & 7.2 & 97.2\% & 6.0 & 2.8\% \\
-		33 & 6.0 & 90.8\% & 5.0 & 9.2\% \\
-		32 & 7.7 & 77.3\% & 10.1 & 15.9\% \\
-		31 & 8.3 & 60.5\% & 7.9 & 27.9\% \\
-		24 & 7.3 & 97.5\% & 0.0 & 0.0\% \\
-		
-		\rowcolor[rgb]{.8, .8, .8}
-		Average & 7.7 & 72.9\% & 8.4 & 16.0\% \\
-		
-		\Xhline{1.5pt}
-	\end{tabular}%
-
-\end{table}%
-
-%
-\subsection{Index framework}
-%
-In this study, the average daily ridership of each subway station is used as the dependent variable. There are 16 variables from the three categories being adopted as candidate independent factors (as shown in Table \ref{tab:chp3:StatisticalDescription}). Some of these variables have already been estimated many times in previous studies, however, there are still some indicators, which may help explain the variation of ridership, ignored in the previous studies. Besides, there is another problem that should be dealt with, the more comprehensive the index framework is, the problem of multicollinearity will occur more easily. For this problem, the candidate variables should be identified and selected by interpret ability in the next stage.
-
-% Table 3
-\begin{sidewaystable}[htbp] % sidewaystable 表格横置，依赖于 rotating 包
-	\centering
-	\caption{Statistical description of candidate independent variables}
-	\label{tab:chp3:StatisticalDescription} % \label 一定要在 \caption 之后，否则引用编号会很奇怪
-	\small
-	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	
-	% 指定每列宽度
-	% tabular 的对齐方式有clrp，c剧中，l居左，r居右，p指定宽度自动换行
-	\begin{tabular}{clllrrr}
-		\Xhline{1.5pt}
-		
-		\multicolumn{1}{c}{Category} & % 制作表第一行，用 \multicolumn 是为了区别表题一行与数据的格式
-		\multicolumn{1}{l}{Variable} &
-		\multicolumn{1}{l}{Unit} &
-		\multicolumn{1}{l}{Expected sign} &
-		\multicolumn{1}{c}{Min Value} &	
-		\multicolumn{1}{c}{Max Value} &	
-		\multicolumn{1}{c}{Average}\\
-		\midrule
-		
-		% 数据部分
-		% 第一大行
-		% 合并多行，依赖于 multirow
-		\multirow{7}{90pt}{\centering Land use factors} % 7是合并了7行，90pt是单元格宽度
-		& Commerce & ha & + & 0.29 & 81.13 & 11.44 \\
-		& Office & ha & + & 0.26  & 84.00 & 16.71 \\
-		& Residence & ha & + & 11.08 & 106.75 & 52.85 \\
-		& Education & ha & + & 0.03 & 30.56 & 5.97 \\
-		& Government & ha & + & - & 12.85 & 2.09 \\
-		& Transportation Facility & ha & + & 0.02 & 13.28 & 2.12 \\
-		& Land use Aggregation & - & + & 0.09 & 0.75 & 0.31 \\
-		\midrule
-		
-		% 第二大行
-		\multirow{5}{90pt}{\centering Transit-related factors}
-		& Transfer Station & Dummy & + & 1.00 & 4.00 & 1.34 \\
-		& Bicycle Parking & 100 & Unknown & 0.64 & 43.75 & 7.78 \\
-		& Bus Capacity & - & Unknown & 3.00 & 260.00 & 58.48 \\
-		& Bus Accessibility & - & Unknown & 4.00 & 455.0 & 89.71 \\
-		& Road Density & km/km2 & - & 19.10 & 47.90 & 29.90 \\
-		\midrule
-		
-		% 第三大行
-		\multirow{4}{90pt}{\centering Demographic and socioeconomic environment factors} 
-		& Population & Person & + & 1.91 & 19.39 & 9.81 \\
-		& House Member & Person & - & 1.86 & 2.79 & 2.18 \\
-		& Population Job Balance & - & Unknown & 1.27 & 2.61 & 1.80 \\
-		& Ratio of Rental House & \% & - & 0.15 & 0.65 & 0.43 \\
+		1 & Kukou Line & 1981 & 1993 & 13.1 $km$ & 13 & 1067 $mm$\\
+		2 & Hakozaki Line & 1982 & 1986 & 4.7 $km$ & 7 & 1067 $mm$ \\
+		3 & Nanukuma Line & 2005 & - & 12.0 $km$ & 16 & 1435 $mm$ \\
+		\multicolumn{2}{r}{Total} & - & - & 29.8 $km$ & 35 & - \\
 		\Xhline{1.5pt}
 	\end{tabular}
-\end{sidewaystable}
+\end{table}
 
-%
-\subsubsection{Land use factors}
-%
-The land and buildings provide people space for living, working and recreating, and people tend to have different travel preferences with different trip purposes. Therefore, the floor area is commonly thought to be the primary factor that can affect ridership. Another compound indicator, land use diversity, is also thought to be an important factor that can influence transit ridership, because people living in the catchment area with higher land use diversity can do most of their daily activities at different types of buildings without taking public transport.
-
-%
-The same with previous studies, this study choose several types of land use with higher proportion to assess the indicator of land use diversity, including residential, office, commercial, education. The four main types of land use account for about 90\% of all the floor area in Fukuoka, especially in subway catchment area, reaching more than 95\%. However, different from the general definition of land use diversity, the proportion of land use is not evenly distributed in the case of Fukuoka City. As shown in Table \ref{tab:chp3:ProportionOfLanduse}, obviously, it is significantly different from average distribution, and the proportion varies with the variation of the catchment area. To describe the land use diversity closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station catchment area (800 meters pedestrian distance) in Fukuoka.
-
-% Table 2
-\begin{table}[htbp]
-	\centering
-	\caption{Proportion of land use in terms of the range of PCA}
-	\label{tab:chp3:ProportionOfLanduse}
-	\small
-	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{cccccc}
-		\Xhline{1.5pt}
-		Range of PCA & Residence & Office & Commerce & Education & Total \\
-		\midrule
-		
-		600 & 51.80\% & 19.30\% & 13.80\% & 5.50\% & 90.50\% \\
-		\rowcolor[rgb]{.8, .8, .8}
-		800 & 55.30\% & 17.50\% & 12.00\% & 6.20\% & 90.90\% \\
-		1000 & 57.60\% & 16.50\% & 10.80\% & 6.00\% & 90.90\% \\
-		1200 & 59.20\% & 15.50\% & 10.20\% & 5.90\% & 90.80\% \\
-		Ave & 62.80\% & 10.10\% & 7.50\% & 5.30\% & 85.70\% \\
-		\Xhline{1.5pt}
-		
-	\end{tabular}%
-
-	\begin{description}
-		\small
-		\label{note:tab:chp3:ProportionOfLanduse}
-		\item[Note:] The value marked with gray is adopted in this study.
-	\end{description}
-\end{table}%
-
-
-% Table 4 和第三章的表重复了，删掉一个
-%\begin{table}[htbp]
-%	\centering
-%	\caption{Average proportion of each land use type in different PCA}
-%	\label{tab:chp2:LandUse}%
-%	\small
-%	\renewcommand{\arraystretch}{1.25} % 重设表间距
-%	% 控制表的行间距
-%	% \renewcommand{\arraystretch}{1}
-%	% \begin{tabular}[option]{layout} option两个可选，t：按表格顶部对齐，顶部为表格第一行或表线；b：按表格底部对齐，底部是表格第一行或表线
-%	% \begin{array} 按数学模式制表，可以控制显示的小数点位数等
-%	\begin{tabular}{ccccc}
-%		
-%		\Xhline{1.5pt} % 依赖于 makecell 包
-%		\diagbox[height=3em]{Range}{Type} & Business & Commerce & Residence & Education\\ % 表头
-%		\midrule % 依赖于 booktabs 包
-%		
-%		% 表内容
-%		\multicolumn{1}{c}{600 m}
-%		& 20.8\% & 14.9\% & 55.7\% & 6.0\%\\
-%		\multicolumn{1}{c}{800 m}
-%		& 18.8\% & 12.8\% & 59.4\% & 6.7\%\\
-%		\multicolumn{1}{c}{1000 m}
-%		& 17.7\% & 11.6\% & 62.0\% & 6.5\%\\
-%		\multicolumn{1}{c}{City Average}
-%		& 10.5\% & 7.7\% & 65.2\% & 5.5\%\\
-%		\Xhline{1.5pt}
-%	\end{tabular}
-%	\normalsize
-%	\begin{description}
-%		\label{note:tab:chp2:LandUse}
-%		\item[Note:]
-%		The value marked with grey is adopted in this study.
-%	\end{description}
-%\end{table}
-
-%
-In addition, to make indicator more intuitive and simpler, the index of land use diversity is redefined as the aggregation of land use. The Euclidean Metric is used for evaluating the deviation of land use aggregation in each subway station with respect to a reference value. The value of this indicator is arranged from $0$ to $\sqrt{2}$, in which the lower value represents a higher level of mixing in land use function, while the higher value means the land use function is more monotonous. This indicator of land use aggregation is defined as Equation \ref{eq:chp2:LanduseAggregation}, it is speculated to have a negative impact on ridership.
-
-% Equation 1
-\begin{equation}
-A=\sqrt{\sum (S_i-P_i)^2}
-\label{eq:chp2:LanduseAggregation}
-\end{equation}
-
-\begin{description}
-	\setlength{\parskip}{0\baselineskip} % 设置段间距
-	\normalsize
-	\item[\textbf{Where:}]
-	\item[$i$] represents the type of land use (respectively government, commercial, residence and education).
-	\item[$A$] is the indicator for aggregation of land use functions.
-	\item[$P_i$] is the average proportion of the land use with type $i$.
-	\item[$L_i$] is the floor area of land use with type $i$ within the PCA.
-	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
-\end{description}
-
-\subsubsection{Transit-related factors}
-%
-The transit-related factors are thought to affect subway ridership in two opposite ways. Higher accessibility for accessing into the catchment area of subway station means people will have more transportation options to get into the area instead of the subway, such as private cars, bicycle, bus or walking etc. On the other hand, higher accessibility also allows people to arrive station more easily, and then attract passengers to use the subway. Considering different travel modes, accessibility is separated into 3 parts to be interpreted in this study. First is for users of the road network; second is for passengers transferring from the bus; third is for rail transit interchange.
-
-%
-Road network is commonly used in previous studies. Users of the road network are not only the vehicle but also non-motorized travelers including bicycle riders and pedestrians. As is known, the higher coverage of road network is thought to have better accessibility for both motor travel and non-motorized travel. Additional, bicycle parking may also be an important factor influencing the accessibility of catchment area for non-motorized travelers. Therefore, the accessibility index for road network is set into the number of bicycle parking and road density in this study.
-
-%
-Another accessibility for passengers transferring from the bus is also considered from both positive and negative way. Bus service in catchment area can reflect the connectivity with other regions, by which the potential subway ridership can be shared by bus to some extent. This sharing ridership can be represented by the service capacity of all the bus operating in the same catchment area of the subway station, and the service capacity $BC$ is expressed by Equation \ref{eq:chp2:BusCapacity} as follow. In contrast, the bus station close to subway can be used as transfer station which can increase the accessibility of subway for people who want to take the subway but living far away from subway station. In this case, the bus station will play a positive effect on ridership of subway. The indicator should represent the accessibility between subway and bus, thus it is defined as the number of bus lines within the catchment area of subway station. The indicator $BA$ representing accessibility of bus is defined as Equation \ref{eq:chp2:BusAccessibility} in the below.
-
-% Equation 2
-\begin{equation}
-BC=\sum_{k}^{K}\sum_{r}^{R}f_{r}^{k}
-\label{eq:chp2:BusCapacity}
-\end{equation}
-
-% Equation 3
-\begin{equation}
-BA=\sum_{k}^{K}R_{k}
-\label{eq:chp2:BusAccessibility}
-\end{equation}
-
-% note for Equation 3
-\begin{description}
-	\setlength{\parskip}{0\baselineskip} % 设置段间距
-	\normalsize
-	\item[\textbf{Where:}]
-	\item[$K$] is the numbers of bus stations within PCA.
-	\item[$R$] is the number of lines at one bus station.
-	\item[$f_{r}^{k}$] is the frequency of the $r$th line at the $k$th station
-	\item[$R_k$] is the number of bus lines passing through the $k$th bus station.
-	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
-\end{description}
-
-%
-Because the existing rail transit network is relatively stable and unchanging, the convenience of railway interchange is roughly determined by the characteristic of the subway station. The accessibilities are different in diverse types of station: intermediate, terminal, interchange, intermodal. Terminal station is generally thought to have a larger catchment area since the terminal station is probably the only choice for the people living far away from the station when they want to take the subway. And people can accept spending more time on getting into the terminal station \cite{o1996walking}. Interchange station and intermodal station are attractive for passengers since it can connect to other lines of railway transit or other modes of transportation \cite{kuby2004factors}. To distinguish the difference between different types of stations, the dummy variable for describing the number of railway lines passing through each station is introduced into this study.
-
-%
-\subsubsection{Demographic and socioeconomic environment factors}
-%
-For this group of factors, except for the population and employment factors, age structure and household member are also considered to have effect on travel habit. In addition, the family with more working people tends to generate more travel, therefore the indicator of population-to-employment is also thought to be one of the determinants. The factor of tenant proportion was considered to have negative effect on subway ridership in previous studies. Because renters are commonly commute-oriented, they prefer to live close to where they are working and usually commute by walking.
-
-%
-All the 16 candidate indicators are shown in Table \ref{tab:chp3:StatisticalDescription}. According to the previous studies, an expected influence is shown in the column of expected sign. With the consideration of small sample case in this study, the method is divided into two phases, identifying the valid variables and estimating the coefficients.
-
-%
-\section{Methods}
-%
-The exploratory regression tool in ArcGIS is introduced into this study to help to conduct the process of identifying valid variables. As is known, finding a proper OLS model is the main problem in this kind of study, especially when there are lots of candidate explanatory variables being estimated in the regression model. The Exploratory Regression tool provides a reference for choosing a valid combination of explanatory variables. It is a data mining tool that will try all possible combinations of explanatory variables to see which model can pass the necessary OLS diagnostics. This study proposes a two-step procedure to explore the final model with an optimal combination of explanatory indicators, rather than selecting the best one from all possible combinations. The first step is selecting the variables having effectiveness in explaining the subway ridership, and the second step is choosing the best combination of the valid variables in the final indicators.
-
-%
-GWR is a spatial regression technique, which is used for dealing with the explanatory variables with spatial dependence. The coefficients of explanatory variables are varied with the spatial location of the data point in GWR, and the closer the distance between a data point and observation point is, the greater weight the data point is. Different from general GWR, the explanatory variables in MGWR can be either spatial dependent or spatial independent. The variables with spatial dependence (called local variable) are the same with that in GWR, varied with spatial location of data points; while the variables without spatial dependence (called global variable) are the same with that in OLS, constant in all data points. Before estimating the MGWR model, it is necessary to determine whether the variable is spatial dependent or not. To prevent this small sample case from becoming data-driven, repeating test is conducted to reduce the probability of occasional mistakes. The local/global variables were determined by the spatial dependency of each exploratory variable, in which the variable with spatial dependency is treated as a local term, otherwise, is treated as a global term.
-
-%
-\section{Results}
-\subsection{Selection of effective variables}
-%
-The first stage of selecting effective variables is conducted based on three judgment factors: a. Multicollinearity, which is expressed by the factor of VIF; b. Validity, which is expressed by the number of times that shows statistical importance; c. Stability, which is shown by the percentage of negative and positive effect to the dependent variable (Stage 1 in Table \ref{tab:chp3:ExploratoryRegression}). Generally, the variable is thought to be multicollinearity if the value of VIF factor is more than 7.5, as shown in Table \ref{tab:chp3:ExploratoryRegression} there are four variables with higher VIF which are marked by dark color. For the factor of validity, three variables are filtered since they rarely show their statistical significance (less than 10\%). Even though some variables have statistical significances in the regression model, they are still not credible since their performances are not stable in different models (sometimes they are positive for the independent variable but sometimes are not). As shown in the underneath of stage 1 in Table \ref{note:tab:chp3:ExploratoryRegression}, the three variables marked with gray are shown not stable in explaining dependent variable. Therefore, as a result, 10 valid variables of 16 candidate variables are reserved in the first stage.
-
-% Table 5
-\begin{sidewaystable}[htbp]
-	\centering
-	\caption{Results of the exploratory regression}
-	\label{tab:chp3:ExploratoryRegression}%
-	\small
-	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{llrrrrrcrrr}
-		\Xhline{1.5pt}
-		
-		% 表题第一行，Stage 1和Stage 2
-		\multirow{3}[4]{*}{Variable} & \multirow{3}[4]{*}{Unit} & & \multicolumn{4}{c}{Stage 1} & & \multicolumn{3}{c}{Stage 2} \\
-		
-		% 表题第二行，Statistical... 和 Test Model
-		& & & \multicolumn{4}{c}{Statistical Information} & & \multicolumn{3}{c}{Test Model} \\
-		
-		% 第一行的下划线
-		\cmidrule{4-7} \cmidrule{9-11}
-		
-		% 表题第三行，VIF, Validity, Stability...
-		& & & VIF & Validity & Stability & Times & & B & Sig & VIF \\
-		
-		% 第二行的下划线
-		\cmidrule{1-2}\cmidrule{4-7}\cmidrule{9-11}
-		
-		% 表的正文上半部分
-		Government & ha & & 1.8 & 42.30\% & 100.00\% & 33 & & 490 & 0.02  & 1.36 \\
-		Transportation Facility & ha & & 3.0 & 67.90\% & 100.00\% & 53 & & 1180 & 0.00 & 2.31 \\
-		
-		Land use Aggregation & \% & & 2.5 & 50.00\% & 100.00\% & 39 & & 124 & 0.03 & 1.42 \\
-		
-		Transfer Station & Dummy & & 3.0 & 34.60\% & 100.00\% & 27 & & 6014.28 & 0.00 & 2.79 \\
-		
-		Bicycle Parking & 100 & & 4.5 & 44.90\% & 100.00\% & 35 & & 754 & 0.00 & 2.6 \\
-		
-		Bus Capacity & - & & 6.6 & 37.20\% & 96.60\% & 29 & & -68.19 & 0.01 & 3.56 \\
-		
-		Bus Accessibility & - & & 6.8 & 19.20\% & 100.00\% & 15 & & 49.37 & 0.00 & 4.71 \\
-		
-		Job-Resident Balance & \% & & 3.0 & 37.20\% & 100.00\% & 35 & & -47.08 & 0.05  & 1.94 \\
-		
-		Tenant Proportion & \% & & 2.2 & 21.80\% & 100.00\% & 29 & & -138.2 & 0.03  & 1.32 \\
-		
-		Household Members & \% & & 3.0 & 39.70\% & 100.00\% & 27 & & - & - & - \\
-		
-		% 第三行下划线
-		\cmidrule{1-2}\cmidrule{4-7}\cmidrule{9-11}
-		
-		% 表的正文下半部分
-		Commerce & ha & & \cellcolor[rgb]{ .8,  .8,  .8}8.8 & 32.10\% & 100.00\% & 25 & & &  \\
-		
-		Office & ha & & \cellcolor[rgb]{ .8,  .8,  .8}10.4 & \cellcolor[rgb]{ .8,  .8,  .8}9.00\% & \cellcolor[rgb]{ .8,  .8,  .8}71.40\% & 7 & & \multicolumn{2}{l}{Residual sum of squares} & 337744990 \\
-		
-		Residence & ha & & \cellcolor[rgb]{ .8,  .8,  .8}27.5 & 12.80\% & \cellcolor[rgb]{ .8,  .8,  .8}70.00\% & 10 & & \multicolumn{2}{l}{Adjusted R2} & 0.96 \\
-		
-		Education & ha & & 1.8 & \cellcolor[rgb]{ .8,  .8,  .8}7.70\% & 100.00\% & 6 & & \multicolumn{2}{l}{AICc} & 694.39 \\
-		
-		Road Density & km/km2 & & 2.3 & \cellcolor[rgb]{ .8,  .8,  .8}1.30\% & 100.00\% & 1 & & \multicolumn{2}{l}{Jarque-Bera test (Sig)} & 0.61 \\
-		
-		Population & person & & \cellcolor[rgb]{ .8,  .8,  .8}23.9 & 12.80\% & \cellcolor[rgb]{ .8,  .8,  .8}60.00\% & 10 & & \multicolumn{2}{l}{Koenker (BP) test (Sig)} & 0.85 \\
-		
-		\Xhline{1.5pt}
-	\end{tabular}%
-
-	\begin{description}
-		\small
-		\label{note:tab:chp3:ExploratoryRegression}
-		\item[Note:]
-		The value marked with gray means it is not valid.
-	\end{description}
-\end{sidewaystable}%
-
-%
-At the second stage, the exploratory regression is conducted again to select an optimal combination of explanatory variables based on a statistical test for regression. As shown in the stage 2 of Table \ref{tab:chp3:ExploratoryRegression}, the variable of household members did not pass the statistical significance test, there are 9 valid variables entering the model at last (at 95\% confidence level). The Jarque–Bera test (Abbreviated as JB test) is not significant in the final model; it indicates that there are no biased standard errors due to heteroscedasticity. The Breusch–Pagan test is not showing statistical significance, it represents that the residuals are not deviating from a normal theoretical distribution. The test of SA is not significant; it means the residuals are not spatial autocorrelated. The optimal combination with 9 explanatory variables will be evaluated by using MGWR in the next part to obtain a better result with fewer residuals.
-
-\subsection{Estimation of MGWR}
-%
-The MGWR is estimated is estimated by using a fixed Gaussian kernel function,  the optimal bandwidth size is determined by using a “golden-section search” method. As a result, the optimal bandwidth is obtained when its corresponding AICc value gets to the minimum. The variation of AICc at different bandwidths are shown in Figure \ref{fig:chp3:AICcBandwidths}, and the optimal bandwidth is to the lowest AICc of 5.7 km.
-
-% Figure 2
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\linewidth]{chapter3/AICcBandwidths}
-	\caption{Variations of AICc at different bandwidths}
-	\label{fig:chp3:AICcBandwidths}
+	\includegraphics[width=\linewidth]{chapter2/SubwayStations}
+	\caption{Distribution of the subway stations}
+	\label{fig:chp3:SubwayStations}
 \end{figure}
 
-The determination of local or global is processed in two steps: firstly, using Moran’s index to examine if the variable is spatial autocorrelation or not; secondly, re-examining the variable with spatial dependency in terms of the indicator of “DIFF of Criterion” provided by GWR4. The test value describing the spatial relationship is summarized in the left part of Table \ref{tab:chp3:ResultMGWR}. Five variables are found to be spatial autocorrelation; they are transportation warehousing, bus capacity, bus accessibility and the tenant proportion respectively. Thereby in the first step, the other 4 variables are considered as global variables while the 5 variables with spatial dependency are considered as local variables. Nakaya, the author of the GWR4 software suggested in the GWR4 user manual that the assessment of the spatial variability of the $k$th varying coefficient is conducted by comparing the fitted GWR with a model in which only the $k$th coefficient is fixed while the other coefficients vary spatially \cite{nakaya2014gwr4}. If the original model is better than the model with the kth coefficient fixed, that coefficient can be considered as spatial autocorrelation. GWR4 also provides the indicator of model comparison which is “DIFF of Criterion”. The user manual suggests that a positive value of “DIFF of Criterion”, especially greater than or equal to 2, means the local term is better to be assumed as a global one. As shown in the left part of Table \ref{tab:chp3:ResultMGWR}, all the values of indicator “DIFF of Criterion” are no more than 2, which means that all the local terms are adapt to the model. Therefore, all the local variables passed the test in the second step.
+%
+From the spatial distribution, the subway stations covered most of the core area of Fukuoka, Line 1 and Line 2 are connected while Line 3 is separated from the other two lines. The catchment area of stations with the number of 8, 9, 10, 11, 20 shapes the downtown area, where has the higher density in both population and building. The number 7 station is in Fukuoka airport, which mainly serves for the transfer of airport passengers. The number 11 station, Hakata Station, is the comprehensive railway transportation hub of Fukuoka integrating Shinkansen, JR, subway, and bus terminal. The number 10 station, Tenjin Station, is another central transportation hub, including West Japan Railway, subway, and bus terminal. The two transportation hubs undertake the role as the passenger distribution center not only within Fukuoka urban area but also extending to the cities around Fukuoka city. The endpoint stations with number 1 and number 16 connect to other railway lines extending to other cities.
 
-% Table 6
-\begin{sidewaystable}[htbp]
+%
+\subsection{Data collection}
+%
+All the dataset used in this study comes from the official statistics, details for the dataset is listed in Table \ref{tab:chp3:DataSource}. The data of subway transit and population is annual statistics, while the data of urban planning basic survey is provided every 5 years. Since the subway line 3 is opened in 2005, the research period is set to the 10 years after the subway line 3 is operated. The statistics of population and land use is on the accuracy of town-chome, which is the smallest region in Japanese administrative division. 
+
+% Table
+\begin{table}[htbp]
 	\centering
-	\caption{Results of MGWR model}
-	\label{tab:chp3:ResultMGWR}
+	\caption{Data source}
+	\label{tab:chp3:DataSource}%
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	
-	\begin{tabular}{llrrrrrrrrr}
+	\begin{tabular}{llll}
 		\Xhline{1.5pt}
-		\multicolumn{1}{l}{\multirow{2}[4]{*}{Variable}} & \multicolumn{6}{c}{Spatial distribution characteristics of final explanatory variables} & & \multicolumn{3}{c}{MGWR model} \\
-		
-		\cmidrule{2-7}\cmidrule{9-11}
-		
-		& \multicolumn{1}{p{3em}}{Unit} & \multicolumn{1}{p{4em}}{Moran's Index} & P-Value* & Pattern & Type & \multicolumn{1}{p{4em}}{DIFF of Criterion} & & Coefficient & SE & t \\
-		
-		\cmidrule{1-7}\cmidrule{9-11}
-		
-		Government & ha & 0.04 & 0.51 & Random & Global &- & & 490.00 & 190.00 & 2.59 \\
-		Transportation Facility & ha & 0.29 & 0.00 & Clustered & Local & -1.95 & & 1020.00 & 200.00 & - \\
-		Land use Aggregation & \% & -0.01 & 0.84 & Random & Global & - & & 133.84 & 54.06 & 2.48 \\
-		Transfer Station & Dummy & 0.13 & 0.12 & Random & Global & - & & 5968.65 & 1198.72 & 4.98 \\
-		Bicycle Parking & 100 & -0.12 & 0.36 & Random & Global & - & & 771.70 & 89.80 & 8.59 \\
-		Bus Capacity & - & 0.70 & 0.00 & Clustered & Local & 0.18  & & -55.16 & 5.94  & - \\
-		Bus Accessibility & - & 0.45 & 0.00 &  Clustered & Local & 0.04 & & 48.61 & 2.43 & - \\
-		Job-Resident Balance & \% & 0.77 & 0.00 & Clustered & Local & -0.17 & & -24.11 & 3.64 & - \\
-		Tenant Proportion & \% & 0.24 & 0.01 & Clustered & Local & 1.02 & & -103.05 & 7.56 & - \\
+		Item & Source & Data accuracy & Time point \\
 		
 		\midrule
+		Subway transit ridership & Fukuoka Traffic Bureau & Station & 2005-2014 \\
+		Population & Resident Basic Account & Town-chome & 2005-2014 \\
+		Land use & Urban Planning Basic Survey & Building & 2003, 2008, 2012 \\
+		\Xhline{1.5pt}
+	\end{tabular}%
+
+\end{table}%
+
+%
+\subsection{Data preprocessing}
+%
+Since the data accuracy is not matching in population and land use, a preprocess is necessary before conducting the analysis. The data preprocess can be separated into 3 aspects.
+
+%
+\begin{enumerate}
+	\setlength{\parskip}{0\baselineskip} % 设置段间距
+	\item Matching the region of data. Due to the data accuracy of land use is higher than that of population, the common data accuracy is set to town-chome in this study.
+	\item Matching the time points of data. Since the time points are not matching between different data, this study investigates the relationship between transit ridership and land use using the time point of 2008, for which is included in all kinds of data.
+	\item Extracting the data of population and land use within the catchment area of subway stations. This operation is conducted by using ArcGIS, as shown in Figure \ref{fig:chp3:DataExtraction}, an 800-meter circle area taking the subway station as the center is drawn at first, then the statistics within this area is extracted.
+	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
+\end{enumerate}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/DataExtraction}
+	\caption{Extraction of data}
+	\label{fig:chp3:DataExtraction}
+\end{figure}
+
+%
+\section{Analysis on the characteristics of transit ridership and land use}
+%
+\subsection{Characteristics of annual change in transit ridership}
+%
+The subway line 3 was put into operation from 2004, the data of transit ridership was fully recorded from the year of 2005. Figure \ref{fig:chp3:RidershipVariation} gives the trend of transit ridership during 2005-2014. The total transit ridership has exceeded 0.6 million per day, of which the transit ridership of line 1 accounts for the most reaching about 0.5 million per day.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/RidershipVariation}
+	\caption{Variation in the transit ridership of Fukuoka subway 2005-2014}
+	\label{fig:chp3:RidershipVariation}
+\end{figure}
+
+%
+From the annual change rate of transit ridership in terms of subway lines, as shown in Figure \ref{fig:chp3:AnnualGrowth}, notably, at the first three years after the line 3 was opened, the growth rate of line 3 is much higher than line 1 and line 2. After the year of 2009, the growth rate of three lines tends to be stable and consistent with each other.
+
+%
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/AnnualGrowth}
+	\caption{Annual growth rate of transit ridership by subway lines}
+	\label{fig:chp3:AnnualGrowth}
+\end{figure}
+
+%
+The characteristics of transit ridership are investigated from two aspects, the growth rate variation and transit ridership variation. Different types of station have different characteristics, specific to each subway station, the transit ridership and growth rate is as shown in Figure \ref{fig:chp3:AnnualVariationEachStation}, which is sorted by ascending order on transit ridership. The transit ridership is the daily average on the year of 2010, the growth rate is the average of 10 years from 2005 to 2014. 
+
+%
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/AnnualVariationEachStation}
+	\caption{Variation in transit ridership of each station}
+	\label{fig:chp3:AnnualVariationEachStation}
+\end{figure}
+
+%
+Figure \ref{fig:chp3:RidershipSpatialDistribution} plotted the information of each station on the map, the stations in the newly opened line 3 generally have lower transit ridership but higher growth rate. The stations with the higher growth rate in line 1 and line 2 are mainly located close to the downtown area. From the spatial distribution of both transit ridership and growth rate, it shows a clear central agglomeration effect, which means the large-scale stations can attract more passengers.
+
+%
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/RidershipSpatialDistribution}
+	\caption{Spatial distribution of transit ridership}
+	\label{fig:chp3:RidershipSpatialDistribution}
+\end{figure}
+
+%
+\subsection{Analysis on the factors of land use around subway stations}
+%
+\subsubsection{Data extraction}
+%
+As stated before, the data of land use is extracted within the 800-meter circle region taking subway station as the center. As shown in the Figure \ref{fig:chp3:BufferAreas}, 35 800-meter circular buffer areas are created. This process of drawing the buffer area and extracting data is conducted using the tool of “Buffer” and “Tabulate Intersection” respectively in ArcGIS.
+
+%
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/BufferAreas}
+	\caption{800-meter Circular buffer areas for 35 subway stations}
+	\label{fig:chp3:BufferAreas}
+\end{figure}
+
+%
+The land use data from Urban Planning Basic Survey is available every 5 years, to match the data period of transit ridership, the land use data on 2008 is used for analyzing characteristics of land use type. The dataset of land use contains 23 types, which, however, is too many for analyzing the characteristics of land use in the case with only 35 stations. Moreover, most of the land use types account for little of the total building area, for which they are thought to have restricted influence on transit ridership. As a result, 9 types of land use, which have relatively larger building areas and commonly exist in all the catchment area of subway stations, are selected to analyze the characteristics of land use, the reserved items are listed in Figure \ref{fig:chp3:IndicatorSelection}.
+
+%
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/IndicatorSelection}
+	\caption{Flow of selecting indicators}
+	\label{fig:chp3:IndicatorSelection}
+\end{figure}
+
+%
+Through the initial screening, there are 10 indicators being selected. Nevertheless, restricted by the sample size of 35 stations, the 10 indicators are still too many to make quantitative exploration the characteristics of land use. To further explore what these indicators are expressing, thus extracting valuable information, the correlation analysis is put forward to make clear of the relationship between indicators. The result of correlation analysis is shown in the Table \ref{tab:chp3:CorrelationAnalysis}. There are strong correlations between the 4 land use types of office, commerce, hotel, and entertainment. The type of dwelling with shop also has a strong correlation with that of office, commerce, and hotel, while the culture type of land use closely relates to the type of apartment and dwelling with shop.
+
+%
+\begin{sidewaystable}[htbp]
+	\centering
+	\caption{Correlation analysis for indicators}
+	\label{tab:chp3:CorrelationAnalysis}
+	\small
+	\renewcommand{\arraystretch}{1.5} % 重设表间距
+	\begin{tabular}{p{9em}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}|p{3em}<{\raggedleft}}
+		\Xhline{1.5pt}
+		Indicator & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 		
-		\multicolumn{5}{l}{\multirow{3}[2]{30em}{\textbf{Note:} Confidence level 95\%. If p-value is less than 0.05, the corresponding variable can be viewed as a local one.}} & \multicolumn{4}{r}{Best bandwidth} & \multicolumn{2}{r}{5.7km} \\
-		\multicolumn{5}{l}{} & \multicolumn{4}{r}{AICc} & \multicolumn{2}{r}{690.6} \\
-		\multicolumn{5}{l}{} & \multicolumn{4}{r}{Residual sum of squares} & \multicolumn{2}{r}{296311499} \\
+		\Xhline{0.5pt}
+		1. Business & 1.000 & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.987} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.775} & -0.385 & 0.378  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 0.615  & 0.006  & 0.656 \\
 		
+		2. Commerce & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 1.000 & 0.828  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.765} & -0.293 & 0.345  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.734} & 0.645  & 0.065  & 0.530 \\
+		
+		3. Hotel & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.987} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.828} & 1.000 & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.716} & -0.361 & 0.382  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.815} & 0.585  & 0.000  & 0.619 \\
+		
+		4. Entertainment & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.775} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.765} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.716} & 1.000 & -0.322 & 0.281  & 0.663  & 0.439  & -0.018 & 0.552 \\
+		
+		5. Residence & -0.385 & -0.293 & -0.361 & -0.322 & 1.000 & 0.205  & -0.287 & -0.164 & -0.175 & -0.063 \\
+		
+		6. Apartment house & 0.378  & 0.345  & 0.382  & 0.281  & 0.205  & 1.000 & 0.649  & 0.408  &0.087  & \multicolumn{1}{r}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.729} \\
+		
+		7. Dwelling with shop & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.734} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.815} & 0.663  & -0.287 & 0.649  & 1.000 & 0.641  & 0.038  & \multicolumn{1}{r}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.808} \\
+		
+		8. Government & 0.615  & 0.645  & 0.585  & 0.439  & -0.164 & 0.408  & 0.641  & 1.000 & 0.395  & 0.549 \\
+		
+		9. Education & 0.006  & 0.065  & 0.000  & -0.018 & -0.175 & 0.087  & 0.038  & 0.395  & 1.000 & -0.012 \\
+		
+		10. Culture & 0.656  & 0.530  & 0.619  & 0.552  & -.063 & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.729} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.808} & 0.549  & -0.012 & 1.000 \\
 		\Xhline{1.5pt}
 	\end{tabular}%
 \end{sidewaystable}%
 
-
-\subsection{Interpretation of coefficients}
+\subsubsection{Factor analysis}
 %
-The right part of Table \ref{tab:chp3:ResultMGWR} reports the result of MGWR model. The global variables in MGWR model have statistical significance at 95\% confidence level, it means most of the variation in ridership can be explained by the 9 variables in this present model. The signs of all terms for local variables are consistent with that of OLS model in Table \ref{tab:chp3:ExploratoryRegression}, and the values of coefficients in MGWR maintain a high consistency with OLS model. The result shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables play positive effect. The value of the explanatory variable changes by 1 unit, the subway passenger will change the value of the coefficient. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform completely opposite effect on the independent variable. Moreover, comparing with the result of OLS regression, the result of MGWR has an improvement in both adjusted R2 and AICc value, and there is a 12\% decrease in residual.
+To deal with the strong collinearity among indicators, also to further make clear of the internal relationship, the exploratory factor analysis is introduced to reduce the dimension of the indicators, thus exploring the meanings that the indicators express. The factor analysis is a statistical method used to describe variability among observed, correlated variables in terms of a potentially lower number of unobserved variables, for which the factor analysis is usually used for dealing with the indicator set with strong collinearity. The procedure of factor analysis is as below.
 
 %
-\subsection{Evaluation of results}
-%
-As the result from both models, MGWR has a better performance than OLS, in which the residual of MGWR is 12.27\% less than that of OLS. Also, the homogeneity of residual distribution is evaluated by using Moran’s index shown in Table \ref{tab:chp3:Residual}. As can be seen, the Moran’s index in MGWR is closer to expected value than that in OLS. The MGWR model also shows less variance and greater likelihood of random distribution (with lower z-score and higher p-value) than OLS model. The spatial autocorrelation analysis presents that the residual of OLS model is more likely to be aggregative in space.
+\emph{1. KMO and Bartlett's Test}
 
-% Table 7
+%
+The KMO measure of sampling adequacy reflect the correlation among all the indicators, referring to Table \ref{tab:chp3:KMOBartlettTest}. The test result of 0.756, which is greater than the suggested value of 0.7, means this indicator set has enough collinearity to conduct the factor analysis. As to the Bartlett’s Test, if the variables are independent to each other, the common factor cannot be extracted from it, and factor analysis cannot be applied. The Bartlett sphere test judges that if the correlation matrix is a unit matrix, the factor analysis method of each variable is invalid. The test results show that $Sig.<0.05$, which means that each variable has correlation and factor analysis is effective. 
+
+% Table
 \begin{table}[htbp]
 	\centering
-	\caption{Residual spatial autocorrelation of OLS and MGWR}
-	\label{tab:chp3:Residual}%
+	\caption{KMO and Bartlett's Test}
+	\label{tab:chp3:KMOBartlettTest}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	
+	\begin{tabular}{p{16em}<{\centering}rr}
+		\Xhline{1.5pt}
+		\multicolumn{2}{c}{Kaiser-Meyer-Olkin Measure of Sampling Adequacy} & 0.756 \\
+		\midrule
+		
+		\multirow{3}[0]{16em}{\centering{Bartlett's Test of Sphericity}} & \multicolumn{1}{r}{Chi-Square} & 346.086 \\
+		& df & 45 \\
+		& Sig. & 0 \\
+		\Xhline{1.5pt}
+	\end{tabular}%
+\end{table}%
+
+%
+\emph{2. Fact extraction}
+
+%
+The factors are extracted using principal component method, Table \ref{tab:chp3:Communalities}lists the communalities of the indicators. As shown in this table, most information contained in the indicators can be explained by the extracted factors. Less information loss during the process of extracting factors means a good effect.
+
+%
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[htbp]
+	\centering
+	\caption{Communalities of each indicator}
+	\label{tab:chp3:Communalities}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
 	\begin{tabular}{lrr}
 		\Xhline{1.5pt}
-		Index & OLS & MGWR \\
-		
+		Indicator & Initial & Extraction \\
 		\midrule
-		Moran’s index & 0.08  & 0.03 \\
-		Expected index & -0.03 & -0.03 \\
-		Variance & 0.01  & 0.01 \\
-		z-score & 1.09  & 0.61 \\
-		p-value & 0.27  & 0.54 \\
 		
+		Office & 1.000 & 0.943 \\
+		Commerce & 1.000 & 0.799 \\
+		Hotel & 1.000 & 0.890 \\
+		Entertainment & 1.000 & 0.725 \\
+		Residence & 1.000 & 0.710 \\
+		Apartment house & 1.000 & 0.849 \\
+		Dwelling with shop & 1.000 & 0.885 \\
+		Government & 1.000 & 0.756 \\
+		Education & 1.000 & 0.923 \\
+		Culture & 1.000 & 0.811 \\
+		\Xhline{1.5pt}
+	\end{tabular}
+\end{table}%
+
+%
+As a result, there are four factors with the eigenvalue greater than 1 being extracted, these four factors account for 82.90\% of all the variance. It means the 3 factors can explain most part of the original 10 indicators. The Table \ref{tab:chp3:TotalVarianceExplained} shows the total variance explained.
+
+%
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[htbp]
+	\centering
+	\caption{Total variance explained}
+	\label{tab:chp3:TotalVarianceExplained}%
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	\begin{tabular}{cccc}
+		\Xhline{1.5pt}
+		\multirow{2}[4]{*}{Component} & \multicolumn{3}{p{15em}}{Rotation Sums of Squared Loadings} \\
+		\cmidrule{2-4}
+		& Total & \% of Variance & Cumulative \% \\
+		\midrule
+		
+		1 & 5.068 & 50.676 & 50.676 \\
+		2 & 1.851 & 18.510 & 69.187 \\
+		3 & 1.372 & 13.716 & 82.902 \\
+		\Xhline{1.5pt}
+	\end{tabular}%
+\end{table}%
+
+%
+\emph{3. Factor naming and interpretation}
+
+%
+The rotated component matrix (refer to Table \ref{tab:chp3:RotatedComponent} shows the attribution of each indicators on the newly extracted factors. The 3 factors can be named and explained as follow, they are Office \& commerce, mixed-residence, education.
+
+%
+\begin{itemize}
+	\item \textbf{Factor 1: Office \& commerce} \\
+	This factor represents the land use type mainly including office area, large commercial area, and some commercial supporting facilities.
+	
+	\item \textbf{Factor 2: Mixed residence} \\
+	The indicators of apartment, residence, and culture mainly attribute to this factor, which can reflect the attribute of residence with supporting facilities.
+	
+	\item \textbf{Factor 3: Education} \\
+	Except for the indicator of education, the indicator of government also attributes a large part of this factor. It means that the land use types of education and government have a relatively strong correlation.
+\end{itemize}
+
+% Table
+\begin{table}[htbp]
+	\centering
+	\caption{Rotated Component Matrix}
+	\label{tab:chp3:RotatedComponent}%
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	\begin{tabular}{lp{3em}<{\centering}p{3em}<{\centering}p{3em}<{\centering}}
+		\Xhline{1.5pt}
+		\multirow{2}[3]{*}{Indicator} & \multicolumn{3}{c}{Component} \\
+		\cmidrule{2-4}
+		& 1 & 2 & 3 \\
+		\midrule
+		
+		Office & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.962 & 0.122 & 0.060 \\
+		Hotel & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.934 & 0.123 & 0.050 \\
+		Commerce & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.878 & 0.105 & 0.131 \\
+		Entertainment & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.85 & 0.044 & -0.030 \\
+		Dwelling with shop & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.834 & 0.417 & 0.125 \\
+		Apartment house & 0.301 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.86 & 0.134 \\
+		Residence & -0.521 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.62 & -0.234 \\
+		Education & -0.066 & -0.039 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.958 \\
+		Culture & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.627 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.644 & 0.057 \\
+		Government & 0.570  & 0.305 & 0.582 \\
+		\Xhline{1.5pt}
+	\end{tabular}%
+	\label{tab:addlabel}%
+\end{table}%
+
+%
+\subsection{Classification of stations}
+%
+To further explore the characteristics of land use type in terms of each station, the cluster analysis is used to classify all the 35 subway stations, and the characteristics are summarized respect to the classifications.
+
+%
+The indicators used for classifying the subway stations are selected on the base of correlation analysis and factor analysis conducted before. Although the indicator of office and commerce have a strong collinearity, the definitions and usage of them are quite different, therefore, both two indicators are used in cluster analysis. Also with the consideration of the internal correlations shown in Table \ref{tab:chp3:CorrelationAnalysis}, the indicators with relatively high independence are selected. At last, there are 4 indicators of land use being selected for classification, which are office, commerce, residence, education, adding to one more indicator of population density is selected to describing the characteristic of density.
+
+%
+As to the procedure of cluster analysis, the cluster method is Ward method, the measurement of interval uses the Squared Euclidean distance, the data is standardized into 0-1 range. The 34 of all the 35 subway stations fall into 5 types, while the No.7 station located in the Fukuoka airport differs from the others. The 5 types are: low-density residence (9 stations), high-density residence (9 stations), education (6 stations), downtown commerce (5 stations), and office (5 stations) respectively. The result of classification is in the Figure \ref{fig:chp3:StationClassification}, the right part of this Table is the pie chart of land use type which shows the proportion of land use. The following gives the description of each type of stations. 
+
+%
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter2/StationClassification}
+	\caption{Classification of stations in terms of land use}
+	\label{fig:chp3:StationClassification}
+\end{figure}
+
+%
+\begin{itemize}
+	\item \textbf{Characteristics of low-density residence type} \\
+	This factor represents the land use type mainly including office area, large commercial area, and some commercial supporting facilities.
+	
+	\item \textbf{Characteristics of High-density residence type} \\
+	The indicators of apartment, residence, and culture mainly attribute to this factor, which can reflect the attribute of residence with supporting facilities.
+	
+	\item \textbf{Characteristics of education type} \\
+	Except for the indicator of education, the indicator of government also attributes a large part of this factor. It means that the land use types of education and government have a relatively strong correlation.
+	
+	\item \textbf{Characteristics of downtown commerce type} \\
+	The type of downtown commerce includes 5 stations, which constituted the CBD area of Fukuoka. These stations have the highest proportion of office and commerce, while proportion of residence is the lowest and population density is relatively lower.
+	
+	\item \textbf{Characteristics of office type} \\
+	This type includes 5 stations, of which the main land use is office. These stations mainly distribute around the CBD area, mixed land use is one of the main characteristics.
+\end{itemize}
+
+%
+This type includes 5 stations, of which the main land use is office. These stations mainly distribute around the CBD area, mixed land use is one of the main characteristics.
+
+%
+Different from the 5 types of stations, since the No.7 station, Kukou Station, is located at Fukuoka airport, the main component of land use is transportation facilities. From the view of land use, reflecting into the result of classification, the No.7 station does not belong to any type of stations.
+
+
+%
+\section{Analysis on the influencing factors of transit ridership}
+\subsection{Relationship between transit ridership and land use}
+%
+The data of land use is conducted every 5 years, while the data of subway transit ridership is annual. The 2008 data included in both data is used to analyze the relationship between subway transit ridership and land use.
+
+%
+According to the classification result (refer to \ref{fig:chp3:StationClassification}), adding to the average transit ridership of each type of station, as shown in the Table \ref{tab:chp3:ClassificationCharacteristics}, the subway transit ridership varies a lot in different types of land use. The station of low-density residence type has an average transit ridership of only 3416, while that of high-density residence type has 15633 on average. The downtown commerce type has the highest average transit ridership of 52300, while that in office type is only 11038, even though similar with the type of downtown commerce the office type has a high proportion of land use in office and commerce. The proportions of office and commerce in education type are similar with that in the two residence types, but from which the average transit ridership is quite different.
+
+% Table
+\begin{table}[htbp]
+	\centering
+	\caption{Classification Characteristics}
+	\label{tab:chp3:ClassificationCharacteristics}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	\begin{tabular}{lp{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\raggedleft}}
+		\Xhline{1.5pt}
+		Type & Office & Commerce & Residence & Education & Transit ridership \\
+		\midrule
+		
+		Low-density residence & 2.85\% & 7.99\% & 69.23\% & 4.47\% & 3416 \\
+		High-density residence & 5.43\% & 4.03\% & 59.66\% & 7.47\% & 15633 \\
+		Education & 6.03\% & 5.08\% & 40.22\% & 20.71\% & 7391 \\
+		Downtown commerce & 38.08\% & 25.76\% & 13.68\% & 1.24\% & 52300 \\
+		Office & 27.48\% & 14.20\% & 27.09\% & 3.10\% & 11038 \\
 		\Xhline{1.5pt}
 	\end{tabular}
 \end{table}
 
 %
-Since the MGWR is a kind of variable coefficient regression model, the coefficients and adjusted $R^2$ of each data point are different depending on the location of the data point, as shown in the Figure \ref{fig:chp3:LocalR}. For the 5 local variables in all 35 data points, the spatial distribution of significance level for the local variables are mapped in Figure \ref{fig:chp3:SignificanceDistribution}. For the variables of building area of transportation, bus capacity, bus accessibility, job-resident balance and tenant proportion, there are 33, 34, 35, 24 and 32 data points having statistical significance at confidence level 95\% respectively. As can be seen, the two indicators for bus proposed in this study have good performance in terms of significance and stability, while the variable of ‘tenant proportion’ does not have a strong stability in explanatory ability. Relatively, the other 4 variables have higher reliability in explaining the variety of ridership.
+According to the classification result of both subway transit ridership and land use around the stations, the cross table is shown in the Figure \ref{tab:chp3:CrossTable} below. All the stations belonging to low-density residence type have small-scale of transit ridership, which is under 10000 per day. Both the two hub stations belonging to the downtown commerce type located in the CBD area of Fukuoka. Overall, it can be inferred from this table that the area with lower density either in population or building has a lower demand in using rail transit; besides the high density in population and building, hub stations should also have particularities in location and function. 
 
-% Figure 3
-\begin{figure}[htbp]
+% Table
+\begin{table}[htbp]
 	\centering
-	\normalsize
-	\includegraphics[width=0.7\linewidth]{chapter3/LocalR}
-	\caption{Spatial distribution of local $R^2$}
-	\label{fig:chp3:LocalR}
-\end{figure}
-
-% Feagure 4
-% 多图联排的模板
-% 如果使用\usepackage{subfig},可以对每个子图进行交叉引用
-% 用法：\subfloat[...]{\label{sub-fig-1}% 为子图加交叉引用，详见该包的说明
-% Note： 两个minipage之间不能有空行，否则无法对齐
-
-% \begin{figure}[] 位置参数的说明
-% [h]  表示的当前位置（here），也就是说图片排在你设置的当前位置，但是如果这一页的空间不足以放下这个图片，此时图片会转到下一页。
-% [t]  顶端(top)。此时系统会将图片放置在页面的顶部。
-% [b] 底部. (bottom) 这里是优先将图片放置在底部，也就是页面的底部。
-% [p]  这个是将图片设置为浮动状态，也就是可以根据系统排版的，自动放置图片的位置。
-% [htbp] 优先放置在最佳位置，然后将其放在顶端最后放在底部,最后设置为浮动状态。
-\begin{figure}[htbp]
-	% 两列排列，每列占宽0.48
-	\begin{minipage}{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{chapter3/TransportationFacility} % 这里的图片宽度是相对minipage的，所以1倍就可以了
-		\centering{Transportation Facility}
-	\end{minipage}
-	\hfill % 横向填充，均匀分布
-	\begin{minipage}{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{chapter3/BusCapacity}
-		\centering{Bus Capacity}
-	\end{minipage}
-	
-	\vfill % 纵向填充，均匀分布
-	
-	\begin{minipage}{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{chapter3/BusAccessibility}
-		\centering{Bus Accessibility}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{chapter3/PopulationJobBalance}
-		\centering{Population Job Balance}
-	\end{minipage}
-	
-	\vfill
-	
-	\begin{minipage}{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{chapter3/TenantProportion}
-		\centering{Tenant Proportion}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[c]{0.48\linewidth}
-		\centering
-		\includegraphics[scale=0.3]{chapter3/Legend}\\
-	\end{minipage}
-	
-	\caption{Spatial distribution of significance level for local variables}
-	\label{fig:chp3:SignificanceDistribution}
-\end{figure}
+	\caption{Cross tabulation of land use types and transit ridership types}
+	\label{tab:chp3:CrossTable}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	\begin{tabular}{lp{3em}<{\raggedleft}p{3em}<{\raggedleft}p{3em}<{\raggedleft}p{3em}<{\raggedleft}}
+		\Xhline{1.5pt}
+		Type & Hub & Large-scale & Medium-scale & Small-scale \\
+		\midrule
+		
+		Low-density residence & 0 & 0 & 0 & 9 \\
+		High-density residence & 0 & 2 & 4 & 3 \\
+		Education & 0 & 0 & 1 & 5 \\
+		Downtown commerce & 2 & 1 & 2 & 0 \\
+		Office & 0 & 0 & 3 & 2 \\
+		\Xhline{1.5pt}
+	\end{tabular}
+\end{table}
 
 %
-\section{Discussion}
+Through the analysis of subway transit ridership and land use, the general trend of the relationship between them can be understood. However, the conclusion obtained from the trend analysis cannot be fully trusted due to the lack of statistical analysis, also, how the factor land use can influence transit ridership is still not clear.
+
+\subsection{Influencing factors on transit ridership}
 %
-This study focuses on small sample size, using 9 explanatory variables to describe the variety of subway ridership in a local central city with 35 subway stations, while regarding the outcomes of some existed studies in Table \ref{tab:chp1:Review}, most of these studies have a middle sample size (ranged from 150-450), and the number of explanatory variables is general about 10. The adjusted $R^2$ (0.96) in this study is a relatively higher one comparing with other studies, which means that most of the variation in ridership can be explained by the 9 variables in this present model. 
+The quantification method 1 is introduced to further explore the influence of each factor on the transit ridership. Different from regression model, the quantification method 1 converts the continuous independent variables into categorical variables thus investigating the correlation between categorical independent variables and the continuous dependent variable. This method is thought suitable to do the exploratory analysis on the data for the first time due to the procedure of discretizing the continuous independent variables. This discretization can partly reduce the deviation caused by the uneven distribution of the sample in the whole.
 
 %
-However, the adjusted $R^2$ is not the only judgment criterion in the regression model, especially in the small sample case. The result of this study shows that there are 3 variables, which are bus capacity, job-resident balance, and tenant proportion, impacting negative effect on ridership, while the others 6 variables plays positive effect. It is interesting to note from the coefficient that although the variables of bus capacity and bus accessibility have a strong positive correlation with statistical significance, they perform fully opposite effect on the independent variable. Regarding the coefficient showed in Table \ref{tab:chp3:ExploratoryRegression} and Table \ref{tab:chp3:ResultMGWR} obtained from the two models and 9 variables, the coefficients in both OLS model and MGWR model have consistent signs and similar values. The rationale of estimated results will be discussed from the three categories of indicators.
+The quantification method 1 can be viewed as an improvement of regression model which is used for dealing with the exploratory analysis at the beginning. Therefore, in the process of selecting explaining indicators, the indicators with strong collinearity should be excluded. Referring to the Table \ref{tab:chp3:CorrelationAnalysis}, the indicators of office, residence, education, and government have less collinearity. Notably, the indicators of office and commerce have strong collinearity, but either of the two indicators accounts for a large part in total, for which they should not be easily ignored. In order to reserve more information, a new indicator named commerce \& office which represents the sum of commerce and office building area is proposed. Coupled with the indicator of population density, there are 5 influencing indicators selected as the independent variables. The division of continuous variables are determined based on the Squared Euclidean distance between groups. Both the transit ridership and growth rate of transit ridership are estimated using the 5 indicators of population density, commercial \& office, residence, education, and government. The result is shown as Table \ref{tab:chp3:QM1TransitRidership} and Table \ref{tab:chp3:QM1GrowthRate}.
 
 %
-\subsubsection{Factors of land use}
-%
-Land use has been considered as a critical driver for influencing transit ridership, and some results of empirical studies have supported it \cite{sohn2010factors,zhao2013influences,chakraborty2013land}. Different kinds of land use have various demand in using subway \cite{chakraborty2013land}. In this study, two variables about building floor area (government area and transportation facility area) are found to be valid in explaining subway ridership (with statistical significance at 0.05 level). The coefficients showed in Table \ref{tab:chp3:ResultMGWR} implies that there is an increase of 5/10 passengers per additional 100 $m^2$ building floor area for government/transportation facility respectively. 
+As the results, the coefficients of determination with the value of 0.513 and 0.537 in both models respectively are not satisfactory. However, the results are not for predicting the transit ridership in the future but for exploring the influence of land use on the transit ridership. In view of this, the results are thought to have a certain referential value. 
 
 %
-Refer to the results of previous studies, the building floor area of office and commerce was normally considered as the crucial driver for generating transit ridership. However, travel habit and culture are not the same in all cities. The result of this study stated that in Fukuoka people working at or visiting government office are likely to use the subway. Another valid indicator is building floor area of transportation facilities, which mainly represents the scale of public transit in the urban area. Obviously, the larger station usually has a larger scale of passengers, but the causal relationship is that forecasted ridership determined the scale of the station, rather than the opposite direction. Thus, this indicator of transportation facility can be viewed as an index for posterior evaluation, to judge if the planning is consistent with the fact, but not a predictable index. In fact, the variables of office area, commerce area, and residence area are also placed on the candidate list, but they are not showing statistical significance. One possible conjecture can be given here: these three indicators represent the major category in building type, but they also contain several subcategories which cannot be expressed in the indicators. It means that each of these indicators is interpreting multiple issues, for which they cannot be consistent with statistics.
+As to the result of influence on the transit ridership, the commerce \& office contributes most of the variation in the transit ridership, which means that the commerce \& office plays important role in explaining the transit ridership. The building area of education has the weakest influence, while even building area of government is much smaller than that of education, the indicator of government contributes more to the variation in transit ridership. 
+
+% Table
+\begin{table}[htbp]
+	\centering
+	\caption{Results of quantification method 1 on transit ridership}
+	\label{tab:chp3:QM1TransitRidership}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距	
+	\begin{tabular}{p{8em}rp{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\centering}}
+		\Xhline{1.5pt}	
+		Factor category & Category & Number & Score & \multirow{1}[1]{4em}{Range} \\
+		\midrule
+		
+		\multirow{5}[0]{8em}{population density \\ (person/ha)} & 0-40  & 3 & 4644 & \multirow{5}[0]{4em}{13004 \\ 13.84\%} \\
+		& 40-80 & 13 & 2283 & \\
+		& 80-120 & 8 & 164 &  \\
+		& 120-160 & 8 & -2481 &  \\
+		& 160- & 3 & -8360 &  \\
+		\midrule
+		
+		\multirow{4}[0]{8em}{Commerce \& Office \\ ($m^2$)} & 0-100,000 & 16 & -6249 & \multirow{4}[0]{4em}{43288 \\ 46.07\%} \\
+		& 100,000-400,000 & 9 & -6617 &\\
+		& 400,000-1,000,000 & 5 & -4765 & \\
+		& 1,000,000- & 5 & 36671 & \\
+		\midrule
+		
+		\multirow{3}[0]{8em}{Residence \\ ($m^2$)} & 0-300,000 & \multicolumn{1}{r}{4} & -1450 & \multirow{3}[0]{4em}{16240 \\ 17.28\%} \\
+		& 300,000-800,000 & 20 & -5575 & \\
+		& 800,000- & 11 & 10664 & \\
+		\midrule
+		
+		\multirow{3}[0]{8em}{Government \\ ($m^2$)} & 0-1,000 & 13 & -2957 & \multirow{3}[0]{4em}{12267 \\ 13.06\%} \\
+		& 1,000-10,000 & 9 & -5501 & \\
+		& 10,000- & 13 & 6766 & \\
+		\midrule
+				
+		\multirow{4}[0]{8em}{Education \\ ($m^2$)} & 0-10,000 & 5 & 4842 & \multirow{4}[0]{4em}{9159 \\ 9.75\%}\\
+		& 10,000-50,000 & 11 & 993 & \\
+		& 50,000-100,000 & 11 & -4317 & \\
+		& 100,000- & 8 & 1544 & \\
+		\Xhline{0.5pt}
+				
+		\multicolumn{2}{c|}{Independent variable} & \multicolumn{2}{c}{Sample size} & 35 \\
+		\multicolumn{2}{c|}{Transit ridership} & \multicolumn{2}{c}{Coefficient of determination} & 0.513 \\
+		\Xhline{1.5pt}
+	\end{tabular}%
+\end{table}%
+
+% Table
+\begin{table}[htbp]
+	\centering
+	\caption{Results of quantification method 1 on growth rate of transit ridership}
+	\label{tab:chp3:QM1GrowthRate}
+	\small
+	\renewcommand{\arraystretch}{1.25} % 重设表间距	
+	\begin{tabular}{p{8em}rp{4em}<{\raggedleft}p{4em}<{\raggedleft}p{4em}<{\centering}}
+		\Xhline{1.5pt}	
+		Factor category & Category & Number & Score & \multirow{1}[1]{4em}{Range} \\
+		\midrule
+		
+		\multirow{5}[0]{8em}{population density \\ (person/ha)} & 0-40  & 3 & 0.0155 & \multirow{5}[0]{4em}{0.0265 \\ 28.44\%} \\
+		& 40-80 & 13 & 0.0020 & \\
+		& 80-120 & 8 & -0.0001 & \\
+		& 120-160 & 8 & -0.0110 & \\
+		& 160- & 3 & 0.0056 & \\
+		\midrule
+		
+		\multirow{4}[0]{8em}{Commerce \& Office \\ ($m^2$)} & 0-100,000 & 16 & -0.0016 & \multirow{4}[0]{4em}{0.0097 \\ 10.44\%} \\
+		& 100,000-400,000 & 9 & 0.0006 & \\
+		& 400,000-1,000,000 & 5 & 0.0069 & \\
+		& 1,000,000- & 5 & -0.0028 & \\
+		\midrule
+		
+		\multirow{3}[0]{8em}{Residence \\ ($m^2$)} & 0-300,000 & \multicolumn{1}{r}{4} & -0.0183 & \multirow{3}[0]{4em}{0.0226 \\ 24.31\%} \\
+		& 300,000-800,000 & 20 & 0.0043 & \\
+		& 800,000- & 11 & -0.0012 & \\
+		\midrule
+		
+		\multirow{3}[0]{8em}{Government \\ ($m^2$)} & 0-1,000 & 13 & 0.0111 & \multirow{3}[0]{4em}{0.0228 \\ 24.54\%} \\
+		& 1,000-10,000 & 9 & 0.0008 & \\
+		& 10,000- & 13 & -0.0117 & \\
+		\midrule
+		
+		\multirow{4}[0]{8em}{Education \\ ($m^2$)} & 0-10,000 & 5 & -0.0078 & \multirow{4}[0]{4em}{0.0114 \\ 12.27\%}\\
+		& 10,000-50,000 & 11 & -0.0025 & \\
+		& 50,000-100,000 & 11 & 0.0034 & \\
+		& 100,000- & 8 & 0.0036 & \\
+		\Xhline{0.5pt}
+		
+		\multicolumn{2}{c|}{Independent variable} & \multicolumn{2}{c}{Sample size} & 35 \\
+		\multicolumn{2}{c|}{Growth rate of transit ridership} & \multicolumn{2}{c}{Coefficient of determination} & 0.537 \\
+		\Xhline{1.5pt}
+	\end{tabular}
+\end{table}
+
 
 %
-Moreover, the land use mix is also widely thought to be a crucial factor that can influence subway ridership. Some researches argued that the diversity of land use has a positive relationship with ridership, which means the higher diversity of land use can attract more passengers \cite{gutierrez2011transit,jun2015land}. However, the finding of this study shows an opposite result. The index of land use mix is redefined into land use aggregation in this study, and the result shows that the more aggregated the land use is the more ridership will be generated. In another word, the high diversity of land use will lead to a decrease in subway ridership. 
+The same indicator set is also used for estimating the influence on the growth rate of transit ridership (Table \ref{tab:chp3:QM1GrowthRate}), as a result, the coefficient of determination is a little higher than that of transit ridership. The indicator of commerce \& office explains only 10\% of the total variation in growth rate, while it accounts for almost 50\% in the case of transit ridership. This result shows that the driving force of transit ridership and of transit ridership growth rate is different. The factor of population and residents play the key roles in promoting the use of subway.
 
 %
-A possible explanation can be interpreted as following from the perspective of principles and features of TOD. A complete TOD area should have various kinds of urban function, and the main aim of TOD is to allow people to do their daily activities by walking in the TOD area, thus reducing inefficient vehicle trip. That is, if people can do most of their daily activities around the station, they will tend to reduce the use of subway. It is still not clear why this difference occurs. Unfortunately, the indicator of land use mix was not discussed in previous studies, there is little reference to explain it. A hypothesis is proposed to interpret this difference, even though there is no way to verify it, that is the proportion of each kind of land use should not be equal, the proportion in Fukuoka is as shown in Table \ref{tab:chp3:ProportionOfLanduse} \cite{bhat2007comprehensive}. Therefore, maybe this indicator with statistical significance in the prior studies was interpreting something else related to ridership but not describing land use mix. The results may be just statistically relevant to the ridership coincidentally. And that is the reason why this study proposes the method of identifying valid explanatory variables. Especially for small sample case, repeating test can reduce the probability of contingency.
-
-%
-\subsubsection{Factors of transportation accessibility}
-%
-Accessibility is also thought to be a key factor influencing ridership. K. Sohn and H.Shim further divided this factor into internal and external accessibility, which was also cited and used by Zhao et al., the former represented the accessibility to station within the catchment area, and the latter reflected the connectivity to the place outside the catchment area \cite{sohn2010factors,zhao2013influences}. This study identified four valid variables in transportation accessibility: transfer dummy, bicycle parking, bus capacity and bus accessibility. The transfer dummy and bicycle parking can be easily classified into external accessibility and internal accessibility respectively, and both have a positive effect on ridership. It means the more easily people reach subway station, the more likely they will use the subway. This result is also consistent with prior studies \cite{gutierrez2011transit,cardozo2012application,kuby2004factors}.
-
-%
-However, the effect of bus service on subway ridership is not so intuitive and clear as other factors. It can be speculated that bus service may have both positive and negative effects on ridership, for there are both competitive and transferring relationships between bus and subway simultaneously. Therefore, a greater transport capacity of bus service can share part of the passengers of the subway while a more accessible route network, bus service can transfer more passengers to subway from other places. And the result from this study has verified this hypothesis that the indicator of bus accessibility and bus capacity showed the totally opposite effect on subway ridership, the former have a positive effect on subway ridership while the latter is in contrary. 
-
-%
-The indicator of bus service was intuitively considered to be related with subway ridership, and it often appears in the candidate variables list of prior studies, but is rarely estimated successfully in final model (some studies used the indicator of feeder bus rather than normal urban bus \cite{sohn2010factors,cardozo2012application,zhao2013influences}. Besides, the factor of trunk bus which is thought to be competitive with subway, is also considered in the previous study, but it did not show statistical significance \cite{sohn2010factors}. It can be guessed that the influence of bus service cannot be interpreted by only one indicator since the factor of bus service contains more than one kind of information. This result provided some inspiration that every transportation mode having both competitive and transferring relationships with another transportation mode may have both positive and negative effect on the others simultaneously.
-
-%
-\subsubsection{Factor of demographic and social economic environment}
-%
-Regarding the factor of the demographic and socioeconomic environment, the job-resident balance and tenant proportion are found to be effective in explaining the variation of subway ridership. As shown in Table \ref{tab:chp3:ResultMGWR}, both job-resident balance and tenant proportion are showed to have a negative impact on subway ridership. The result indicates that working people tend to use subway more than unemployed people (like children, old people, and housewife), while tenant takes subway less.
-
-%
-Because the travel habit is not the same between working people and unemployed people, the indicator of job-resident balance is developed to help to interpret the difference between jobs and population. It is also suggested that job-resident balance is a crucial factor that can influence house price, this indicator is thought to be related to income level, family structure, social class an so on \cite{song2004measuring}. But whether and how it can influence subway ridership has not been verified yet in prior studies. The result from this study shows that job-resident balance can affect subway ridership, and it also can be inferred that different group of people has different travel habit. Moreover, the generally considered crucial indicator of population and employment is not showing validity in this study. One possible explanation is that these two variables have multicollinearity with other variables and they have been expressed in the combination of other variables.
-
-%
-In this study, tenant proportion is also verified that having a positive influence on subway ridership. But for different cities and regions, travel preferences are different. The result from the empirical case in nine US cities indicates that tenant is more likely to use subway, while the case in Seoul shows an opposite result that tenants living around station use subway less \cite{jun2015land,kuby2004factors}. It seems that renters are likely to use public transport, since they are thought to be poor, young, located in denser multifamily housing \cite{kuby2004factors}. However, the discussion also suggests that the indicator of tenant percentage should be treated separated: it may have a high tenant percentage in both CBD areas and suburban apartment, but of which the travel habits may be totally different. That means even though travel preference is different in CBD area and suburban area, the indicator of tenant proportion may be almost the same.
-
-%
-\subsubsection{Limitation and implication}
-%
-This study focuses on subway ridership at station level. However, the ridership of one station is not only influenced by the circumstance of itself but also the stations connected to it. Once the circumstance within catchment area changes, obviously, the ridership of this station will change as well. But the increased part of passengers will be transported to other stations, thus every station connected to that station will also have an increasing on ridership. Until now, most of the studies (including this study) on this issue are focusing on station level. Therefore, identifying and explaining the factors influencing subway ridership from both origin and destination will be the next step of research. Meanwhile, the analysis of subway ridership at station-to-station level based on OD data will also provide a way to research the spatial connectivity among the catchment area of subway stations.
-
 \section{Conclusion}
 %
-This study examined the factors that may be associated with transit ridership using the case of subway stations in Fukuoka, Japan. There are 9 effective factors selected from candidate indicators to describe the variation of subway ridership in the final models. The results from both the OLS and MGWR model show that the 9 indicators performed stably. The procedure proposed in this study is verified to be effective in identifying valid explanatory indicators in terms of small sample cases. The major contribution of this study can be summarized as follows.
+This study investigated the variation of subway transit passengers from 2005 to 2014, and then analyzed land use types around the stations. On the base of understanding the characteristics of transit ridership and land use, the relationship between them was also estimated. The 35 subway stations were classified into 5 types with typical characteristics in terms of land use. The transit ridership of each type of stations showed significant differences. The results from quantification method 1 showed the quantitative relationship between transit ridership and land use. Even though the accuracy of results was not enough to make a prediction, it provided references for selecting more valid indicator to make a prediction in the future research.
 
 %
-First, on the base of previous studies, this study reclassified and reorganized the indicator framework. Besides the indicators appeared in the previous studies, the indicator of land use diversity was redefined as an aggregation of land use to make the expression of this index more intuitive and closer to reality. Additionally, two variables representing bus accessibility and bus capacity were proposed in this study to explore how can bus service influence the subway ridership.
+The major finding of this study can be summarized as follow. 
 
 %
-Second, this study proposed an approach for identifying the valid indicators from all the candidate factors. The result shows that the valid indicators identified by this approach indeed has stable effect on the subway ridership of Fukuoka. In small sample cases, this approach is expected for it can reduce the probability of statistical error by repeating the trail regression.
+\begin{itemize}
+	\item From the comprehensive description of the study case and the investigation on the transit ridership, it can be known that the subway transit ridership is still increasing at present, but it probably turns to decrease within the near future. 
+	
+	\item The subway line 3 has a greater potential for growth in transit ridership. Even though the transit ridership also the population and building density are still lower at present, the stations in subway line 3 are under rapid developing.
+	
+	\item The spatial variation in transit ridership shows the characteristics of central aggregation. The hub stations with higher transit ridership near to the downtown area have a higher growth rate in transit ridership.
+	
+	\item According to the classification of stations in terms of land use, different types of stations have quite different scales on the transit ridership.
+	
+	\item The same indicators of land use have different effects on transit ridership and the growth rate of transit ridership.
+\end{itemize}
 
 %
-Third, this study proposed an approach for distinguishing the global and local variables in MGWR model by using Moran’ Index. The result shows a significant improvement, even though in the case of a small sample, it performed reasonable and stable.
+This study is the first step to explain the influencing factors on rail transit ridership, which aims to give a comprehensive description of the research objectives also provide references for further explaining transit ridership. Based on the understanding of the insufficiencies in this study, some recommendations are given for the next research.
 
 %
-Finally, as a summary and prospect, direct station-level transit ridership forecasting model showed its advantages of rapid response, low cost, and high efficiency. But on the other hand, the direct model was still a part of the four step model, which could be viewed as the in-depth first step (forecasting of traffic generation) of the four step model. With the enrichment and diversification of data, the influence of environmental change in catchment area on transit ridership can be mastered more accurately with the help of GIS technology.
+\begin{itemize}
+	\item The determination of catchment area needs more investigation. Since the 800-meter circle catchment does not consider the differences in the form of the road network, the same 800 meters catchment area may represent different walking distance reflecting on the real road network.
+	
+	\item The selection of indicators explaining the transit ridership needs more exploration. The other categories of indicators about such as facilities, socio-economic, and urban design should also have influence on the transit ridership.
+	
+	\item The selection and usage of estimation model need more investigation. The issue of transit ridership is not only a simple regression problem, but it also relates to the location of stations. A model which is suitable for spatial analysis may be better than an ordinary regression model. 
+	
+	\item Need to deal with the small sample. Statistical analysis needs a certain sample size, otherwise, it cannot say the estimation result is credible. The problem led by small sample also reflects on the procedure of selecting the valid explanatory variables. 
+\end{itemize}
+
 
 % reference
 \clearpage % 新起一页
-% \bibliographystyle{apacite}
-\bibliographystyle{IEEEtran}
+\bibliographystyle{apacite}
+% \bibliographystyle{IEEEtran}
 \bibliography{ref}

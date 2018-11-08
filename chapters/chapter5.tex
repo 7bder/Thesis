@@ -1,336 +1,288 @@
-\chapter{Catchment Area and Walking Preference}
+\chapter{Influencing Factors on Ridership at Station-to-Station Level}
 \markright{CHAPTER 5}
 
-% 待修正
+% 待修正，再稍微补充一点，有点短感觉。两段话差不多
 \section{Introduction}
-% 略微重复一点第一章内容，说明我要做的背景
+% background
 \subsection{Background}
-At present, the 800 meters (half-mile) walking distance has been widely accepted as a principal reference of the catchment area for the planning of TOD \cite{kuby2004factors,gutierrez2011transit,cardozo2012application,zhao2013influences}. Planners and researchers also use rail transit catchment areas to make prediction of ridership. However, this 800 meters walking distance is loosely obtained from the sampling survey by asking how far people are willing to walk to rail transit stations, and the same reasoning has been used to justify other rail transit catchment areas and even in different cities and countries. As to passengers, the acceptable walking distance/duration should not only relate to the features of that, for example, the scale of stations and land use around stations, but also relate to the features of passengers' individual characteristics, such as occupations and trip purposes.
+%
+Urban rail transit is a type of high-capacity public transport generally found in urban areas. Because of the rapid, punctual and environment-friendly features, the urban rail transit is becoming one of the most important travel modes in modern cities. With the popularity of the urban rail transit in modern cities and the emphasis on sustainable development, the concept of TOD (Transit Oriented Development) is put forward, intended to build the compact city \cite{calthorpe1993next}. Many cities around the world have adopted the policy of giving priority to the development of public transport for decreasing the share of motorized travel and increasing the willingness of using public transit. For policymakers, how to grasp the relation between land use and transit ridership has become an important issue that they must face.
 
 %
-\subsection{Research objective}
-% 一个类比
-Rail transit provides a cheaper and environment-friendly way of transportation to passengers. Like any other service and commodities, it needs to face the market and should be transacted at the cost acceptable to consumers. As a result, the distribution of transaction cost can reflect the consumption-ability of consumers in the market. Obviously, it is important for rail transit operators to know how much the cost that consumers are willing to pay, based on which thereby making rail transit more attractive. But a little different from general service and commodities, for passengers, the cost refers to the convenience rather than the fare, because the cheap enough fare is already not the important element for passengers to decide whether using rail transit while the walking duration to stations become the important determinant.
+Although there have been lots of research on the relationship between land use and transit ridership, most of them are conducted from the perspective of the single station. The transit ridership of a station, however, should be affected not only by the elements around that station, but also be affected by the transit ridership of other stations, since all the stations are running in the same system.  Once the circumstance within catchment area changes, obviously, the ridership of this station will change as well. But the increased part of passengers will be transported to other stations, thus every station connected to that station will also have an increase in ridership. 
 
-% 转换回轨道交通乘客时的选择问题
-In the case of rail transit, before a potential passenger makes the decision of walking to a station, the expected walking duration, which is the "price" for this potential passenger, is just the reflection of the distance between departures and stations; while if this expected walking duration can be accepted by this potential passenger, this trip will happen and be surveyed. Based on the analogy given before, it's easy to think of that people with different individual characteristics generally should have different willingness towards walking duration to stations, and the surveyed walking durations can be viewed as the transaction price which have been accepted by passengers. It follows that the willingness of using rail transit will increase if the expected walking duration is less than that of acceptant range, otherwise, the willingness will decrease, which reflected in the survey data will be that the records with shorter walking duration are more than that with longer walking duration. 
-
+% why focus on the ridership at station-to-station level
 \subsection{Research purpose}
-% Introduction的总结
-As interpreted above, although the walking duration just presents the distance between departures and stations, it should have relevance with individual characteristics. Thereby, this study uses Fukuoka, Japan, as the case to explore this relevance, trying to explore how long passengers with have different individual characteristics are willing to take for walking to stations. The sample mainly includes people's individual characteristics and trip chain information, for example gender, age, occupation, departures, destinations and travel time. This paper is constructed as follow: section two reviews the previous research from the factor of walking duration and the influencing factors two parts;  section three describes the data for Fukuoka, and presents methods and necessary assumptions; section four and five give the process of analysis; section six discusses the results and draws conclusions. 
-
 %
+Some researchers have discussed on the issue of inter-urban transit demand at station-to-station level \cite{wardman1997inter,jones1983demand}, nevertheless, restricted by the difficulties in collecting data at station-to-station level, few studies focused on intra-urban transit demand \cite{choi2012analysis}. Even now, the transit ridership forecasting at station-to-station level is still difficult due to the complex interaction among stations. 
+
+Based on this realistic background, this study will focus on the relation among stations from the perspective of land use. But rather than making the prediction of transit ridership between station and station, this study tries to explain what factors of land use can influence the choice of destination station for passengers. 
+
 \section{Review}
-This section reviews the literature on the issue of walking duration/distance to rail transit stations, some problems that are still not well addressed are summarized. The review is arranged into two parts, which are the disposal of the variable of walking duration/distance, and the effect of influencing factors.
+%
+Until now, there are many studies focusing on the relationship between various factors and transit ridership. Most of the studies are based on regression model and conducted from the view of station-level, the transit ridership is thought to be affected by the circumstance surrounding the station \cite{cervero1997travel,taylor2003analyzing,zhao2005transit,estupinan2008relationship,taylor2009nature,sohn2010factors,gutierrez2011transit,jun2015land}. Among them, the multiple linear regression models are the earliest and most widely used model \cite{cervero1997travel,gutierrez2011transit}. However, the data point in ordinary least squares (OLS) model is treated as a single point, which is not consistent with fact since the transit node is connected to each other. To deal with the relationship among stations in the network, the approach of spatial regression is also introduced into this issue \cite{cardozo2012application,jun2015land}. However, this relationship among stations in spatial regression models is just the expression for the distribution relationship of stations in location, it cannot reflect the real connectivity between two station areas.
 
 %
-For the walking duration / distance, which is the research object in this study, there is always a difficult point in obtaining the accuracy walking duration/distance by questionnaire because of the discrepancy between perceived values and objective values. Also, the observed walking duration/distance is not the reflection of how long people are willing to spend on walking to rail transit stations, but only the walking duration/distance between departures and stations. For this problem, some studies chose a different perspective trying to explain the walking duration/distance by introducing a threshold of walking duration \cite{besser2005walking,mccormack2008objective}. They examined the differences in the distribution of influencing factors in terms of the specific threshold of walking duration. Indeed, using a threshold can decrease the discrepancy between observation and reality in some extent, but this disposal also brought some new problems in, for example, it may lead to a great loss of information in the raw data, and it is also difficult to decide the threshold of walking duration/distance.
+To explore the connectivity between station areas, Choi et al. conducted a station-to-station level investigation into the effect of both origins and destinations on OD metro ridership of Seoul, Korea by using the data from the automatic fare collection system \cite{choi2012analysis}. The factors considered to influence the OD ridership is divided into three groups: the factors of both origin and destination, and the impedance factors between stations. And where the variables of origin and destination are the same, representing the travel characteristics of O and D respectively. The influence of factors on OD ridership is estimated using multiplicative and Poisson regression, with the data of morning, evening peak hours, and midday hours. This station-to-station approach has connected stations by using the factors of both origin and destination. As the result of this empirical study, different land use functions have different travel characteristics in terms of both time and space. However, this approach still cannot reflect the connectivity between two station areas because of the aggregate processing for data.
 
 %
-Moreover, another point for this issue is whether to choose walking distance or walking duration as the threshold. To date, there are a lot of studies working on the relationship between walking distance and passengers' individual characteristics, some of them argued that an individual has a limited amount of time spending on traveling during a day, people tend to accept further walking distance as the speed of travel increases \cite{marchetti1994anthropological,larsen2010beyond}. With this reasoning it is easy to think of that passengers with the same individual characteristics may have the similar willingness of walking duration, but they generally have different willingness of walking distance due to different travel speed. This is also the reason why this study chooses the walking duration as the research object.
+Land use and public transit are coevolving partners in city building \cite{handy2005smart,dittmar2012new}. In the urban railway transit system, the ridership between stations is thought to be related to land use, distribution of functional regions, or travel preferences \cite{thompson1997achieving}. The catchment area of a station is the area with mixed land use of residences, business, and leisure within walking distance taking the station as the center, while the transit ridership between stations can be viewed as the connectivity of different catchment areas. The catchment area is generally referring to a compact residential district that includes mixing land use to allow people to most of their daily activities within the easy walking distance of a major transit node \cite{lund2004travel}. In details, various functional buildings are the carrier for people to live, work and recreate, different functions of buildings correspond different trip purposes. When the functions of buildings within the easy walking distance of a station cannot satisfy the requirement of people’s daily activities, people will choose to go to other places to conduct their business by using the transit node such as the subway. Therefore, the distribution of different functional building in a catchment area is considered to not only affect the ridership of the station where it is located but also affect the ridership of other stations connected to that station.
 
 %
-Among the influencing factors for walking durations, passengers' individual characteristics are generally thought to be the key that can affect walking distance \cite{besser2005walking,weinstein2008far,krygsman2004multimodal,yang2012walking,daniels2013explaining,guerra2012half}, whereas, there are few studies having clearly verified the relationship between individual characteristics and walking distance/duration, even there is a study suggesting the walking distance should not be viewed as a function of socio-demographic characteristics \cite{krygsman2004multimodal}. Several studies have confirmed the role of travel purposes in determining walking distance, the commute trip showed particularity from the other purposes, people with the purpose of commute tend to walk a longer distance to rail transit stations \cite{larsen2010beyond}. However, the definite relationship between trip purposes and walking distance is still unclear. The situation is the same with other categories of factors, such as the factors of transportation environment, land use, and willingness of passengers \cite{guerra2012half,krygsman2004multimodal,weinstein2008far}. The only thing that has been confirmed to date is that the walking distance/duration can be influenced by some specific kinds of factors, such as socio-demographic characteristics, trip purposes, and built-environment, but the problem is how and to what degree the walking distance/duration can be influenced.
-
-%
-It may be because of the problems in the disposal of walking distance/duration or the selection of influencing factors, most of the existing studies did not find the significant relevance between the walking distance/duration and the influencing factors. The studies working on the qualitative description for the distribution of walking distance accounted for the majority although some of the existing studies attempted regression model on this issue, the expected results were not obtained. To avoid the problems mentioned in the review, this study uses the thresholds of walking duration as the research object; for any given threshold of walking duration, the respondent who gives the answer greater than the given threshold can be viewed as this respondent can accept this threshold of walking duration; the surveyed walking duration is the reflection of passengers' willingness for using rail transit. For the analytical method, since various types of regression model has been verified unsuitable for this issue, instead of finding the linear relevance between dependent and independent variables, this study introduces the approach of machine learning into this issue, and try to explain the relevance between walking durations and individual characteristics from the view of probability.
+With the goal of explaining the variation in the ridership between stations, this study will focus on the passengers’ choices for destination stations from the perspective of complementarity of building function in different catchment areas, using the case of subway network in Fukuoka, Japan. The result from this study also can provide a foundation for explaining the connectivity between different catchment areas. Factors that are expected to influence the connection of stations are stated in the next section. Then the approach and model that are adopted in this study are interpreted. Based on the approach and model, the case of the subway system in Fukuoka, Japan is investigated. The discussion for the result is also presented in the last section.
 
 %
 \section{Data}
+
 %
 \subsection{Case introduction}
-All the rail transit stations and rail transit passengers within the urban area of Fukuoka are investigated as the research objective. The dataset is extracted from the Northern Kyushu Area Person Trip Survey, which is conducted about every 12 years, the latest available data is from the 4th survey surveyed by the year of 2005, and the 5th survey is already in preparation from September 2017. Figure \ref{fig:chp5:StationDistribution} shows the research area and the distribution of rail transit stations. By the year of 2005 (the 4th Northern Kyushu Area Person Trip Survey was conducted), there are more than 70 stations located within the city area of Fukuoka, of which the number of JR Kyushu station is 27, Fukuoka Subway station is 35, and West Japan Railway station is 16. Now some new rail transit lines and stations are still under planning and construction. 
-
-% Figure 1
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\linewidth]{chapter5/StationDistribution}
-	\caption{Distribution of transit stations}
-	\label{fig:chp5:StationDistribution}
-\end{figure}
+%
+This study focuses on 35 subway stations in Fukuoka City (the sixth largest city in Japan) which has the largest population in Kyushu Island of Japan (more than 1.5 million). Referring to Figure \ref{fig:chp4:ResearchArea}, the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines, a total of 29.8 kilometers operating mileage. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel (from Fukuoka City Transportation Bureau). Although the Fukuoka subway system is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population. Moreover, one thing should be noted that the third line is not directly connected with the first and second line. The catchment area of transit stations used in this chapter is the same with that in chapter 3. An 800-meter real walking distance on the road network is used as the pedestrian catchment area. The factors considered to have influences on the passengers' choices for destination stations are described as follow.
 
 %
-\subsection{Data description}
-The main purpose of person trip survey is to know the travel trends, thus making a better living environment and providing support for traffic planning. The original data covered the range of all the main cities in Northern Kyushu Area, which has more than 483,000 records of trip chaining behavior. The available data in this study mainly includes trip chaining behavior and socio-demographic characteristics, as shown in the Table \ref{tab:chp5:Data}.
+\subsection{Land use factors}
+%
+Land use is generally accepted as one of the determinants for transit ridership. The indicator of floor area in different building functions can be considered as a detailed expression for land use. Also, many researchers have verified the influence of floor area in different building functions on transit ridership by conducting empirical studies \cite{sohn2010factors,gutierrez2011transit,chakraborty2013land,chakraborty2013land,jun2015land}. Also, all the stations in the network are connected, the change of land use within the PCA of a station will lead to the changes of transit ridership in all the stations in the same network. For the case of Fukuoka, about 90\% of the trips accessing subway stations are non-motorized, in another word, the land use within the PCA of stations play a crucial role in determining the trip purposes of subway users. The accessing duration refers to Table \ref{tab:chp4:AccessToStations}.
 
-% Table 1
+%
+The same with previous studies, this study chose several types of land use with higher proportion to assess the indicator of land use mix, including residential, office, commercial, education. The four main types of land use account for about 85\% of all the floor area in Fukuoka City, especially in subway PCA, reaching more than 90\%, which refers to Table \ref{tab:chp4:ProportionOfLanduse}. In addition to the indicator of floor area, the index of the land use mix is also assumed to be a crucial factor for explaining the connectivity of stations \cite{badoe2000transportation,cervero2004transit,frank2004obesity}. Different from the general definition of land use mix, this study redefines it into the aggregation of land use. The Euclidean Metric is used for evaluating the deviation of land use aggregation in each subway station with respect to a reference value. The value of this indicator is ranged from 0 to 1, in which the lower value represents a higher diversity in land use function, while the higher value means the land use function is less diverse. This indicator of land use aggregation is defined as for Equation \ref{eq:chp4:LanduseAggregation}, it is speculated to have a negative impact on ridership. To describe the mixture of land use closer to the facts, the referenced balance proportion of land use types is decided by the average proportion of all subway station PCA (800 meters) in Fukuoka City (refer to Table \ref{tab:chp4:ProportionOfLanduse}). There are five variables of land use category selected as the indicator in this study, the list of indicators also the statistical descriptions refer Table \ref{tab:chp5:StationToStationFactorStatistics}.
+
+% Table
 \begin{table}[htbp]
 	\centering
-	\caption{Available data contents}
-	\label{tab:chp5:Data}
+	\caption{Statistical description of data}
+	\label{tab:chp5:StationToStationFactorStatistics}%
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	\begin{tabular}{ll}
+	\begin{tabular}{llrp{5em}<{\raggedleft}p{5em}<{\raggedleft}p{5em}<{\raggedleft}} 
 		\Xhline{1.5pt}
-		Category                      & Feature\\
-		\midrule
-		\multirow{7}[0]{*}{Trip chaining behavior} 
-		& Departure location \\
-		& Departure time \\
-		& Destination location \\
-		& Arrival time \\
-		& Transport modes \\
-		& Time spent for each mode \\
-		& Location of bus stop or rail transit station \\
-		\Xhline{0.5pt}
+		Category & Variable & Unit & Min Value & Max Value & Average \\
 		
-		\multirow{6}[0]{*}{Socio-demographic attributes}
-		& Age \\
-		& Sex \\
-		& Occupation \\
-		& Trip purpose \\
-		& Vehicle/License holding \\
-		& Address \\
+		\midrule
+		\multirow{4}[0]{*}{Land use}
+		& Commerce & \% & 1.03 & 44.58 & 9.89 \\
+		& Office & \% & 0.41 & 44.19 & 12.78 \\
+		& Residence & \% & 7.15 & 92.26 & 60.34 \\
+		& Education & \% & 0.03 & 48.02 & 7.08 \\
+		& Land Use Aggregation & - & 0.09 & 0.75 & 0.31 \\
+		
+		\Xhline{0.5pt}	
+		\multirow{2}[0]{*}{Impedance} 
+		& Bus Capacity & - & 58.48 & 2.91 & 259.80 \\
+		& Bus Accessibility & - & 89.71 & 4.00 & 455.00 \\
+		& Operation Distance & $km$ & 154.50 & 389.30 & 237.58 \\
 		\Xhline{1.5pt}
-	\end{tabular}
-\end{table}
+		
+	\end{tabular}%
+\end{table}%
 
 %
-To analyze the walking duration between departures and rail transit stations in Fukuoka, the first step is to extract the valid records of rail transit trip within the city area of Fukuoka from over 480,000 records in the dataset. The procedure of extracting the valid data is divided into 3 steps. Firstly, extracting all the person trip data that surveyed within the city area of Fukuoka; secondly, selecting the trip chaining behavior which contains the rail transit mode; thirdly, filtering the invalid data that with null value or abnormal value. The procedure of data cleaning is shown in Figure \ref{fig:chp5:DataCleaning}, at last the valid dataset is reduced to a size of 4254 trips.
-
-% Figure 2
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.9\linewidth]{chapter5/DataCleaning}
-	\caption{Process of data cleaning}
-	\label{fig:chp5:DataCleaning}
-\end{figure}
+\subsection{Impedance factors}
+%
+Another factor generally used for representing the connectivity between stations is the remoteness, which is also widely adopted as impedance in the gravity model for explaining the connectivity between traffic zones \cite{iwanow2007trade,kepaptsoglou2010gravity,nitsch2000national}. Impedance is the index that represents the connectivity and cost between origin and destination, it can affect the choice of the trip in terms of both destination and travel mode. Generally, the factor of impedance can be considered from two aspects in this issue, one is the internal impedance that representing the convenience for accessing the station \cite{chu2004ridership,chakraborty2013land}; the other is external impedance that evaluating the connectivity between stations \cite{sohn2010factors}.
 
 %
-Figure \ref{fig:chp5:AgeDistribution} shows the age distribution for walking trips to rail transit stations based on the finally valid dataset. The passengers aged from 25 to 55 account for the majority of the whole passengers, while schoolchildren aged under 15 rarely take rail transit. The distribution graph does not show significant peak values at any specific age group. Figure \ref{fig:chp5:DurationDistribution} shows the distribution of real walking durations to stations, it has a mean value of 8.32, and the standard deviation is 2. Notably, there are several peak values at the time of 5 multiples. It is speculated that the peak values may be caused by deviation occurred in the investigation. Since people's feeling about the specific time or number is inaccurate, they are inclined to reply a loose answer when they are asked some questions about the details of walking duration. This inclination will count some of the real walking duration that is near to 5 multiples as the 5 multiples and finally expressed in the result of investigation. Despite the bias between survey and reality, as the second assumption proposed before, passengers are viewed that they can accept the walking duration what they answered, therefore, the peak values are thought available in this study.
+For Fukuoka, there are about 90\% of all the trip accessing stations by walking and bicycles (refer to Table \ref{tab:chp4:AccessToStations}). Because the PCA is set by the pedestrian distance, the internal road impedance has been already considered in the phase of setting the PCA. It can be thought that there is no need to create a new indicator to represent the internal impedance in this case study.
 
-% Figure 3
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{chapter5/AgeDistribution}
-	\caption{Age distribution of passengers}
-	\label{fig:chp5:AgeDistribution}
-\end{figure}
-
-% Figure 4
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{chapter5/DurationDistribution}
-	\caption{Distribution of walking duration}
-	\label{fig:chp5:DurationDistribution}
-\end{figure}
+%
+Since the focus of this study is the connectivity between stations, it can be assumed that the interconnection between stations in a subway network is an influential factor in determining the ridership between stations. Two types of external impedance are considered in this study. The operation distance of subway line between two stations is the direct indicator representing the spatial connectivity between two stations. And the impedance of competing modes is also considered in this study. Two indicators of bus accessibility and bus capacity are proposed referring to Equation \ref{eq:chp4:BusCapacity} and Equation \ref{eq:chp4:BusAccessibility} respectively. The former one is used for representing the convenience for accessing the station which is speculated as a positive factor for ridership, while the later one is the transport capacity of the bus within the PCA of the station which is considered as a negative factor for ridership because it may share part of ridership from the subway. All the statistical description of indicators in this study are listed in Table \ref{tab:chp5:StationToStationFactorStatistics}.
 
 %
 \section{Methods}
 %
-\subsection{Necessary hypothesis}
-Based on the statements outlined in the parts of introduction and review, three basic assumptions are proposed in this study.
-
-\begin{itemize}
-	\setlength{\parskip}{0\baselineskip} % 设置段间距
-	\item A1: The distribution of departures and destinations of people with different individual characteristics in Fukuoka, Japan, is random in space. 
-	\item A2: The acceptant walking duration of people with same individual characteristics should subject to the normal distribution. 
-	\item A3: The respondents are viewed as they can accept the walking duration that they answered.
-	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
-\end{itemize}
-
-Based on H1 and H2, when examining the threshold of walking duration $t$, set the proportion of $k$ group in the whole surveyed sample as $r_k$, the proportion of people whose walking durations are under the given threshold of $t$ is marked as $r_{k}^{<t}$, the proportion of people whose walking durations are over the given threshold of $t$ minutes is marked as $r_{k}^{>t}$. If individual characteristics have no significant correlation with acceptant walking durations, there should be no significant differences among $r_k$, $r_{k}^{<t}$, and $r_{k}^{>t}$; otherwise, the three proportion should show significant differences, and the differences will show regularities at different threshold $t$.
-
-Based on H3, if someone gives the answer $t$ minutes, it means this respondent can accept the walking duration of $t$ minutes and any walking duration that less than $t$ minutes. Indeed, this respondent perhaps can accept the walking duration over he answered, but this study just concern about if he can accept the given threshold of the walking duration other than how long he can accept.
+\subsection{Flow of the method}
+It is difficult to analyze the connectivity of all the stations simultaneously. To simplify this issue, the study will be started by one single station, and then the connectivity between this station and all the other stations connected to it will be investigated. For a passenger, the behavior of going to some places by subway can be viewed as a procedure of choice. In this selection process, the choice is decided by the trip purpose of the passenger. As stated in the introduction, the type of building functions can be mainly categorized into residence, office, education, and commerce, which represent the trip purposes of going home, business, commute, and leisure respectively. Therefore, this issue can be converted into a discrete choice model, in which the dependent variables are the building environment in the station catchment area, and the independent variable is the choice of the destination station.
 
 %
-\subsection{Random forest decision model}
-%
-In this study, the variable of walking duration to the rail transit station is a continuous one, while the variables of individual characteristics are multi-categorical, for which the multiple linear regression is considered not applicable. Although there were some studies using the multiple linear regression to estimate the walking duration, the result showed no clear relationship \cite{krygsman2004multimodal}. Since what we concern with is the feature distribution of individual characteristics over or under the thresholds of walking durations, there is no need to find the linear relationship between the individual characteristics and walking durations.
+\subsection{Logistic regression}
+Taking one station as the destination station, it will correspond to the other departure stations in the subway system. The passengers from the all the departure stations have two options at that destination station, that is getting off and not getting off at this destination station. This probability of getting off at that destination station can be viewed as the representation of the connectivity between the departure station and the destination station. At this point, this issue has been converted into a binary choice problem that investigating the probability of getting off at one subway station. Thus, the Binary-Logistic Regression is introduced into this study to deal with this issue. Formula \ref{eq:chp5:LogisticRegression} shows the Binary-Logistic Regression that will be adopted in the next section.
 
-%
-According to the assumptions proposed before, when giving a specific threshold of walking duration, passengers walking longer or less than this threshold should have different feature distributions of individual characteristics. That is, if the walking duration of a passenger is more than a given threshold of walking duration, it can be considered that this given threshold of walking duration is an acceptant one, and this passenger should have a relatively high probability of choosing to use rail transit at any threshold of walking duration that less than that given one. This willingness of using rail transit can be reflected by the distribution of walking duration in terms of passengers' individual characteristics, based on which this study examines the relevance of passengers' individual characteristics and this distribution. The abstract model describing this relevance is expressed as follow, of which Equation \ref{eq:chp4:threshold} gives the value of $Y^T_i$, and Equation \ref{eq:chp4:probability} is the probability that $Y^T_i=1$ at given vector of $X_i$.
-
-% & 符号为对齐符号，用于 table 或 matrix
+% Equation 4
 \begin{equation}
-    \left\{\begin{matrix}
-		Y^T_i=1,&(t_i>T) \\
-		Y^T_i=0,&(t_i<T)
-	\end{matrix}\right.
-	\label{eq:chp4:threshold}
+	p_i(y_i=1 \mid X_i)=\frac{1}{1+e^{-(\alpha +X_i)}}
+	\label{eq:chp5:LogisticRegression}
 \end{equation}
 
-\begin{equation}
-	P(Y^T_i=1 \mid X_i)=F(X_i)
-	\label{eq:chp4:probability}
-\end{equation}
-
-%
 \begin{description}
 	\setlength{\parskip}{0\baselineskip} % 设置段间距
 	\normalsize
 	\item[\textbf{Where:}]
-	\item[$t_i$] is the walking duration answered by passenger $i$ (in minutes).
-	\item[$T$] is the threshold of walking duration that to be examined (in minutes).
-	\item[$Y^T_i$] is a binary variable. According to assumption 3, $Y^T_i=1$ means passenger $i$ can accept the threshold of $T$; while $Y^T_i=0$ indicates that it is uncertain whether passenger $i$ can accept this threshold.
-	\item[$X_i$] is the vector whose component is the individual characteristics of passengers.
+	\item[$p_i$] is the probability of getting off the subway for the $i$th passenger.
+	\item[$y$] is the choice of passengers.
+	\item[$X_i$] is the attribute vector of the $i$th passenger.
+	\item[$\alpha$] is the residual item
 	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
 \end{description}
 
 %
-The essence of such issue can be viewed as a binary classification problem, for which the models of decision tree, Bayesian, support vector machine (SVM), logistic regression, and neural network are widely adopted. In this study, limited by the volume of sample and features, also the unknown internal relationship among the features, the decision tree model should be a good choice because of the good generalization for different forms of data. Furthermore, to avoid the structure of the tree being too complicated, and to improve the robustness of the model, this study will use an improved model of decision tree, the random forest decision model, to train and test the samples. Random forest decision is an ensemble learning method mainly for classification and prediction. The random forest decision is an extension and improvement for the decision tree model, it is operated by constructing a multitude of decision trees and randomly selecting the features at training time \cite{ho1995random,ho1998random}. To improve the efficiency and accuracy of the model, and reduce the number of invalid branches in the model, it is necessary to filter the invalid features before estimating the model.
+For the estimation of a regression model, the model of logistic regression built in this study is a non-linear regression model, which can be directly estimated by using maximum likelihood estimation (MLE). Thus, the MLE is adopted to estimate the coefficient. In this study, the sample size is the passenger volume of all the departure stations connected to the investigated destination station, which is marked as $N$. The same with Equation \ref{eq:chp5:LogisticRegression}, $p_i$ is the probability for choosing to get off, thus, $1-p_i$ represent the probability for choosing not to get off. Then the occurrence probability $L(\theta)$ in all observation sample can be expressed as Equation \ref{eq:chp5:MLE}:
 
-%
-Briefly, the general process of this study can be summarized as follows. Firstly, data is extracted on the Fukuoka city-wide, including 4254 samples, and 6 main categories of features. Secondly, the features with importance in explaining the willingness of walking duration are selected by using analysis of variance (ANOVA). Thirdly, random forest decision for each threshold of walking duration is estimated, the result obtained from the random forest decision is the probability of walking longer than the given threshold of walking duration for each passenger in terms of individual characteristics. Finally, the accuracy of this result is evaluated using the method of simple moving average by descending order of the predicted probabilities.
+% Equation 5
+\begin{equation}
+	L(\theta)=\prod_{i=1}^{N}{p_i}^{y_i}(1-p_i)^{(1-y_i)}
+	\label{eq:chp5:MLE}
+\end{equation}
 
-%
-\section{Results}
-The procedure of feature selection includes two parts, the first is the disposal of features with low variance, and the second is the univariate feature selection. The first one is used for filtering the features accounting for very little in the total samples, because a too small quantity in the sample cannot present significant influence on the result. In this study, the multi-categorical features in the original dataset are reclassified into larger groups, thus dealing with the features with low variance. The second step is to select the valid features that indeed have relevance with the independent variable, this step is based on statistical tests. In this study, the Analysis of Variance (ANOVA) is used for estimating the importance of each feature.
-
-%
-\subsection{Reclassifying features}
-The feature of trip purpose has 15 subcategories in the original dataset, this study reclassifies them into 5 categories including commuting to work, commuting to school, official business, private purpose (such as shopping, entertainment), and going home. The feature of occupation is reclassified from 14 subcategories into 5 categories as well, they are service, technology, administration, student, and the other. Table \ref{tab:chp5:StatisticalDescription} reports some of the statistical description for each feature. Overall, the average walking duration to rail transit stations is 8.32 minutes; more than 75\% of the passengers walk less than 10 minutes; most passengers walk to stations costing 5-10 minutes. In detail, there are some significant differences in the statistical description for each feature, the differences are summarized as follows.
-
-%
-\begin{itemize}
+\begin{description}
 	\setlength{\parskip}{0\baselineskip} % 设置段间距
-	\item People with the purpose of commuting account for the major of rail transit users.
-	\item Most people do not accept a more than 15 minutes walking duration to transit stations.
-	\item The walking duration in peak hour is longer than off-peak hour.
-	\item Young and old people are inclined to spend less time on walking to rail transit stations.
-	\item Passengers with the trip purposes of official business and going home tend to take shorter time in walking to rail transit stations.
-	\item Passengers with the trip purpose of commuting to work are willing to accept a longer walking duration than that with other purposes significantly.
+	\normalsize
+	\item[\textbf{Where:}]
+	\item[$p_i$] is the probability of getting off at the investigated destination station for the $i$th passenger.
+	\item[$y_i$] is the choice of $i$th passenger, of which $y_i = 1$ means getting off at the investigated destination station, $y_i = 0$ means not getting off at the investigated station.
+	\item[$N$] is the number of passengers riding rail transit at all the departure stations connected to the investigated destination station
 	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
-\end{itemize}
+\end{description}
 
-
-% Table 2
-\begin{sidewaystable}[htbp]
-	\caption{Statistical description of walking duration for each feature}
-	\label{tab:chp5:StatisticalDescription}
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.25}
-	\begin{tabular}{llrrccccccc}
-		\Xhline{1.5pt}
-		Features & Categories & Count & Percentage & Mean & Std & 10th & 25th & 50th & 75th & 90th\\
-		
-		\midrule
-		& Total & 4254 & - & 8.32 & 4.63 & 3 & 5 & 8 & 10 & 15 \\
-		
-		\midrule
-		\multirow{2}{*}{Sex}
-		& Male & 2257 & 53.1\% & 8.41 & 4.63 & 3 & 5 & 8 & 10 & 15 \\
-		& Female & 1996 & 46.90\% & 8.22  & 4.63 & 3 & 5 & 7 & 10 & 15 \\
-		
-		\midrule
-		\multirow{2}{*}{Peak hour}
-		& Peak & 2976 & 70.00\% & 8.51 & 4.66 & 3 & 5 & 8 & 10 & 15 \\
-		& Off peak & 1277 & 30.00\% & 7.88 & 4.52 & 3 & 5 & 7 & 10 & 15 \\
-		
-		\midrule
-		\multirow{4}{*}{Age}
-		& 5-24 & 543 & 12.80\% & 8.18 & 4.7 & 3 & 5 & 7 & 10 & 15 \\
-		& 25-44 & 1992 & 46.80\% & 8.36 & 4.42 & 3 & 5 & 8 & 10 & 15 \\
-		& 45-64 & 1407 & 33.10\% & 8.43 & 4.83 & 3 & 5 & 8 & 10 & 15 \\
-		& 65- & 311 & 7.30\% & 7.78 & 4.81 & 3 & 5 & 7 & 10 & 15 \\
-		
-		\midrule
-		\multirow{5}{*}{Occupation}
-		& Service & 1256 & 29.50\% & 8.32 & 4.57 & 3 & 5 & 8 & 10 & 15 \\
-		& Tech & 721 & 17.00\% & 8.58 & 4.89 & 3 & 5 & 8 & 10 & 15 \\
-		& Office & 1076 & 25.30\% & 8.44 & 4.48 & 4 & 5 & 8 & 10 & 15 \\
-		& Student & 325 &  7.60\% & 8.12 & 4.73 & 3 & 5 & 7 & 10 & 15 \\
-		& Null & 875 & 20.60\% & 8.03 & 4.62 & 3 & 5 & 7 & 10 & 15 \\
-		
-		\midrule
-		\multirow{5}{*}{Purpose}		
-		& Commuting to work & 2697 & 63.40\% & 8.69 & 4.51 & 4 & 5 & 9 & 10 & 15 \\
-		& Commuting to school & 287 & 6.70\% & 8.19 & 4.60 & 3 & 5 & 8 & 10 & 15 \\
-		& Official business & 153 & 3.60\% & 7.10 & 5.05 & 2 & 3 & 5 & 10 & 15 \\
-		& Private purpose & 789 & 18.60\% & 7.82  & 4.78 & 3 & 5 & 7 & 10 & 15 \\
-		& Going home & 327 & 7.70\% & 7.17 & 4.67  & 2 & 5 & 5 & 10 & 15 \\
-		%
-		\Xhline{1.5pt}
-	\end{tabular}
-\end{sidewaystable}
-
+\section{Results}
 %
-\subsection{Univariate feature selection}
-%
-According to the achievements from previous studies, the walking distance to rail transit stations ranged generally from 400 meters to 1000 meters in terms of different city types, travel habits, also the needs of research purpose \cite{guerra2012half,murray1998public,o1996walking,keijer2000people,zhao2003forecasting,alshalalfah2007case}. If converting this walking distance into walking duration by using the walking speed of 4.8 km/h, the walking duration would range from 5 minutes to 13 minutes \cite{bohannon1997comfortable}. 
+The characteristic of land use within the PCA of a station can represent the characteristic of passengers departing from that station. Since a city is the collection of different functional regions, the land use characteristics of each PCA are also different. To explore the connectivity between stations with different types of land use characteristics, this study firstly classifies all the stations in terms of the proportion of different function of land use and population density. Then the typical stations are chosen from each group of different land use type, thereby estimating the connectivity between stations by conducting the logistic regression. 
 
+\subsection{Selection of object station}
 %
-In this study, more than 40\% of the samples walk less than 5 minutes, and the walking duration within 13 minutes covers about 85\% of the total. The 5 minutes walking duration can be accepted by most passengers, while a walking duration longer than 13 minutes cannot be accepted by most passengers. In addition, as the average walking duration in this study is about 8 minutes, the three representative thresholds of 5, 8, 13 minutes are picked as the typical threshold for estimating the relationship between individual characteristics and walking durations. 
-
-%
-The valid features are identified using ANOVA. The features with p-value less than 0.05, which means this feature relevant with the dependent variable at the confidence level of 95\%, are picked out and listed in Table \ref{tab:chp5:ValidFeatures}. In the Effect column of this table, L means the individual with this feature tend to walk longer than the given threshold of walking duration, while M is the opposite meaning.
+As the result, all the stations are fallen into six categories, they are medium-density residence, high-density residence, education, office, commerce, and airport (refer to Figure \ref{fig:chp3:StationClassification}). Detailed statistics for each type is shown in Table \ref{tab:chp5:StationClassification}, the average values of attributions in each group are represented, furthermore, the factors of bus service and land use aggregation are also put in this table to help to observe the difference among groups. As is shown, both the group of medium-density residence and the group of high-density residence have a higher proportion of residence floor area, but there is a significant difference in the population density in the two groups. It is clearly that the education type has the highest proportion of education floor area. Both the office type and the commerce type have a higher proportion in office than other types, but the commerce proportion in commerce type is also higher than other types. Additionally, the station of Fukuoka airport does not belong to any group, which mainly takes the feeder traffic from the airport to urban area. It also can be noted that the residence and office type have a relatively lower land use aggregation and higher population density.
 
 % Table 3
 \begin{sidewaystable}[htbp]
-	\caption{Valid features and the effect at each threshold}
-	\label{tab:chp5:ValidFeatures}
 	\centering
+	\caption{Station classification}
+	\label{tab:chp5:StationClassification}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
-	
-	\begin{tabular}{lrlrlr}
-		\Xhline{1.5pt}
-		\multicolumn{2}{c}{5 min threshold} & \multicolumn{2}{c}{8 min threshold} & \multicolumn{2}{c}{13 min threshold} \\
+	\begin{tabular}{p{12em}<{\raggedright}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{4em}<{\centering}p{5em}<{\centering}p{5em}<{\centering}p{5em}<{\centering}}
 		
-		\midrule
-		Features & Effect* & Features & Effect* & Features & Effect* \\
-		Age over 65 & L	& Female & M & Age 45-64 & M \\
-		Peak hour & M & Age 25-44 & M & Peak hour & M \\
-		O\_Null & L & Peak hour & M & P\_commuting to work & M \\
-		P\_commuting to work & M & P\_commuting to work & M & P\_ private purpose & L \\
-		P\_official business & L & P\_official business & L	& & \\
-		P\_private purpose & L & P\_ private purpose & L & & \\
-		P\_going home & L & P\_ going home & L & & \\
 		\Xhline{1.5pt}
+		Type & Population density & Commerce & Office & Residence & Education & Land Use Aggregation & Bus Capacity & Bus Accessibility \\
+		\midrule
+		
+		Medium-density residence & 98 & 4\% & 3\% & \cellcolor[rgb]{.8, .8, .8} 83\% & 4\% & 0.34 & 18 & 28 \\
+		High-density residence & 173 & 5\% & 7\% & \cellcolor[rgb]{.8, .8, .8} 76\% & 6\% & 0.26 & 51 & 80 \\
+		Education & 83 & 5\% & 6\% & 51\% & \cellcolor[rgb]{.8, .8, .8} 22\% & 0.3 & 45 & 52 \\
+		Office & 135 & 8\% & \cellcolor[rgb]{.8, .8, .8} 31\% & 49\% & 3\% & 0.18 & 83 & 131 \\
+		Commerce & 69 & \cellcolor[rgb]{.8, .8, .8} 34\% & \cellcolor[rgb]{.8, .8, .8} 32\% & 24\% & 1\% & 0.47 & 132 & 213 \\
+		Airport & 36 & 1\% & 3\% & 45\% & 2\% & 0.23 & 32 & 56 \\
+		\Xhline{1.5pt}
+		
 	\end{tabular}
 	%
 	\begin{description}
 		\small
-		\label{note:tab:chp5:ValidFeatures}
-		\item[*Note:] L means the individual with this feature tend to walk longer than the given threshold of walking duration, while M is the opposite meaning.
+		\label{note:tab:chp5:StationClassification}
+		\item[Note:] the highlighted cells refer to the representative values that having much higher percentage than other land use types.
 	\end{description}
+	
 \end{sidewaystable}
 
 %
-As shown in \ref{tab:chp5:ValidFeatures}, at the threshold of 5 minutes, the features of trip purposes and peak hour play the most important role in determining the willingness of walking duration. Situations are changed a little at the threshold of 8 minutes, the importance of age and gender raised in some extent, while the features of trip purposes changed little from that of 5 minutes. The feature importance shows a big difference from 5 and 8 minutes at the threshold of 13 minutes. This result of feature selection is also consistent with common sense and partly confirmed by the previous research. Most of the walking duration is distributed around the average walking duration of 8 minutes, it can be considered that walking duration between 5 and 13 minutes is sensitive to individual characteristics. The walking duration more than 13 minutes is not accepted by most people even if they have different individual characteristics, and the threshold less than 5 minutes is also not sensitive to individual characteristics since the 5 minutes threshold is generally accepted by most passengers.
+To investigate the stations with significant differences in land use characteristic, the most typical object station is chosen from each group in terms of the guidelines as follow. 1) Avoid selecting the stations with the highest value of feature indicator. Because the high value may be caused by the particularity of its distribution of land use and road network, it does not have generality in terms of the type it is. 2) Avoid selecting the transferable stations. Because the transit ridership of this kind of stations generally relates the other stations, which cannot reflect the distribution of land use within the PCA. 3) Avoid selecting the stations with much lower or higher population density than other stations. Because the low or high population density may lead to different travel preference due to the difference in the distribution of facilities (such as hospitals, schools, and transportation facilities etc.). Finally, six stations are selected from six groups, the factor of each station is shown in Table \ref{tab:chp5:Result}.
+
+% Table 4
+\begin{sidewaystable}[htbp]
+	\centering
+	\caption{Result of Logistic Regression}
+	\label{tab:chp5:Result}
+	\footnotesize % 该表使用小字体
+	\renewcommand{\arraystretch}{1.25} % 重设表间距
+	
+	\begin{tabular}{p{7em}p{5em}p{5em}<{\centering}rrrrrrrrr}
+		\Xhline{1.5pt}
+		
+		% 表题第一行
+		\multicolumn{2}{c}{Destination Station} & & \multicolumn{9}{c}{Variables in Boarding Station} \\
+		\midrule
+		
+		% 表题第二行
+		\multirow{2}[5]{7em}{Type} & \multirow{2}[5]{5em}{Station} & \multirow{2}[5]{5em}{\centering{Statistical index}} & \multicolumn{5}{c}{Land use} & & \multicolumn{3}{c}{Impedance} \\
+		\cmidrule{4-8} \cmidrule{10-12}
+		
+		% 表题第三行
+		& & & 
+		\multicolumn{1}{p{5em}}{\centering{Commerce}} & 
+		\multicolumn{1}{p{5em}}{\centering{Office}} & 
+		\multicolumn{1}{p{5em}}{\centering{Residence}} & 
+		\multicolumn{1}{p{5em}}{\centering{Education}} & 
+		\multicolumn{1}{p{5em}}{\centering{Land use Aggregation}} & &  \multicolumn{1}{p{5em}}{\centering{Distance}} & 
+		\multicolumn{1}{p{5em}}{\centering{Bus Capacity}} & 
+		\multicolumn{1}{p{5em}}{\centering{Bus Accessibility}} \\
+		\midrule
+		
+		% 开始表的内容
+		\multirow{3}[0]{7em}{Medium-density residence} & \multirow{3}[0]{5em}{Kamo} & \textsl{B} & -0.05 & -0.06 & -0.06 & -0.07 & -0.03 & & 0.07 & 0.01 & -0.01 \\
+		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & & 0.00 & 0.04 & 0.04 \\
+		& & \textsl{Exp(B)} & 0.95 & 0.94 & 0.94 & 0.93 & 0.97 & & 1.07 & 1.01 & 1.00 \\
+		\midrule
+		
+		\multirow{3}[0]{7em}{High-density residence} & \multirow{3}[0]{5em}{Fujisaki} & \textsl{B} & 0.01 & \cellcolor[rgb]{.8, .8, .8} 0.00 & -0.01 & 0.01 & -0.02 & & -0.06 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & \cellcolor[rgb]{.8, .8, .8} 0.18 & 0.00 & 0.00 & 0.00 & & 0.00 & 0.00 & 0.00 \\
+		& & \textsl{Exp(B)} & 1.01 & \cellcolor[rgb]{.8, .8, .8} 1.00 & 0.99 & 1.01 & 0.98 & & 0.95 & 1.00 & 1.00 \\
+		\midrule
+		
+		\multirow{3}[0]{7em}{Education} & \multirow{3}[0]{5em}{Hakozakikyudai} & \textsl{B} & 0.02 & \cellcolor[rgb]{.8, .8, .8} 0.00 & 0.02 & 0.03 & -0.01 & & -0.13 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & \cellcolor[rgb]{.8, .8, .8} 0.53 & 0.00 & 0.00 & 0.00 & & 0.00 & 0.04 & 0.00 \\
+		& & \textsl{Exp(B)} & 1.02 & \cellcolor[rgb]{.8, .8, .8} 1.00 & 1.02 & 1.03 & 0.99 & & 0.88 & 1.00 & 1.00 \\
+		\midrule
+		
+		\multirow{3}[0]{7em}{Office} & \multirow{3}[0]{5em}{Gofukumachi} & \textsl{B} & 0.02 & -0.02 & 0.02 & 0.05 & -0.01 & & \cellcolor[rgb]{.8, .8, .8} -0.01 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00 & 0.01 & & \cellcolor[rgb]{.8, .8, .8} 0.72 & 0.03 & 0.00 \\
+		& & \textsl{Exp(B)} & 1.02 & 0.98 & 1.02 & 1.06 & 0.99 & & \cellcolor[rgb]{.8, .8, .8} 0.99 & 1.00 & 1.00 \\
+		\midrule
+		
+		\multirow{3}[0]{7em}{Commerce} & \multirow{3}[0]{5em}{Tenjinn} & \textsl{B} & -0.01 & -0.01 & 0.01  & 0.03  & 0.02  & & 0.06 & \cellcolor[rgb]{.8, .8, .8} 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00  & 0.00 & & 0.00 & \cellcolor[rgb]{.8, .8, .8} 0.38 & 0.00 \\
+		& & \textsl{Exp(B)} & 1 & 0.99 & 1.01 & 1.03 & 1.02 & & 1.06 & \cellcolor[rgb]{.8, .8, .8} 1.00 & 1.00 \\
+		\midrule
+		
+		\multirow{3}[0]{7em}{Airport} & \multirow{3}[0]{5em}{Fukuoka Airport} & \textsl{B} & -0.03 & 0.03 & -0.01 & -0.02 & 0.03 & & -0.08 & 0.00 & 0.00 \\
+		& & \textsl{P-value} & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & & 0.00 & 0.00 & 0.00 \\
+		& & \textsl{Exp(B)} & 0.97 & 1.03 & 0.99 & 0.99 & 1.03 & & 0.92 & 1.00 & 1.00 \\
+		\Xhline{1.5pt}
+		
+	\end{tabular}%
+%
+	\begin{description}
+		\footnotesize
+		\label{note:tab:chp5:Result}
+		\item[Note:]
+		$B$ is the coefficient \\
+		$Exp(B)$ is the odds ratio \\
+		Gray cell means the estimated value is not significant at the significance level of 0.05 \\
+	\end{description}
+	
+\end{sidewaystable}%
+
+\subsection{Estimation of logistic regression}
+%
+In this study, the independent variable is the choice of getting off at the object station or not, and the influencing factors are land use and impedance between stations and stations. Notably, in the case of Fukuoka subway network, subway line 3 is not directly connected with that line 1 and line 2, thus subway line 3 is addressed separately from subway line 1 and line 2. That is, if the object station belongs to subway line 3, the connectivity will be only investigated within subway line 3. The result of estimation is shown in Table \ref{tab:chp5:Result}.
 
 %
-\subsection{Estimation of features}
-The valid features (Table \ref{tab:chp5:ValidFeatures}) are used in the random forest decision to estimate the probability that walking longer than the given threshold of walking duration. For estimating the model, the dataset is divided into two parts, 50\% of the sample are used for fitting the model thus obtaining the coefficients, the rest 50\% are used for testing the ability of prediction. The prediction process is presented in Figure \ref{fig:chp5:RandomForests}. For the random forest decision, the prediction is not obtained from the only one decision tree but the multitude of decision trees constructed by random selection of features and samples. The dependent variable at the given threshold of walking duration to rail transit stations is calculated by equation \ref{eq:chp4:probability} based on the mean prediction.
-
-% Figure 5
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.7\linewidth]{chapter5/RandomForests}
-	\caption{Prediction process in random forests decision}
-	\label{fig:chp5:RandomForests}
-\end{figure}
+The estimation is as shown in Table \ref{tab:chp5:Result}, the values in gray cell mean that this factor showed no statistical significance at the confidence level of 0.05. The index of $Exp(B)$, which is the odds ratio, represents the extent to the effect on the probability of choice if the coefficient $B$ changes one unit. Here giving a brief explanation of the index of $Exp(B)$, since the unit and meaning of the variables entered the models are different. For the variables of land use, the index of $Exp(B)$ represents that the 1 percent (0.01 unit) change in the variables will lead to an $Exp(B)$ multiples of increases in the probability of getting off at the object station. For the variables of impedance, it means the 1 unit change in the variables will lead to an $Exp(B)$ multiples of increases in the probability of choosing the object station as a destination. 
 
 %
-The accuracy of results are evaluated by using the method of simple moving average. Figure \ref{fig:chp5:Prediction} is the trend line of probabilities that walking less than the given threshold. The trend line of the surveyed values based on the test set is calculated by the mean probability of a group people who have close predicted values. The trend line is drawn by a descending order of predicted values. From the comparison of predicted values and surveyed values, it can be known that the prediction at the threshold of 5 minutes has the best fitness, and the prediction for the threshold of 13 minutes is also slightly good, while it is not so good in the case of 8 minutes. In fact, if checking the prediction for individuals, the accuracy of this model is still not enough to explain the individual behavior. But the trend line in Figure \ref{fig:chp5:Prediction} infers that this result can reflect the behavior of people with specific individual characteristics at a given threshold of walking duration. 
-
-% Figure 6
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.7\linewidth]{chapter5/Prediction5Min} \\
-	\includegraphics[width=0.7\linewidth]{chapter5/Prediction8Min} \\
-	\includegraphics[width=0.7\linewidth]{chapter5/Prediction13Min} \\
-	\caption{Trend line of prediction and test set}
-	\label{fig:chp5:Prediction}
-\end{figure}
+A further explanation taking the Tenjin station as an example is given as below. From the point of land use, the increase of commerce and office floor area in the catchment area of the boarding stations can lead to a decrease in the probability of choosing the Tenjin station as the destination station; while the increase of residence and education floor area in the catchment area of boarding stations can raise the probability of choosing to go the Tenjin station. If interpreted in terms of connectivity, the business type of Tenjin Station is weakly connected to stations with the same commercial type, and the stations of office type; while the stations of business type have relatively strong connectivity with the stations of residence and education type. 
 
 %
 \section{Discussion}
-This study described and analyzed 4254 records of rail transit trip. Three thresholds of walking duration are examined. From the result in Table \ref{tab:chp5:ValidFeatures}, trip purpose is the most important factor in determining the walking durations at all the 3 thresholds. The feature of peak hour is also significant in explaining the walking duration. People tend to walk a longer time to stations at peak hours, while people with private purpose or on the way going home are not willing to choose a stations far away. For the details of each threshold, the unemployed people and the elderly people tend to walk less than 5 minutes to stations; people whose age is between 25 and 44 are unwilling to walk more than 8 minutes; people aged from 45 to 64 can accept walking more than 13 minutes to stations more easily.
+%
+From the perspective of TOD, this study investigated the connectivity between stations with different land use characteristic by examining the impact of land use and impedance on subway passengers' choice of the destination station. As shown in Table \ref{tab:chp5:StationClassification}, the PCA of the station in Fukuoka shows a significant characteristic of land use distribution, and all the subway stations are categorized into six major types. The result of logistic regression shows the coefficient of factor influencing the choice of the destination station, which can be explained as the connectivity between different PCAs.
 
 %
-However, summarized above is only the description for the distribution of walking duration in terms of each feature which is hard to apply. In fact, the data in this study is obtained from a factual investigation but not a willingness survey. Once people have made a decision of walking to rail transit stations, the walking duration is just representation of the location of departures and the walking speed. It is hard to say whether the individual characteristics affected the walking durations, maybe due to this reasons few existing studies can explain the relevance between walking duration and individual characteristics quantitatively correctly. The perspective changed a little in this study, under the assumptions proposed before, the distribution of walking duration can be viewed as a reflection of the acceptability of walking duration, which should have relevance with people's individual characteristics. According to assumption 3, the behavior that a passenger chose to walk to a station means this passenger can accept the walking duration from the departure to that station. Based on assumption 1 and 2, if the people who accepted the given threshold of walking duration shows significant differences in individual characteristics, it means they have a different acceptability of walking duration with the others.
+Some findings of the land use factors can be known from the result in Table \ref{tab:chp5:Result}. The increase in the proportion of residence area of the departure station can lead to an increase in the choice of taking the office and education type station as destination stations. This can be explained as the result of commuter traffic since there is a relatively stronger connectivity between the residential area and work area \cite{badoe2000transportation}. But the situation may change in the medium-residence type due to the different travel preferences in the area with different population density. Another interesting finding is that all kinds of land use have positive connectivity with the education type station. One speculation is that students tend to take public transit because of the low income. Overall, one kind of land use generally shows a rejection effect on the station which has a similar consist of land use type. Such as the Tenjin station located in the CBD area, the proportion of commerce area in the PCA of departure station causes a negative effect on the choice of getting off at Tenjin station. Moreover, the variable of land use aggregation shows that there is a positive connectivity between the areas with an unbalanced distribution of land use.
 
 %
-As explained above, this study examined the differences in individual characteristics of which people who accepted the given thresholds of walking duration. As the results, people with different individual characteristics shows different acceptability at each threshold of walking duration. According to the evaluation from the method of simple moving average, the model of 5 minutes’ threshold has a better explanatory ability, the model of 13 minutes' threshold is a little weaker, and the model of 8 minutes' threshold is not good. Here are some possible reasons for explaining the results. The selected thresholds of walking duration 5, 8, 13 minutes represent the lower boundary, mean value, and upper boundary of the main distribution of walking durations respectively. The commonly acceptable walking durations range from 5 to 13 minutes, therefore, it can be inferred that people who prefer walking less than 5 minutes and who can accept walking longer than 13 minutes may have significant features. However, as the mean value of walking duration, it can be thought that most of the walking durations are distributed around 8 minutes, for passengers there may be some randomness in making the decision of whether walking to rail transit stations. For the other threshold values near the mean value of 8 minutes, it also can be inferred that people may have some ambiguity in choosing whether to walk to stations or not. This explanation can also be confirmed by the result of valid features selection. There are 5 identical features in both thresholds of 5 and 8 minutes, which means people with those features are not sensitive to the threshold from 5 to 8 minutes.
+The factors of impedance also showed a good statistical significance, however, the results do not seem to show a certain regularity in different types of stations. Here some possible speculations of the reasons are given for helping to find the limitation of this study and explore the direction for the next study. First, the share of different transportation modes is not considered in this study. The distance between two stations may also affect the variation in the share of different transportation modes, thus it is not stable in representing the impedance.  Second, the variables of bus service describe the features of one single station, but not the features that reflecting the connectivity between two stations. If considering two stations, one is in the downtown where the transportation hub locates, and one is in suburban where there are few public transportation facilities; it can be inferred that even though the bus service is rich in the downtown area, it affects very little on the station located in the suburban area.
 
+%
 \section{Conclusion}
 %
-The results of the random forest decision showed good predictive ability for groups of people, especially at the threshold of 5 minutes. However, it did not give ideal results on individual predictions, which means the application of this study needs a certain number of sample scale, there is still a lot of work should be done on improving the accuracy of prediction. In the next stage of this research, we plan to apply the results on predicting the willingness at a specific threshold of walking duration for a group of people. By using this prediction, for example, if knowing the individual characteristics of residents in a particular area locating from the rail transit station $T$ minutes, the general acceptability of walking to the station for the residents in this area should be predictive. Therefore, this prediction of willingness is expected to be used in planning the catchment area of rail transit stations or estimating the catchment area of existing stations.
+This study investigated the effect of land use and impedance between stations on the OD subway ridership from the perspective of the connectivity. The effect of factors on the choice of destination station was estimated using the logistic regression model. The result showed that the influence of land use on the ridership between stations was effective, and this result could be explained consistently with fact; while the factor of impedance was still difficult to get explained.
+
+%
+From the results obtained in this article, in the urban rail transit, the land use within the station catchment area is an important factor in determining the destination of passengers. Correspondingly, the change in the choice of destination can be reflected to the transit ridership. Furthermore, this change in the transit ridership of each station, which is caused by the change in the choice of destination, is the reflect of the connectivity between the station and the station in terms of land use in each station catchment area. The results are clearly shown in Table \ref{tab:chp5:Result}.
+
+%
+Based on the results in this study, the next stage of this research will focus on the share ratio in different transportation modes to make a deeper exploration of subway ridership. The factor of impedance will also be rebuilt to help to describe the connectivity between stations more accurately.
 
 % reference
 \clearpage % 新起一页
-% \bibliographystyle{apacite}
-\bibliographystyle{IEEEtran}
+\bibliographystyle{apacite}
+% \bibliographystyle{IEEEtran}
 \bibliography{ref}

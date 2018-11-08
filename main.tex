@@ -19,8 +19,8 @@
 % 断字和参考文献格式相关
 % 使用apa格式参考文献时，使用以下命令。数字格式直接用默认格式, 下边这些需要注释掉，否则报错。
 \usepackage[activate={true,nocompatibility}]{microtype} % 不完美解决断行断字问题。参数是自适应调整字间距。keyword: letterspace, hyphenate, expansion, protrusion
-% \usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
-% \usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
+\usepackage{cite} % 神奇的包，完美解决引用溢出边界问题。key word: citation, line-breaking
+\usepackage{apacite} % APA格式参考文献, 引用格式apacite。目前的问题好像是编译需要多次才能通过。
 
 % 几个没试成功的包
 % \usepackage{ragged2e} % 设置两端对齐的，没试成功
@@ -68,7 +68,7 @@
 \begin{document}
 % 表页制作
 \title{
-	{\Huge Research on Factors Influencing the Use of Rail Transit}\\
+	{\Huge Research on determinants of transit ridership}\\
 	{\vspace{3cm}}
 	{\includegraphics[width=0.2\linewidth]{university.jpg}}\\
 	{\vspace{2cm}}
@@ -91,9 +91,9 @@ This academic dissertation is independent research work conducted under the guid
 \newline
 \newline
 %
-Postscript:
+% Postscript:
 %
-This dissertation is edited in \LaTeX. For any details on content or typesetting, please contact below.
+% This dissertation is edited in \LaTeX. For any details on content or typesetting, please contact below.
 
 \begin{flushright}
 	Name: Chen Qi \\
@@ -123,25 +123,28 @@ This dissertation is edited in \LaTeX. For any details on content or typesetting
 % 声明
 \chapter{Acknowledgments}
 % Most valuable thing duing Ph.D., the overview.
-The journey of PhD has both pleasure and pain, but I deeply trust that all I went through today, either good or bad, will be the valuable life experience in the future. If mentioning the most memorable thing during my PhD, maybe I would say the process of shifting the way of thinking from a common people to a researcher, even I can say this is the most valuable thing that I obtained after the 4 years rather than the degree certificate.
+The journey of PhD has both pleasure and pain, but I deeply trust that all I went through today, either good or bad, will be the valuable life experience in the future. If mentioning the most memorable thing during my PhD, maybe I would say the process of shifting the way of thinking from a common people to a real researcher, even I can say this is the most valuable thing that I obtained after rather than the degree certificate during the more than 4 years .
 
 % 我要谢！谢全家十八辈儿！
 I am not willing to describe the period of PhD in a suffering way, but frankly, I have to say that without the support and help from various people around me, I should have already stopped my feet underway. There are so many thanks I would like to say, please let me express my appreciation one by one.
 
-% 我要谢！一个一个谢！
-First and foremost, I would like to thank Prof. Zhao Shichen, my supervisor, for the guidance and instruction not only in my studies but more in work and life attitude. The time of drinking with Prof. Zhao is so joyful and memorable, this drinking time also shortened the distance between us students and professor, for which I appreciated a lot. It's my luck that I came to Zhao laboratory doing research, thank to Prof. Zhao again for teaching me so many things.
+% 我要谢老大
+First and foremost, I would like to thank Prof. Zhao Shichen, my supervisor, for the guidance and instruction not only in my studies but more in work and life attitude. The time of drinking with Prof. Zhao is also joyful and memorable, that chance of drinking together also shortened the distance between us students and professor, for which I appreciated a lot. It's my luck that I came to Zhao laboratory doing research, thank to Prof. Zhao again for teaching me so many things.
 
 % co-supervisor
 I would like to express my appreciation to my co-supervisors, Prof. Sakai Takeru and Prof. Divigalpitiya Prasanna, for their instruction in the designing workshop. Even though I am not working on the architecture design, the sense of design they inspired me must be a valuable wealth in the future.
 
+% 感谢刘泽
+I feel very grateful that I met many nice senior fellow students when I just entered our laboratory. They taught me so many tips and experiences in both daily life and research, which helped me a lot in my later days. I would like to thank my brother Liu Ze, who should also be my teacher, for giving me so many comments and advices on my research. 
+
 % 谢陈思婷帮我搞论文
-I would like to thank the fellow students in our laboratory for their feedback on my papers. Communication is an important segment of research, a good research without readers has no meaning. Thanks to everyone for the their patients. Among them, I would like to thank Chen Siting especially for helping a lot in checking my messy English also in organizing the logic of my papers. 
+I would like to thank the other fellow students in our laboratory for their feedback on my papers. Communication is an important segment of research, a research without readers has no meaning. Thanks to everyone for the their patients. Especially I would like to thank Li He, Chen Siting, and Sun Xia for helping a lot in checking my messy English also in organizing the logic of my papers. 
 
 % 谢日本小鬼子教我日语
-Also, I have to say thanks to the cute Japanese fellows, although not for helping me in research. They talked with me, taught me language and culture, made me adapt Japanese life soon. My period in Japan is so enrich and interesting, a large part of which can be attributed to them. In particular, I would like to say thanks to  Yoshioka Daiki, Ikutake Shin, and Higuchi Go, thanks for their accompany in countless overnights.
+Also, I have to say thanks to the cute Japanese fellows, although not for helping me in research. They talked with me, taught me language and culture, made me adapt Japanese life soon. My period in Japan is so enrich and interesting, a large part of which can be attributed to them. In particular, I would like to say thanks to Yoshioka Daiki, Ikutake Shin, and Higuchi Go, thanks for their accompany in countless overnights.
 
 % 感谢韩博士家的麻将，火锅，炒菜
-One more thing, as we know relax is also important especially during the relatively arduous PhD period, how to spend the boring time and retrieve research condition is always a serious problem puzzling PhD students. Dr. Han Guofeng, my ex-roommate at Kyushu University International House, and his current-roommate provided us the party place in his apartment, where we have hotpot party and even playing mahjong in leisure time. Thanks to my mahjong partners, together with them a lot of happiness is created, boring time is spent, thus accomplishing research with a better status.
+One more thing, as we know relax is also important especially during the relatively arduous PhD period, how to spend the boring time and adjust the pace of work is always a serious problem puzzling PhD students. Dr. Han Guofeng, my ex-roommate at Kyushu University International House, and his current-roommate provided us the party place in his apartment, where we have hotpot party and even playing mahjong in leisure time. Thanks to my mahjong partners, together with them a lot of happiness is created, boring time is spent, thus accomplishing research with a better status.
 
 % 最后的最重要，我要感谢China, CSC，他们给我钱
 The most important thing always come last, all the expense during the 4 years PhD period is sponsored by China Scholarship Council (CSC). With this money, I clearly know that my country is standing behind me, she gives me confidences to step into a new environment, to face the world. Thanks to my country.
@@ -154,15 +157,17 @@ The most important thing always come last, all the expense during the 4 years Ph
 Urbanization caused many social problems related to urban traffic in both developing and developed countries, of which although the problems are manifested in various aspects, in essence, they can be attributed to the demand for sustainability. Giving priority to the development of public transport has been widely accepted as the effective means to deal with the problem in the sustainability of urban traffic. To decrease the share of motorized travel and increase the willingness of using public transit, a lot of measures aimed at attracting people to use public transit were proposed and implemented. However, the implementation of these measures is not as simple as building rail transit stations, then waiting for people to come. Understanding the factors influencing rail transit ridership is always central and fundamental to decisions on this issue.
 
 % 主旨，目的
-% 因此，本文最基本的目的是解释客流量。具体来看，目的可以分为三个。
-The primary purpose of this research is explaining rail transit ridership, it is expanded to 4 specific aspects: 1. exploring the characteristics of variation in transit ridership and land use; 2. explaining transit ridership at station level; 3. explaining transit ridership at station-to-station level; 4. explaining the walking duration to transit stations. To this end, the research questions are as follow: 1. to explore the overall relationship between transit ridership and land use; 2. to find an approach for screening effective influencing factors; 3. to describe the relationship of transit ridership between stations and stations; 4. to explore the relation between walking distance and walking preference.
+% 因此，本文最基本的目的是解释客流量。具体来看，目的可以分为4个。
+With the requirement of sustainable development, the primary purpose of this research is carried out: analyzing the determinants of transit ridership, thus providing references for the coordinated planning of urban and transit. The main topics in this research field can be briefly summarized into 3 aspects: 1. how to determine the catchment area. 2. What are the determinants of transit ridership at station level; 3. How the transit ridership is influenced at station-to-station level. 
+
+Corresponding to the topics and previous studies, the specific research questions are proposed as follow: 1. to explore the relation between walking distance and walking preference; 2. to find an approach for screening effective influencing factors; 3. to describe the relationship of transit ridership between stations and stations.
 
 % 具体研究的内容，包含方法
-The first question is answered through the exploratory regression decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables is then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
+As to the first question, this research examines the feature distribution of individual characteristics at several thresholds of walking duration, thus trying to explore the willingness of walking duration to transit stations. The model of random forest decision is introduced to explain the relationship from the perspective of probability. The results show a quantitative relationship of surveyed walking durations and passengers' individual characteristics, which is thought can be used in planning catchment areas of rail transit station or estimating the catchment areas of existing stations.
 
-For the second question, the relationship of transit ridership between stations and stations is analyzed from the view of land use within the station catchment area. This relationship then is converted into a binary choice problem, and is estimated using logistic regression model. The results show that for passengers the variations in land use in departure stations can lead to variations in the choice of destination stations.
+The second question is answered through the exploratory regression decreasing the risk of type I and type II errors in statistic when identifying the valid variables that should be put into the regression model. The specific influence of screened valid variables is then estimated using mixed geographically weighted regression. The results give the factors actually playing a role on influencing transit ridership, and indicate the influence quantitatively. 
 
-As to the third question, this research examines the feature distribution of individual characteristics at several thresholds of walking duration, thus trying to explore the willingness of walking duration to transit stations. The model of random forest decision is introduced to explain the relationship from the perspective of probability. The results show a quantitative relationship of surveyed walking durations and passengers' individual characteristics, which is thought can be used in planning catchment areas of rail transit station or estimating the catchment areas of existing stations.
+For the third question, the relationship of transit ridership between stations and stations is analyzed from the view of land use within the station catchment area. This relationship then is converted into a binary choice problem, and is estimated using logistic regression model. The results show that for passengers the variations in land use in departure stations can lead to variations in the choice of destination stations.
 
 % 讨论和建议
 Based on the achievements of this research, several recommendations are given as follow: 1. before estimating transit ridership a general process of screening valid factors is necessary; 2. since the transit ridership of one station is not only affected by the factors within the catchment area of that station but also affected by the other stations in the same transit network, the research perspective should be shifted to station-to-station level and further to the line or network level. 3. accuracy estimation for catchment area needs further exploration. \\ \\ \\

@@ -1,10 +1,18 @@
 # Thesis
 
 ## Current Version: 1.2.20180612 (Last updated: Jun 12th, 2018)
-
+## Need to be updated since the chapter 5 has been updated in AURG paper
 ---
 
 ## Upgrade Log
+---
+ Version: 1.3.20181108
+
+    Date: 2018-11-08, 13:10 p.m.
+        Progress    :   Complement
+        Remaining   :   Null
+        Overall     :
+>Remarks : Revised some details, adjusted the organization of chapters.
 ---
  Version: 1.2.201806012
 
@@ -44,7 +52,7 @@
         Progress    :   Conclusion chapter is finished
         Remaining   :   Revise for the body chapters, and abstract
         Overall     :   1. Revise the body chapters (In one day)
-                        2. Abstract and overall check (In one day)
+                        1. Abstract and overall check (In one day)
 ---
  Version: 1.0.20180507
 
