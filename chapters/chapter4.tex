@@ -1,4 +1,4 @@
-\chapter{Influencing Factors on Ridership at Station Level}
+\chapter{Influencing Factors on Transit Ridership at Station Level}
 \markright{CHAPTER 4}
 %
 \section{Introduction}
@@ -40,12 +40,12 @@ This study will focus on the small sample case and try to address some of the sh
 \section{Data}
 \subsection{Case introduction}
 %
-This study focuses on 35 subway stations in Fukuoka City of Japan, which is a typical local central city in Japan having not so large population and not so complex rail transit system. A city like Fukuoka commonly has the demand in developing rail transit, but usually, the data support is insufficient due to the lack of station samples. Figure \ref{fig:chp4:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines (The first line was operated since 1981, the second line was operated in 1993 and the latest third line began in 2005), and has a total of 29.8 kilometers operating mileage, some details of the three lines are shown in Table \ref{tab:chp4:DetailsSubway}. The transport system carries a daily average of more than 0.4 million passengers by 2015 that accounting for more than 20\% in total motorized travel(Ministry of Land, Infrastructure n.d.). Although the subway system of Fukuoka is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population.
+This study focuses on 35 subway stations in Fukuoka City of Japan, which is a typical local central city in Japan having not so large population and not so complex rail transit system. A city like Fukuoka commonly has the demand in developing rail transit, but usually, the data support is insufficient due to the lack of station samples. Figure \ref{fig:chp4:ResearchArea} is the research area and the distribution of subway stations. Until now Fukuoka has three operating subway lines (The first line was operated since 1981, the second line was operated in 1993 and the latest third line began in 2005), and has a total of 29.8 kilometers operating mileage, some details of the three lines are shown in Table \ref{tab:chp4:DetailsSubway}. The transport system carries a daily average of more than 0.6 million passengers by 2015 that accounting for more than 20\% in total motorized travel(Ministry of Land, Infrastructure n.d.). Although the subway system of Fukuoka is not a large-scale one, it plays a crucial role in public transportation in terms of the city scale and population.
 
 % Figure 1
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\linewidth]{chapter3/ResearchArea}
+	\includegraphics[width=0.8\linewidth]{chapter4/ResearchArea}
 	\caption{Research area and the distribution of subway stations}
 	\label{fig:chp4:ResearchArea}
 	\small
@@ -429,7 +429,7 @@ The MGWR is estimated is estimated by using a fixed Gaussian kernel function,  t
 % Figure 2
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\linewidth]{chapter3/AICcBandwidths}
+	\includegraphics[width=0.8\linewidth]{chapter4/AICcBandwidths}
 	\caption{Variations of AICc at different bandwidths}
 	\label{fig:chp4:AICcBandwidths}
 \end{figure}
@@ -514,7 +514,7 @@ Since the MGWR is a kind of variable coefficient regression model, the coefficie
 \begin{figure}[htbp]
 	\centering
 	\normalsize
-	\includegraphics[width=0.7\linewidth]{chapter3/LocalR}
+	\includegraphics[width=0.7\linewidth]{chapter4/LocalR}
 	\caption{Spatial distribution of local $R^2$}
 	\label{fig:chp4:LocalR}
 \end{figure}
@@ -535,13 +535,13 @@ Since the MGWR is a kind of variable coefficient regression model, the coefficie
 	% 两列排列，每列占宽0.48
 	\begin{minipage}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{chapter3/TransportationFacility} % 这里的图片宽度是相对minipage的，所以1倍就可以了
+		\includegraphics[width=\linewidth]{chapter4/TransportationFacility} % 这里的图片宽度是相对minipage的，所以1倍就可以了
 		\centering{Transportation Facility}
 	\end{minipage}
 	\hfill % 横向填充，均匀分布
 	\begin{minipage}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{chapter3/BusCapacity}
+		\includegraphics[width=\linewidth]{chapter4/BusCapacity}
 		\centering{Bus Capacity}
 	\end{minipage}
 	
@@ -549,13 +549,13 @@ Since the MGWR is a kind of variable coefficient regression model, the coefficie
 	
 	\begin{minipage}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{chapter3/BusAccessibility}
+		\includegraphics[width=\linewidth]{chapter4/BusAccessibility}
 		\centering{Bus Accessibility}
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{chapter3/PopulationJobBalance}
+		\includegraphics[width=\linewidth]{chapter4/PopulationJobBalance}
 		\centering{Population Job Balance}
 	\end{minipage}
 	
@@ -563,13 +563,13 @@ Since the MGWR is a kind of variable coefficient regression model, the coefficie
 	
 	\begin{minipage}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{chapter3/TenantProportion}
+		\includegraphics[width=\linewidth]{chapter4/TenantProportion}
 		\centering{Tenant Proportion}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[c]{0.48\linewidth}
 		\centering
-		\includegraphics[scale=0.3]{chapter3/Legend}\\
+		\includegraphics[scale=0.3]{chapter4/Legend}\\
 	\end{minipage}
 	
 	\caption{Spatial distribution of significance level for local variables}

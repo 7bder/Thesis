@@ -4,7 +4,7 @@
 %
 \section{Background}
 
-\subsection{The problem of sustainability caused by urbanization}
+\subsection{The demand of sustainability caused by urbanization}
 % status quo
 With the continued urbanization, people keep on migrating from rural areas to urban areas. As a result of this, 54\% population in the world lives in urban areas by 2014, this population shift will continues and is predicted to reach 66\% by 2050 \cite{un2014world}. Living in cities is considered much more efficient and convenient than that in rural areas in a variety of ways, as it is easier to provide services when people live closer together. However, cities also change the way that people interact with each other and the environment, which often causes multiple problems. The second UN Conference on Human Settlements in 1996 came to the conclusion that the cities all over the world are facing problems due to urbanization.
 
@@ -31,25 +31,24 @@ Giving priority to public transit is one of the important ways to help create su
 The guidelines summarized above has received a lot of attention by the governments which are regarded as the means of mitigating most of the common urban problems, such as traffic congestion, air pollution, and incessant sprawl \cite{cervero2002transit}. In a common sense, an area taking the station as the core typically has a central transit stop (such as a train station, or light rail or bus stop) surrounded by a high-density mixed-use area, with lower-density areas spreading out from this center. The densest areas are normally located within a radius of 400 meters to 800 meters (5 minutes to 10 minutes walking duration, varying in terms of different kinds of transit station) around the central transit stop, which are determined by the acceptable walking distance for pedestrians, thus helping solve the last mile problem.
 
 % Change the objective to rail transit station. Interpret the importance of ridership prediction
-With the increase in demand for speed, punctuality and environment protection, urban rail transit has gained popularity by governments, especially in metropolises with high compactness and population density. Add to the continuous extension of city scale and the growth in travel demand, more and more newly developed areas are planned taking rail transit station as the core. With this popularity, it is probably easy to enter a misunderstanding that if the transit station is built, people will come, but the reality is not that simple. Because of this, understanding the factors influencing rail transit ridership has become central and fundamental to decisions on urban planning and management. 
+With the increase in demand for speed, punctuality and environment protection, urban rail transit has gained popularity by governments, especially in metropolises with high compactness and population density. Add to the continuous extension of city scale and the growth in travel demand, more and more newly developed areas are planned taking rail transit station as the core. With this popularity, it is probably easy to enter a misunderstanding that if the transit station is built, people will come, but the reality is not that simple. Because of this, understanding the determinants of rail transit ridership has become central and fundamental to decisions on urban planning and management. 
 
 % 
 \section{Research purpose}
 % propose station level and station-to-station level
-How to encourage people to take rail transit? What explains rail transit ridership? How to increase the rail transit ridership? As interpreted before, these questions is placed in front of us. The answer seems to be both obvious and complex. Every element existing in the catchment area of stations associate with ridership, population, road network, parking, income, transit network, building density etc., all the factors surely play a role. But the relative importance of these various factors and the internal relations among them are much more complex, and still not well understood \cite{taylor2003factors}. Besides, as transit station is a part of transit network but not an independent existence, once the transit ridership of one station varied, transit ridership of all the other stations connected to that station should vary as well. But the interaction among catchment areas of the stations in the same transit network remains unclear to date.
+How to encourage people to take rail transit? What explains rail transit ridership? How to increase the rail transit ridership? As interpreted before, these questions is placed in front of us. The answer seems to be both obvious and complex. Every element existing in the catchment area of stations associate with ridership, population, road network, parking, income, transit network, building density etc., all the factors surely play a certain role. But the relative importance of these various factors and the internal relations among them are much more complex, and still not well understood \cite{taylor2003factors}. Besides, as transit station is a part of transit network but not an independent existence, once the transit ridership of one station varied, transit ridership of all the other stations connected to that station should vary as well. But the interaction among catchment areas of the stations in the same transit network remains unclear to date.
 
 %  catchment area
-We mentioned the term of catchment area above, however, what does it mean in transit ridership analysis? As a general definition, a catchment area is the area from which a city, service or institution attracts a population that uses its services. In the issue of transit ridership analysis, it means a station's primary service area, within which that people are willing to use the station, beyond which land use, travel mode choice, population distribution are unlikely to be influenced by this transit station. The catchment area is thought to be largely determined by people's willingness of walking to transit stations, which, however, vary by people's individual characteristics including trip purpose, age, gender and so on \cite{guerra2013half}. Because of this, the transit catchment area is important and fundamental to the ridership analysis, even the most.
+We mentioned the term of catchment area above, however, what does it mean in transit ridership analysis? As a general definition, a catchment area is the area from which a city, service or institution attracts a population that uses its services. In the issue of transit ridership analysis, it means a station's primary service area, within which people are willing to use the station, and beyond which land use, travel mode choice, population distribution are unlikely to be influenced by this transit station. The catchment area is thought to be largely determined by people's willingness of walking to transit stations, which, however, vary by people's individual characteristics including trip purpose, age, gender etc. \cite{guerra2013half}. Because of this, the transit catchment area is important and fundamental to the ridership analysis, even the most.
 
 % 基于上述存在的现实问题，我们得出了explain rail transit ridership 这个整体目标。以此为中心，本文针对以下三个问题点进行展开
-Based on the interpretation of the real issue above, the research goal of the whole dissertation is defined to \emph{\textbf{explore the factors influencing rail transit ridership}}. Three main questions are to be answered in this dissertation.
+Based on the interpretation of the real issue above, the research goal of the whole dissertation is defined to \emph{\textbf{explore the determinants of rail transit ridership}}. Three main questions are to be answered in this dissertation.
 
 \begin{enumerate}
 	\setlength{\parskip}{0\baselineskip} % 设置段间距
 	\item What determines catchment area?
 	\item What factors explain transit ridership at station level?
 	\item What factors influence transit ridership among stations?
-	\item What explains catchment area?
 	\setlength{\parskip}{0.7\baselineskip} % 设置段间距
 \end{enumerate}
 
@@ -62,7 +61,7 @@ From the research purposes, the literature review is to be extended in terms of 
 % 这个表太大了，划线的时候使用toprule，bottomrule。否则格式会乱
 \begin{sidewaystable}[htbp]
 	\centering
-	\caption{Summary of some previous studies}
+	\caption{Summary of previous studies}
 	\label{tab:chp1:Review}
 	\scriptsize % 该表使用小字体
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
@@ -93,7 +92,7 @@ From the research purposes, the literature review is to be extended in terms of 
 			\Xhline{0.5pt}
 			
 			% 这里的multirow格式控制，限制宽度自动换行，内容部分加上\centering 可以居中
-			\multirow{6}[3]{*}{\centering{Land use factors}} & Building area & & & & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$  \\
+			\multirow{6}[0]{*}{\centering{Land use factors}} & Building area & & & & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$  \\
 			\Xcline{2-11}{0.5pt}
 			& Hospital & & & & & & & & $\bullet$ &  \\
 			\Xcline{2-11}{0.5pt}
@@ -106,7 +105,7 @@ From the research purposes, the literature review is to be extended in terms of 
 			& Other infrastructures & & $\bullet$ & & & & & & $\bullet$ & $\bullet$ \\
 			
 			\Xhline{0.5pt}
-			\multirow{6}[3]{8em}{\centering{Transit-related factors}} & Accessibility of pedestrian & $\bullet$ & & & & & & $\bullet$ & &  \\
+			\multirow{6}[0]{8em}{\centering{Transit-related factors}} & Accessibility of pedestrian & $\bullet$ & & & & & & $\bullet$ & &  \\
 			\Xcline{2-11}{0.5pt}
 			& Accessibility of transfer & & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
 			\Xcline{2-11}{0.5pt}
@@ -119,7 +118,7 @@ From the research purposes, the literature review is to be extended in terms of 
 			& Locational factor & & $\bullet$ & & $\bullet$ & & & & $\bullet$ &  \\
 			\Xhline{0.5pt}
 			
-			\multirow{8}[4]{8em}{\centering{Demographic and socioeconomic environment factors}} & Population & & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+			\multirow{8}[0]{8em}{\centering{Demographic and socioeconomic environment factors}} & Population & & $\bullet$ & $\bullet$ & $\bullet$ & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
 			\Xcline{2-11}{0.5pt}
 			& Employment & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
 			\Xcline{2-11}{0.5pt}
@@ -142,7 +141,7 @@ From the research purposes, the literature review is to be extended in terms of 
 %
 \subsection{Catchment area}
 % historically，buffer area，PCA
-An important precondition for investigating factors influencing transit ridership is the definition of the catchment area of a station, which has been interpreted in the part of research purpose. Historically, the determination of transit catchment area was mainly implemented in GIS by creating a distance buffer around the transit station \cite{o1992analysis,hsiao1997use,ayvalik2002heuristic,peng1997simultaneous}. However, since a transit catchment area is determined by the walking distance from the transit station, which is also called pedestrian catchment area (Abbreviated as PCA), a circle buffer area is not adequate for presenting the catchment area. Recent decades, with the development in GIS and the richness in statistics, the application scenario of GIS has progressed far beyond the simple buffering operation \cite{biba2010new,wu2003ptal,jiang2012walk}. Also, many efforts have been made to estimate the real walking distance by importing the data of real road network. According to the existing studies, the PCA generally range from 400 meters to 1000 meters due to different station types, city forms, also travel preference \cite{alshalalfah2007case,guerra2012half,keijer2000people,murray1998public,o1996walking,zhao2003forecasting}.
+An important precondition for investigating factors influencing transit ridership is the definition of the catchment area of a station, which has been interpreted in the part of research purpose. Historically, the determination of transit catchment area was mainly implemented in GIS by creating a distance buffer around the transit station \cite{o1992analysis,hsiao1997use,ayvalik2002heuristic,peng1997simultaneous}. However, since a transit catchment area is determined by the common walking distance from the transit station, which is also called pedestrian catchment area (Abbreviated as PCA), a circle buffer area is not adequate for presenting the catchment area. Recent decades, with the development in GIS and the richness in statistics, the application scenario of GIS has progressed far beyond the simple buffering operation \cite{biba2010new,wu2003ptal,jiang2012walk}. Also, many efforts have been made to estimate the real walking distance by importing the data of real road network. According to the existing studies, the PCA generally range from 400 meters to 1000 meters due to different station types, city forms, also travel preference \cite{alshalalfah2007case,guerra2012half,keijer2000people,murray1998public,o1996walking,zhao2003forecasting}.
 
 % 这里给出支持800米, 然后这个800米其实也很不合理
 Since difficulties in estimating the accuracy catchment area are still not well addressed, a general 800 meters (half-mile) walking distance, which has been verified to be suitable for most cases, has been widely accepted as a principal reference of the catchment \cite{kuby2004factors,gutierrez2011transit,cardozo2012application,zhao2013influences}. This 800 meters, however, is just a general distance for rail transit stations without considerations of people's individual characteristics and travel preference. The catchment area is mainly determined on the base of questionnaires by asking how far/long did passengers walk to stations, or how far/long are passengers willing to walk to stations \cite{keijer2000people,zhao2003forecasting,garcia2013walking}, while the answers are usually given in a loose way like I remember I walked... or I think I prefer... What's more, the same reasoning has been used to justify other rail transit catchment areas and even in different cities and countries. Till now, restricted by analytical method and data, there are no better options than this general 800 meters walking distance in determining rail transit catchment area, unless doing a large-scale rail transit travel survey which is also thought to be impossible due to excessive costs.
@@ -184,7 +183,7 @@ On the base of fully understanding the existing research, this dissertation will
 % 描述的再详细一点
 \begin{enumerate}
 	\setlength{\parskip}{0\baselineskip} % 设置段间距
-	\item Exploring the relationship between walking distance and walking preference, and trying to explain the catchment area
+	\item Exploring the relationship between walking distance and walking preference, and trying to explain the catchment area.
 	\item Analyzing the characteristics in the variation of transit ridership.
 	\item Exploring the approach for screening effective influencing factors.
 	\item Shifting the research perspective, trying to describing the relationship between stations and stations.
@@ -194,7 +193,7 @@ On the base of fully understanding the existing research, this dissertation will
 %
 \section{Dissertation organization}
 % introduction for study case
-The dissertation uses the rail transit system of Fukuoka City, which is the sixth largest city in Japan having a more than 1.5 million population, as the study case. The rail transit system of Fukuoka has 78 rail transit stations, including 27 JR Kyushu stations, 35 subway stations, and 16 West Japan Railway stations. Figure \ref{fig:chp1:ResearchArea} presents the research area and the distribution of rail transit stations. The rail transit system of Fukuoka carries a daily average of more than 0.4 million passengers by 2015 that accounting for about 20\% in total motorized travel (Ministry of Land, Infrastructure n.d.). The rail transit system of Fukuoka is not a large-scale one, the share ratio of rail transit is staying at a lower level. Like many local central cities in Japan, Fukuoka city also has the problems in urban traffic congestion and financial press on public transit due to the tendency of using private cars and the huge operating costs on the subway system. Improving subway ridership has been an urgent demand for the Fukuoka government.
+The dissertation uses the rail transit system of Fukuoka City, which is the sixth largest city in Japan having a more than 1.5 million population, as the study case. The rail transit system of Fukuoka has 78 rail transit stations, including 27 JR Kyushu stations, 35 subway stations, and 16 West Japan Railway stations. Figure \ref{fig:chp1:ResearchArea} presents the research area and the distribution of rail transit stations. The rail transit system of Fukuoka carries a daily average of more than 0.6 million passengers by 2015 that accounting for about 20\% in total motorized travel (Ministry of Land, Infrastructure n.d.). The rail transit system of Fukuoka is not a large-scale one, the share ratio of rail transit is staying at a lower level. Like many local central cities in Japan, Fukuoka city also has the problems in urban traffic congestion and financial press on public transit due to the tendency of using private cars and the huge operating costs on the subway system. Improving subway ridership has been an urgent demand for the Fukuoka government.
 
 % Figure 2
 \begin{figure}[htbp]
