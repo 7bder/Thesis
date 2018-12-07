@@ -229,7 +229,7 @@ As stated before, the data of land use is extracted within the 800-meter circle 
 \end{figure}
 
 %
-The land use data from Urban Planning Basic Survey is available every 5 years, to match the data period of transit ridership, the land use data on 2008 is used for analyzing characteristics of land use. The dataset of land use contains 23 types, which, however, is too many for analyzing the characteristics of land use in the case with only 35 stations. Moreover, most types of land use account for very little of the total building area, for which they are thought to have restricted influence on transit ridership. As a result, 9 types of land use, which have relatively larger building areas and commonly exist in all the catchment area of subway stations, are selected to analyze the characteristics of land use, the reserved items are listed in Figure \ref{fig:chp3:IndicatorSelection}.
+The land use data from Urban Planning Basic Survey is available every 5 years, to match the data period of transit ridership, the land use data on 2008 is used for analyzing characteristics of land use. The dataset of land use contains 23 types, which, however, are too many for analyzing the characteristics of land use in the case with only 35 stations. Moreover, most types of land use account for very little of the total building area, for which they are thought to have restricted influence on transit ridership. As a result, 9 types of land use, which have relatively larger building areas and commonly exist in all the catchment area of subway stations, are selected to analyze the characteristics of land use, the reserved items are listed in Figure \ref{fig:chp3:IndicatorSelection}.
 
 %
 \begin{figure}[htbp]
@@ -256,7 +256,7 @@ Through the initial screening, there are 10 indicators being selected. Neverthel
 		\Xhline{0.5pt}
 		1. Business & 1.000 & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.987} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.775} & -0.385 & 0.378  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 0.615  & 0.006  & 0.656 \\
 		
-		2. Commerce & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 1.000 & 0.828  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.765} & -0.293 & 0.345  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.734} & 0.645  & 0.065  & 0.530 \\
+		2. Commerce & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.848} & 1.000 & {\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.828}  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.765} & -0.293 & 0.345  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.734} & 0.645  & 0.065  & 0.530 \\
 		
 		3. Hotel & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.987} & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.828} & 1.000 & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.716} & -0.361 & 0.382  & \multicolumn{1}{r|}{\cellcolor[rgb]{ 0.8, 0.8, 0.8} 0.815} & 0.585  & 0.000  & 0.619 \\
 		
@@ -301,13 +301,13 @@ The KMO measure of sampling adequacy reflect the correlation among all the indic
 		
 		\multirow{3}[0]{16em}{\centering{Bartlett's Test of Sphericity}} & \multicolumn{1}{r}{Chi-Square} & 346.086 \\
 		& df & 45 \\
-		& Sig. & 0 \\
+		& Sig. & 0.000 \\
 		\Xhline{1.5pt}
 	\end{tabular}%
 \end{table}%
 
 %
-\emph{2. Fact extraction}
+\emph{2. Factor extraction}
 
 %
 The factors are extracted using principal component method, Table \ref{tab:chp3:Communalities} lists the communalities of the indicators. As shown in this table, most information contained in the indicators can be explained by the extracted factors. Less information loss during the process of extracting factors means a good effect.
@@ -399,13 +399,13 @@ The rotated component matrix (Table \ref{tab:chp3:RotatedComponent}) shows the a
 		Office & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.962 & 0.122 & 0.060 \\
 		Hotel & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.934 & 0.123 & 0.050 \\
 		Commerce & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.878 & 0.105 & 0.131 \\
-		Entertainment & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.85 & 0.044 & -0.030 \\
+		Entertainment & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.850 & 0.044 & -0.030 \\
 		Dwelling with shop & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.834 & 0.417 & 0.125 \\
-		Apartment house & 0.301 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.86 & 0.134 \\
-		Residence & -0.521 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.62 & -0.234 \\
+		Apartment house & 0.301 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.860 & 0.134 \\
+		Residence & -0.521 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.620 & -0.234 \\
 		Education & -0.066 & -0.039 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.958 \\
 		Culture & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.627 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.644 & 0.057 \\
-		Government & 0.570  & 0.305 & 0.582 \\
+		Government & 0.570  & 0.305 & \cellcolor[rgb]{ 0.8,  0.8, 0.8} 0.582 \\
 		\Xhline{1.5pt}
 	\end{tabular}%
 	\label{tab:addlabel}%
@@ -433,13 +433,13 @@ As to the procedure of cluster analysis, the cluster method is Ward Method, the 
 %
 \begin{itemize}
 	\item \textbf{Characteristics of low-density residence type} \\
-	This factor represents the land use mainly including office area, large commercial area, and some commercial supporting facilities.
+	This type has 9 stations with the characteristics of high proportion of residence, and low population-density, very few office and commerce.
 	
 	\item \textbf{Characteristics of High-density residence type} \\
-	The indicators of apartment, residence, and culture mainly attribute to this factor, which can reflect the attribute of residence with supporting facilities.
+	The proportion of each land use in high-density residence is similar with that in low-density residence type, but population-density is much higher than other types.
 	
 	\item \textbf{Characteristics of education type} \\
-	Except for the indicator of education, the indicator of government also attributes a large part of this factor. It means that the land use of education and government have a relatively strong correlation.
+	This type has 6 stations, they are located in the vicinity of colleges and universities, and the service population is mainly students and nearby residents.
 	
 	\item \textbf{Characteristics of downtown commerce type} \\
 	The type of downtown commerce includes 5 stations, which constituted the CBD area of Fukuoka. These stations have the highest proportion of office and commerce, while proportion of residence is the lowest and population density is relatively lower.
@@ -449,21 +449,21 @@ As to the procedure of cluster analysis, the cluster method is Ward Method, the 
 \end{itemize}
 
 %
-The No.7 Kukou station, which locate at Fukuoka airport, is different from the other 5 types of stations, the main component of land use is transportation facilities. From the view of land use, reflecting into the result of classification, the No.7 station does not belong to any type of stations.
+The No.7 Kukou station, which locates at Fukuoka airport, is different from the other 5 types of stations, the main component of land use is transportation facilities. From the view of land use, reflecting into the result of classification, the No.7 station does not belong to any type of stations.
 
 %
-\section{Influencing factors of transit ridership}
-\subsection{Relationship between transit ridership and land use}
+\section{Exploration on the relationship between land use and transit ridership}
+\subsection{General relationship between land use and transit ridership}
 %
 The data of land use is conducted every 5 years, while the data of subway transit ridership is annual. The 2008 data included in both data is used to analyze the relationship between subway transit ridership and land use.
 
 %
-According to the classification result (refer to \ref{fig:chp3:StationClassification}), adding to the average transit ridership of each type of station, as shown in the Table \ref{tab:chp3:ClassificationCharacteristics}, the subway transit ridership varies a lot in different types of land use. The station of low-density residence type has an average transit ridership of only 3416, while that of high-density residence type has 15633 on average. The downtown commerce type has the highest average transit ridership of 52300, while that in office type is only 11038, even though similar with the type of downtown commerce the office type has a high proportion of land use in office and commerce. The proportions of office and commerce in education type are similar with that in the two residence types, but from which the average transit ridership is quite different.
+According to the classification result (refer to \ref{fig:chp3:StationClassification}), adding to the average transit ridership of each type of station, as shown in the Table \ref{tab:chp3:ClassificationCharacteristics}, the subway transit ridership varies a lot in different types of land use. The station of low-density residence type has an average transit ridership of only 3,416, while that of high-density residence type has 15,633 on average. The downtown commerce type has the highest average transit ridership of 52,300, while that in office type is only 11,038, even though similar with the type of downtown commerce the office type has a high proportion of land use in office and commerce. The proportions of office and commerce in education type are similar with that in the two residence types, but from which the average transit ridership is quite different.
 
 % Table
 \begin{table}[htbp]
 	\centering
-	\caption{Classification Characteristics}
+	\caption{Characteristic of each classification}
 	\label{tab:chp3:ClassificationCharacteristics}
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
@@ -482,7 +482,7 @@ According to the classification result (refer to \ref{fig:chp3:StationClassifica
 \end{table}
 
 %
-According to the classification result of both subway transit ridership and land use around the stations, the cross table is shown in the Figure \ref{tab:chp3:CrossTable} below. All the stations belonging to low-density residence type have small-scale of transit ridership, which is under 10000 per day. Both the two hub stations belonging to the downtown commerce type located in the CBD area of Fukuoka. Overall, it can be inferred from this table that the area with lower density either in population or building has a lower demand in using rail transit; besides the high density in population and building, hub stations should also have particularities in location and function. 
+According to the classification result of both subway transit ridership and land use around the stations, the cross table is shown in the Figure \ref{tab:chp3:CrossTable} below. All the stations belonging to low-density residence type have small-scale of transit ridership, which is under 10,000 per day. Both the two hub stations belonging to the downtown commerce type located in the CBD area of Fukuoka. Overall, it can be inferred from this table that the area with lower density either in population or building has a lower demand in using rail transit; besides the high density in population and building, hub stations should also have particularities in location and function. 
 
 % Table
 \begin{table}[htbp]
@@ -508,7 +508,7 @@ According to the classification result of both subway transit ridership and land
 %
 Through the characteristics analysis of subway transit ridership and land use, the general trend of the relationship between them can be understood. However, the conclusion obtained from the trend analysis cannot be fully trusted due to the lack of quantitative analysis, also, how the factor land use can influence transit ridership is still not clear.
 
-\subsection{Influencing factors on transit ridership}
+\subsection{Statistical relationship of land use and transit ridership}
 %
 The quantification method \uppercase\expandafter{\romannumeral1} is introduced to further explore the influence of each factor on the transit ridership. Different from regression model, the quantification method \uppercase\expandafter{\romannumeral1} converts the continuous independent variables into categorical variables thus investigating the correlation between categorical independent variables and the continuous dependent variable. This method is thought suitable to do the exploratory analysis on the data for the first time due to the procedure of discretizing the continuous independent variables. This discretization can partly reduce the deviation caused by the uneven distribution of the sample in the whole.
 
