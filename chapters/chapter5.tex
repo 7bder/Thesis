@@ -29,7 +29,14 @@ To explore the connectivity between station areas, Choi et al. conducted a stati
 Land use and public transit are coevolving partners in city building \cite{handy2005smart,dittmar2012new}. In the urban railway transit system, the ridership between stations is thought to be related to land use, distribution of functional regions, or travel preferences \cite{thompson1997achieving}. The catchment area of a station is the area with mixed land use of residences, business, and leisure within walking distance taking the station as the center, while the transit ridership between stations can be viewed as the connectivity of different catchment areas. The catchment area is generally referring to a compact residential district that includes mixing land use to allow people to most of their daily activities within the easy walking distance of a major transit node \cite{lund2004travel}. In details, various functional buildings are the carrier for people to live, work and recreate, different functions of buildings correspond different trip purposes. When the functions of buildings within the easy walking distance of a station cannot satisfy the requirement of people’s daily activities, people will choose to go to other places to conduct their business by using the transit node such as the subway. Therefore, the distribution of different functional building in a catchment area is considered to not only affect the ridership of the station where it is located but also affect the ridership of other stations connected to that station.
 
 %
-With the goal of explaining the variation in the ridership between stations, this study will focus on the passengers’ choices for destination stations from the perspective of complementarity of building function in different catchment areas, using the case of subway network in Fukuoka, Japan. The result from this study also can provide a foundation for explaining the connectivity between different catchment areas. Factors that are expected to influence the connection of stations are stated in the next section. Then the approach and model that are adopted in this study are interpreted. Based on the approach and model, the case of the subway system in Fukuoka, Japan is investigated. The discussion for the result is also presented in the last section.
+With the goal of explaining the variation in the ridership between stations, this study will focus on the passengers’ choices for destination stations from the perspective of complementary of building function in different catchment areas, using the case of subway network in Fukuoka, Japan. The result from this study also can provide a foundation for explaining the connectivity between different catchment areas. Factors that are expected to influence the connection of stations are stated in the next section. Then the approach and model that are adopted in this study are interpreted. Based on the approach and model, the case of the subway system in Fukuoka, Japan is investigated. The discussion for the result is also presented in the last section. The flow of research process is shown in Figure \ref{fig:chp5:Chp5Flowchart}.
+
+\begin{sidewaysfigure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{chapter5/BWChp5Flowchart}
+	\caption{Research flowchart}
+	\label{fig:chp5:Chp5Flowchart}
+\end{sidewaysfigure}
 
 %
 \section{Data}
@@ -50,7 +57,7 @@ The same with previous studies, this study chose several types of land use with 
 % Table
 \begin{table}[htbp]
 	\centering
-	\caption{Statistical description of data}
+	\caption{Summary of the land use proportion}
 	\label{tab:chp5:StationToStationFactorStatistics}%
 	\small
 	\renewcommand{\arraystretch}{1.25} % 重设表间距
@@ -173,7 +180,14 @@ As the result, all the stations are fallen into six categories, they are medium-
 \end{sidewaystable}
 
 %
-To investigate the stations with significant differences in land use characteristic, the most typical object station is chosen from each group in terms of the guidelines as follow. 1) Avoid selecting the stations with the highest value of feature indicator. Because the high value may be caused by the particularity of its distribution of land use and road network, it does not have generality in terms of the type it is. 2) Avoid selecting the transferable stations. Because the transit ridership of this kind of stations generally relates the other stations, which cannot reflect the distribution of land use within the PCA. 3) Avoid selecting the stations with much lower or higher population density than other stations. Because the low or high population density may lead to different travel preference due to the difference in the distribution of facilities (such as hospitals, schools, and transportation facilities etc.). Finally, six stations are selected from six groups, the factor of each station is shown in Table \ref{tab:chp5:Result}.
+To investigate the stations with significant differences in land use characteristic, the most typical object station is chosen from each group in terms of the guidelines as follow: 
+
+\begin{itemize}
+	\item Avoid selecting the stations with the highest value of feature indicator. Because the high value may be caused by the particularity of its distribution of land use and road network, it does not have generality in terms of the type it is.
+	\item Avoid selecting the transferable stations. Because the transit ridership of this kind of stations generally relates the other stations, which cannot reflect the distribution of land use within the PCA.
+	\item Avoid selecting the stations with much lower or higher population density than other stations. Because the low or high population density may lead to different travel preference due to the difference in the distribution of facilities (such as hospitals, schools, and transportation facilities etc.).
+	\item Finally, six stations are selected from six groups, the factor of each station is shown in Table \ref{tab:chp5:Result}.
+\end{itemize}
 
 % Table 4
 \begin{sidewaystable}[htbp]
