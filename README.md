@@ -1,10 +1,18 @@
 # Thesis
 
-## Current Version: 1.2.20180612 (Last updated: Jun 12th, 2018)
-## Need to be updated since the chapter 5 has been updated in AURG paper
+## Current Version: 2.0.20190130 (Last updated: Feb 8th, 2019)
+## Submit version
 ---
 
 ## Upgrade Log
+---
+ Version: 2.0.20190130
+
+    Date: 2018-11-08, 13:10 p.m.
+        Progress    :   Complement
+        Remaining   :   Null
+        Overall     :
+>Remarks : Revised some details, adjusted the organization of chapters.
 ---
  Version: 1.3.20181108
 
@@ -90,9 +98,14 @@
 
 ---
 
-## Construction of files
+## Requirements
+1. Tex Live 2018 or later version.
 
-1. Main.tex is the entry of all the files.
+
+## Construction of files
+1. <font color = yellow> Main.tex </font> is the entry of all the files.
 2. Chapters are in the document of chapters.
-3. The bib file is also in the chapters document.
-4. Run the bat file in the root path to compile the pdf file. (note: the bat file should be run in the same path with the root path)
+3. The <font color = yellow> bib </font> file is also in the <font color = yellow> chapters </font> document.
+4. Run the <font color = yellow> bat </font> file in the root path to compile the pdf file. (<font color = yellow> note: </font> the bat file should be run in the same path with the root path)
+5. The power point files used for presentation are in the <font color = yellow> presentation </font> document.
+6. Chapter 3 is added afterwards, the material is in the <font color = yellow> chp3 </font> document.
